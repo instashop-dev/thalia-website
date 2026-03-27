@@ -6,14 +6,14 @@ const AppCard = ({ app }: { app: AppData; index?: number }) => {
   if (app.comingSoon) {
     return (
       <div className="card-elevated p-6 h-full relative opacity-60">
-        <div className="absolute top-4 right-4 text-xs font-heading font-bold px-3 py-1 rounded-full" style={{ background: "#E4EAF0", color: "#8888A0" }}>
+        <div className="absolute top-4 right-4 text-xs font-heading font-bold px-3 py-1 rounded-full bg-muted text-muted-foreground">
           Coming Soon
         </div>
         <div className="w-12 h-12 rounded-[14px] flex items-center justify-center text-2xl mb-4" style={{ backgroundColor: `${app.color}18` }}>
           {app.icon}
         </div>
-        <h3 className="font-heading font-bold text-lg mb-1" style={{ color: "#0D0D14" }}>{app.name}</h3>
-        <p className="text-sm font-body" style={{ color: "#8888A0" }}>{app.tagline}</p>
+        <h3 className="font-heading font-bold text-lg mb-1 text-foreground">{app.name}</h3>
+        <p className="text-sm font-body text-muted-foreground">{app.tagline}</p>
       </div>
     );
   }
@@ -23,10 +23,10 @@ const AppCard = ({ app }: { app: AppData; index?: number }) => {
       <div className="w-12 h-12 rounded-[14px] flex items-center justify-center text-2xl mb-4" style={{ backgroundColor: `${app.color}18` }}>
         {app.icon}
       </div>
-      <h3 className="font-heading font-bold text-xl mb-1 group-hover:text-primary transition-colors" style={{ color: "#0D0D14" }}>
+      <h3 className="font-heading font-bold text-lg mb-1 group-hover:text-primary transition-colors text-foreground">
         {app.name}
       </h3>
-      <p className="text-sm font-body leading-relaxed mb-3" style={{ color: "#8888A0" }}>{app.tagline}</p>
+      <p className="text-sm font-body leading-relaxed mb-3 text-muted-foreground">{app.tagline}</p>
       <div className="flex items-center justify-between">
         <span
           className="inline-block text-xs font-bold font-body px-2.5 py-1 rounded-full"
@@ -34,7 +34,7 @@ const AppCard = ({ app }: { app: AppData; index?: number }) => {
         >
           {getPlatformLabel(app.platform)}
         </span>
-        <span className="text-sm font-medium transition-colors" style={{ color: "#29C9F0" }}>View App →</span>
+        <span className="text-sm font-medium transition-colors text-primary">View App →</span>
       </div>
     </Link>
   );

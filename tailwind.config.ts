@@ -14,8 +14,14 @@ export default {
     },
     extend: {
       fontFamily: {
-        heading: ['"Syne"', 'sans-serif'],
-        body: ['"DM Sans"', 'sans-serif'],
+        heading: ['"DM Sans"', 'sans-serif'],
+        body: ['"Inter"', 'sans-serif'],
+      },
+      fontSize: {
+        'h1': ['56px', { lineHeight: '1.15' }],
+        'h2': ['40px', { lineHeight: '1.15' }],
+        'h3': ['28px', { lineHeight: '1.15' }],
+        'h4': ['20px', { lineHeight: '1.15' }],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -81,11 +87,16 @@ export default {
           from: { opacity: "0", transform: "translateY(24px)" },
           to: { opacity: "1", transform: "translateY(0)" },
         },
+        "marquee": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-50%)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "fade-in-up": "fade-in-up 0.6s ease-out forwards",
+        "marquee": "marquee 30s linear infinite",
       },
     },
   },
