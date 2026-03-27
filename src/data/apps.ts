@@ -17,7 +17,7 @@ export const apps: AppData[] = [
   {
     slug: "spreadr",
     name: "Spreadr",
-    tagline: "Dropship Amazon products or earn affiliate commissions",
+    tagline: "Dropship Amazon products or earn affiliate commissions directly in your Shopify store.",
     description: "Spreadr lets Shopify merchants easily import Amazon products to their store and earn affiliate commissions or dropship products directly. Connect your store to millions of Amazon products in just a few clicks and start generating revenue immediately.",
     platform: "Amazon+Shopify",
     features: ["Import Amazon products instantly", "Earn affiliate commissions on every sale", "Auto price & description sync", "One-click order forwarding", "Affiliate link management", "Bulk import thousands of products"],
