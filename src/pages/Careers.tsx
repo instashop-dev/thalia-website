@@ -4,7 +4,7 @@ import { ArrowRight, Globe, Rocket, Brain, Heart } from "lucide-react";
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 import { Button } from "@/components/ui/button";
-import careersImg from "@/assets/careers-workspace.png";
+import careersImg from "@/assets/careers-workspace.jpg";
 
 const perks = [
   { icon: Globe, title: "Fully Remote", desc: "Work from wherever you do your best work. We are 100% remote and have been since day one." },
@@ -41,7 +41,7 @@ const Careers = () => {
               </motion.div>
             </div>
             <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.2 }}>
-              <img src={careersImg} alt="Modern remote workspace" className="w-full rounded-2xl" width={800} height={600} />
+              <img src={careersImg} alt="Modern remote workspace with laptop, coffee, and plant on a clean desk" className="w-full rounded-2xl" width={800} height={600} />
             </motion.div>
           </div>
         </div>
@@ -71,14 +71,8 @@ const Careers = () => {
           <SectionHeading title="Current Openings" />
           <div className="max-w-3xl mx-auto space-y-4">
             {openings.map((job, i) => (
-              <motion.div
-                key={job.title}
-                initial={{ opacity: 0, y: 12 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08 }}
-                className="card-elevated p-5 flex items-center justify-between gap-4"
-              >
+              <motion.div key={job.title} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}
+                className="card-elevated p-5 flex items-center justify-between gap-4">
                 <div>
                   <h4 className="font-heading font-bold text-foreground">{job.title}</h4>
                   <p className="text-sm text-muted-foreground font-body">{job.dept} · {job.type} · {job.location}</p>

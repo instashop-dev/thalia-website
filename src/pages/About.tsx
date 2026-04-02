@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Heart, Target, Lightbulb, Users, Globe, Palette } from "lucide-react";
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
-import saasImg from "@/assets/saas-tools.png";
-import teamImg from "@/assets/team-collaboration.png";
+import aboutImg from "@/assets/about-workspace.jpg";
+import globalImg from "@/assets/global-team.jpg";
 
 const values = [
   { icon: Lightbulb, title: "Innovation First", desc: "We explore new ways to solve commerce problems. Innovation isn't a buzzword — it's how we operate every day." },
@@ -46,7 +46,7 @@ const About = () => {
               </p>
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-              <img src={saasImg} alt="SaaS tools illustration" className="w-full rounded-2xl" loading="lazy" width={800} height={600} />
+              <img src={aboutImg} alt="Professional workspace with laptop showing SaaS dashboard and analytics" className="w-full rounded-2xl" loading="lazy" width={800} height={600} />
             </motion.div>
           </div>
         </div>
@@ -86,12 +86,15 @@ const About = () => {
         <div className="section-container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-              <img src={teamImg} alt="Remote team" className="w-full rounded-2xl" loading="lazy" width={800} height={600} />
+              <img src={globalImg} alt="World map showing global team locations across India, US, Europe, and Asia" className="w-full rounded-2xl" loading="lazy" width={800} height={600} />
             </motion.div>
             <div>
               <h2 className="font-heading text-h2 font-bold text-foreground mb-6">A Small Team. A Big Impact.</h2>
-              <p className="text-muted-foreground leading-relaxed font-body">
+              <p className="text-muted-foreground leading-relaxed mb-4 font-body">
                 We are a lean, fully remote team of engineers, designers, and product managers spread across the globe. We move fast, care deeply, and celebrate our merchants' wins as our own.
+              </p>
+              <p className="text-muted-foreground leading-relaxed font-body">
+                Our apps serve merchants from 100+ countries. We build with a global perspective — multi-currency, multi-language, and compliant with tax regulations from India to the EU. Whether you're a first-time Shopify seller or a $10M merchant, our apps scale with you.
               </p>
             </div>
           </div>

@@ -5,13 +5,7 @@ import AppCard from "@/components/AppCard";
 import { apps, getPlatformColor, getPlatformLabel } from "@/data/apps";
 import NotFound from "./NotFound";
 import { useState } from "react";
-import { ArrowRight } from "lucide-react";
-
-const howItWorks = [
-  { step: "01", title: "Install the App", desc: "Add to your store in one click from the app store" },
-  { step: "02", title: "Configure Settings", desc: "Set up your preferences in under 5 minutes" },
-  { step: "03", title: "Watch It Work", desc: "Sit back as the app automates everything for you" },
-];
+import { ArrowRight, Check, Star } from "lucide-react";
 
 const AppDetail = () => {
   const { slug } = useParams();
@@ -44,16 +38,19 @@ const AppDetail = () => {
         }} />
         <div className="section-container relative">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
               <span className="inline-block text-xs font-bold font-body px-3 py-1 rounded-lg mb-4"
                 style={{ backgroundColor: `${platformColor}14`, color: platformColor }}>
                 {getPlatformLabel(app.platform)}
               </span>
-              <h1 className="font-heading font-extrabold text-h1 mb-4 text-foreground">
+              <h1 className="font-heading text-h1 font-extrabold text-foreground mb-4">
                 {app.name}
               </h1>
-              <p className="font-body text-lg leading-relaxed mb-8 text-muted-foreground">
+              <p className="font-body text-lg leading-relaxed mb-4 text-muted-foreground">
                 {app.description}
+              </p>
+              <p className="font-body text-sm leading-relaxed mb-8 text-muted-foreground">
+                {app.longDescription}
               </p>
 
               {app.comingSoon ? (
@@ -72,74 +69,95 @@ const AppDetail = () => {
                     )}
                     <Link to="/contact" className="btn-outline text-base px-8 py-4">Contact Sales</Link>
                   </div>
-                  <p className="text-sm font-body text-muted-foreground">
-                    ⭐ {app.stats[1]?.value || "4.8★"} rating · {app.stats[0]?.value || "10,000+"} installs
-                  </p>
+                  <div className="flex items-center gap-4 text-sm font-body text-muted-foreground">
+                    <span className="flex items-center gap-1">
+                      <Star className="h-4 w-4 text-yellow-400 fill-yellow-400" />
+                      {app.stats[1]?.value || "4.8★"} rating
+                    </span>
+                    <span>·</span>
+                    <span>{app.stats[0]?.value || "10,000+"} installs</span>
+                  </div>
                 </>
               )}
-            </div>
+            </motion.div>
 
-            <div className="flex items-center justify-center">
+            <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.2 }}
+              className="flex items-center justify-center">
               <div className="w-full max-w-md aspect-square rounded-3xl flex items-center justify-center"
                 style={{ background: `${app.color}10`, boxShadow: `0 20px 60px ${app.color}20` }}>
                 <span className="text-8xl">{app.icon}</span>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {!app.comingSoon && (
         <>
-          {/* Features */}
-          <section className="section-alt" style={{ paddingTop: 96, paddingBottom: 96 }}>
-            <div className="section-container">
-              <div className="text-center mb-12">
-                <span className="inline-block font-heading font-bold text-xs uppercase tracking-[0.12em] mb-3 text-primary">KEY FEATURES</span>
-                <h2 className="font-heading font-extrabold text-h2 text-foreground">Everything You Need</h2>
+          {/* About This App */}
+          {app.benefits.length > 0 && (
+            <section className="section-alt" style={{ paddingTop: 96, paddingBottom: 96 }}>
+              <div className="section-container">
+                <div className="text-center mb-12">
+                  <span className="inline-block font-heading font-bold text-xs uppercase tracking-[0.12em] mb-3 text-primary">WHY CHOOSE {app.name.toUpperCase()}</span>
+                  <h2 className="font-heading font-extrabold text-h2 text-foreground">Key Benefits</h2>
+                </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-4xl mx-auto">
+                  {app.benefits.map((b, i) => (
+                    <motion.div key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }}
+                      className="flex gap-3 items-start">
+                      <div className="w-6 h-6 rounded-full bg-primary flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <Check className="h-3.5 w-3.5 text-primary-foreground" />
+                      </div>
+                      <p className="text-sm font-body text-foreground leading-relaxed">{b}</p>
+                    </motion.div>
+                  ))}
+                </div>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {app.features.map(f => (
-                  <div key={f} className="card-elevated p-6">
-                    <div className="w-10 h-10 rounded-xl flex items-center justify-center text-lg mb-3 bg-secondary text-primary">✓</div>
-                    <h3 className="font-heading font-bold text-base mb-1 text-foreground">{f}</h3>
-                  </div>
-                ))}
+            </section>
+          )}
+
+          {/* Features Detail */}
+          {app.featureDetails.length > 0 && (
+            <section style={{ paddingTop: 96, paddingBottom: 96 }}>
+              <div className="section-container">
+                <div className="text-center mb-12">
+                  <span className="inline-block font-heading font-bold text-xs uppercase tracking-[0.12em] mb-3 text-primary">KEY FEATURES</span>
+                  <h2 className="font-heading font-extrabold text-h2 text-foreground">Everything You Need</h2>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {app.featureDetails.map((f, i) => (
+                    <motion.div key={f.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }}
+                      className="card-elevated p-6">
+                      <div className="w-10 h-10 rounded-xl flex items-center justify-center text-lg mb-3" style={{ backgroundColor: `${app.color}15` }}>
+                        <Check className="h-5 w-5" style={{ color: app.color }} />
+                      </div>
+                      <h3 className="font-heading font-bold text-base mb-2 text-foreground">{f.title}</h3>
+                      <p className="text-sm text-muted-foreground font-body leading-relaxed">{f.desc}</p>
+                    </motion.div>
+                  ))}
+                </div>
               </div>
-            </div>
-          </section>
+            </section>
+          )}
 
           {/* How It Works */}
-          <section style={{ paddingTop: 96, paddingBottom: 96 }}>
-            <div className="section-container">
-              <div className="text-center mb-12">
-                <span className="inline-block font-heading font-bold text-xs uppercase tracking-[0.12em] mb-3 text-primary">HOW IT WORKS</span>
-                <h2 className="font-heading font-extrabold text-h2 text-foreground">Get Started in Minutes</h2>
-              </div>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {howItWorks.map((s, i) => (
-                  <div key={s.step} className="text-center relative">
-                    <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 font-heading font-extrabold text-xl bg-secondary text-primary">
-                      {s.step}
-                    </div>
-                    <h3 className="font-heading font-bold text-lg mb-2 text-foreground">{s.title}</h3>
-                    <p className="text-sm font-body text-muted-foreground">{s.desc}</p>
-                    {i < 2 && <div className="hidden md:block absolute top-8 right-0 translate-x-1/2 text-2xl text-border">→</div>}
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-
-          {/* Stats */}
-          {app.stats.length > 0 && (
-            <section className="section-alt" style={{ paddingTop: 60, paddingBottom: 60 }}>
+          {app.howItWorks.length > 0 && (
+            <section className="section-alt" style={{ paddingTop: 96, paddingBottom: 96 }}>
               <div className="section-container">
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
-                  {app.stats.map(s => (
-                    <div key={s.label}>
-                      <div className="font-heading font-extrabold text-4xl text-primary">{s.value}</div>
-                      <div className="text-sm font-body mt-1 text-muted-foreground">{s.label}</div>
+                <div className="text-center mb-12">
+                  <span className="inline-block font-heading font-bold text-xs uppercase tracking-[0.12em] mb-3 text-primary">HOW IT WORKS</span>
+                  <h2 className="font-heading font-extrabold text-h2 text-foreground">Get Started in Minutes</h2>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                  {app.howItWorks.map((s, i) => (
+                    <div key={s.step} className="text-center relative">
+                      <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 font-heading font-extrabold text-xl bg-primary text-primary-foreground">
+                        {s.step}
+                      </div>
+                      <h3 className="font-heading font-bold text-lg mb-2 text-foreground">{s.title}</h3>
+                      <p className="text-sm font-body text-muted-foreground leading-relaxed">{s.desc}</p>
+                      {i < 2 && <div className="hidden md:block absolute top-8 right-0 translate-x-1/2 text-2xl text-border">→</div>}
                     </div>
                   ))}
                 </div>
@@ -147,22 +165,98 @@ const AppDetail = () => {
             </section>
           )}
 
-          {/* Testimonial */}
-          {app.testimonial.quote && (
-            <section style={{ paddingTop: 80, paddingBottom: 80 }}>
-              <div className="section-container max-w-2xl text-center">
-                <div className="card-elevated p-8" style={{ borderTop: "3px solid hsl(var(--primary))" }}>
-                  <div className="flex gap-0.5 justify-center mb-4">{Array(5).fill(0).map((_, i) => <span key={i} className="text-yellow-400">★</span>)}</div>
-                  <p className="font-body text-lg italic leading-relaxed mb-6 text-foreground">"{app.testimonial.quote}"</p>
-                  <div className="flex items-center justify-center gap-3">
-                    <div className="w-10 h-10 rounded-full flex items-center justify-center font-heading font-bold text-sm bg-primary text-primary-foreground">
-                      {app.testimonial.author.split(" ").map(w => w[0]).join("")}
+          {/* Stats */}
+          {app.stats.length > 0 && (
+            <section className="bg-foreground" style={{ paddingTop: 60, paddingBottom: 60 }}>
+              <div className="section-container">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+                  {app.stats.map(s => (
+                    <div key={s.label}>
+                      <div className="font-heading font-extrabold text-4xl text-primary">{s.value}</div>
+                      <div className="text-sm font-body mt-1 text-primary-foreground/70">{s.label}</div>
                     </div>
-                    <div className="text-left">
-                      <div className="font-heading font-bold text-sm text-foreground">{app.testimonial.author}</div>
-                      <div className="text-xs font-body text-muted-foreground">{app.testimonial.role}</div>
-                    </div>
-                  </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+          )}
+
+          {/* Pricing Plans */}
+          {app.plans.length > 0 && (
+            <section style={{ paddingTop: 96, paddingBottom: 96 }}>
+              <div className="section-container">
+                <div className="text-center mb-12">
+                  <span className="inline-block font-heading font-bold text-xs uppercase tracking-[0.12em] mb-3 text-primary">PRICING</span>
+                  <h2 className="font-heading font-extrabold text-h2 text-foreground">Simple, Transparent Pricing</h2>
+                  <p className="text-muted-foreground font-body mt-3">Start free. Upgrade as you grow. No hidden fees.</p>
+                </div>
+                <div className={`grid grid-cols-1 md:grid-cols-${Math.min(app.plans.length, 3)} gap-6 max-w-4xl mx-auto`}>
+                  {app.plans.map((plan, i) => (
+                    <motion.div key={plan.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
+                      className={`card-elevated p-8 text-center relative ${plan.highlighted ? 'ring-2 ring-primary' : ''}`}>
+                      {plan.highlighted && (
+                        <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-bold font-heading px-4 py-1 rounded-full">
+                          Most Popular
+                        </span>
+                      )}
+                      <h3 className="font-heading font-bold text-lg text-foreground mb-2">{plan.name}</h3>
+                      <div className="mb-6">
+                        <span className="font-heading font-extrabold text-4xl text-foreground">{plan.price}</span>
+                        <span className="text-muted-foreground font-body text-sm">{plan.period}</span>
+                      </div>
+                      <ul className="space-y-3 mb-8">
+                        {plan.features.map((f, j) => (
+                          <li key={j} className="flex items-center gap-2 text-sm font-body text-muted-foreground">
+                            <Check className="h-4 w-4 text-primary flex-shrink-0" />
+                            {f}
+                          </li>
+                        ))}
+                      </ul>
+                      {app.externalUrl !== "#" ? (
+                        <a href={app.externalUrl} target="_blank" rel="noopener noreferrer"
+                          className={plan.highlighted ? "btn-primary w-full text-center block" : "btn-outline w-full text-center block"}>
+                          Get Started
+                        </a>
+                      ) : (
+                        <button className={plan.highlighted ? "btn-primary w-full" : "btn-outline w-full"}>
+                          Get Started
+                        </button>
+                      )}
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </section>
+          )}
+
+          {/* Reviews */}
+          {app.reviews.length > 0 && (
+            <section className="section-alt" style={{ paddingTop: 96, paddingBottom: 96 }}>
+              <div className="section-container">
+                <div className="text-center mb-12">
+                  <span className="inline-block font-heading font-bold text-xs uppercase tracking-[0.12em] mb-3 text-primary">REVIEWS</span>
+                  <h2 className="font-heading font-extrabold text-h2 text-foreground">What Merchants Say</h2>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                  {app.reviews.map((r, i) => (
+                    <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
+                      className="card-elevated p-6" style={{ borderTop: `3px solid ${app.color}` }}>
+                      <div className="flex gap-0.5 mb-3">
+                        {Array(r.rating).fill(0).map((_, j) => <Star key={j} className="h-4 w-4 text-yellow-400 fill-yellow-400" />)}
+                      </div>
+                      <p className="text-sm font-body text-foreground italic leading-relaxed mb-4">"{r.quote}"</p>
+                      <div className="flex items-center gap-3">
+                        <div className="w-9 h-9 rounded-full flex items-center justify-center font-heading font-bold text-xs text-primary-foreground"
+                          style={{ backgroundColor: app.color }}>
+                          {r.author.split(" ").map(w => w[0]).join("")}
+                        </div>
+                        <div>
+                          <div className="font-heading font-bold text-sm text-foreground">{r.author}</div>
+                          <div className="text-xs font-body text-muted-foreground">{r.role} · {r.date}</div>
+                        </div>
+                      </div>
+                    </motion.div>
+                  ))}
                 </div>
               </div>
             </section>
@@ -170,10 +264,10 @@ const AppDetail = () => {
 
           {/* Related */}
           {relatedApps.length > 0 && (
-            <section className="section-alt" style={{ paddingTop: 80, paddingBottom: 80 }}>
+            <section style={{ paddingTop: 80, paddingBottom: 80 }}>
               <div className="section-container">
                 <h2 className="font-heading font-extrabold text-2xl text-center mb-8 text-foreground">You Might Also Like</h2>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-4xl mx-auto">
                   {relatedApps.map((a, i) => <AppCard key={a.slug} app={a} index={i} />)}
                 </div>
               </div>

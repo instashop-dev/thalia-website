@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
+import blogHero from "@/assets/blog-hero.jpg";
 
 const categories = ["All", "Dropshipping", "Pricing", "Compliance", "Retention", "Multichannel"];
 
@@ -22,8 +23,15 @@ const Blog = () => {
     <Layout>
       {/* Hero */}
       <section className="section-alt relative overflow-hidden" style={{ paddingTop: 80, paddingBottom: 60 }}>
-        <div className="section-container relative text-center">
-          <SectionHeading title="Insights for Commerce Builders" description="Deep dives, tutorials, and merchant success stories from the Thalia team." />
+        <div className="section-container relative">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div className="text-center lg:text-left">
+              <SectionHeading center={false} title="Insights for Commerce Builders" description="Deep dives, tutorials, and merchant success stories from the Thalia team." />
+            </div>
+            <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.2 }}>
+              <img src={blogHero} alt="Content creation and blogging with floating article cards and ecommerce themes" className="w-full rounded-2xl" width={800} height={600} />
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -65,17 +73,9 @@ const Blog = () => {
         <div className="section-container">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filtered.map((post, i) => (
-              <motion.article
-                key={post.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.06 }}
-                className="card-elevated p-6 cursor-pointer group"
-              >
-                <div className="h-32 rounded-xl bg-secondary flex items-center justify-center text-5xl mb-4">
-                  {post.emoji}
-                </div>
+              <motion.article key={post.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }}
+                className="card-elevated p-6 cursor-pointer group">
+                <div className="h-32 rounded-xl bg-secondary flex items-center justify-center text-5xl mb-4">{post.emoji}</div>
                 <span className="text-xs font-bold text-primary bg-secondary px-2 py-1 rounded-md font-body">{post.category}</span>
                 <h3 className="font-heading font-bold text-foreground mt-3 mb-2 group-hover:text-primary transition-colors">{post.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed mb-4 font-body">{post.excerpt}</p>
