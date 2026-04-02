@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import contactImg from "@/assets/contact-support.png";
+import contactImg from "@/assets/contact-support.jpg";
 
 const contactCards = [
   { icon: Mail, label: "General Inquiries", value: "hello@thaliatechnologies.com" },
@@ -57,7 +57,7 @@ const Contact = () => {
         <div className="section-container">
           <div className="grid lg:grid-cols-2 gap-12 max-w-5xl mx-auto items-center">
             <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-              <img src={contactImg} alt="Customer support" className="w-full rounded-2xl" loading="lazy" width={800} height={600} />
+              <img src={contactImg} alt="Customer support agent helping customers with friendly chat interface" className="w-full rounded-2xl" loading="lazy" width={800} height={600} />
               <div className="mt-8 space-y-3">
                 <div className="flex items-center gap-3"><Mail className="h-5 w-5 text-primary" /><span className="text-sm font-body text-muted-foreground">hello@thaliatechnologies.com</span></div>
                 <div className="flex items-center gap-3"><Building2 className="h-5 w-5 text-primary" /><span className="text-sm font-body text-muted-foreground">Thalia Technologies Private Limited</span></div>
@@ -66,13 +66,8 @@ const Contact = () => {
               </div>
             </motion.div>
 
-            <motion.form
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              onSubmit={handleSubmit}
-              className="card-elevated p-8 space-y-5"
-            >
+            <motion.form initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
+              onSubmit={handleSubmit} className="card-elevated p-8 space-y-5">
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="text-sm font-medium text-foreground mb-1.5 block font-body">First Name</label>

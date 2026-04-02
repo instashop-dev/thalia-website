@@ -5,10 +5,10 @@ import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 import AppCard from "@/components/AppCard";
 import { apps } from "@/data/apps";
-import { Button } from "@/components/ui/button";
-import heroImg from "@/assets/hero-dashboard.png";
-import saasImg from "@/assets/saas-tools.png";
-import teamImg from "@/assets/team-collaboration.png";
+import heroImg from "@/assets/hero-dashboard.jpg";
+import saasImg from "@/assets/saas-tools.jpg";
+import teamImg from "@/assets/team-collaboration.jpg";
+import statsBg from "@/assets/stats-bg.jpg";
 
 const stats = [
   { value: "100K+", label: "Merchants Trust Us" },
@@ -75,9 +75,8 @@ const Index = () => {
                 <span>✓ Shopify Partner</span>
               </motion.div>
             </div>
-
             <motion.div {...fadeUp(0.2)}>
-              <img src={heroImg} alt="SaaS dashboard illustration showing ecommerce analytics" className="w-full rounded-2xl" width={1200} height={800} />
+              <img src={heroImg} alt="SaaS dashboard illustration showing ecommerce analytics and product management" className="w-full rounded-2xl" width={1200} height={800} />
             </motion.div>
           </div>
         </div>
@@ -117,7 +116,7 @@ const Index = () => {
               </div>
             </div>
             <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-              <img src={saasImg} alt="Interconnected SaaS tools" className="w-full rounded-2xl" loading="lazy" width={800} height={600} />
+              <img src={saasImg} alt="Interconnected SaaS tools showing sync modules, API connectors, and automation" className="w-full rounded-2xl" loading="lazy" width={800} height={600} />
             </motion.div>
           </div>
         </div>
@@ -141,19 +140,16 @@ const Index = () => {
       </section>
 
       {/* Stats */}
-      <section className="bg-foreground" style={{ paddingTop: 80, paddingBottom: 80 }}>
-        <div className="section-container">
+      <section className="relative" style={{ paddingTop: 80, paddingBottom: 80 }}>
+        <div className="absolute inset-0">
+          <img src={statsBg} alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-foreground/80" />
+        </div>
+        <div className="section-container relative">
           <h2 className="font-heading text-h2 font-extrabold text-primary-foreground text-center mb-12">The Numbers Speak for Themselves</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, i) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="text-center"
-              >
+              <motion.div key={stat.label} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="text-center">
                 <div className="font-heading text-h1 font-extrabold text-primary mb-1">{stat.value}</div>
                 <div className="text-sm text-primary-foreground opacity-70 font-body">{stat.label}</div>
               </motion.div>
@@ -167,7 +163,7 @@ const Index = () => {
         <div className="section-container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-              <img src={teamImg} alt="Diverse remote team collaborating" className="w-full rounded-2xl" loading="lazy" width={800} height={600} />
+              <img src={teamImg} alt="Diverse remote team collaborating across different locations and time zones" className="w-full rounded-2xl" loading="lazy" width={800} height={600} />
             </motion.div>
             <div>
               <SectionHeading center={false} label="OUR VALUES" title="What Drives Us Every Day" description="We are a small, passionate team. Different backgrounds, one shared obsession — building products that genuinely matter." />
@@ -217,19 +213,10 @@ const Index = () => {
       {/* Careers CTA */}
       <section style={{ paddingTop: 96, paddingBottom: 96 }}>
         <div className="section-container">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.96 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="rounded-2xl p-10 md:p-16 text-center"
-            style={{ background: "linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)))" }}
-          >
-            <h2 className="font-heading text-h2 font-extrabold text-primary-foreground mb-4">
-              We're Hiring — Come Build With Us
-            </h2>
-            <p className="text-primary-foreground/80 max-w-lg mx-auto mb-8 font-body">
-              Join a team that cares deeply about craft, ships constantly, and works on real-world problems. We're always looking for exceptional people.
-            </p>
+          <motion.div initial={{ opacity: 0, scale: 0.96 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }}
+            className="rounded-2xl p-10 md:p-16 text-center" style={{ background: "linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)))" }}>
+            <h2 className="font-heading text-h2 font-extrabold text-primary-foreground mb-4">We're Hiring — Come Build With Us</h2>
+            <p className="text-primary-foreground/80 max-w-lg mx-auto mb-8 font-body">Join a team that cares deeply about craft, ships constantly, and works on real-world problems.</p>
             <Link to="/careers" className="inline-flex items-center justify-center font-heading font-bold text-sm px-8 py-3.5 rounded-lg bg-background text-primary transition-all hover:scale-102">
               View Open Positions <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
@@ -242,12 +229,8 @@ const Index = () => {
         <div className="section-container text-center">
           <SectionHeading title="Let's Talk" description="Have a question, a partnership idea, or just want to say hello? We'd love to hear from you." />
           <div className="flex flex-wrap gap-3 justify-center">
-            <Link to="/contact" className="btn-primary text-sm">
-              Get in Touch <ArrowRight className="ml-2 h-4 w-4 inline" />
-            </Link>
-            <a href="mailto:hello@thaliatechnologies.com" className="btn-outline text-sm">
-              hello@thaliatechnologies.com
-            </a>
+            <Link to="/contact" className="btn-primary text-sm">Get in Touch <ArrowRight className="ml-2 h-4 w-4 inline" /></Link>
+            <a href="mailto:hello@thaliatechnologies.com" className="btn-outline text-sm">hello@thaliatechnologies.com</a>
           </div>
         </div>
       </section>

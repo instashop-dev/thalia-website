@@ -4,6 +4,7 @@ import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import featuresImg from "@/assets/features-platforms.jpg";
 
 const features = [
   { icon: Zap, title: "Instant Sync", desc: "Real-time product, inventory and order synchronization across platforms with zero lag." },
@@ -39,14 +40,7 @@ const Features = () => {
         <div className="section-container">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map((f, i) => (
-              <motion.div
-                key={f.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.06 }}
-                className="card-elevated p-8"
-              >
+              <motion.div key={f.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }} className="card-elevated p-8">
                 <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center mb-4">
                   <f.icon className="h-6 w-6 text-primary" />
                 </div>
@@ -60,15 +54,22 @@ const Features = () => {
 
       {/* Platforms */}
       <section className="section-alt" style={{ paddingTop: 96, paddingBottom: 96 }}>
-        <div className="section-container text-center">
-          <SectionHeading title="Works With Your Favorite Platforms" />
-          <div className="flex flex-wrap justify-center gap-6">
-            {platforms.map((p) => (
-              <div key={p.name} className="card-elevated px-8 py-6 flex items-center gap-3">
-                <div className="w-4 h-4 rounded-full" style={{ backgroundColor: p.color }} />
-                <span className="font-heading font-bold text-foreground">{p.name}</span>
+        <div className="section-container">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <SectionHeading center={false} title="Works With Your Favorite Platforms" description="Our apps integrate natively with the world's leading ecommerce platforms, giving you seamless data flow and unified management." />
+              <div className="grid grid-cols-2 gap-4">
+                {platforms.map((p) => (
+                  <div key={p.name} className="card-elevated px-6 py-5 flex items-center gap-3">
+                    <div className="w-4 h-4 rounded-full" style={{ backgroundColor: p.color }} />
+                    <span className="font-heading font-bold text-foreground">{p.name}</span>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
+            <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+              <img src={featuresImg} alt="Platform integration showing Shopify, Amazon, and BigCommerce connected in a tech ecosystem" className="w-full rounded-2xl" loading="lazy" width={800} height={600} />
+            </motion.div>
           </div>
         </div>
       </section>
