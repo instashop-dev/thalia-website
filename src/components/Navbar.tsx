@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 
 const navLinks = [
+  { label: "Home", path: "/" },
   { label: "Products", path: "/apps" },
   { label: "About", path: "/about" },
   { label: "Features", path: "/features" },

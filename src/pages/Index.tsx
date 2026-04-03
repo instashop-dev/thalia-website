@@ -6,8 +6,8 @@ import SectionHeading from "@/components/SectionHeading";
 import AppCard from "@/components/AppCard";
 import { apps } from "@/data/apps";
 import heroImg from "@/assets/hero-dashboard.jpg";
-import saasImg from "@/assets/saas-tools.jpg";
-import teamImg from "@/assets/team-collaboration.jpg";
+import ecommerceImg from "@/assets/ecommerce-tools.jpg";
+import valuesImg from "@/assets/values-illustration.jpg";
 import statsBg from "@/assets/stats-bg.jpg";
 
 const stats = [
@@ -65,9 +65,7 @@ const Index = () => {
                 <Link to="/apps" className="btn-primary text-sm">
                   Explore Our Products <ArrowRight className="ml-2 h-4 w-4 inline" />
                 </Link>
-                <Link to="/about" className="btn-outline text-sm">
-                  Learn About Us
-                </Link>
+                <Link to="/about" className="btn-outline text-sm">Learn About Us</Link>
               </motion.div>
               <motion.div {...fadeUp(0.4)} className="flex flex-wrap gap-4 text-sm font-body text-muted-foreground">
                 <span>✓ 100,000+ Merchants</span>
@@ -116,7 +114,7 @@ const Index = () => {
               </div>
             </div>
             <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-              <img src={saasImg} alt="Interconnected SaaS tools showing sync modules, API connectors, and automation" className="w-full rounded-2xl" loading="lazy" width={800} height={600} />
+              <img src={ecommerceImg} alt="Ecommerce tools ecosystem showing Shopify store dashboard, inventory sync, and analytics connected together" className="w-full rounded-2xl" loading="lazy" width={1200} height={800} />
             </motion.div>
           </div>
         </div>
@@ -163,7 +161,7 @@ const Index = () => {
         <div className="section-container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-              <img src={teamImg} alt="Diverse remote team collaborating across different locations and time zones" className="w-full rounded-2xl" loading="lazy" width={800} height={600} />
+              <img src={valuesImg} alt="Team values illustration showing innovation, collaboration and strategic thinking" className="w-full rounded-2xl" loading="lazy" width={800} height={600} />
             </motion.div>
             <div>
               <SectionHeading center={false} label="OUR VALUES" title="What Drives Us Every Day" description="We are a small, passionate team. Different backgrounds, one shared obsession — building products that genuinely matter." />

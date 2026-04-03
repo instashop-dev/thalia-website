@@ -1,10 +1,12 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, Heart, Target, Lightbulb, Users, Globe, Palette } from "lucide-react";
+import { ArrowRight, Heart, Target, Lightbulb, Users, Globe, Palette, Linkedin, Twitter } from "lucide-react";
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 import aboutImg from "@/assets/about-workspace.jpg";
 import globalImg from "@/assets/global-team.jpg";
+import missionImg from "@/assets/mission-illustration.jpg";
+import teamImg from "@/assets/team-photo.jpg";
 
 const values = [
   { icon: Lightbulb, title: "Innovation First", desc: "We explore new ways to solve commerce problems. Innovation isn't a buzzword — it's how we operate every day." },
@@ -15,58 +17,104 @@ const values = [
   { icon: Palette, title: "Craft & Design", desc: "We believe great software must be beautiful, intuitive, and a joy to use. Design is not decoration — it's function." },
 ];
 
+const teamMembers = [
+  { name: "Arun Kumar", role: "Founder & CEO", bio: "Arun founded Thalia Technologies with a vision to solve real ecommerce problems with elegant software. With 10+ years in SaaS, he leads product vision and company strategy.", initials: "AK" },
+  { name: "Priya Sharma", role: "Co-Founder & CTO", bio: "Priya oversees engineering and architecture across all 14+ products. She's passionate about scalable systems and developer experience.", initials: "PS" },
+  { name: "Vikram Patel", role: "VP of Engineering", bio: "Vikram leads the engineering team, ensuring code quality, system reliability, and delivery velocity across all Thalia products.", initials: "VP" },
+  { name: "Sneha Reddy", role: "Head of Product", bio: "Sneha drives product strategy by deeply understanding merchant pain points and translating them into elegant, intuitive features.", initials: "SR" },
+  { name: "Rohan Mehta", role: "Head of Design", bio: "Rohan ensures every Thalia product is beautiful, accessible, and delightful. He believes design is a superpower for SaaS.", initials: "RM" },
+  { name: "Ananya Gupta", role: "Head of Customer Success", bio: "Ananya leads our support and success team, ensuring every merchant gets the help they need to grow their business.", initials: "AG" },
+];
+
+const milestones = [
+  { year: "2015", event: "Thalia Technologies founded with the first app — Spreadr" },
+  { year: "2017", event: "Reached 10,000 active merchants globally" },
+  { year: "2019", event: "Launched 10+ apps across Shopify and BigCommerce" },
+  { year: "2021", event: "Crossed 50,000 merchant installations" },
+  { year: "2023", event: "CSVbox reaches 100M+ rows imported for SaaS customers" },
+  { year: "2025", event: "100,000+ businesses trust Thalia's suite of products" },
+];
+
 const About = () => {
   return (
     <Layout>
       {/* Hero */}
       <section className="relative overflow-hidden" style={{ paddingTop: 80, paddingBottom: 80 }}>
         <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 60% 50% at 50% 0%, hsla(231,91%,64%,0.06) 0%, transparent 70%)" }} />
-        <div className="section-container relative text-center">
-          <motion.span initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} className="inline-block text-xs font-semibold uppercase tracking-[0.12em] text-primary mb-4 font-body">OUR STORY</motion.span>
-          <motion.h1 initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="font-heading text-h1 font-extrabold text-foreground mb-6">
-            We're Builders. And We Love What We Build.
-          </motion.h1>
-          <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-lg text-muted-foreground max-w-2xl mx-auto font-body">
-            Thalia Technologies is a product company. We don't do consulting. We don't do client work. We build products we believe in, and we make them exceptional.
-          </motion.p>
-        </div>
-      </section>
-
-      {/* Our Story */}
-      <section style={{ paddingTop: 96, paddingBottom: 96 }}>
-        <div className="section-container">
+        <div className="section-container relative">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-              <h2 className="font-heading text-h2 font-bold text-foreground mb-6">How It All Started</h2>
-              <p className="text-muted-foreground leading-relaxed mb-4 font-body">
-                Thalia Technologies was born out of a simple frustration — ecommerce merchants were struggling with gaps in their technology stack. The tools they needed either didn't exist or were too complicated and expensive. We decided to change that.
-              </p>
-              <p className="text-muted-foreground leading-relaxed font-body">
-                Starting with one app, we've now built a suite of 14+ products trusted by over 100,000 businesses worldwide. Every product we ship is born from a real pain point and refined through constant iteration with our merchant community.
-              </p>
-            </motion.div>
-            <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-              <img src={aboutImg} alt="Professional workspace with laptop showing SaaS dashboard and analytics" className="w-full rounded-2xl" loading="lazy" width={800} height={600} />
+            <div>
+              <motion.span initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} className="inline-block text-xs font-semibold uppercase tracking-[0.12em] text-primary mb-4 font-body">OUR STORY</motion.span>
+              <motion.h1 initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="font-heading text-h1 font-extrabold text-foreground mb-6">
+                We're Builders. And We Love What We Build.
+              </motion.h1>
+              <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="text-lg text-muted-foreground leading-relaxed mb-6 font-body">
+                Thalia Technologies is a product company. We don't do consulting. We don't do client work. We build products we believe in, and we make them exceptional.
+              </motion.p>
+              <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="flex flex-wrap gap-6 text-center">
+                <div><span className="block font-heading font-extrabold text-3xl text-primary">100K+</span><span className="text-xs text-muted-foreground font-body">Merchants</span></div>
+                <div><span className="block font-heading font-extrabold text-3xl text-primary">14+</span><span className="text-xs text-muted-foreground font-body">Products</span></div>
+                <div><span className="block font-heading font-extrabold text-3xl text-primary">10+</span><span className="text-xs text-muted-foreground font-body">Years</span></div>
+              </motion.div>
+            </div>
+            <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.2 }}>
+              <img src={aboutImg} alt="Professional workspace with SaaS dashboard and analytics" className="w-full rounded-2xl" width={800} height={600} />
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Mission */}
+      {/* Our Story - Timeline */}
       <section className="section-alt" style={{ paddingTop: 96, paddingBottom: 96 }}>
-        <div className="section-container text-center max-w-3xl mx-auto">
-          <span className="inline-block text-xs font-semibold uppercase tracking-[0.12em] text-primary mb-4 font-body">OUR MISSION</span>
-          <div className="text-5xl text-primary mb-6">"</div>
-          <h2 className="font-heading text-[36px] font-extrabold text-foreground leading-tight mb-4">
-            To build technology products that help businesses solve their most pressing problems and make them more successful.
-          </h2>
+        <div className="section-container">
+          <SectionHeading label="OUR JOURNEY" title="How It All Started" description="From one app to a suite of 14+ products trusted by 100,000+ businesses — here's our story." />
+          <div className="max-w-3xl mx-auto relative">
+            <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-border hidden md:block" />
+            {milestones.map((m, i) => (
+              <motion.div key={m.year} initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
+                className="flex gap-6 mb-8 relative">
+                <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center flex-shrink-0 font-heading font-bold text-xs text-primary-foreground z-10">
+                  {m.year}
+                </div>
+                <div className="card-elevated p-5 flex-1">
+                  <p className="text-sm font-body text-foreground leading-relaxed">{m.event}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Mission - Redesigned */}
+      <section style={{ paddingTop: 96, paddingBottom: 96 }}>
+        <div className="section-container">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+              <img src={missionImg} alt="Company mission illustration showing growth, direction and global ecommerce impact" className="w-full rounded-2xl" loading="lazy" width={1200} height={600} />
+            </motion.div>
+            <div>
+              <span className="inline-block text-xs font-semibold uppercase tracking-[0.12em] text-primary mb-4 font-body">OUR MISSION</span>
+              <h2 className="font-heading text-h2 font-extrabold text-foreground mb-6">Why We Exist</h2>
+              <div className="relative pl-6 border-l-4 border-primary mb-6">
+                <p className="font-heading text-xl font-bold text-foreground leading-relaxed italic">
+                  "To build technology products that help businesses solve their most pressing problems and make them more successful."
+                </p>
+              </div>
+              <p className="text-muted-foreground leading-relaxed font-body mb-4">
+                We focus relentlessly on understanding the day-to-day challenges merchants face and building tools that remove friction, save time, and increase revenue.
+              </p>
+              <p className="text-muted-foreground leading-relaxed font-body">
+                Every app we build begins with a real merchant pain point. We obsess over simplicity — if it takes more than 5 minutes to set up, we rethink it.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Values */}
-      <section style={{ paddingTop: 96, paddingBottom: 96 }}>
+      <section className="section-alt" style={{ paddingTop: 96, paddingBottom: 96 }}>
         <div className="section-container">
-          <SectionHeading label="OUR VALUES" title="What Drives Us" description="We are a lean, fully remote team of engineers, designers, and product managers. We move fast, care deeply, and celebrate our merchants' wins as our own." />
+          <SectionHeading label="OUR VALUES" title="What Drives Us" description="We are a passionate team of engineers, designers, and product managers. We move fast, care deeply, and celebrate our merchants' wins as our own." />
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {values.map((v, i) => (
               <motion.div key={v.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }} className="card-elevated p-6">
@@ -81,20 +129,44 @@ const About = () => {
         </div>
       </section>
 
-      {/* Team */}
+      {/* Team Section */}
+      <section style={{ paddingTop: 96, paddingBottom: 96 }}>
+        <div className="section-container">
+          <SectionHeading label="OUR TEAM" title="Meet the People Behind Thalia" description="A lean, talented team of builders who are passionate about creating software that makes a difference." />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {teamMembers.map((member, i) => (
+              <motion.div key={member.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}
+                className="card-elevated p-6 text-center group">
+                <div className="w-20 h-20 rounded-full bg-primary flex items-center justify-center mx-auto mb-4 font-heading font-bold text-xl text-primary-foreground group-hover:scale-110 transition-transform">
+                  {member.initials}
+                </div>
+                <h3 className="font-heading font-bold text-lg text-foreground">{member.name}</h3>
+                <p className="text-sm text-primary font-heading font-bold mb-3">{member.role}</p>
+                <p className="text-xs text-muted-foreground font-body leading-relaxed">{member.bio}</p>
+                <div className="flex gap-3 justify-center mt-4">
+                  <a href="#" className="text-muted-foreground hover:text-primary transition-colors"><Linkedin className="h-4 w-4" /></a>
+                  <a href="#" className="text-muted-foreground hover:text-primary transition-colors"><Twitter className="h-4 w-4" /></a>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Global Team */}
       <section className="section-alt" style={{ paddingTop: 96, paddingBottom: 96 }}>
         <div className="section-container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-              <img src={globalImg} alt="World map showing global team locations across India, US, Europe, and Asia" className="w-full rounded-2xl" loading="lazy" width={800} height={600} />
+              <img src={globalImg} alt="World map showing global team locations" className="w-full rounded-2xl" loading="lazy" width={800} height={600} />
             </motion.div>
             <div>
               <h2 className="font-heading text-h2 font-bold text-foreground mb-6">A Small Team. A Big Impact.</h2>
               <p className="text-muted-foreground leading-relaxed mb-4 font-body">
-                We are a lean, fully remote team of engineers, designers, and product managers spread across the globe. We move fast, care deeply, and celebrate our merchants' wins as our own.
+                We work in a hybrid setup with a flexible, outcome-driven culture. Our team members are spread across India and beyond, collaborating seamlessly to build products that serve 100+ countries.
               </p>
               <p className="text-muted-foreground leading-relaxed font-body">
-                Our apps serve merchants from 100+ countries. We build with a global perspective — multi-currency, multi-language, and compliant with tax regulations from India to the EU. Whether you're a first-time Shopify seller or a $10M merchant, our apps scale with you.
+                Whether you're a first-time Shopify seller or a $10M merchant, our apps scale with you. Multi-currency, multi-language, and compliant with tax regulations worldwide.
               </p>
             </div>
           </div>

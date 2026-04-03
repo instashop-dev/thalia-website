@@ -33,7 +33,19 @@ export interface AppData {
   stats: { value: string; label: string }[];
   testimonial: { quote: string; author: string; role: string };
   comingSoon?: boolean;
+  heroImage?: string;
 }
+
+const appImages: Record<string, string> = {};
+try {
+  const imageModules = import.meta.glob('/src/assets/app-*.jpg', { eager: true, import: 'default' });
+  for (const [path, mod] of Object.entries(imageModules)) {
+    const match = path.match(/app-(.+)\.jpg$/);
+    if (match) appImages[match[1]] = mod as string;
+  }
+} catch (e) { /* ignore */ }
+
+export const getAppImage = (slug: string): string | undefined => appImages[slug];
 
 export const apps: AppData[] = [
   {
