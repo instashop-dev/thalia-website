@@ -1,24 +1,33 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, Globe, Rocket, Brain, Heart } from "lucide-react";
+import { ArrowRight, Building, Rocket, Brain, Heart, GraduationCap, HeartPulse, Plane, Coffee, Gift, Clock } from "lucide-react";
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 import { Button } from "@/components/ui/button";
 import careersImg from "@/assets/careers-workspace.jpg";
 
 const perks = [
-  { icon: Globe, title: "Fully Remote", desc: "Work from wherever you do your best work. We are 100% remote and have been since day one." },
+  { icon: Building, title: "Hybrid & Flexible", desc: "We work in a hybrid model with flexible hours. Work from office or home — whatever helps you do your best work." },
   { icon: Rocket, title: "Ship Constantly", desc: "We move fast. You'll see your work live in days, not months. No endless approval chains." },
   { icon: Brain, title: "Real Ownership", desc: "You're not a cog in a machine. You'll own features, make decisions, and see their direct impact." },
   { icon: Heart, title: "Merchant-First Culture", desc: "We obsess over our customers. Every decision starts with: does this make our merchants more successful?" },
 ];
 
+const benefits = [
+  { icon: HeartPulse, title: "Health Insurance", desc: "Comprehensive health insurance for you and your family including dental and vision coverage." },
+  { icon: GraduationCap, title: "Learning Budget", desc: "Annual learning allowance for courses, conferences, books, and certifications to grow your skills." },
+  { icon: Plane, title: "Paid Time Off", desc: "Generous paid leave policy including vacation days, sick leave, and personal days. Recharge when you need to." },
+  { icon: Coffee, title: "Team Offsites", desc: "Regular team offsites and retreats to bond, brainstorm, and have fun together outside of work." },
+  { icon: Gift, title: "Performance Bonuses", desc: "Competitive salary with performance-based bonuses and equity options for long-term wealth building." },
+  { icon: Clock, title: "Flexible Hours", desc: "No rigid 9-to-5. Work during your most productive hours as long as you deliver results and collaborate." },
+];
+
 const openings = [
-  { title: "Senior Full-Stack Engineer", type: "Full-time", location: "Remote – India", dept: "Engineering" },
-  { title: "Product Designer (UX/UI)", type: "Full-time", location: "Remote", dept: "Design" },
-  { title: "Growth Marketing Manager", type: "Full-time", location: "Remote – India", dept: "Marketing" },
-  { title: "Customer Success Specialist", type: "Full-time", location: "Remote", dept: "Support" },
-  { title: "DevOps / Site Reliability Engineer", type: "Full-time", location: "Remote", dept: "Infrastructure" },
+  { title: "Senior Full-Stack Engineer", type: "Full-time", location: "Hybrid – India", dept: "Engineering" },
+  { title: "Product Designer (UX/UI)", type: "Full-time", location: "Hybrid / Remote", dept: "Design" },
+  { title: "Growth Marketing Manager", type: "Full-time", location: "Hybrid – India", dept: "Marketing" },
+  { title: "Customer Success Specialist", type: "Full-time", location: "Hybrid / Remote", dept: "Support" },
+  { title: "DevOps / Site Reliability Engineer", type: "Full-time", location: "Hybrid / Remote", dept: "Infrastructure" },
 ];
 
 const Careers = () => {
@@ -41,7 +50,7 @@ const Careers = () => {
               </motion.div>
             </div>
             <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.2 }}>
-              <img src={careersImg} alt="Modern remote workspace with laptop, coffee, and plant on a clean desk" className="w-full rounded-2xl" width={800} height={600} />
+              <img src={careersImg} alt="Modern workspace with laptop, coffee, and plant" className="w-full rounded-2xl" width={800} height={600} />
             </motion.div>
           </div>
         </div>
@@ -65,8 +74,29 @@ const Careers = () => {
         </div>
       </section>
 
+      {/* Benefits */}
+      <section style={{ paddingTop: 96, paddingBottom: 96 }}>
+        <div className="section-container">
+          <SectionHeading label="PERKS & BENEFITS" title="Great Benefits, Great Culture" description="We believe happy, supported team members build the best products. Here's what we offer." />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {benefits.map((b, i) => (
+              <motion.div key={b.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08 }}
+                className="flex gap-4 p-5 rounded-2xl border border-border hover:border-primary/20 transition-all">
+                <div className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center flex-shrink-0">
+                  <b.icon className="h-5 w-5 text-primary" />
+                </div>
+                <div>
+                  <h3 className="font-heading font-bold text-sm text-foreground mb-1">{b.title}</h3>
+                  <p className="text-xs text-muted-foreground font-body leading-relaxed">{b.desc}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Openings */}
-      <section id="openings" style={{ paddingTop: 96, paddingBottom: 96 }}>
+      <section id="openings" className="section-alt" style={{ paddingTop: 96, paddingBottom: 96 }}>
         <div className="section-container">
           <SectionHeading title="Current Openings" />
           <div className="max-w-3xl mx-auto space-y-4">

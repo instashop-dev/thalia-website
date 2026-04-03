@@ -2,7 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
 import AppCard from "@/components/AppCard";
-import { apps, getPlatformColor, getPlatformLabel } from "@/data/apps";
+import { apps, getPlatformColor, getPlatformLabel, getAppImage } from "@/data/apps";
 import NotFound from "./NotFound";
 import { useState } from "react";
 import { ArrowRight, Check, Star } from "lucide-react";
@@ -17,6 +17,7 @@ const AppDetail = () => {
   const relatedApps = apps.filter(a => a.slug !== app.slug && a.platform === app.platform && !a.comingSoon).slice(0, 3);
   const platformColor = getPlatformColor(app.platform);
   const installLabel = app.platform.includes("Shopify") ? "Shopify" : app.platform.includes("Amazon") ? "Shopify" : app.platform;
+  const appImage = getAppImage(app.slug);
 
   return (
     <Layout>
@@ -43,15 +44,9 @@ const AppDetail = () => {
                 style={{ backgroundColor: `${platformColor}14`, color: platformColor }}>
                 {getPlatformLabel(app.platform)}
               </span>
-              <h1 className="font-heading text-h1 font-extrabold text-foreground mb-4">
-                {app.name}
-              </h1>
-              <p className="font-body text-lg leading-relaxed mb-4 text-muted-foreground">
-                {app.description}
-              </p>
-              <p className="font-body text-sm leading-relaxed mb-8 text-muted-foreground">
-                {app.longDescription}
-              </p>
+              <h1 className="font-heading text-h1 font-extrabold text-foreground mb-4">{app.name}</h1>
+              <p className="font-body text-lg leading-relaxed mb-4 text-muted-foreground">{app.description}</p>
+              <p className="font-body text-sm leading-relaxed mb-8 text-muted-foreground">{app.longDescription}</p>
 
               {app.comingSoon ? (
                 <div className="flex gap-3">
@@ -83,10 +78,14 @@ const AppDetail = () => {
 
             <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.2 }}
               className="flex items-center justify-center">
-              <div className="w-full max-w-md aspect-square rounded-3xl flex items-center justify-center"
-                style={{ background: `${app.color}10`, boxShadow: `0 20px 60px ${app.color}20` }}>
-                <span className="text-8xl">{app.icon}</span>
-              </div>
+              {appImage ? (
+                <img src={appImage} alt={`${app.name} — ${app.tagline}`} className="w-full max-w-lg rounded-2xl shadow-lg" loading="lazy" width={800} height={600} />
+              ) : (
+                <div className="w-full max-w-md aspect-square rounded-3xl flex items-center justify-center"
+                  style={{ background: `${app.color}10`, boxShadow: `0 20px 60px ${app.color}20` }}>
+                  <span className="text-8xl">{app.icon}</span>
+                </div>
+              )}
             </motion.div>
           </div>
         </div>
@@ -94,7 +93,7 @@ const AppDetail = () => {
 
       {!app.comingSoon && (
         <>
-          {/* About This App */}
+          {/* Benefits */}
           {app.benefits.length > 0 && (
             <section className="section-alt" style={{ paddingTop: 96, paddingBottom: 96 }}>
               <div className="section-container">
@@ -207,8 +206,7 @@ const AppDetail = () => {
                       <ul className="space-y-3 mb-8">
                         {plan.features.map((f, j) => (
                           <li key={j} className="flex items-center gap-2 text-sm font-body text-muted-foreground">
-                            <Check className="h-4 w-4 text-primary flex-shrink-0" />
-                            {f}
+                            <Check className="h-4 w-4 text-primary flex-shrink-0" />{f}
                           </li>
                         ))}
                       </ul>
@@ -218,9 +216,7 @@ const AppDetail = () => {
                           Get Started
                         </a>
                       ) : (
-                        <button className={plan.highlighted ? "btn-primary w-full" : "btn-outline w-full"}>
-                          Get Started
-                        </button>
+                        <button className={plan.highlighted ? "btn-primary w-full" : "btn-outline w-full"}>Get Started</button>
                       )}
                     </motion.div>
                   ))}
