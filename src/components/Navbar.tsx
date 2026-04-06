@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/thalia-logo.jpg";
 
 const navLinks = [
   { label: "Home", path: "/" },
@@ -32,9 +33,7 @@ const Navbar = () => {
     >
       <div className="section-container flex items-center justify-between h-full">
         <Link to="/" className="flex items-center gap-2.5">
-          <div className="w-9 h-9 rounded-lg bg-foreground flex items-center justify-center">
-            <span className="font-heading font-extrabold text-lg text-primary-foreground">T</span>
-          </div>
+          <img src={logo} alt="Thalia Technologies logo" className="w-9 h-9 rounded-lg object-cover" width={36} height={36} />
           <span className="font-heading font-extrabold text-lg text-foreground">Thalia Technologies</span>
         </Link>
 

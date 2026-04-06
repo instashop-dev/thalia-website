@@ -4,7 +4,6 @@ import { ArrowRight, Heart, Target, Lightbulb, Users, Globe, Palette, Linkedin, 
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 import aboutImg from "@/assets/about-workspace.jpg";
-import globalImg from "@/assets/global-team.jpg";
 import missionImg from "@/assets/mission-illustration.jpg";
 import teamImg from "@/assets/team-photo.jpg";
 
@@ -18,12 +17,11 @@ const values = [
 ];
 
 const teamMembers = [
-  { name: "Arun Kumar", role: "Founder & CEO", bio: "Arun founded Thalia Technologies with a vision to solve real ecommerce problems with elegant software. With 10+ years in SaaS, he leads product vision and company strategy.", initials: "AK" },
-  { name: "Priya Sharma", role: "Co-Founder & CTO", bio: "Priya oversees engineering and architecture across all 14+ products. She's passionate about scalable systems and developer experience.", initials: "PS" },
-  { name: "Vikram Patel", role: "VP of Engineering", bio: "Vikram leads the engineering team, ensuring code quality, system reliability, and delivery velocity across all Thalia products.", initials: "VP" },
-  { name: "Sneha Reddy", role: "Head of Product", bio: "Sneha drives product strategy by deeply understanding merchant pain points and translating them into elegant, intuitive features.", initials: "SR" },
-  { name: "Rohan Mehta", role: "Head of Design", bio: "Rohan ensures every Thalia product is beautiful, accessible, and delightful. He believes design is a superpower for SaaS.", initials: "RM" },
-  { name: "Ananya Gupta", role: "Head of Customer Success", bio: "Ananya leads our support and success team, ensuring every merchant gets the help they need to grow their business.", initials: "AG" },
+  { name: "Tejas Sangoi", role: "Founder & CEO", bio: "Tejas founded Thalia Technologies with a vision to solve real ecommerce problems with elegant software. He leads product vision and company strategy, driving the team to build products that truly make a difference.", initials: "TS" },
+  { name: "Pawan More", role: "Senior Software Engineer", bio: "Pawan leads core engineering across Thalia's product suite. He's passionate about building scalable, reliable systems and ensuring every product meets the highest standards of code quality.", initials: "PM" },
+  { name: "Ankit Kothari", role: "Customer Support Specialist", bio: "Ankit ensures every merchant gets the help they need. He's the voice of the customer inside Thalia, translating feedback into product improvements.", initials: "AK" },
+  { name: "Aniket Rane", role: "Software Engineer", bio: "Aniket builds and maintains key features across Thalia's apps. He's dedicated to writing clean, efficient code and delivering seamless user experiences.", initials: "AR" },
+  { name: "Ankit Mane", role: "Application Support Specialist", bio: "Ankit Mane provides expert application support, helping merchants troubleshoot issues and get the most out of Thalia's products.", initials: "AM" },
 ];
 
 const milestones = [
@@ -153,17 +151,17 @@ const About = () => {
         </div>
       </section>
 
-      {/* Global Team */}
+      {/* A Small Team. A Big Impact. - No map, text only */}
       <section className="section-alt" style={{ paddingTop: 96, paddingBottom: 96 }}>
         <div className="section-container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-              <img src={globalImg} alt="World map showing global team locations" className="w-full rounded-2xl" loading="lazy" width={800} height={600} />
+              <img src={teamImg} alt="Thalia Technologies team collaborating" className="w-full rounded-2xl" loading="lazy" width={800} height={600} />
             </motion.div>
             <div>
               <h2 className="font-heading text-h2 font-bold text-foreground mb-6">A Small Team. A Big Impact.</h2>
               <p className="text-muted-foreground leading-relaxed mb-4 font-body">
-                We work in a hybrid setup with a flexible, outcome-driven culture. Our team members are spread across India and beyond, collaborating seamlessly to build products that serve 100+ countries.
+                We work in a hybrid setup with a flexible, outcome-driven culture. Our team members collaborate seamlessly to build products that serve 100+ countries.
               </p>
               <p className="text-muted-foreground leading-relaxed font-body">
                 Whether you're a first-time Shopify seller or a $10M merchant, our apps scale with you. Multi-currency, multi-language, and compliant with tax regulations worldwide.

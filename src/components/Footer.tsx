@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logo from "@/assets/thalia-logo.jpg";
 
 const Footer = () => {
   return (
@@ -7,9 +8,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2.5 mb-4">
-              <div className="w-9 h-9 rounded-lg bg-primary flex items-center justify-center">
-                <span className="font-heading font-extrabold text-lg text-primary-foreground">T</span>
-              </div>
+              <img src={logo} alt="Thalia Technologies logo" className="w-9 h-9 rounded-lg object-cover" width={36} height={36} />
               <span className="font-heading font-extrabold text-lg">Thalia Technologies</span>
             </div>
             <p className="text-sm leading-relaxed opacity-60">
@@ -23,7 +22,7 @@ const Footer = () => {
               <Link to="/apps/spreadr" className="text-sm opacity-65 hover:opacity-100 transition-opacity">Spreadr</Link>
               <Link to="/apps/watchlyst" className="text-sm opacity-65 hover:opacity-100 transition-opacity">Watchlyst</Link>
               <Link to="/apps/bolt" className="text-sm opacity-65 hover:opacity-100 transition-opacity">Bolt</Link>
-              <Link to="/apps/pro" className="text-sm opacity-65 hover:opacity-100 transition-opacity">Pro</Link>
+              <Link to="/apps/probulkpriceeditor" className="text-sm opacity-65 hover:opacity-100 transition-opacity">Pro Bulk Price Editor</Link>
               <Link to="/apps" className="text-sm text-primary hover:opacity-80 transition-opacity">All Apps →</Link>
             </div>
           </div>
