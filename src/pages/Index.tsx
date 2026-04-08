@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, Wrench, BarChart3, RefreshCcw, Handshake, Flame, Target } from "lucide-react";
+import { ArrowRight, DollarSign, RefreshCcw, PenTool, Bell, ShoppingCart, ExternalLink, Tags, CalendarClock, Handshake, Flame, Target } from "lucide-react";
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 import AppCard from "@/components/AppCard";
@@ -18,9 +18,12 @@ const stats = [
 ];
 
 const features = [
-  { icon: Wrench, title: "Purpose-Built Tools", desc: "Every product we build starts with a real merchant problem. We don't build features; we build solutions." },
-  { icon: BarChart3, title: "Proven at Scale", desc: "Our apps are trusted by over 100,000 businesses globally, processing millions of transactions every day." },
-  { icon: RefreshCcw, title: "Constantly Evolving", desc: "We ship improvements constantly. Your feedback shapes what we build next." },
+  { icon: DollarSign, title: "Bulk Price Editing", desc: "Edit prices across thousands of products in one go. Schedule bulk discounts and rollback anytime with full control." },
+  { icon: RefreshCcw, title: "Product & Inventory Sync", desc: "Sync products and inventory seamlessly between Amazon and Shopify — keep everything in perfect harmony." },
+  { icon: PenTool, title: "Bulk Product Editor", desc: "Update titles, descriptions, tags, and metafields in bulk. Save hours of manual work every single week." },
+  { icon: Bell, title: "Price Drop Alerts", desc: "Automatically notify customers when prices drop on products they love — bring them back and boost conversions." },
+  { icon: ExternalLink, title: "External Affiliate Links", desc: "Add affiliate and external buy buttons to your Shopify store. Monetize traffic with Amazon, Walmart, and more." },
+  { icon: Tags, title: "Discount Scheduling", desc: "Schedule bulk discounts in advance, run flash sales, and auto-rollback prices when the sale ends." },
 ];
 
 const values = [
