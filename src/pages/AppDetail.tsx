@@ -2,6 +2,7 @@ import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
 import AppCard from "@/components/AppCard";
+import Seo from "@/components/Seo";
 import type { AppData } from "@/data/apps";
 import { apps, getPlatformColor, getPlatformLabel, getAppImage, getAppLogo } from "@/data/apps";
 
@@ -50,6 +51,11 @@ const AppDetail = () => {
 
   return (
     <Layout>
+      <Seo
+        title={`${appPageName} | Thalia Technologies`}
+        description={app.description}
+        path={`/apps/${app.slug}`}
+      />
       {/* Breadcrumb */}
       <div className="section-container pt-6">
         <nav className="text-sm font-body text-muted-foreground">

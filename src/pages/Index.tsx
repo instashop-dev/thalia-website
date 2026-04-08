@@ -15,6 +15,7 @@ import wordpressLogo from "@/assets/Wordpress_logo-removebg-preview.png";
 import bigCommerceLogo from "@/assets/icons8-bigcommerce-48.png";
 import shopifyPlusLogo from "@/assets/shopify-plus-seeklogo.png";
 import amazonLogo from "@/assets/Amazon_logo-removebg-preview.png";
+import Seo from "@/components/Seo";
 
 const stats = [
   { value: "100K+", label: "Merchants Trust Us" },
@@ -62,6 +63,12 @@ const fadeUp = (delay = 0) => ({
 const Index = () => {
   return (
     <Layout>
+      <Seo
+        title="Thalia Technologies | Ecommerce Apps for Growth"
+        description="Thalia builds focused ecommerce apps for Shopify, Amazon, and BigCommerce to help merchants automate workflows, increase revenue, and grow faster."
+        path="/"
+      />
+      
       {/* Hero */}
       <section className="relative overflow-hidden" style={{ paddingTop: 80, paddingBottom: 80 }}>
         <div className="absolute inset-0 pointer-events-none" style={{

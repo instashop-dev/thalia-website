@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Building, Rocket, Brain, Heart, GraduationCap, HeartPulse, Plane, Coffee, Gift, Clock } from "lucide-react";
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
+import Seo from "@/components/Seo";
 import careersImg from "@/assets/careers-workspace.jpg";
 
 /** External careers / job listings (opens in new tab from Apply CTAs). */
@@ -35,6 +36,11 @@ const openings = [
 const Careers = () => {
   return (
     <Layout>
+      <Seo
+        title="Careers at Thalia Technologies | Join Our Team"
+        description="Explore career opportunities at Thalia Technologies and help build ecommerce software used by businesses worldwide."
+        path="/careers"
+      />
       {/* Hero */}
       <section className="relative overflow-hidden" style={{ paddingTop: 80, paddingBottom: 80 }}>
         <div className="absolute inset-0 pointer-events-none" style={{ background: "radial-gradient(ellipse 60% 50% at 50% 0%, hsla(231,91%,64%,0.06) 0%, transparent 70%)" }} />

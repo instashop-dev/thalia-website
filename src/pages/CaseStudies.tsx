@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
+import Seo from "@/components/Seo";
 import caseStudiesImg from "@/assets/case-studies-hero.jpg";
 
 const studies = [
@@ -15,6 +16,11 @@ const studies = [
 const CaseStudies = () => {
   return (
     <Layout>
+      <Seo
+        title="Case Studies | Thalia Technologies"
+        description="See real merchant success stories and measurable outcomes achieved with Thalia Technologies apps."
+        path="/case-studies"
+      />
       {/* Hero */}
       <section className="section-alt relative overflow-hidden" style={{ paddingTop: 80, paddingBottom: 60 }}>
         <div className="section-container relative">

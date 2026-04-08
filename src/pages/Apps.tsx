@@ -4,10 +4,16 @@ import SectionHeading from "@/components/SectionHeading";
 import AppCard from "@/components/AppCard";
 import { apps } from "@/data/apps";
 import appsImg from "@/assets/Ecommerce apps.jpg";
+import Seo from "@/components/Seo";
 
 const Apps = () => {
   return (
     <Layout>
+      <Seo
+        title="Thalia Apps | Ecommerce Tools for Shopify, Amazon, and More"
+        description="Explore Thalia's full suite of ecommerce apps for pricing, catalog management, notifications, sync, badges, and merchant growth."
+        path="/apps"
+      />
       {/* Hero */}
       <section className="relative overflow-hidden" style={{ paddingTop: 80, paddingBottom: 60 }}>
         <div className="absolute inset-0 pointer-events-none" style={{

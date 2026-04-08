@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Mail, Send, Building2, Globe, Clock, Ticket, MapPin } from "lucide-react";
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
+import Seo from "@/components/Seo";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -77,6 +78,11 @@ const Contact = () => {
 
   return (
     <Layout>
+      <Seo
+        title="Contact Thalia Technologies | Support and Sales"
+        description="Get in touch with Thalia Technologies for product support, questions, and business inquiries."
+        path="/contact"
+      />
       {/* Hero */}
       <section className="section-alt relative overflow-hidden" style={{ paddingTop: 80, paddingBottom: 60 }}>
         <div className="section-container relative text-center">

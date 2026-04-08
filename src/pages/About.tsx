@@ -11,6 +11,7 @@ import aniketRanePhoto from "@/assets/Aniket Rane.jpg";
 import ankitManePhoto from "@/assets/Ankit Mane.png";
 import ankitKothariPhoto from "@/assets/Ankit Kothari.jpg";
 import tejasSangoiPhoto from "@/assets/Tejas Sangoi.jpg";
+import Seo from "@/components/Seo";
 
 const values = [
   { icon: Lightbulb, title: "Innovation First", desc: "We explore new ways to solve commerce problems. Innovation isn't a buzzword — it's how we operate every day." },
@@ -41,6 +42,13 @@ const milestones = [
 const About = () => {
   return (
     <Layout>
+      <Seo
+        title="About Thalia Technologies | Our Story, Team, and Mission"
+        description="Learn about Thalia Technologies, our mission to solve real ecommerce problems, and the team behind our merchant-focused software products."
+        path="/about"
+      />
+
+
       {/* Hero */}
       <section className="relative overflow-hidden bg-background" style={{ paddingTop: 80, paddingBottom: 80 }}>
         <div className="section-container relative">
