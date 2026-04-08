@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowRight, DollarSign, RefreshCcw, PenTool, Bell, ShoppingCart, ExternalLink, Tags, CalendarClock, Handshake, Flame, Target } from "lucide-react";
+import { ArrowRight, DollarSign, RefreshCcw, PenTool, Bell, ShoppingCart, ExternalLink, Tags, CalendarClock, Handshake, Flame, Target, Wrench, BarChart3 } from "lucide-react";
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 import AppCard from "@/components/AppCard";
