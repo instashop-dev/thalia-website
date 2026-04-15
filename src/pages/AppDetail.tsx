@@ -122,12 +122,13 @@ const AppDetail = () => {
         />
 
         <div className="section-container relative">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left: Text & CTA */}
+          <div className="max-w-3xl mx-auto">
+            {/* Text & CTA — Centered */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
+              className="text-center"
             >
               {/* Platform badge */}
               <motion.div
@@ -165,7 +166,7 @@ const AppDetail = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.16 }}
-                className="text-lg leading-relaxed mb-4 font-body"
+                className="text-lg leading-relaxed mb-4 font-body mx-auto max-w-2xl"
                 style={{ color: "rgba(255,255,255,0.68)" }}
               >
                 {app.description}
@@ -176,7 +177,7 @@ const AppDetail = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className="text-base leading-relaxed mb-8 font-body"
+                className="text-base leading-relaxed mb-8 font-body mx-auto max-w-2xl"
                 style={{ color: "rgba(255,255,255,0.55)" }}
               >
                 {app.longDescription}
@@ -205,7 +206,7 @@ const AppDetail = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.24 }}
-                    className="flex flex-col sm:flex-row gap-3 mb-6"
+                    className="flex flex-col sm:flex-row gap-3 mb-6 justify-center"
                   >
                     {app.externalUrl !== "#" && (
                       <a
@@ -244,7 +245,7 @@ const AppDetail = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.6, delay: 0.28 }}
-                    className="flex items-center gap-4 text-sm font-body"
+                    className="flex items-center gap-4 text-sm font-body justify-center"
                     style={{ color: "rgba(255,255,255,0.55)" }}
                   >
                     <span className="flex items-center gap-1">
@@ -258,42 +259,6 @@ const AppDetail = () => {
               )}
             </motion.div>
 
-            {/* Right: Image/Logo */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex items-center justify-center lg:justify-end"
-            >
-              {appImage ? (
-                <div className="w-full max-w-2xl overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-2xl">
-                  <img
-                    src={appImage}
-                    alt={`${appPageName} — ${app.tagline}`}
-                    className="w-full h-auto max-h-[min(32rem,70vh)] object-contain object-top"
-                    loading="lazy"
-                    width={960}
-                    height={640}
-                  />
-                </div>
-              ) : appLogo ? (
-                <img
-                  src={appLogo}
-                  alt={`${appPageName} logo`}
-                  className="w-full max-w-md max-h-80 object-contain rounded-2xl"
-                  loading="lazy"
-                  width={512}
-                  height={320}
-                />
-              ) : (
-                <div
-                  className="w-full max-w-md aspect-square rounded-3xl flex items-center justify-center"
-                  style={{ background: `${app.color}10`, boxShadow: `0 20px 60px ${app.color}20` }}
-                >
-                  <span className="text-8xl">{app.icon}</span>
-                </div>
-              )}
-            </motion.div>
           </div>
         </div>
       </section>
