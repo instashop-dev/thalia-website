@@ -2,13 +2,13 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
   ArrowRight, RefreshCcw, Handshake, Flame, Target, Wrench, BarChart3,
+  Users, LayoutGrid, Star, Clock,
 } from "lucide-react";
 import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 import AppCard from "@/components/AppCard";
 import { apps } from "@/data/apps";
 import heroImg from "@/assets/hero-dashboard (2).jpg";
-import valuesImg from "@/assets/values-illustration new.jpg";
 import shopifyLogo from "@/assets/shopify_logo_black.png";
 import wixLogo from "@/assets/wix logo.png";
 import wordpressLogo from "@/assets/Wordpress_logo-removebg-preview.png";
@@ -20,10 +20,10 @@ import Seo from "@/components/Seo";
 /* ─── Data ────────────────────────────────────────────────────────── */
 
 const stats = [
-  { value: "100K+", label: "Merchants Trust Us" },
-  { value: "14+",   label: "Apps Published" },
-  { value: "5★",    label: "Average App Rating" },
-  { value: "10+",   label: "Years of Experience" },
+  { value: "100K+", label: "Merchants Trust Us",    desc: "Worldwide & growing",        icon: Users },
+  { value: "14+",   label: "Apps Published",         desc: "Across major platforms",     icon: LayoutGrid },
+  { value: "5★",    label: "Average App Rating",     desc: "Consistently top-rated",     icon: Star },
+  { value: "10+",   label: "Years of Experience",    desc: "Building ecommerce tools",   icon: Clock },
 ];
 
 const features = [
@@ -378,20 +378,37 @@ const Index = () => {
               <motion.div
                 key={stat.label}
                 {...inView(i * 0.1)}
-                className="rounded-2xl p-8 text-center"
+                className="rounded-2xl p-8 text-center relative overflow-hidden"
                 style={{
                   border: "1px solid rgba(255,255,255,0.07)",
+                  borderTop: "2px solid rgba(0,192,255,0.45)",
                   background: "rgba(255,255,255,0.03)",
                 }}
               >
+                {/* Icon */}
+                <div
+                  className="w-10 h-10 rounded-xl flex items-center justify-center mx-auto mb-5"
+                  style={{ background: "rgba(0,192,255,0.12)" }}
+                >
+                  <stat.icon className="h-5 w-5" style={{ color: "#00c0ff" }} />
+                </div>
+                {/* Value */}
                 <div
                   className="font-heading font-extrabold gradient-text-cyan leading-none mb-2"
-                  style={{ fontSize: "clamp(36px, 4.5vw, 54px)" }}
+                  style={{ fontSize: "clamp(32px, 4vw, 48px)" }}
                 >
                   {stat.value}
                 </div>
-                <div className="text-sm font-body" style={{ color: "rgba(255,255,255,0.48)" }}>
+                {/* Label */}
+                <div
+                  className="text-sm font-body font-semibold mb-1"
+                  style={{ color: "rgba(255,255,255,0.72)" }}
+                >
                   {stat.label}
+                </div>
+                {/* Sub-description */}
+                <div className="text-xs font-body" style={{ color: "rgba(255,255,255,0.32)" }}>
+                  {stat.desc}
                 </div>
               </motion.div>
             ))}
@@ -400,65 +417,32 @@ const Index = () => {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════
-          VALUES — image left, values list right
+          VALUES — centered 3-column cards
       ════════════════════════════════════════════════════════════════ */}
       <section style={{ paddingTop: 96, paddingBottom: 96 }}>
         <div className="section-container">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Image */}
-            <motion.div
-              initial={{ opacity: 0, x: -24 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="relative"
-            >
-              <div
-                className="absolute -inset-6 rounded-3xl pointer-events-none"
-                style={{
-                  background:
-                    "radial-gradient(ellipse at 30% 50%, rgba(0,192,255,0.08) 0%, transparent 70%)",
-                }}
-              />
-              <img
-                src={valuesImg}
-                alt="Team values illustration"
-                className="relative w-full rounded-2xl"
-                loading="lazy"
-                width={800}
-                height={600}
-              />
-            </motion.div>
-
-            {/* Values list */}
-            <div>
-              <SectionHeading
-                center={false}
-                label="OUR VALUES"
-                title="What Drives Us Every Day"
-                description="We are a small, passionate team — different backgrounds, one shared obsession: building products that genuinely matter."
-              />
-              <div className="space-y-4">
-                {values.map((v, i) => (
-                  <motion.div
-                    key={v.title}
-                    {...inView(i * 0.1)}
-                    className="flex gap-4 p-5 rounded-xl border border-border transition-colors duration-200 hover:border-primary/40"
-                  >
-                    <div
-                      className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
-                      style={{ background: "rgba(0,192,255,0.1)" }}
-                    >
-                      <v.icon className="h-5 w-5" style={{ color: "#00c0ff" }} />
-                    </div>
-                    <div>
-                      <h3 className="font-heading font-bold text-foreground mb-1">{v.title}</h3>
-                      <p className="text-sm text-muted-foreground font-body leading-relaxed">{v.desc}</p>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
+          <SectionHeading
+            label="OUR VALUES"
+            title="What Drives Us Every Day"
+            description="We are a small, passionate team — different backgrounds, one shared obsession: building products that genuinely matter."
+          />
+          <div className="grid md:grid-cols-3 gap-6">
+            {values.map((v, i) => (
+              <motion.div
+                key={v.title}
+                {...inView(i * 0.1)}
+                className="card-elevated p-8 text-center group"
+              >
+                <div
+                  className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-6 transition-colors duration-200"
+                  style={{ background: "rgba(0,192,255,0.1)" }}
+                >
+                  <v.icon className="h-6 w-6" style={{ color: "#00c0ff" }} />
+                </div>
+                <h3 className="font-heading font-bold text-xl text-foreground mb-3">{v.title}</h3>
+                <p className="text-sm text-muted-foreground font-body leading-relaxed">{v.desc}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

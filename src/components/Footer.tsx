@@ -19,7 +19,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2.5 mb-4">
-              <img src={logo} alt="Thalia Technologies logo" className="w-9 h-9 rounded-lg object-cover" width={36} height={36} />
+              <img src={logo} alt="Thalia Technologies logo" className="w-9 h-9 rounded-none object-cover" width={36} height={36} />
               <span className="font-heading font-extrabold text-lg">Thalia Technologies</span>
             </div>
             <p className="text-sm leading-relaxed opacity-60">

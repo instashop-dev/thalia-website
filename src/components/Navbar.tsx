@@ -41,7 +41,7 @@ const Navbar = () => {
           <img
             src={logo}
             alt="Thalia Technologies logo"
-            className="w-9 h-9 rounded-lg object-cover"
+            className="w-9 h-9 rounded-none object-cover"
             width={36}
             height={36}
           />
