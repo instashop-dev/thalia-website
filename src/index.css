@@ -5,25 +5,25 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 230 25% 14%;
+    --foreground: 220 35% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 230 25% 14%;
+    --card-foreground: 220 35% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 230 25% 14%;
+    --popover-foreground: 220 35% 10%;
 
-    --primary: 231 91% 64%;
-    --primary-foreground: 0 0% 100%;
-    --primary-dark: 231 67% 53%;
+    --primary: 195 100% 50%;           /* #00c0ff */
+    --primary-foreground: 0 0% 100%;   /* white — used for footer text etc. */
+    --primary-dark: 195 100% 40%;      /* #00a3cc – hover state */
 
-    --secondary: 233 100% 98%;
-    --secondary-foreground: 220 13% 46%;
+    --secondary: 195 40% 95%;
+    --secondary-foreground: 195 40% 30%;
 
-    --muted: 233 100% 98%;
-    --muted-foreground: 220 9% 52%;
+    --muted: 220 20% 97%;
+    --muted-foreground: 220 10% 48%;
 
-    --accent: 170 100% 41%;
+    --accent: 252 95% 65%;             /* electric violet */
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
@@ -32,24 +32,26 @@
     --success: 162 100% 39%;
     --warning: 36 90% 55%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 231 91% 64%;
+    --border: 220 15% 90%;
+    --input: 220 15% 90%;
+    --ring: 195 100% 50%;
 
     --radius: 1rem;
 
-    --card-shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
-    --card-shadow-hover: 0 8px 32px rgba(79, 110, 247, 0.12);
-    --section-alt: 233 100% 98%;
+    --card-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+    --card-shadow-hover: 0 12px 40px rgba(0, 192, 255, 0.14);
+    --section-alt: 220 20% 97%;
+
+    --hero-bg: 218 44% 7%;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 231 91% 64%;
+    --sidebar-primary: 195 100% 50%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 233 100% 98%;
-    --sidebar-accent-foreground: 231 91% 50%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 231 91% 64%;
+    --sidebar-accent: 195 40% 95%;
+    --sidebar-accent-foreground: 195 40% 30%;
+    --sidebar-border: 220 15% 90%;
+    --sidebar-ring: 195 100% 50%;
   }
 }
 
@@ -93,13 +95,29 @@
     background-color: hsl(var(--section-alt));
   }
 
+  /* Primary button — dark text on cyan for accessibility */
   .btn-primary {
     @apply inline-flex items-center justify-center font-heading font-bold text-sm px-7 py-3.5 rounded-lg transition-all duration-200;
     background-color: hsl(var(--primary));
-    color: hsl(var(--primary-foreground));
+    color: hsl(220 44% 8%);
+    box-shadow: 0 4px 20px rgba(0, 192, 255, 0.3);
   }
   .btn-primary:hover {
     background-color: hsl(var(--primary-dark));
+    box-shadow: 0 6px 28px rgba(0, 192, 255, 0.45);
+    transform: translateY(-1px) scale(1.02);
+  }
+
+  /* Ghost button for dark backgrounds */
+  .btn-ghost-dark {
+    @apply inline-flex items-center justify-center font-heading font-bold text-sm px-7 py-3.5 rounded-lg transition-all duration-200;
+    border: 1.5px solid rgba(255, 255, 255, 0.2);
+    color: rgba(255, 255, 255, 0.85);
+    background: rgba(255, 255, 255, 0.06);
+  }
+  .btn-ghost-dark:hover {
+    border-color: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.12);
     transform: scale(1.02);
   }
 
@@ -121,5 +139,19 @@
   .btn-outline:hover {
     background-color: hsl(var(--secondary));
     transform: scale(1.02);
+  }
+
+  /* Gradient text — cyan to violet */
+  .gradient-text-cyan {
+    background: linear-gradient(135deg, #00c0ff 0%, #7c55ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Hero dot-grid background */
+  .hero-dot-grid {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px);
+    background-size: 32px 32px;
   }
 }
