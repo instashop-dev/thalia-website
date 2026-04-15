@@ -156,7 +156,7 @@ const HeroVisual = () => (
       </div>
 
       {/* Metric row */}
-      <div className="grid grid-cols-2 gap-px p-5 pb-4" style={{ gap: 0 }}>
+      <div className="grid grid-cols-2 p-5 pb-4">
         <div className="pr-5">
           <div className="text-xs font-body mb-1" style={{ color: "rgba(255,255,255,0.38)" }}>
             Monthly Revenue
@@ -379,7 +379,7 @@ const Index = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.18 }}
                 className="text-lg leading-relaxed mb-8 max-w-lg font-body"
-                style={{ color: "rgba(255,255,255,0.58)" }}
+                style={{ color: "rgba(255,255,255,0.68)" }}
               >
                 We build powerful SaaS tools that help ecommerce businesses on Shopify,
                 Amazon, and BigCommerce solve their most pressing challenges — and scale faster.
@@ -390,7 +390,7 @@ const Index = () => {
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.26 }}
-                className="flex flex-wrap gap-3 mb-12"
+                className="flex flex-wrap gap-3"
               >
                 <Link to="/apps" className="btn-primary text-sm">
                   Explore Our Products <ArrowRight className="ml-2 h-4 w-4 inline" />
@@ -465,10 +465,14 @@ const Index = () => {
                 key={f.title}
                 {...inView(i * 0.1)}
                 className="card-elevated p-8"
+                style={{ borderTop: "2px solid rgba(0,192,255,0.22)" }}
               >
                 <div
                   className="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
-                  style={{ background: "rgba(0,192,255,0.1)" }}
+                  style={{
+                    background: "rgba(0,192,255,0.1)",
+                    border: "1px solid rgba(0,192,255,0.18)",
+                  }}
                 >
                   <f.icon className="h-5 w-5" style={{ color: "#00c0ff" }} />
                 </div>
@@ -547,7 +551,10 @@ const Index = () => {
                 {/* Icon */}
                 <div
                   className="w-10 h-10 rounded-xl flex items-center justify-center mx-auto mb-5"
-                  style={{ background: "rgba(0,192,255,0.12)" }}
+                  style={{
+                    background: "rgba(0,192,255,0.12)",
+                    border: "1px solid rgba(0,192,255,0.2)",
+                  }}
                 >
                   <stat.icon className="h-5 w-5" style={{ color: "#00c0ff" }} />
                 </div>
@@ -566,7 +573,7 @@ const Index = () => {
                   {stat.label}
                 </div>
                 {/* Sub-description */}
-                <div className="text-xs font-body" style={{ color: "rgba(255,255,255,0.32)" }}>
+                <div className="text-xs font-body" style={{ color: "rgba(255,255,255,0.45)" }}>
                   {stat.desc}
                 </div>
               </motion.div>
@@ -591,15 +598,19 @@ const Index = () => {
                 key={v.title}
                 {...inView(i * 0.1)}
                 className="card-elevated p-8 text-center group"
+                style={{ borderTop: "2px solid rgba(0,192,255,0.22)" }}
               >
                 <div
-                  className="w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-6 transition-colors duration-200"
-                  style={{ background: "rgba(0,192,255,0.1)" }}
+                  className="w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-5"
+                  style={{
+                    background: "rgba(0,192,255,0.1)",
+                    border: "1px solid rgba(0,192,255,0.18)",
+                  }}
                 >
-                  <v.icon className="h-6 w-6" style={{ color: "#00c0ff" }} />
+                  <v.icon className="h-5 w-5" style={{ color: "#00c0ff" }} />
                 </div>
                 <h3 className="font-heading font-bold text-xl text-foreground mb-3">{v.title}</h3>
-                <p className="text-sm text-muted-foreground font-body leading-relaxed">{v.desc}</p>
+                <p className="text-sm font-body text-muted-foreground leading-relaxed">{v.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -617,19 +628,19 @@ const Index = () => {
               <motion.div
                 key={i}
                 {...inView(i * 0.1)}
-                className="card-elevated p-8 flex flex-col"
+                className="card-elevated p-8 flex flex-col relative overflow-hidden"
               >
-                {/* Decorative quote mark */}
+                {/* Decorative quote mark — background accent */}
                 <div
-                  className="font-heading font-extrabold leading-none mb-4 select-none"
-                  style={{ fontSize: 56, color: "rgba(0,192,255,0.2)", lineHeight: 1 }}
+                  className="absolute -top-2 -right-1 font-heading font-extrabold select-none pointer-events-none"
+                  style={{ fontSize: 96, color: "rgba(0,192,255,0.07)", lineHeight: 1 }}
                   aria-hidden
                 >
                   &ldquo;
                 </div>
 
                 {/* Stars */}
-                <div className="flex gap-0.5 mb-4" aria-label={`${t.rating} stars`}>
+                <div className="flex gap-0.5 mb-5 relative" aria-label={`${t.rating} stars`}>
                   {Array(t.rating).fill(0).map((_, j) => (
                     <svg key={j} className="w-4 h-4 fill-amber-400" viewBox="0 0 20 20" aria-hidden>
                       <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
@@ -638,14 +649,14 @@ const Index = () => {
                 </div>
 
                 {/* Quote */}
-                <p className="text-sm font-body text-foreground leading-relaxed flex-1 mb-6">
-                  {t.quote}
+                <p className="text-sm font-body text-foreground leading-relaxed flex-1 mb-6 relative">
+                  &ldquo;{t.quote}&rdquo;
                 </p>
 
                 {/* Author */}
                 <div className="flex items-center gap-3 pt-5 border-t border-border">
                   <div
-                    className="w-10 h-10 rounded-full flex items-center justify-center font-heading font-bold text-sm text-white flex-shrink-0"
+                    className="w-9 h-9 rounded-full flex items-center justify-center font-heading font-bold text-xs text-white flex-shrink-0"
                     style={{ background: "linear-gradient(135deg, #00c0ff, #7c55ff)" }}
                   >
                     {t.author.split(" ").map(w => w[0]).join("")}
@@ -697,7 +708,7 @@ const Index = () => {
               <Link
                 to="/careers"
                 className="inline-flex items-center justify-center font-heading font-bold text-sm px-8 py-3.5 rounded-lg bg-white transition-all duration-200 hover:scale-105"
-                style={{ color: "#7c3aed" }}
+                style={{ color: "#7c3aed", boxShadow: "0 4px 20px rgba(0,0,0,0.18)" }}
               >
                 View Open Positions <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
@@ -720,7 +731,7 @@ const Index = () => {
               Get in Touch <ArrowRight className="ml-2 h-4 w-4 inline" />
             </Link>
             <a href="mailto:supportteam@thaliatechnologies.com" className="btn-outline text-sm">
-              supportteam@thaliatechnologies.com
+              Email Us →
             </a>
           </div>
         </div>
