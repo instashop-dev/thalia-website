@@ -125,8 +125,8 @@ const HeroVisual = () => (
     {/* ── Main dashboard card ── */}
     <motion.div
       initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: [20, 0, -6, 0] }}
-      transition={{ duration: 3, ease: "easeInOut", times: [0, 0.4, 0.7, 1], repeat: Infinity, repeatType: "reverse" }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, ease: "easeOut" }}
       className="relative rounded-2xl overflow-hidden"
       style={{
         background: "rgba(255,255,255,0.04)",
@@ -257,12 +257,8 @@ const HeroVisual = () => (
     {/* ── Floating chip: new sale ── */}
     <motion.div
       initial={{ opacity: 0, x: 16 }}
-      animate={{ opacity: 1, x: 0, y: [0, -5, 0] }}
-      transition={{
-        opacity: { duration: 0.5, delay: 0.6 },
-        x: { duration: 0.5, delay: 0.6 },
-        y: { duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.8 },
-      }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.5, delay: 0.6 }}
       className="absolute -top-3 -right-2 px-3.5 py-2.5 rounded-xl"
       style={{
         background: "rgba(8,18,36,0.92)",
@@ -274,7 +270,7 @@ const HeroVisual = () => (
         <div className="w-2 h-2 rounded-full animate-pulse" style={{ background: "#4ade80" }} />
         <div>
           <div className="text-xs font-heading font-bold text-white leading-none mb-0.5">New Sale</div>
-          <div className="text-xs font-body" style={{ color: "#00c0ff" }}>$329 · Spreadr</div>
+          <div className="text-xs font-body" style={{ color: "#00c0ff" }}>$329 · bag</div>
         </div>
       </div>
     </motion.div>
@@ -282,12 +278,8 @@ const HeroVisual = () => (
     {/* ── Floating chip: rating ── */}
     <motion.div
       initial={{ opacity: 0, x: -16 }}
-      animate={{ opacity: 1, x: 0, y: [0, 5, 0] }}
-      transition={{
-        opacity: { duration: 0.5, delay: 0.9 },
-        x: { duration: 0.5, delay: 0.9 },
-        y: { duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 1.2 },
-      }}
+      animate={{ opacity: 1, x: 0 }}
+      transition={{ duration: 0.5, delay: 0.9 }}
       className="absolute -bottom-3 -left-2 px-3.5 py-2.5 rounded-xl"
       style={{
         background: "rgba(8,18,36,0.92)",
