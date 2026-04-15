@@ -8,7 +8,6 @@ import Layout from "@/components/Layout";
 import SectionHeading from "@/components/SectionHeading";
 import AppCard from "@/components/AppCard";
 import { apps } from "@/data/apps";
-import heroImg from "@/assets/hero-dashboard (2).jpg";
 import shopifyLogo from "@/assets/shopify_logo_black.png";
 import wixLogo from "@/assets/wix logo.png";
 import wordpressLogo from "@/assets/Wordpress_logo-removebg-preview.png";
@@ -100,6 +99,218 @@ const inView = (delay = 0) => ({
   viewport: { once: true },
   transition: { duration: 0.55, delay, ease: [0.25, 0.46, 0.45, 0.94] },
 });
+
+/* ─── Hero Visual — glassmorphic dashboard mockup ────────────────── */
+
+const appBadges = [
+  { letter: "S", label: "Spreadr" },
+  { letter: "W", label: "Watchlyst" },
+  { letter: "B", label: "Bolt" },
+  { letter: "P", label: "Pro Bulk Editor" },
+];
+
+const sparkPoints = "M0,52 C20,48 38,38 62,30 C86,22 102,32 128,22 C154,12 170,18 196,10 L220,6";
+
+const HeroVisual = () => (
+  <div className="relative px-6 py-8" aria-hidden="true">
+    {/* Ambient glow behind the card */}
+    <div
+      className="absolute inset-0 pointer-events-none"
+      style={{
+        background:
+          "radial-gradient(ellipse 80% 70% at 50% 50%, rgba(0,192,255,0.14) 0%, transparent 70%)",
+      }}
+    />
+
+    {/* ── Main dashboard card ── */}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: [20, 0, -6, 0] }}
+      transition={{ duration: 3, ease: "easeInOut", times: [0, 0.4, 0.7, 1], repeat: Infinity, repeatType: "reverse" }}
+      className="relative rounded-2xl overflow-hidden"
+      style={{
+        background: "rgba(255,255,255,0.04)",
+        border: "1px solid rgba(0,192,255,0.2)",
+        backdropFilter: "blur(16px)",
+      }}
+    >
+      {/* Window chrome */}
+      <div
+        className="flex items-center gap-1.5 px-4 py-3 border-b"
+        style={{ borderColor: "rgba(255,255,255,0.07)", background: "rgba(0,0,0,0.2)" }}
+      >
+        <div className="w-2.5 h-2.5 rounded-full" style={{ background: "rgba(255,95,87,0.7)" }} />
+        <div className="w-2.5 h-2.5 rounded-full" style={{ background: "rgba(255,189,46,0.7)" }} />
+        <div className="w-2.5 h-2.5 rounded-full" style={{ background: "rgba(40,201,64,0.7)" }} />
+        <span
+          className="ml-3 text-xs font-body"
+          style={{ color: "rgba(255,255,255,0.3)" }}
+        >
+          Store Analytics · Thalia Dashboard
+        </span>
+        {/* Live indicator */}
+        <div className="ml-auto flex items-center gap-1.5">
+          <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "#00c0ff" }} />
+          <span className="text-xs font-body" style={{ color: "#00c0ff" }}>Live</span>
+        </div>
+      </div>
+
+      {/* Metric row */}
+      <div className="grid grid-cols-2 gap-px p-5 pb-4" style={{ gap: 0 }}>
+        <div className="pr-5">
+          <div className="text-xs font-body mb-1" style={{ color: "rgba(255,255,255,0.38)" }}>
+            Monthly Revenue
+          </div>
+          <div className="font-heading font-extrabold text-white mb-1" style={{ fontSize: 26, letterSpacing: "-0.03em" }}>
+            $248,500
+          </div>
+          <div className="text-xs font-body font-semibold" style={{ color: "#00c0ff" }}>
+            ↑ 24% vs last month
+          </div>
+        </div>
+        <div
+          className="pl-5"
+          style={{ borderLeft: "1px solid rgba(255,255,255,0.07)" }}
+        >
+          <div className="text-xs font-body mb-1" style={{ color: "rgba(255,255,255,0.38)" }}>
+            Orders Processed
+          </div>
+          <div className="font-heading font-extrabold text-white mb-1" style={{ fontSize: 26, letterSpacing: "-0.03em" }}>
+            12,470
+          </div>
+          <div className="text-xs font-body font-semibold" style={{ color: "#00c0ff" }}>
+            ↑ 18% vs last month
+          </div>
+        </div>
+      </div>
+
+      {/* Sparkline chart */}
+      <div className="px-5 pb-4">
+        <svg
+          viewBox="0 0 220 60"
+          className="w-full"
+          style={{ height: 56 }}
+          preserveAspectRatio="none"
+          aria-hidden="true"
+        >
+          {/* Subtle grid */}
+          {[20, 40].map(y => (
+            <line key={y} x1="0" y1={y} x2="220" y2={y}
+              stroke="rgba(255,255,255,0.05)" strokeWidth="1" />
+          ))}
+          {/* Fill under line */}
+          <path
+            d={`${sparkPoints} L220,60 L0,60 Z`}
+            fill="url(#sparkFill)"
+          />
+          {/* Gradient def */}
+          <defs>
+            <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="#00c0ff" stopOpacity="0.18" />
+              <stop offset="100%" stopColor="#00c0ff" stopOpacity="0" />
+            </linearGradient>
+          </defs>
+          {/* Main line */}
+          <path
+            d={sparkPoints}
+            fill="none"
+            stroke="#00c0ff"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          {/* End dot */}
+          <circle cx="220" cy="6" r="3.5" fill="#00c0ff" />
+          <circle cx="220" cy="6" r="6" fill="rgba(0,192,255,0.2)" />
+        </svg>
+      </div>
+
+      {/* Divider */}
+      <div style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }} />
+
+      {/* Active apps row */}
+      <div className="px-5 py-4 flex items-center justify-between">
+        <span className="text-xs font-body" style={{ color: "rgba(255,255,255,0.35)" }}>
+          Active Apps
+        </span>
+        <div className="flex items-center gap-2">
+          {appBadges.map(({ letter, label }) => (
+            <div
+              key={letter}
+              title={label}
+              className="w-7 h-7 rounded-lg flex items-center justify-center text-xs font-heading font-bold text-white"
+              style={{
+                background: "rgba(0,192,255,0.1)",
+                border: "1px solid rgba(0,192,255,0.25)",
+              }}
+            >
+              {letter}
+            </div>
+          ))}
+          <span className="text-xs font-body" style={{ color: "rgba(255,255,255,0.3)" }}>
+            +10
+          </span>
+        </div>
+      </div>
+    </motion.div>
+
+    {/* ── Floating chip: new sale ── */}
+    <motion.div
+      initial={{ opacity: 0, x: 16 }}
+      animate={{ opacity: 1, x: 0, y: [0, -5, 0] }}
+      transition={{
+        opacity: { duration: 0.5, delay: 0.6 },
+        x: { duration: 0.5, delay: 0.6 },
+        y: { duration: 3, repeat: Infinity, ease: "easeInOut", delay: 0.8 },
+      }}
+      className="absolute -top-3 -right-2 px-3.5 py-2.5 rounded-xl"
+      style={{
+        background: "rgba(8,18,36,0.92)",
+        border: "1px solid rgba(0,192,255,0.22)",
+        backdropFilter: "blur(12px)",
+      }}
+    >
+      <div className="flex items-center gap-2.5">
+        <div className="w-2 h-2 rounded-full animate-pulse" style={{ background: "#4ade80" }} />
+        <div>
+          <div className="text-xs font-heading font-bold text-white leading-none mb-0.5">New Sale</div>
+          <div className="text-xs font-body" style={{ color: "#00c0ff" }}>$329 · Spreadr</div>
+        </div>
+      </div>
+    </motion.div>
+
+    {/* ── Floating chip: rating ── */}
+    <motion.div
+      initial={{ opacity: 0, x: -16 }}
+      animate={{ opacity: 1, x: 0, y: [0, 5, 0] }}
+      transition={{
+        opacity: { duration: 0.5, delay: 0.9 },
+        x: { duration: 0.5, delay: 0.9 },
+        y: { duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 1.2 },
+      }}
+      className="absolute -bottom-3 -left-2 px-3.5 py-2.5 rounded-xl"
+      style={{
+        background: "rgba(8,18,36,0.92)",
+        border: "1px solid rgba(0,192,255,0.22)",
+        backdropFilter: "blur(12px)",
+      }}
+    >
+      <div className="flex items-center gap-2.5">
+        <div className="flex gap-0.5">
+          {[1,2,3,4,5].map(i => (
+            <svg key={i} className="w-3 h-3 fill-amber-400" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+          ))}
+        </div>
+        <div>
+          <div className="text-xs font-heading font-bold text-white leading-none mb-0.5">App Store</div>
+          <div className="text-xs font-body" style={{ color: "rgba(255,255,255,0.45)" }}>5.0 avg rating</div>
+        </div>
+      </div>
+    </motion.div>
+  </div>
+);
 
 /* ─── Component ───────────────────────────────────────────────────── */
 
@@ -228,29 +439,14 @@ const Index = () => {
               </motion.div>
             </div>
 
-            {/* Right — hero image */}
+            {/* Right — product UI mockup */}
             <motion.div
               initial={{ opacity: 0, x: 28 }}
               animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.75, delay: 0.15 }}
-              className="relative hidden lg:block"
+              transition={{ duration: 0.75, delay: 0.2 }}
+              className="hidden lg:block"
             >
-              {/* Glow halo */}
-              <div
-                className="absolute -inset-8 rounded-3xl pointer-events-none"
-                style={{
-                  background:
-                    "radial-gradient(ellipse at center, rgba(0,192,255,0.18) 0%, transparent 68%)",
-                }}
-              />
-              <img
-                src={heroImg}
-                alt="Thalia — ecommerce software dashboard"
-                className="relative w-full rounded-2xl object-cover"
-                style={{ border: "1px solid rgba(0,192,255,0.18)" }}
-                width={1200}
-                height={800}
-              />
+              <HeroVisual />
             </motion.div>
           </div>
         </div>
