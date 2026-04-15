@@ -72,6 +72,28 @@ const Careers = () => {
   const [dept, setDept] = useState<string>("All");
   const filtered = dept === "All" ? openings : openings.filter((j) => j.dept === dept);
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://thaliatechnologies.com/" },
+      { "@type": "ListItem", position: 2, name: "Careers", item: "https://thaliatechnologies.com/careers" },
+    ],
+  };
+
+  const careersItemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Open Positions at Thalia Technologies",
+    numberOfItems: openings.length,
+    itemListElement: openings.map((job, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: job.title,
+      url: JOB_LISTINGS_URL,
+    })),
+  };
+
   return (
     <Layout>
       <Seo
@@ -79,6 +101,7 @@ const Careers = () => {
         description="Explore career opportunities at Thalia Technologies and help build ecommerce software used by businesses worldwide."
         keywords="Thalia careers, ecommerce jobs, SaaS jobs, software engineer jobs, product design jobs, remote jobs, tech careers India"
         path="/careers"
+        structuredData={[breadcrumbSchema, careersItemListSchema]}
       />
 
       {/* ═══════════════════════════════════════════════════════════════

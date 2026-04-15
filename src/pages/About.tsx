@@ -45,6 +45,35 @@ const inView = (delay = 0) => ({
 });
 
 const About = () => {
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://thaliatechnologies.com/" },
+      { "@type": "ListItem", position: 2, name: "About", item: "https://thaliatechnologies.com/about" },
+    ],
+  };
+
+  const aboutPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    name: "About Thalia Technologies",
+    url: "https://thaliatechnologies.com/about",
+    description:
+      "Learn about Thalia Technologies, our mission to solve real ecommerce problems, and the team behind our merchant-focused SaaS products.",
+    mainEntity: {
+      "@type": "Organization",
+      name: "Thalia Technologies",
+      legalName: "Thalia Technologies Private Limited",
+      url: "https://thaliatechnologies.com",
+      logo: "https://thaliatechnologies.com/thalia-logo.jpg",
+      description:
+        "Thalia Technologies builds focused SaaS apps for Shopify, Amazon, and BigCommerce merchants — trusted by 100,000+ businesses worldwide.",
+      foundingDate: "2015",
+      numberOfEmployees: { "@type": "QuantitativeValue", minValue: 10, maxValue: 50 },
+    },
+  };
+
   return (
     <Layout>
       <Seo
@@ -52,6 +81,7 @@ const About = () => {
         description="Learn about Thalia Technologies, our mission to solve real ecommerce problems, and the team behind our merchant-focused software products."
         keywords="about Thalia Technologies, Thalia team, ecommerce software company, merchant-first products, SaaS product company, ecommerce mission"
         path="/about"
+        structuredData={[aboutPageSchema, breadcrumbSchema]}
       />
 
       {/* ═══════════════════════════════════════════════════════════════

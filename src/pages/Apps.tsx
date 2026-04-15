@@ -45,6 +45,38 @@ const Apps = () => {
     return liveApps.filter((a) => active.match(a.platform));
   }, [filter, liveApps]);
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://thaliatechnologies.com/" },
+      { "@type": "ListItem", position: 2, name: "Apps", item: "https://thaliatechnologies.com/apps" },
+    ],
+  };
+
+  const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Thalia Technologies — Ecommerce Apps",
+    description: "Complete catalog of Thalia Technologies SaaS apps for Shopify, Amazon, and BigCommerce merchants.",
+    numberOfItems: liveApps.length,
+    itemListElement: liveApps.map((a, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      url: `https://thaliatechnologies.com/apps/${a.slug}`,
+      name: a.name,
+    })),
+  };
+
+  const collectionPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Thalia Apps | Ecommerce Tools for Shopify, Amazon, and More",
+    url: "https://thaliatechnologies.com/apps",
+    isPartOf: { "@type": "WebSite", url: "https://thaliatechnologies.com" },
+    about: "Ecommerce SaaS apps for Shopify, Amazon, and BigCommerce merchants.",
+  };
+
   return (
     <Layout>
       <Seo
@@ -52,6 +84,7 @@ const Apps = () => {
         description="Explore Thalia's full suite of ecommerce apps for pricing, catalog management, notifications, sync, badges, and merchant growth."
         keywords="Thalia apps, ecommerce tools, Shopify app collection, Amazon sync app, bulk editor app, product badges app, pricing app, merchant productivity"
         path="/apps"
+        structuredData={[collectionPageSchema, breadcrumbSchema, itemListSchema]}
       />
 
       {/* ═══════════════════════════════════════════════════════════════

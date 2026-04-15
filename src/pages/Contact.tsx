@@ -124,6 +124,44 @@ const Contact = () => {
     }
   };
 
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://thaliatechnologies.com/" },
+      { "@type": "ListItem", position: 2, name: "Contact", item: "https://thaliatechnologies.com/contact" },
+    ],
+  };
+
+  const contactPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    name: "Contact Thalia Technologies",
+    url: "https://thaliatechnologies.com/contact",
+    description: "Get in touch with Thalia Technologies for product support, questions, and business inquiries.",
+    mainEntity: {
+      "@type": "Organization",
+      name: "Thalia Technologies",
+      url: "https://thaliatechnologies.com",
+      contactPoint: [
+        {
+          "@type": "ContactPoint",
+          contactType: "customer support",
+          email: "supportteam@thaliatechnologies.com",
+          availableLanguage: ["English"],
+          areaServed: "Worldwide",
+        },
+        {
+          "@type": "ContactPoint",
+          contactType: "sales",
+          email: "info@thaliatechnologies.com",
+          availableLanguage: ["English"],
+          areaServed: "Worldwide",
+        },
+      ],
+    },
+  };
+
   return (
     <Layout>
       <Seo
@@ -131,6 +169,7 @@ const Contact = () => {
         description="Get in touch with Thalia Technologies for product support, questions, and business inquiries."
         keywords="contact Thalia Technologies, app support, ecommerce software support, merchant help, product inquiries, Thalia contact"
         path="/contact"
+        structuredData={[contactPageSchema, breadcrumbSchema]}
       />
 
       {/* ═══════════════════════════════════════════════════════════════

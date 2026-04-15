@@ -55,21 +55,81 @@ const AppDetail = () => {
             : app.slug === "csvbox"
               ? "CSV Box"
         : app.name;
-  const appStructuredData = {
+  // Parse rating like "4.9★" → 4.9
+  const ratingStat = app.stats.find((s) => /★|star|rating/i.test(s.label) || /★/.test(s.value));
+  const ratingValue = ratingStat ? parseFloat(ratingStat.value.replace(/[^0-9.]/g, "")) : undefined;
+  // Parse installs like "50K+" → 50000
+  const installStat = app.stats.find((s) => /install|user|merchant/i.test(s.label));
+  const parseCount = (v?: string): number | undefined => {
+    if (!v) return undefined;
+    const match = v.match(/([0-9.]+)\s*([KMB]?)/i);
+    if (!match) return undefined;
+    const n = parseFloat(match[1]);
+    const unit = match[2].toUpperCase();
+    const mult = unit === "K" ? 1_000 : unit === "M" ? 1_000_000 : unit === "B" ? 1_000_000_000 : 1;
+    return Math.round(n * mult);
+  };
+  const installCount = parseCount(installStat?.value);
+  const reviewCountFromStats = app.reviews.length;
+
+  const appStructuredData: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     name: appPageName,
     applicationCategory: "BusinessApplication",
+    applicationSubCategory: `${app.platform} App`,
     operatingSystem: "Web",
     description: app.description,
-    offers: app.plans.length
-      ? app.plans.map((plan) => ({
-          "@type": "Offer",
-          name: plan.name,
-          price: plan.price.replace(/[^0-9.]/g, "") || "0",
-          priceCurrency: "USD",
-        }))
-      : undefined,
+    url: `https://thaliatechnologies.com/apps/${app.slug}`,
+    ...(appImage ? { image: appImage.startsWith("http") ? appImage : `https://thaliatechnologies.com${appImage}` } : {}),
+    brand: {
+      "@type": "Brand",
+      name: "Thalia Technologies",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Thalia Technologies",
+      url: "https://thaliatechnologies.com",
+    },
+    ...(app.plans.length
+      ? {
+          offers: app.plans.map((plan) => ({
+            "@type": "Offer",
+            name: plan.name,
+            price: plan.price.replace(/[^0-9.]/g, "") || "0",
+            priceCurrency: "USD",
+            availability: "https://schema.org/InStock",
+            url: app.externalUrl !== "#" ? app.externalUrl : `https://thaliatechnologies.com/apps/${app.slug}`,
+          })),
+        }
+      : {}),
+    ...(ratingValue && !Number.isNaN(ratingValue)
+      ? {
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: ratingValue.toFixed(1),
+            bestRating: "5",
+            worstRating: "1",
+            ratingCount: installCount ?? Math.max(reviewCountFromStats, 10),
+            reviewCount: reviewCountFromStats || undefined,
+          },
+        }
+      : {}),
+    ...(app.reviews.length
+      ? {
+          review: app.reviews.map((r) => ({
+            "@type": "Review",
+            reviewRating: {
+              "@type": "Rating",
+              ratingValue: r.rating,
+              bestRating: "5",
+            },
+            author: { "@type": "Person", name: r.author },
+            reviewBody: r.quote,
+            datePublished: r.date,
+          })),
+        }
+      : {}),
   };
   const breadcrumbStructuredData = {
     "@context": "https://schema.org",

@@ -307,6 +307,22 @@ const HeroVisual = () => (
 /* ─── Component ───────────────────────────────────────────────────── */
 
 const Index = () => {
+  const featuredApps = apps.filter((a) => !a.comingSoon).slice(0, 8);
+
+  const featuredItemList = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Featured Thalia Apps",
+    description: "A selection of our most popular SaaS apps for Shopify, Amazon, and BigCommerce merchants.",
+    numberOfItems: featuredApps.length,
+    itemListElement: featuredApps.map((a, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      url: `https://thaliatechnologies.com/apps/${a.slug}`,
+      name: a.name,
+    })),
+  };
+
   return (
     <Layout>
       <Seo
@@ -314,6 +330,7 @@ const Index = () => {
         description="Thalia builds focused ecommerce apps for Shopify, Amazon, and BigCommerce to help merchants automate workflows, increase revenue, and grow faster."
         keywords="Thalia Technologies, ecommerce apps, Shopify apps, Amazon apps, BigCommerce apps, ecommerce automation, ecommerce growth tools, merchant software"
         path="/"
+        structuredData={[featuredItemList]}
       />
 
       {/* ═══════════════════════════════════════════════════════════════

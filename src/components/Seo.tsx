@@ -24,7 +24,9 @@ const Seo = ({
   structuredData,
 }: SeoProps) => {
   const canonical = `${SITE_URL}${path}`;
-  const robots = noindex ? "noindex, nofollow" : "index, follow";
+  const robots = noindex
+    ? "noindex, nofollow"
+    : "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1";
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
@@ -65,15 +67,18 @@ const Seo = ({
 
       <meta property="og:type" content="website" />
       <meta property="og:site_name" content={SITE_NAME} />
+      <meta property="og:locale" content="en_US" />
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:url" content={canonical} />
       <meta property="og:image" content={image} />
+      <meta property="og:image:alt" content={title} />
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
+      <meta name="twitter:image:alt" content={title} />
       <script type="application/ld+json">{JSON.stringify(allSchemas)}</script>
     </Helmet>
   );
