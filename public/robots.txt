@@ -1,27 +1,8 @@
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
-User-agent: GPTBot
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: anthropic-ai
-Allow: /
+# Thalia Technologies — robots.txt
+# Allow all well-behaved crawlers (search engines + AI indexers).
 
 User-agent: *
 Allow: /
+Disallow: /404
+
 Sitemap: https://thaliatechnologies.com/sitemap.xml

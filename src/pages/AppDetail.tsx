@@ -1,10 +1,13 @@
 import { useParams, Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useState } from "react";
+import { ArrowRight, Check, Star } from "lucide-react";
 import Layout from "@/components/Layout";
 import AppCard from "@/components/AppCard";
 import Seo from "@/components/Seo";
 import type { AppData } from "@/data/apps";
 import { apps, getPlatformColor, getPlatformLabel, getAppImage, getAppLogo } from "@/data/apps";
+import NotFound from "./NotFound";
 
 const getPrimaryCtaLabel = (app: AppData) => {
   if (app.platform === "BigCommerce") return "Install on BigCommerce";
@@ -17,9 +20,13 @@ const getWebsiteUrl = (app: AppData): string | undefined => {
   if (app.slug === "csvbox") return "https://csvbox.io/";
   return undefined;
 };
-import NotFound from "./NotFound";
-import { useState } from "react";
-import { ArrowRight, Check, Star } from "lucide-react";
+
+const inView = (delay = 0) => ({
+  initial: { opacity: 0, y: 22 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, margin: "-60px" },
+  transition: { duration: 0.55, delay, ease: [0.25, 0.46, 0.45, 0.94] as const },
+});
 
 const AppDetail = () => {
   const { slug } = useParams();
@@ -48,21 +55,81 @@ const AppDetail = () => {
             : app.slug === "csvbox"
               ? "CSV Box"
         : app.name;
-  const appStructuredData = {
+  // Parse rating like "4.9★" → 4.9
+  const ratingStat = app.stats.find((s) => /★|star|rating/i.test(s.label) || /★/.test(s.value));
+  const ratingValue = ratingStat ? parseFloat(ratingStat.value.replace(/[^0-9.]/g, "")) : undefined;
+  // Parse installs like "50K+" → 50000
+  const installStat = app.stats.find((s) => /install|user|merchant/i.test(s.label));
+  const parseCount = (v?: string): number | undefined => {
+    if (!v) return undefined;
+    const match = v.match(/([0-9.]+)\s*([KMB]?)/i);
+    if (!match) return undefined;
+    const n = parseFloat(match[1]);
+    const unit = match[2].toUpperCase();
+    const mult = unit === "K" ? 1_000 : unit === "M" ? 1_000_000 : unit === "B" ? 1_000_000_000 : 1;
+    return Math.round(n * mult);
+  };
+  const installCount = parseCount(installStat?.value);
+  const reviewCountFromStats = app.reviews.length;
+
+  const appStructuredData: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     name: appPageName,
     applicationCategory: "BusinessApplication",
+    applicationSubCategory: `${app.platform} App`,
     operatingSystem: "Web",
     description: app.description,
-    offers: app.plans.length
-      ? app.plans.map((plan) => ({
-          "@type": "Offer",
-          name: plan.name,
-          price: plan.price.replace(/[^0-9.]/g, "") || "0",
-          priceCurrency: "USD",
-        }))
-      : undefined,
+    url: `https://thaliatechnologies.com/apps/${app.slug}`,
+    ...(appImage ? { image: appImage.startsWith("http") ? appImage : `https://thaliatechnologies.com${appImage}` } : {}),
+    brand: {
+      "@type": "Brand",
+      name: "Thalia Technologies",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Thalia Technologies",
+      url: "https://thaliatechnologies.com",
+    },
+    ...(app.plans.length
+      ? {
+          offers: app.plans.map((plan) => ({
+            "@type": "Offer",
+            name: plan.name,
+            price: plan.price.replace(/[^0-9.]/g, "") || "0",
+            priceCurrency: "USD",
+            availability: "https://schema.org/InStock",
+            url: app.externalUrl !== "#" ? app.externalUrl : `https://thaliatechnologies.com/apps/${app.slug}`,
+          })),
+        }
+      : {}),
+    ...(ratingValue && !Number.isNaN(ratingValue)
+      ? {
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: ratingValue.toFixed(1),
+            bestRating: "5",
+            worstRating: "1",
+            ratingCount: installCount ?? Math.max(reviewCountFromStats, 10),
+            reviewCount: reviewCountFromStats || undefined,
+          },
+        }
+      : {}),
+    ...(app.reviews.length
+      ? {
+          review: app.reviews.map((r) => ({
+            "@type": "Review",
+            reviewRating: {
+              "@type": "Rating",
+              ratingValue: r.rating,
+              bestRating: "5",
+            },
+            author: { "@type": "Person", name: r.author },
+            reviewBody: r.quote,
+            datePublished: r.date,
+          })),
+        }
+      : {}),
   };
   const breadcrumbStructuredData = {
     "@context": "https://schema.org",
@@ -98,111 +165,189 @@ const AppDetail = () => {
         path={`/apps/${app.slug}`}
         structuredData={[appStructuredData, breadcrumbStructuredData]}
       />
-      {/* Breadcrumb */}
-      <div className="section-container pt-6">
-        <nav className="text-sm font-body text-muted-foreground">
-          <Link to="/" className="hover:text-primary transition-colors">Home</Link>
-          <span className="mx-2">›</span>
-          <Link to="/apps" className="hover:text-primary transition-colors">Apps</Link>
-          <span className="mx-2">›</span>
-          <span className="text-foreground">{appPageName}</span>
-        </nav>
-      </div>
 
-      {/* Hero */}
-      <section className="relative overflow-hidden" style={{ paddingTop: 60, paddingBottom: 80 }}>
-        <div className="absolute inset-0 pointer-events-none" style={{
-          background: "radial-gradient(ellipse 60% 50% at 50% 0%, hsla(231,91%,64%,0.05) 0%, transparent 70%)"
-        }} />
+      {/* ═══════════════════════════════════════════════════════════════
+          HERO — dark navy, 2-column layout, app image/logo
+      ════════════════════════════════════════════════════════════════ */}
+      <section
+        className="relative overflow-hidden hero-dot-grid"
+        style={{ background: "hsl(var(--hero-bg))", paddingTop: 96, paddingBottom: 96 }}
+      >
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(ellipse 70% 55% at 50% -5%, rgba(0,192,255,0.13) 0%, transparent 65%)",
+          }}
+        />
+
         <div className="section-container relative">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-              <span className="inline-block text-xs font-bold font-body px-3 py-1 rounded-lg mb-4"
-                style={{ backgroundColor: `${platformColor}14`, color: platformColor }}>
+          <div className="max-w-3xl mx-auto">
+            {/* Text & CTA — Centered */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-center"
+            >
+              {/* Platform badge */}
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 text-xs font-semibold font-body select-none"
+                style={{
+                  backgroundColor: `${platformColor}15`,
+                  color: platformColor,
+                  border: `1px solid ${platformColor}40`,
+                }}
+              >
+                <span className="w-1.5 h-1.5 rounded-full" style={{ background: platformColor }} />
                 {getPlatformLabel(app.platform)}
-              </span>
-              <h1 className="font-heading text-h1 font-extrabold text-foreground mb-4">{appPageName}</h1>
-              <p className="font-body text-lg leading-relaxed mb-4 text-muted-foreground">{app.description}</p>
-              <p className="font-body text-sm leading-relaxed mb-8 text-muted-foreground">{app.longDescription}</p>
+              </motion.div>
 
+              {/* Headline */}
+              <motion.h1
+                initial={{ opacity: 0, y: 28 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.65, delay: 0.08 }}
+                className="font-heading font-extrabold text-white mb-6"
+                style={{
+                  fontSize: "clamp(36px, 5vw, 56px)",
+                  lineHeight: 1.08,
+                  letterSpacing: "-0.03em",
+                }}
+              >
+                {appPageName}
+              </motion.h1>
+
+              {/* Description */}
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.16 }}
+                className="text-lg leading-relaxed mb-4 font-body mx-auto max-w-2xl"
+                style={{ color: "rgba(255,255,255,0.68)" }}
+              >
+                {app.description}
+              </motion.p>
+
+              {/* Long description */}
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="text-base leading-relaxed mb-8 font-body mx-auto max-w-2xl"
+                style={{ color: "rgba(255,255,255,0.55)" }}
+              >
+                {app.longDescription}
+              </motion.p>
+
+              {/* CTA & Stats */}
               {app.comingSoon ? (
-                <div className="flex gap-3">
-                  <input type="email" value={notifyEmail} onChange={e => setNotifyEmail(e.target.value)}
-                    placeholder="Enter your email" className="flex-1 px-5 py-3 rounded-xl border border-border font-body text-sm" />
-                  <button className="btn-primary">Notify Me</button>
-                </div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.24 }}
+                  className="flex gap-3"
+                >
+                  <input
+                    type="email"
+                    value={notifyEmail}
+                    onChange={(e) => setNotifyEmail(e.target.value)}
+                    placeholder="Enter your email"
+                    className="flex-1 px-5 h-11 rounded-lg border border-white/20 font-body text-sm bg-white/10 text-white placeholder:text-white/40"
+                  />
+                  <button className="btn-primary h-11 px-6">Notify Me</button>
+                </motion.div>
               ) : (
                 <>
-                  <div className="flex flex-col sm:flex-row gap-3 mb-6">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.24 }}
+                    className="flex flex-col sm:flex-row gap-3 mb-6 justify-center"
+                  >
                     {app.externalUrl !== "#" && (
-                      <a href={app.externalUrl} target="_blank" rel="noopener noreferrer" className={`${primaryCtaClass} text-base px-8 py-4`}>
-                        {primaryCtaLabel} <ArrowRight className="ml-2 h-4 w-4 inline" />
+                      <a
+                        href={app.externalUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={`${primaryCtaClass} text-base px-8 h-12 inline-flex items-center justify-center gap-2`}
+                      >
+                        {primaryCtaLabel}
+                        <ArrowRight className="h-4 w-4" />
                       </a>
                     )}
                     {showWebsiteSecondary ? (
-                      <a href={websiteUrl} target="_blank" rel="noopener noreferrer" className="btn-outline text-base px-8 py-4">
+                      <a
+                        href={websiteUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="btn-outline text-base px-8 h-12 inline-flex items-center justify-center"
+                      >
                         View website
                       </a>
                     ) : (
                       app.slug !== "csvbox" && (
-                        <Link to="/contact" className="btn-outline text-base px-8 py-4">Contact Sales</Link>
+                        <Link
+                          to="/contact"
+                          className="btn-outline text-base px-8 h-12 inline-flex items-center justify-center"
+                        >
+                          Contact Sales
+                        </Link>
                       )
                     )}
-                  </div>
-                  <div className="flex items-center gap-4 text-sm font-body text-muted-foreground">
+                  </motion.div>
+
+                  {/* Stats */}
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.6, delay: 0.28 }}
+                    className="flex items-center gap-4 text-sm font-body justify-center"
+                    style={{ color: "rgba(255,255,255,0.55)" }}
+                  >
                     <span className="flex items-center gap-1">
                       <Star className="h-4 w-4 text-yellow-400 fill-yellow-400" />
                       {app.stats[1]?.value || "4.8★"} rating
                     </span>
                     <span>·</span>
                     <span>{app.stats[0]?.value || "10,000+"} installs</span>
-                  </div>
+                  </motion.div>
                 </>
               )}
             </motion.div>
 
-            <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ delay: 0.2 }}
-              className="flex items-center justify-center lg:justify-end">
-              {appImage ? (
-                <div className="w-full max-w-xl overflow-hidden rounded-2xl border border-border/50 bg-muted/30 shadow-xl ring-1 ring-black/[0.04] dark:ring-white/10">
-                  <img
-                    src={appImage}
-                    alt={`${appPageName} — ${app.tagline}`}
-                    className="w-full h-auto max-h-[min(28rem,72vh)] object-contain object-top"
-                    loading="lazy"
-                    width={960}
-                    height={640}
-                  />
-                </div>
-              ) : appLogo ? (
-                <img src={appLogo} alt={`${appPageName} logo`} className="w-full max-w-md max-h-80 object-contain rounded-2xl" loading="lazy" width={512} height={320} />
-              ) : (
-                <div className="w-full max-w-md aspect-square rounded-3xl flex items-center justify-center"
-                  style={{ background: `${app.color}10`, boxShadow: `0 20px 60px ${app.color}20` }}>
-                  <span className="text-8xl">{app.icon}</span>
-                </div>
-              )}
-            </motion.div>
           </div>
         </div>
       </section>
 
       {!app.comingSoon && (
         <>
-          {/* Benefits */}
+          {/* ═══════════════════════════════════════════════════════════════
+              BENEFITS — section-alt, 3-column grid with checkmarks
+          ════════════════════════════════════════════════════════════════ */}
           {app.benefits.length > 0 && (
-            <section className="section-alt" style={{ paddingTop: 96, paddingBottom: 96 }}>
+            <section style={{ background: "hsl(var(--section-alt))", paddingTop: 96, paddingBottom: 96 }}>
               <div className="section-container">
                 <div className="text-center mb-12">
-                  <span className="inline-block font-heading font-bold text-xs uppercase tracking-[0.12em] mb-3 text-primary">WHY CHOOSE {appPageName.toUpperCase()}</span>
-                  <h2 className="font-heading font-extrabold text-h2 text-foreground">Key Benefits</h2>
+                  <span className="inline-block font-heading font-bold text-xs uppercase tracking-[0.12em] mb-3 text-primary">
+                    WHY CHOOSE {appPageName.toUpperCase()}
+                  </span>
+                  <h2 className="font-heading font-extrabold text-foreground" style={{ fontSize: 40, letterSpacing: "-0.02em", marginBottom: 0 }}>
+                    Key Benefits
+                  </h2>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 max-w-4xl mx-auto">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
                   {app.benefits.map((b, i) => (
-                    <motion.div key={i} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }}
-                      className="flex gap-3 items-start">
+                    <motion.div
+                      key={i}
+                      {...inView(Math.min(i * 0.06, 0.3))}
+                      className="flex gap-3 items-start"
+                    >
                       <div className="w-6 h-6 rounded-full bg-primary flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <Check className="h-3.5 w-3.5 text-primary-foreground" />
+                        <Check className="h-3.5 w-3.5 text-white" />
                       </div>
                       <p className="text-sm font-body text-foreground leading-relaxed">{b}</p>
                     </motion.div>
@@ -212,19 +357,32 @@ const AppDetail = () => {
             </section>
           )}
 
-          {/* Features Detail */}
+          {/* ═══════════════════════════════════════════════════════════════
+              FEATURES DETAIL — white bg, 3-col cards with cyan borders
+          ════════════════════════════════════════════════════════════════ */}
           {app.featureDetails.length > 0 && (
-            <section style={{ paddingTop: 96, paddingBottom: 96 }}>
+            <section style={{ background: "white", paddingTop: 96, paddingBottom: 96 }}>
               <div className="section-container">
                 <div className="text-center mb-12">
-                  <span className="inline-block font-heading font-bold text-xs uppercase tracking-[0.12em] mb-3 text-primary">KEY FEATURES</span>
-                  <h2 className="font-heading font-extrabold text-h2 text-foreground">Everything You Need</h2>
+                  <span className="inline-block font-heading font-bold text-xs uppercase tracking-[0.12em] mb-3 text-primary">
+                    KEY FEATURES
+                  </span>
+                  <h2 className="font-heading font-extrabold text-foreground" style={{ fontSize: 40, letterSpacing: "-0.02em", marginBottom: 0 }}>
+                    Everything You Need
+                  </h2>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {app.featureDetails.map((f, i) => (
-                    <motion.div key={f.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.06 }}
-                      className="card-elevated p-6">
-                      <div className="w-10 h-10 rounded-xl flex items-center justify-center text-lg mb-3" style={{ backgroundColor: `${app.color}15` }}>
+                    <motion.div
+                      key={f.title}
+                      {...inView(Math.min(i * 0.06, 0.3))}
+                      className="card-elevated p-6"
+                      style={{ borderTop: "2px solid rgba(0,192,255,0.22)" }}
+                    >
+                      <div
+                        className="w-10 h-10 rounded-xl flex items-center justify-center mb-3"
+                        style={{ backgroundColor: `${app.color}15` }}
+                      >
                         <Check className="h-5 w-5" style={{ color: app.color }} />
                       </div>
                       <h3 className="font-heading font-bold text-base mb-2 text-foreground">{f.title}</h3>
@@ -236,80 +394,116 @@ const AppDetail = () => {
             </section>
           )}
 
-          {/* How It Works */}
+          {/* ═══════════════════════════════════════════════════════════════
+              HOW IT WORKS — section-alt, 3-step centered with arrows
+          ════════════════════════════════════════════════════════════════ */}
           {app.howItWorks.length > 0 && (
-            <section className="section-alt" style={{ paddingTop: 96, paddingBottom: 96 }}>
+            <section style={{ background: "hsl(var(--section-alt))", paddingTop: 96, paddingBottom: 96 }}>
               <div className="section-container">
                 <div className="text-center mb-12">
-                  <span className="inline-block font-heading font-bold text-xs uppercase tracking-[0.12em] mb-3 text-primary">HOW IT WORKS</span>
-                  <h2 className="font-heading font-extrabold text-h2 text-foreground">Get Started in Minutes</h2>
+                  <span className="inline-block font-heading font-bold text-xs uppercase tracking-[0.12em] mb-3 text-primary">
+                    HOW IT WORKS
+                  </span>
+                  <h2 className="font-heading font-extrabold text-foreground" style={{ fontSize: 40, letterSpacing: "-0.02em", marginBottom: 0 }}>
+                    Get Started in Minutes
+                  </h2>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
                   {app.howItWorks.map((s, i) => (
-                    <div key={s.step} className="text-center relative">
-                      <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 font-heading font-extrabold text-xl bg-primary text-primary-foreground">
+                    <motion.div key={s.step} {...inView(i * 0.1)} className="text-center relative">
+                      <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 font-heading font-extrabold text-xl bg-primary text-white">
                         {s.step}
                       </div>
                       <h3 className="font-heading font-bold text-lg mb-2 text-foreground">{s.title}</h3>
                       <p className="text-sm font-body text-muted-foreground leading-relaxed">{s.desc}</p>
-                      {i < 2 && <div className="hidden md:block absolute top-8 right-0 translate-x-1/2 text-2xl text-border">→</div>}
-                    </div>
+                      {i < 2 && (
+                        <div className="hidden md:block absolute top-8 right-0 translate-x-1/2 text-2xl text-border">
+                          →
+                        </div>
+                      )}
+                    </motion.div>
                   ))}
                 </div>
               </div>
             </section>
           )}
 
-          {/* Stats */}
+          {/* ═══════════════════════════════════════════════════════════════
+              STATS — dark navy section, 3-column centered
+          ════════════════════════════════════════════════════════════════ */}
           {app.stats.length > 0 && (
-            <section className="bg-foreground" style={{ paddingTop: 60, paddingBottom: 60 }}>
+            <section style={{ background: "hsl(220 35% 10%)", paddingTop: 72, paddingBottom: 72 }}>
               <div className="section-container">
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
-                  {app.stats.map(s => (
-                    <div key={s.label}>
-                      <div className="font-heading font-extrabold text-4xl text-primary">{s.value}</div>
-                      <div className="text-sm font-body mt-1 text-primary-foreground/70">{s.label}</div>
-                    </div>
+                  {app.stats.map((s) => (
+                    <motion.div key={s.label} {...inView()}>
+                      <div className="gradient-text-cyan font-heading font-extrabold text-4xl">{s.value}</div>
+                      <div className="text-sm font-body mt-2" style={{ color: "rgba(255,255,255,0.55)" }}>
+                        {s.label}
+                      </div>
+                    </motion.div>
                   ))}
                 </div>
               </div>
             </section>
           )}
 
-          {/* Pricing Plans */}
+          {/* ═══════════════════════════════════════════════════════════════
+              PRICING — white bg, responsive grid with popular badge & ring
+          ════════════════════════════════════════════════════════════════ */}
           {app.plans.length > 0 && (
-            <section style={{ paddingTop: 96, paddingBottom: 96 }}>
+            <section style={{ background: "white", paddingTop: 96, paddingBottom: 96 }}>
               <div className="section-container">
                 <div className="text-center mb-12">
-                  <span className="inline-block font-heading font-bold text-xs uppercase tracking-[0.12em] mb-3 text-primary">PRICING</span>
-                  <h2 className="font-heading font-extrabold text-h2 text-foreground">Simple, Transparent Pricing</h2>
-                  <p className="text-muted-foreground font-body mt-3">Start free. Upgrade as you grow. No hidden fees.</p>
+                  <span className="inline-block font-heading font-bold text-xs uppercase tracking-[0.12em] mb-3 text-primary">
+                    PRICING
+                  </span>
+                  <h2 className="font-heading font-extrabold text-foreground" style={{ fontSize: 40, letterSpacing: "-0.02em", marginBottom: 12 }}>
+                    Simple, Transparent Pricing
+                  </h2>
+                  <p className="text-muted-foreground font-body">
+                    Start free. Upgrade as you grow. No hidden fees.
+                  </p>
                 </div>
                 <div
                   className={`grid grid-cols-1 gap-6 mx-auto ${
                     app.plans.length === 5
                       ? "md:grid-cols-2 lg:grid-cols-5 max-w-[96rem]"
                       : app.plans.length >= 4
-                      ? "md:grid-cols-2 lg:grid-cols-4 max-w-7xl"
-                      : app.plans.length === 3
-                        ? "md:grid-cols-3 max-w-6xl"
-                        : app.plans.length === 2
-                          ? "md:grid-cols-2 max-w-4xl"
-                          : "max-w-2xl"
+                        ? "md:grid-cols-2 lg:grid-cols-4 max-w-7xl"
+                        : app.plans.length === 3
+                          ? "md:grid-cols-3 max-w-6xl"
+                          : app.plans.length === 2
+                            ? "md:grid-cols-2 max-w-4xl"
+                            : "max-w-2xl"
                   }`}
                 >
                   {app.plans.map((plan, i) => (
-                    <motion.div key={plan.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
-                      className={`card-elevated p-8 relative h-full flex flex-col ${plan.highlighted ? 'ring-2 ring-primary' : ''}`}>
+                    <motion.div
+                      key={plan.name}
+                      {...inView(Math.min(i * 0.08, 0.3))}
+                      className={`card-elevated p-8 relative h-full flex flex-col ${
+                        plan.highlighted ? "ring-2" : ""
+                      }`}
+                      style={{
+                        ringColor: plan.highlighted ? "rgba(0,192,255,0.5)" : undefined,
+                      }}
+                    >
                       {plan.highlighted && (
-                        <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-bold font-heading px-4 py-1 rounded-full">
+                        <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-xs font-bold font-heading px-4 py-1 rounded-full">
                           Most Popular
                         </span>
                       )}
-                      <h3 className="font-heading font-bold text-lg text-foreground mb-2 text-center">{plan.name}</h3>
+                      <h3 className="font-heading font-bold text-lg text-foreground mb-2 text-center">
+                        {plan.name}
+                      </h3>
                       <div className="mb-6 text-center">
-                        <span className="font-heading font-extrabold text-4xl text-foreground">{plan.price}</span>
-                        {plan.period && <span className="text-muted-foreground font-body text-sm">{plan.period}</span>}
+                        <span className="font-heading font-extrabold text-4xl text-foreground">
+                          {plan.price}
+                        </span>
+                        {plan.period && (
+                          <div className="text-muted-foreground font-body text-sm">{plan.period}</div>
+                        )}
                         {plan.note && (
                           <div className="mt-2 text-[10px] tracking-[0.08em] uppercase text-muted-foreground font-heading font-semibold">
                             {plan.note}
@@ -318,19 +512,30 @@ const AppDetail = () => {
                       </div>
                       <ul className="space-y-3 mb-8 flex-1">
                         {plan.features.map((f, j) => (
-                          <li key={j} className="flex items-start gap-2 text-sm font-body text-muted-foreground text-left leading-relaxed">
+                          <li
+                            key={j}
+                            className="flex items-start gap-2 text-sm font-body text-muted-foreground text-left leading-relaxed"
+                          >
                             <Check className="h-4 w-4 text-primary flex-shrink-0 mt-0.5" />
                             <span>{f}</span>
                           </li>
                         ))}
                       </ul>
                       {app.externalUrl !== "#" ? (
-                        <a href={app.externalUrl} target="_blank" rel="noopener noreferrer"
-                          className={plan.highlighted ? "btn-primary w-full text-center block" : "btn-outline w-full text-center block"}>
+                        <a
+                          href={app.externalUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={plan.highlighted ? "btn-primary w-full text-center block" : "btn-outline w-full text-center block"}
+                        >
                           Get Started
                         </a>
                       ) : (
-                        <button className={plan.highlighted ? "btn-primary w-full" : "btn-outline w-full"}>Get Started</button>
+                        <button
+                          className={plan.highlighted ? "btn-primary w-full" : "btn-outline w-full"}
+                        >
+                          Get Started
+                        </button>
                       )}
                     </motion.div>
                   ))}
@@ -339,30 +544,58 @@ const AppDetail = () => {
             </section>
           )}
 
-          {/* Reviews */}
+          {/* ═══════════════════════════════════════════════════════════════
+              REVIEWS — section-alt, 3-column cards with colored top border
+          ════════════════════════════════════════════════════════════════ */}
           {app.reviews.length > 0 && (
-            <section className="section-alt" style={{ paddingTop: 96, paddingBottom: 96 }}>
+            <section style={{ background: "hsl(var(--section-alt))", paddingTop: 96, paddingBottom: 96 }}>
               <div className="section-container">
                 <div className="text-center mb-12">
-                  <span className="inline-block font-heading font-bold text-xs uppercase tracking-[0.12em] mb-3 text-primary">REVIEWS</span>
-                  <h2 className="font-heading font-extrabold text-h2 text-foreground">What Merchants Say</h2>
+                  <span className="inline-block font-heading font-bold text-xs uppercase tracking-[0.12em] mb-3 text-primary">
+                    REVIEWS
+                  </span>
+                  <h2 className="font-heading font-extrabold text-foreground" style={{ fontSize: 40, letterSpacing: "-0.02em", marginBottom: 0 }}>
+                    What Merchants Say
+                  </h2>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
                   {app.reviews.map((r, i) => (
-                    <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
-                      className="card-elevated p-6" style={{ borderTop: `3px solid ${app.color}` }}>
+                    <motion.div
+                      key={i}
+                      {...inView(Math.min(i * 0.08, 0.3))}
+                      className="card-elevated p-6"
+                      style={{ borderTop: `2px solid ${app.color}` }}
+                    >
                       <div className="flex gap-0.5 mb-3">
-                        {Array(r.rating).fill(0).map((_, j) => <Star key={j} className="h-4 w-4 text-yellow-400 fill-yellow-400" />)}
+                        {Array(r.rating)
+                          .fill(0)
+                          .map((_, j) => (
+                            <Star
+                              key={j}
+                              className="h-4 w-4 text-yellow-400 fill-yellow-400"
+                            />
+                          ))}
                       </div>
-                      <p className="text-sm font-body text-foreground italic leading-relaxed mb-4">"{r.quote}"</p>
+                      <p className="text-sm font-body text-foreground italic leading-relaxed mb-4">
+                        "{r.quote}"
+                      </p>
                       <div className="flex items-center gap-3">
-                        <div className="w-9 h-9 rounded-full flex items-center justify-center font-heading font-bold text-xs text-primary-foreground"
-                          style={{ backgroundColor: app.color }}>
-                          {r.author.split(" ").map(w => w[0]).join("")}
+                        <div
+                          className="w-9 h-9 rounded-full flex items-center justify-center font-heading font-bold text-xs text-white"
+                          style={{ backgroundColor: app.color }}
+                        >
+                          {r.author
+                            .split(" ")
+                            .map((w) => w[0])
+                            .join("")}
                         </div>
                         <div>
-                          <div className="font-heading font-bold text-sm text-foreground">{r.author}</div>
-                          <div className="text-xs font-body text-muted-foreground">{r.role} · {r.date}</div>
+                          <div className="font-heading font-bold text-sm text-foreground">
+                            {r.author}
+                          </div>
+                          <div className="text-xs font-body text-muted-foreground">
+                            {r.role} · {r.date}
+                          </div>
                         </div>
                       </div>
                     </motion.div>
@@ -372,28 +605,69 @@ const AppDetail = () => {
             </section>
           )}
 
-          {/* Related */}
+          {/* ═══════════════════════════════════════════════════════════════
+              RELATED APPS — white bg, 3-column card grid
+          ════════════════════════════════════════════════════════════════ */}
           {relatedApps.length > 0 && (
-            <section style={{ paddingTop: 80, paddingBottom: 80 }}>
+            <section style={{ background: "white", paddingTop: 96, paddingBottom: 96 }}>
               <div className="section-container">
-                <h2 className="font-heading font-extrabold text-2xl text-center mb-8 text-foreground">You Might Also Like</h2>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 max-w-4xl mx-auto">
-                  {relatedApps.map((a, i) => <AppCard key={a.slug} app={a} index={i} />)}
+                <motion.h2
+                  {...inView()}
+                  className="font-heading font-extrabold text-foreground text-center mb-8"
+                  style={{ fontSize: 36 }}
+                >
+                  You Might Also Like
+                </motion.h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                  {relatedApps.map((a, i) => (
+                    <motion.div key={a.slug} {...inView(Math.min(i * 0.1, 0.3))}>
+                      <AppCard app={a} index={i} />
+                    </motion.div>
+                  ))}
                 </div>
               </div>
             </section>
           )}
 
-          {/* Install CTA */}
-          <section style={{ background: "linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)))", paddingTop: 80, paddingBottom: 80 }}>
+          {/* ═══════════════════════════════════════════════════════════════
+              FINAL CTA — gradient background, white text
+          ════════════════════════════════════════════════════════════════ */}
+          <section
+            style={{
+              background: "linear-gradient(135deg, #00c0ff 0%, #7c3aed 100%)",
+              paddingTop: 96,
+              paddingBottom: 96,
+            }}
+          >
             <div className="section-container text-center">
-              <h2 className="font-heading font-extrabold text-3xl text-primary-foreground mb-4">Ready to Try {appPageName}?</h2>
-              <p className="font-body text-lg mb-8 text-primary-foreground/80">Free to install. No credit card required.</p>
+              <motion.h2
+                {...inView()}
+                className="font-heading font-extrabold text-white mb-4"
+                style={{ fontSize: "clamp(28px, 3.6vw, 40px)", lineHeight: 1.15 }}
+              >
+                Ready to Try {appPageName}?
+              </motion.h2>
+              <motion.p
+                {...inView(0.1)}
+                className="font-body text-lg mb-8"
+                style={{ color: "rgba(255,255,255,0.85)" }}
+              >
+                Free to install. No credit card required.
+              </motion.p>
               {app.externalUrl !== "#" && (
-                <a href={app.externalUrl} target="_blank" rel="noopener noreferrer"
-                  className={`${primaryCtaLabel === "Install on Shopify" ? "btn-shopify" : "inline-flex items-center justify-center font-heading font-bold text-sm px-8 py-4 rounded-lg bg-background text-primary transition-all hover:scale-102"}`}>
+                <motion.a
+                  {...inView(0.2)}
+                  href={app.externalUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`${
+                    primaryCtaLabel === "Install on Shopify"
+                      ? "btn-shopify"
+                      : "inline-flex items-center justify-center font-heading font-bold text-sm px-8 py-4 rounded-lg bg-white text-primary transition-all hover:scale-[1.02]"
+                  }`}
+                >
                   {primaryCtaLabel} <ArrowRight className="ml-2 h-4 w-4" />
-                </a>
+                </motion.a>
               )}
             </div>
           </section>
