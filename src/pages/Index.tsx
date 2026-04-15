@@ -400,35 +400,6 @@ const Index = () => {
                 </Link>
               </motion.div>
 
-              {/* Inline stats */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.7, delay: 0.4 }}
-                className="flex flex-wrap items-center gap-0"
-                style={{ borderTop: "1px solid rgba(255,255,255,0.08)", paddingTop: 28 }}
-              >
-                {stats.map((s, i) => (
-                  <div
-                    key={s.label}
-                    className={`pr-6 mr-6 ${i < stats.length - 1 ? "border-r" : ""}`}
-                    style={{ borderColor: "rgba(255,255,255,0.08)" }}
-                  >
-                    <div
-                      className="font-heading font-extrabold leading-none mb-1"
-                      style={{ fontSize: 26, color: "#fff" }}
-                    >
-                      {s.value}
-                    </div>
-                    <div
-                      className="text-xs font-body"
-                      style={{ color: "rgba(255,255,255,0.42)" }}
-                    >
-                      {s.label}
-                    </div>
-                  </div>
-                ))}
-              </motion.div>
             </div>
 
             {/* Right — product UI mockup */}
