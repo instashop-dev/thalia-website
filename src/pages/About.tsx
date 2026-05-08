@@ -49,8 +49,8 @@ const About = () => {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://thaliatechnologies.com/" },
-      { "@type": "ListItem", position: 2, name: "About", item: "https://thaliatechnologies.com/about" },
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.thaliatechnologies.com/" },
+      { "@type": "ListItem", position: 2, name: "About", item: "https://www.thaliatechnologies.com/about" },
     ],
   };
 
@@ -58,15 +58,15 @@ const About = () => {
     "@context": "https://schema.org",
     "@type": "AboutPage",
     name: "About Thalia Technologies",
-    url: "https://thaliatechnologies.com/about",
+    url: "https://www.thaliatechnologies.com/about",
     description:
       "Learn about Thalia Technologies, our mission to solve real ecommerce problems, and the team behind our merchant-focused SaaS products.",
     mainEntity: {
       "@type": "Organization",
       name: "Thalia Technologies",
       legalName: "Thalia Technologies Private Limited",
-      url: "https://thaliatechnologies.com",
-      logo: "https://thaliatechnologies.com/thalia-logo.jpg",
+      url: "https://www.thaliatechnologies.com",
+      logo: "https://www.thaliatechnologies.com/thalia-logo.jpg",
       description:
         "Thalia Technologies builds focused SaaS apps for Shopify, Amazon, and BigCommerce merchants — trusted by 100,000+ businesses worldwide.",
       foundingDate: "2015",
@@ -77,8 +77,8 @@ const About = () => {
   return (
     <Layout>
       <Seo
-        title="About Thalia Technologies | Our Story, Team, and Mission"
-        description="Learn about Thalia Technologies, our mission to solve real ecommerce problems, and the team behind our merchant-focused software products."
+        title="About Thalia Technologies — Our Story & Mission"
+        description="Founded in 2015, Thalia Technologies builds products that help 100,000+ ecommerce merchants work smarter and grow faster. Meet our team."
         keywords="about Thalia Technologies, Thalia team, ecommerce software company, merchant-first products, SaaS product company, ecommerce mission"
         path="/about"
         structuredData={[aboutPageSchema, breadcrumbSchema]}
@@ -129,8 +129,7 @@ const About = () => {
                 letterSpacing: "-0.03em",
               }}
             >
-              We're Builders.{" "}
-              <span className="gradient-text-cyan">We Love What We Build.</span>
+              About Thalia Technologies — Ecommerce SaaS Company
             </motion.h1>
 
             {/* Sub-copy */}

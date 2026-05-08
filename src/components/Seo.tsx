@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet";
 
 const SITE_NAME = "Thalia Technologies";
-const SITE_URL = "https://thaliatechnologies.com";
+const SITE_URL = "https://www.thaliatechnologies.com";
 const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.svg`;
 
 type SeoProps = {
@@ -44,11 +44,23 @@ const Seo = ({
     name: SITE_NAME,
     url: SITE_URL,
     logo: `${SITE_URL}/thalia-logo.jpg`,
+    description:
+      "Powerful SaaS apps for Shopify, Amazon & BigCommerce. Trusted by 100,000+ merchants.",
+    foundingDate: "2015",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Dadar West, Prabhadevi",
+      addressLocality: "Mumbai",
+      addressRegion: "Maharashtra",
+      postalCode: "400025",
+      addressCountry: "IN",
+    },
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer support",
       email: "info@thaliatechnologies.com",
     },
+    sameAs: ["https://www.linkedin.com/company/thalia-technologies"],
   };
   const extraSchemas = structuredData
     ? Array.isArray(structuredData)

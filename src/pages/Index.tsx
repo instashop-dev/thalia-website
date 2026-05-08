@@ -318,7 +318,7 @@ const Index = () => {
     itemListElement: featuredApps.map((a, i) => ({
       "@type": "ListItem",
       position: i + 1,
-      url: `https://thaliatechnologies.com/apps/${a.slug}`,
+      url: `https://www.thaliatechnologies.com/apps/${a.slug}`,
       name: a.name,
     })),
   };
@@ -326,8 +326,8 @@ const Index = () => {
   return (
     <Layout>
       <Seo
-        title="Thalia Technologies | Ecommerce Apps for Growth"
-        description="Thalia builds focused ecommerce apps for Shopify, Amazon, and BigCommerce to help merchants automate workflows, increase revenue, and grow faster."
+        title="Ecommerce Apps for Shopify, Amazon & BigCommerce"
+        description="Thalia Technologies builds powerful SaaS tools that help ecommerce businesses solve operational challenges and scale faster. Trusted by 100,000+ merchants."
         keywords="Thalia Technologies, ecommerce apps, Shopify apps, Amazon apps, BigCommerce apps, ecommerce automation, ecommerce growth tools, merchant software"
         path="/"
         structuredData={[featuredItemList]}
@@ -385,9 +385,7 @@ const Index = () => {
                   letterSpacing: "-0.03em",
                 }}
               >
-                Software That<br />
-                <span className="gradient-text-cyan">Makes a Real</span><br />
-                Difference
+                Ecommerce SaaS Apps for Shopify, Amazon &amp; BigCommerce
               </motion.h1>
 
               {/* Sub-copy */}

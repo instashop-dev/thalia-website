@@ -76,8 +76,8 @@ const Careers = () => {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://thaliatechnologies.com/" },
-      { "@type": "ListItem", position: 2, name: "Careers", item: "https://thaliatechnologies.com/careers" },
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.thaliatechnologies.com/" },
+      { "@type": "ListItem", position: 2, name: "Careers", item: "https://www.thaliatechnologies.com/careers" },
     ],
   };
 
@@ -97,8 +97,8 @@ const Careers = () => {
   return (
     <Layout>
       <Seo
-        title="Careers at Thalia Technologies | Join Our Team"
-        description="Explore career opportunities at Thalia Technologies and help build ecommerce software used by businesses worldwide."
+        title="Careers at Thalia Technologies — Join Our Team"
+        description="Build products that 100,000+ merchants depend on. We're hiring engineers, designers, and product managers. Hybrid & flexible work."
         keywords="Thalia careers, ecommerce jobs, SaaS jobs, software engineer jobs, product design jobs, remote jobs, tech careers India"
         path="/careers"
         structuredData={[breadcrumbSchema, careersItemListSchema]}
@@ -147,8 +147,7 @@ const Careers = () => {
                 letterSpacing: "-0.03em",
               }}
             >
-              Build Things That Matter.{" "}
-              <span className="gradient-text-cyan">With People Who Care.</span>
+              Careers at Thalia Technologies — Join Our Team
             </motion.h1>
 
             <motion.p

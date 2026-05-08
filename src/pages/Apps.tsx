@@ -49,8 +49,8 @@ const Apps = () => {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://thaliatechnologies.com/" },
-      { "@type": "ListItem", position: 2, name: "Apps", item: "https://thaliatechnologies.com/apps" },
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.thaliatechnologies.com/" },
+      { "@type": "ListItem", position: 2, name: "Apps", item: "https://www.thaliatechnologies.com/apps" },
     ],
   };
 
@@ -63,7 +63,7 @@ const Apps = () => {
     itemListElement: liveApps.map((a, i) => ({
       "@type": "ListItem",
       position: i + 1,
-      url: `https://thaliatechnologies.com/apps/${a.slug}`,
+      url: `https://www.thaliatechnologies.com/apps/${a.slug}`,
       name: a.name,
     })),
   };
@@ -72,16 +72,16 @@ const Apps = () => {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     name: "Thalia Apps | Ecommerce Tools for Shopify, Amazon, and More",
-    url: "https://thaliatechnologies.com/apps",
-    isPartOf: { "@type": "WebSite", url: "https://thaliatechnologies.com" },
+    url: "https://www.thaliatechnologies.com/apps",
+    isPartOf: { "@type": "WebSite", url: "https://www.thaliatechnologies.com" },
     about: "Ecommerce SaaS apps for Shopify, Amazon, and BigCommerce merchants.",
   };
 
   return (
     <Layout>
       <Seo
-        title="Thalia Apps | Ecommerce Tools for Shopify, Amazon, and More"
-        description="Explore Thalia's full suite of ecommerce apps for pricing, catalog management, notifications, sync, badges, and merchant growth."
+        title="18+ Ecommerce Apps for Shopify, Amazon & BigCommerce"
+        description="Browse Thalia's suite of focused SaaS apps. From Amazon importers to GST invoicing — every app solves a specific merchant problem."
         keywords="Thalia apps, ecommerce tools, Shopify app collection, Amazon sync app, bulk editor app, product badges app, pricing app, merchant productivity"
         path="/apps"
         structuredData={[collectionPageSchema, breadcrumbSchema, itemListSchema]}
@@ -132,8 +132,7 @@ const Apps = () => {
                 letterSpacing: "-0.03em",
               }}
             >
-              Every App.{" "}
-              <span className="gradient-text-cyan">One Mission.</span>
+              18+ Ecommerce Apps for Shopify, Amazon &amp; BigCommerce
             </motion.h1>
 
             {/* Sub-copy */}

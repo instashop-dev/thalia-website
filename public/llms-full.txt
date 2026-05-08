@@ -1,33 +1,32 @@
 # Thalia Technologies - Full URL Inventory
 
-Canonical: https://thaliatechnologies.com
-Sitemap: https://thaliatechnologies.com/sitemap.xml
+Canonical: https://www.thaliatechnologies.com
+Sitemap: https://www.thaliatechnologies.com/sitemap.xml
 
 ## Main Pages
-- https://thaliatechnologies.com/
-- https://thaliatechnologies.com/about
-- https://thaliatechnologies.com/apps
-- https://thaliatechnologies.com/contact
-- https://thaliatechnologies.com/careers
-- https://thaliatechnologies.com/case-studies
+- https://www.thaliatechnologies.com/
+- https://www.thaliatechnologies.com/about
+- https://www.thaliatechnologies.com/apps
+- https://www.thaliatechnologies.com/contact
+- https://www.thaliatechnologies.com/careers
 
 ## App Pages
-- https://thaliatechnologies.com/apps/spreadr
-- https://thaliatechnologies.com/apps/probulkpriceeditor
-- https://thaliatechnologies.com/apps/watchlyst
-- https://thaliatechnologies.com/apps/connectr
-- https://thaliatechnologies.com/apps/bolt
-- https://thaliatechnologies.com/apps/dual
-- https://thaliatechnologies.com/apps/outlink
-- https://thaliatechnologies.com/apps/robo
-- https://thaliatechnologies.com/apps/t2icons
-- https://thaliatechnologies.com/apps/shipr
-- https://thaliatechnologies.com/apps/duplicate
-- https://thaliatechnologies.com/apps/sleek
-- https://thaliatechnologies.com/apps/clever
-- https://thaliatechnologies.com/apps/super
-- https://thaliatechnologies.com/apps/clean
-- https://thaliatechnologies.com/apps/prime
-- https://thaliatechnologies.com/apps/fetchr
-- https://thaliatechnologies.com/apps/csvbox
-- https://thaliatechnologies.com/apps/fylebox
+- https://www.thaliatechnologies.com/apps/spreadr
+- https://www.thaliatechnologies.com/apps/probulkpriceeditor
+- https://www.thaliatechnologies.com/apps/watchlyst
+- https://www.thaliatechnologies.com/apps/connectr
+- https://www.thaliatechnologies.com/apps/bolt
+- https://www.thaliatechnologies.com/apps/dual
+- https://www.thaliatechnologies.com/apps/outlink
+- https://www.thaliatechnologies.com/apps/robo
+- https://www.thaliatechnologies.com/apps/t2icons
+- https://www.thaliatechnologies.com/apps/shipr
+- https://www.thaliatechnologies.com/apps/duplicate
+- https://www.thaliatechnologies.com/apps/sleek
+- https://www.thaliatechnologies.com/apps/clever
+- https://www.thaliatechnologies.com/apps/super
+- https://www.thaliatechnologies.com/apps/clean
+- https://www.thaliatechnologies.com/apps/prime
+- https://www.thaliatechnologies.com/apps/fetchr
+- https://www.thaliatechnologies.com/apps/csvbox
+- https://www.thaliatechnologies.com/apps/fylebox

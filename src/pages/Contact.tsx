@@ -128,8 +128,8 @@ const Contact = () => {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: "https://thaliatechnologies.com/" },
-      { "@type": "ListItem", position: 2, name: "Contact", item: "https://thaliatechnologies.com/contact" },
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.thaliatechnologies.com/" },
+      { "@type": "ListItem", position: 2, name: "Contact", item: "https://www.thaliatechnologies.com/contact" },
     ],
   };
 
@@ -137,12 +137,12 @@ const Contact = () => {
     "@context": "https://schema.org",
     "@type": "ContactPage",
     name: "Contact Thalia Technologies",
-    url: "https://thaliatechnologies.com/contact",
+    url: "https://www.thaliatechnologies.com/contact",
     description: "Get in touch with Thalia Technologies for product support, questions, and business inquiries.",
     mainEntity: {
       "@type": "Organization",
       name: "Thalia Technologies",
-      url: "https://thaliatechnologies.com",
+      url: "https://www.thaliatechnologies.com",
       contactPoint: [
         {
           "@type": "ContactPoint",
@@ -165,8 +165,8 @@ const Contact = () => {
   return (
     <Layout>
       <Seo
-        title="Contact Thalia Technologies | Support and Sales"
-        description="Get in touch with Thalia Technologies for product support, questions, and business inquiries."
+        title="Contact Thalia Technologies — Support & Sales"
+        description="Get in touch with Thalia Technologies for app support, sales inquiries, or partnerships. We typically reply within 1 business day."
         keywords="contact Thalia Technologies, app support, ecommerce software support, merchant help, product inquiries, Thalia contact"
         path="/contact"
         structuredData={[contactPageSchema, breadcrumbSchema]}
@@ -215,8 +215,7 @@ const Contact = () => {
                 letterSpacing: "-0.03em",
               }}
             >
-              Let's Talk.{" "}
-              <span className="gradient-text-cyan">We're Listening.</span>
+              Contact Thalia Technologies — Support &amp; Sales
             </motion.h1>
 
             <motion.p

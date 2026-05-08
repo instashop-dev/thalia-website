@@ -80,8 +80,8 @@ const AppDetail = () => {
     applicationSubCategory: `${app.platform} App`,
     operatingSystem: "Web",
     description: app.description,
-    url: `https://thaliatechnologies.com/apps/${app.slug}`,
-    ...(appImage ? { image: appImage.startsWith("http") ? appImage : `https://thaliatechnologies.com${appImage}` } : {}),
+    url: `https://www.thaliatechnologies.com/apps/${app.slug}`,
+    ...(appImage ? { image: appImage.startsWith("http") ? appImage : `https://www.thaliatechnologies.com${appImage}` } : {}),
     brand: {
       "@type": "Brand",
       name: "Thalia Technologies",
@@ -89,7 +89,12 @@ const AppDetail = () => {
     publisher: {
       "@type": "Organization",
       name: "Thalia Technologies",
-      url: "https://thaliatechnologies.com",
+      url: "https://www.thaliatechnologies.com",
+    },
+    author: {
+      "@type": "Organization",
+      name: "Thalia Technologies",
+      url: "https://www.thaliatechnologies.com",
     },
     ...(app.plans.length
       ? {
@@ -99,7 +104,7 @@ const AppDetail = () => {
             price: plan.price.replace(/[^0-9.]/g, "") || "0",
             priceCurrency: "USD",
             availability: "https://schema.org/InStock",
-            url: app.externalUrl !== "#" ? app.externalUrl : `https://thaliatechnologies.com/apps/${app.slug}`,
+            url: app.externalUrl !== "#" ? app.externalUrl : `https://www.thaliatechnologies.com/apps/${app.slug}`,
           })),
         }
       : {}),
@@ -139,19 +144,19 @@ const AppDetail = () => {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://thaliatechnologies.com/",
+        item: "https://www.thaliatechnologies.com/",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Apps",
-        item: "https://thaliatechnologies.com/apps",
+        item: "https://www.thaliatechnologies.com/apps",
       },
       {
         "@type": "ListItem",
         position: 3,
         name: appPageName,
-        item: `https://thaliatechnologies.com/apps/${app.slug}`,
+        item: `https://www.thaliatechnologies.com/apps/${app.slug}`,
       },
     ],
   };
@@ -159,8 +164,8 @@ const AppDetail = () => {
   return (
     <Layout>
       <Seo
-        title={`${appPageName} | Thalia Technologies`}
-        description={app.description}
+        title={app.seoTitle || `${appPageName} | Thalia Technologies`}
+        description={app.seoDescription || app.description}
         keywords={`${appPageName}, ${app.platform} app, ${app.features.slice(0, 4).join(", ")}, Thalia Technologies`}
         path={`/apps/${app.slug}`}
         structuredData={[appStructuredData, breadcrumbStructuredData]}
@@ -218,7 +223,7 @@ const AppDetail = () => {
                   letterSpacing: "-0.03em",
                 }}
               >
-                {appPageName}
+                {app.h1 || appPageName}
               </motion.h1>
 
               {/* Description */}

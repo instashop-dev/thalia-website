@@ -3,19 +3,18 @@
 > Ecommerce apps and software tools for Shopify, Amazon, BigCommerce, and SaaS workflows.
 
 ## Canonical
-- https://thaliatechnologies.com
+- https://www.thaliatechnologies.com
 
 ## Key Pages
-- Home: https://thaliatechnologies.com/
-- Apps: https://thaliatechnologies.com/apps
-- About: https://thaliatechnologies.com/about
-- Contact: https://thaliatechnologies.com/contact
-- Careers: https://thaliatechnologies.com/careers
-- Case Studies: https://thaliatechnologies.com/case-studies
+- Home: https://www.thaliatechnologies.com/
+- Apps: https://www.thaliatechnologies.com/apps
+- About: https://www.thaliatechnologies.com/about
+- Contact: https://www.thaliatechnologies.com/contact
+- Careers: https://www.thaliatechnologies.com/careers
 
 ## Structured Discovery
-- Sitemap: https://thaliatechnologies.com/sitemap.xml
-- Full LLM listing: https://thaliatechnologies.com/llms-full.txt
+- Sitemap: https://www.thaliatechnologies.com/sitemap.xml
+- Full LLM listing: https://www.thaliatechnologies.com/llms-full.txt
 
 ## Usage Guidance
 - Public website content may be indexed and summarized.

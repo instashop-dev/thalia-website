@@ -70,6 +70,9 @@ export interface AppData {
   stats: { value: string; label: string }[];
   testimonial: { quote: string; author: string; role: string };
   comingSoon?: boolean;
+  seoTitle?: string;
+  seoDescription?: string;
+  h1?: string;
   heroImage?: string;
 }
 
@@ -217,6 +220,10 @@ export const apps: AppData[] = [
     icon: "🔗",
     stats: [{ value: "50K+", label: "Installs" }, { value: "4.9★", label: "Rating" }, { value: "2M+", label: "Products Imported" }],
     testimonial: { quote: "Spreadr transformed our business. We went from zero to dropshipping 10,000+ Amazon products in just one week.", author: "James M.", role: "Shopify Merchant, USA" },
+    seoTitle: "Spreadr — Amazon to Shopify Importer App",
+    seoDescription: "Import millions of Amazon products into your Shopify store with one click. Earn affiliate commissions or dropship. Trusted by 50,000+ merchants. 4.9★ rating.",
+    h1: "Spreadr — Import Amazon Products to Shopify & Earn Affiliate Commissions",
+
   },
   {
     slug: "probulkpriceeditor",
@@ -295,6 +302,10 @@ export const apps: AppData[] = [
     icon: "🏷️",
     stats: [{ value: "8K+", label: "Installs" }, { value: "4.7★", label: "Rating" }, { value: "30M+", label: "Prices Changed" }],
     testimonial: { quote: "The scheduling and rollback features are game changers for our seasonal campaigns.", author: "Anna F.", role: "eCommerce Manager, Sweden" },
+    seoTitle: "Pro Bulk Price Editor — Shopify Bulk Price Editor App",
+    seoDescription: "Edit thousands of Shopify product prices in bulk with scheduled updates, rules, and automated workflows. Save hours every week.",
+    h1: "Pro Bulk Price Editor — Bulk Edit Shopify Product Prices & Schedule Updates",
+
   },
   {
     slug: "watchlyst",
@@ -339,6 +350,10 @@ export const apps: AppData[] = [
     icon: "👁️",
     stats: [{ value: "12K+", label: "Installs" }, { value: "4.8★", label: "Rating" }, { value: "500K+", label: "Alerts Sent" }],
     testimonial: { quote: "Watchlyst brought back over 200 lost customers in the first month alone. The ROI is incredible.", author: "Sarah L.", role: "eCommerce Owner, UK" },
+    seoTitle: "Watchlyst — Price Drop Alerts for Shopify",
+    seoDescription: "Notify customers when product prices drop. Recover abandoned carts with automated price alert emails.",
+    h1: "Watchlyst — Price Drop Alerts & Back-in-Stock Notifications for Shopify",
+
   },
   {
     slug: "connectr",
@@ -406,6 +421,10 @@ export const apps: AppData[] = [
     icon: "🔄",
     stats: [{ value: "8K+", label: "Installs" }, { value: "4.7★", label: "Rating" }, { value: "10M+", label: "Syncs Completed" }],
     testimonial: { quote: "Connectr eliminated overselling completely. Our multi-channel ops run on autopilot now.", author: "David R.", role: "Multi-channel Seller, Canada" },
+    seoTitle: "Connectr — Shopify Amazon Integration",
+    seoDescription: "Sync inventory, orders, and products between Shopify and Amazon Seller Central. Multi-channel selling made simple.",
+    h1: "Connectr — Sync Shopify & Amazon Seller Central Inventory & Orders",
+
   },
   {
     slug: "bolt",
@@ -484,6 +503,10 @@ export const apps: AppData[] = [
     icon: "⚡",
     stats: [{ value: "15K+", label: "Installs" }, { value: "4.8★", label: "Rating" }, { value: "50M+", label: "Products Edited" }],
     testimonial: { quote: "Bolt saved us 20+ hours per week on product management. The inline editing is a game changer.", author: "Maria S.", role: "Shopify Merchant, Australia" },
+    seoTitle: "Bolt — Shopify Store Backup & Restore",
+    seoDescription: "Automated daily backups for your Shopify store. Restore products, themes, and data in one click.",
+    h1: "Bolt — Automated Daily Backups for Shopify Stores",
+
   },
   {
     slug: "dual",
@@ -527,6 +550,10 @@ export const apps: AppData[] = [
     icon: "💰",
     stats: [{ value: "6K+", label: "Installs" }, { value: "4.7★", label: "Rating" }, { value: "30+", label: "Countries Supported" }],
     testimonial: { quote: "Dual made our B2B pricing transparent. Customers love seeing both prices side by side.", author: "Thomas W.", role: "B2B Merchant, Germany" },
+    seoTitle: "Dual — Shopify Product Duplicator",
+    seoDescription: "Duplicate products, variants, and images in bulk. Save hours on catalog management.",
+    h1: "Dual — Bulk Product Duplicator for Shopify",
+
   },
   {
     slug: "outlink",
@@ -615,6 +642,10 @@ export const apps: AppData[] = [
     icon: "🔗",
     stats: [{ value: "9K+", label: "Installs" }, { value: "4.6★", label: "Rating" }, { value: "5M+", label: "Clicks Tracked" }],
     testimonial: { quote: "Outlink turned our Shopify store into a powerful affiliate hub. Setup took minutes.", author: "Emily C.", role: "Affiliate Marketer, USA" },
+    seoTitle: "Outlink — External Links Manager for Shopify",
+    seoDescription: "Add external/affiliate links to any product. Track clicks and manage outbound URLs at scale.",
+    h1: "Outlink — External & Affiliate Link Manager for Shopify Products",
+
   },
   {
     slug: "robo",
@@ -658,6 +689,10 @@ export const apps: AppData[] = [
     icon: "🤖",
     stats: [{ value: "7K+", label: "Installs" }, { value: "4.5★", label: "Rating" }, { value: "1M+", label: "Products Imported" }],
     testimonial: { quote: "Robo imports products from any site we need. The smart mapping saves hours of manual work.", author: "Kevin P.", role: "Dropshipper, Netherlands" },
+    seoTitle: "Robo — Shopify Automation & Workflows",
+    seoDescription: "Automate repetitive Shopify tasks with rule-based workflows. Schedule updates, auto-tag orders, and more.",
+    h1: "Robo — Shopify Task Automation & Workflow Engine",
+
   },
   {
     slug: "t2icons",
@@ -740,6 +775,10 @@ export const apps: AppData[] = [
     icon: "✨",
     stats: [{ value: "10K+", label: "Installs" }, { value: "4.7★", label: "Rating" }, { value: "100K+", label: "Icons Available" }],
     testimonial: { quote: "T2 Icons made our product pages look professional instantly. Customers love the visual details.", author: "Lisa H.", role: "Shopify Store Owner, USA" },
+    seoTitle: "T2Icons — Custom Icons for Shopify Stores",
+    seoDescription: "Add custom icons to product pages, collections, and navigation. SVG and icon font support.",
+    h1: "T2Icons — Custom Icon Library for Shopify Themes",
+
   },
   {
     slug: "shipr",
@@ -812,6 +851,10 @@ export const apps: AppData[] = [
     icon: "📦",
     stats: [{ value: "5K+", label: "Installs" }, { value: "4.6★", label: "Rating" }, { value: "2M+", label: "Orders Fulfilled" }],
     testimonial: { quote: "Shipr made Amazon FBA fulfillment seamless. Our shipping times dropped by 60%.", author: "Alex T.", role: "eCommerce Merchant, UK" },
+    seoTitle: "Shipr — Amazon FBA Fulfillment for Shopify",
+    seoDescription: "Connect Shopify with Amazon FBA for automated order fulfillment. Real-time inventory sync, multi-SKU support, and return management.",
+    h1: "Shipr — Connect Shopify with Amazon FBA for Automated Fulfillment",
+
   },
   {
     slug: "duplicate",
@@ -910,6 +953,10 @@ export const apps: AppData[] = [
     icon: "🔁",
     stats: [{ value: "4K+", label: "Installs" }, { value: "4.7★", label: "Rating" }, { value: "500K+", label: "SKUs Synced" }],
     testimonial: { quote: "Duplicate keeps our inventory perfectly synced across shared SKUs. No more overselling.", author: "Michael B.", role: "Shopify Merchant, USA" },
+    seoTitle: "Duplicate — Shopify Store Cloner",
+    seoDescription: "Clone entire Shopify stores including products, collections, and settings. Perfect for multi-store operations.",
+    h1: "Duplicate — Clone Entire Shopify Stores Including Products & Settings",
+
   },
   {
     slug: "sleek",
@@ -955,6 +1002,10 @@ export const apps: AppData[] = [
     icon: "📄",
     stats: [{ value: "8K+", label: "Installs" }, { value: "4.8★", label: "Rating" }, { value: "5M+", label: "Invoices Generated" }],
     testimonial: { quote: "Sleek automated our GST invoicing completely. 100% compliance with zero manual effort.", author: "Priya N.", role: "D2C Brand Owner, India" },
+    seoTitle: "Sleek — Shopify Theme Customizer",
+    seoDescription: "Advanced theme customization without code. Edit CSS, inject scripts, and modify layouts visually.",
+    h1: "Sleek — Visual Theme Customizer for Shopify Without Code",
+
   },
   {
     slug: "clever",
@@ -1010,6 +1061,10 @@ export const apps: AppData[] = [
     icon: "🖼️",
     stats: [{ value: "6K+", label: "Installs" }, { value: "4.6★", label: "Rating" }, { value: "10M+", label: "Images Managed" }],
     testimonial: { quote: "Clever finally solved our variant image problem. Product pages look 10x better now.", author: "Sophie M.", role: "Fashion Store Owner, France" },
+    seoTitle: "Clever — Smart Product Recommendations",
+    seoDescription: "AI-powered product recommendations for Shopify. Increase average order value with personalized upsells.",
+    h1: "Clever — AI-Powered Product Recommendations for Shopify",
+
   },
   {
     slug: "super",
@@ -1054,6 +1109,10 @@ export const apps: AppData[] = [
     icon: "🏷️",
     stats: [{ value: "3K+", label: "Installs" }, { value: "4.7★", label: "Rating" }, { value: "1M+", label: "Badges Displayed" }],
     testimonial: { quote: "Super badges boosted our click-through rates significantly. Great tool for BigCommerce.", author: "Jake R.", role: "BigCommerce Merchant, USA" },
+    seoTitle: "Super — Shopify Bulk Actions",
+    seoDescription: "Perform bulk operations on products, orders, and customers. Filter, edit, and export at scale.",
+    h1: "Super — Bulk Product, Order & Customer Actions for Shopify",
+
   },
   {
     slug: "clean",
@@ -1107,6 +1166,10 @@ export const apps: AppData[] = [
     icon: "📊",
     stats: [{ value: "5K+", label: "Installs" }, { value: "4.5★", label: "Rating" }, { value: "500K+", label: "Tables Created" }],
     testimonial: { quote: "Clean tables made our product specs look professional and organized. Customers appreciate the clarity.", author: "Hannah K.", role: "Electronics Store, Germany" },
+    seoTitle: "Clean — Shopify Data Cleaner",
+    seoDescription: "Remove duplicate data, fix broken images, and optimize your Shopify store database.",
+    h1: "Clean — Remove Duplicates & Optimize Your Shopify Store Data",
+
   },
   {
     slug: "prime",
@@ -1187,6 +1250,10 @@ export const apps: AppData[] = [
     icon: "⭐",
     stats: [{ value: "10K+", label: "Installs" }, { value: "4.8★", label: "Rating" }, { value: "5M+", label: "Badges Shown" }],
     testimonial: { quote: "Prime badges increased our conversion rate by 18%. The smart rules are incredibly powerful.", author: "Carlos V.", role: "Shopify Merchant, Spain" },
+    seoTitle: "Prime — Shopify Subscription Manager",
+    seoDescription: "Manage subscription products and recurring billing on Shopify. Customer portal and dunning management.",
+    h1: "Prime — Subscription Management & Recurring Billing for Shopify",
+
   },
   {
     slug: "fetchr",
@@ -1232,6 +1299,10 @@ export const apps: AppData[] = [
     icon: "🔍",
     stats: [{ value: "2K+", label: "Developers" }, { value: "99.9%", label: "Uptime" }, { value: "50M+", label: "API Calls/Month" }],
     testimonial: { quote: "Fetchr's API is reliable and fast. It powers our entire Amazon data pipeline.", author: "Chen W.", role: "Software Engineer, Singapore" },
+    seoTitle: "Fetchr — Shopify Data Importer",
+    seoDescription: "Import products, customers, and orders from CSV, Excel, or external APIs. Map fields and schedule imports.",
+    h1: "Fetchr — Bulk Data Importer for Shopify from CSV & APIs",
+
   },
   {
     slug: "csvbox",
@@ -1339,6 +1410,10 @@ export const apps: AppData[] = [
     icon: "📥",
     stats: [{ value: "1K+", label: "Companies" }, { value: "99.9%", label: "Uptime" }, { value: "100M+", label: "Rows Imported" }],
     testimonial: { quote: "CSVbox reduced our customer onboarding time from days to minutes. The UX is flawless.", author: "Mark D.", role: "CTO, SaaS Startup, USA" },
+    seoTitle: "CSVBox — CSV Data Import for SaaS",
+    seoDescription: "Embed CSV import functionality into any SaaS app. Handle 100M+ rows with validation, transformation, and error handling.",
+    h1: "CSVBox — CSV Data Import Infrastructure for SaaS Applications",
+
   },
   {
     slug: "fylebox",
@@ -1358,6 +1433,9 @@ export const apps: AppData[] = [
     icon: "📁",
     stats: [],
     testimonial: { quote: "", author: "", role: "" },
+    seoTitle: "Fylebox — File Upload for Shopify",
+    seoDescription: "Let customers upload files with their orders. Support for images, documents, and custom file types.",
+    h1: "Fylebox — Customer File Uploads for Shopify Orders",
     comingSoon: true,
   },
 ];
