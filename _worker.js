@@ -3,7 +3,9 @@ const PRERENDER_TOKEN = '51H3EcoHgpxmbe10BFOg';
 const botUserAgents = [
   'googlebot', 'bingbot', 'yandex', 'duckduckbot',
   'slurp', 'baiduspider', 'facebot', 'ia_archiver',
-  'gptbot', 'claudebot', 'perplexitybot', 'anthropic-ai'
+  'gptbot', 'claudebot', 'perplexitybot', 'anthropic-ai',
+  'ahrefsbot', 'mj12bot', 'semrushbot', 'dotbot', 'rogerbot',
+  'screaming frog', 'siteauditbot', 'seokicks'
 ];
 
 function isBot(userAgent) {
