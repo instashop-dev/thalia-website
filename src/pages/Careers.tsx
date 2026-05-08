@@ -136,7 +136,10 @@ const Careers = () => {
               WE'RE HIRING
             </motion.div>
 
-            <motion.h1
+            {/* Hidden SEO H1 */}
+            <h1 className="sr-only">Careers at Thalia Technologies — Join Our Team</h1>
+
+            <motion.h2
               initial={{ opacity: 0, y: 28 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.65, delay: 0.08 }}
@@ -147,8 +150,9 @@ const Careers = () => {
                 letterSpacing: "-0.03em",
               }}
             >
-              Careers at Thalia Technologies — Join Our Team
-            </motion.h1>
+              Build Things That Matter.{" "}
+              <span className="gradient-text-cyan">With People Who Care.</span>
+            </motion.h2>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}

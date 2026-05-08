@@ -120,8 +120,11 @@ const Apps = () => {
               OUR APP LIBRARY
             </motion.div>
 
+            {/* Hidden SEO H1 */}
+            <h1 className="sr-only">18+ Ecommerce Apps for Shopify, Amazon &amp; BigCommerce</h1>
+
             {/* Headline */}
-            <motion.h1
+            <motion.h2
               initial={{ opacity: 0, y: 28 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.65, delay: 0.08 }}
@@ -132,8 +135,9 @@ const Apps = () => {
                 letterSpacing: "-0.03em",
               }}
             >
-              18+ Ecommerce Apps for Shopify, Amazon &amp; BigCommerce
-            </motion.h1>
+              Every App.{" "}
+              <span className="gradient-text-cyan">One Mission.</span>
+            </motion.h2>
 
             {/* Sub-copy */}
             <motion.p

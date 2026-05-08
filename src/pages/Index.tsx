@@ -373,8 +373,11 @@ const Index = () => {
                 TRUSTED BY 100,000+ BUSINESSES
               </motion.div>
 
+              {/* Hidden SEO H1 */}
+              <h1 className="sr-only">Ecommerce SaaS Apps for Shopify, Amazon &amp; BigCommerce</h1>
+
               {/* Headline */}
-              <motion.h1
+              <motion.h2
                 initial={{ opacity: 0, y: 28 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.65, delay: 0.08 }}
@@ -385,8 +388,10 @@ const Index = () => {
                   letterSpacing: "-0.03em",
                 }}
               >
-                Ecommerce SaaS Apps for Shopify, Amazon &amp; BigCommerce
-              </motion.h1>
+                Software That<br />
+                <span className="gradient-text-cyan">Makes a Real</span><br />
+                Difference
+              </motion.h2>
 
               {/* Sub-copy */}
               <motion.p

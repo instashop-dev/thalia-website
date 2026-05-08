@@ -204,7 +204,10 @@ const Contact = () => {
               GET IN TOUCH
             </motion.div>
 
-            <motion.h1
+            {/* Hidden SEO H1 */}
+            <h1 className="sr-only">Contact Thalia Technologies — Support &amp; Sales</h1>
+
+            <motion.h2
               initial={{ opacity: 0, y: 28 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.65, delay: 0.08 }}
@@ -215,8 +218,9 @@ const Contact = () => {
                 letterSpacing: "-0.03em",
               }}
             >
-              Contact Thalia Technologies — Support &amp; Sales
-            </motion.h1>
+              Let's Talk.{" "}
+              <span className="gradient-text-cyan">We're Listening.</span>
+            </motion.h2>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}

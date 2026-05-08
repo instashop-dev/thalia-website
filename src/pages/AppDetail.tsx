@@ -211,8 +211,11 @@ const AppDetail = () => {
                 {getPlatformLabel(app.platform)}
               </motion.div>
 
+              {/* Hidden SEO H1 */}
+              <h1 className="sr-only">{app.h1 || appPageName}</h1>
+
               {/* Headline */}
-              <motion.h1
+              <motion.h2
                 initial={{ opacity: 0, y: 28 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.65, delay: 0.08 }}
@@ -223,8 +226,8 @@ const AppDetail = () => {
                   letterSpacing: "-0.03em",
                 }}
               >
-                {app.h1 || appPageName}
-              </motion.h1>
+                {appPageName}
+              </motion.h2>
 
               {/* Description */}
               <motion.p
