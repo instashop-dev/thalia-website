@@ -154,4 +154,37 @@
     background-image: radial-gradient(rgba(255, 255, 255, 0.055) 1px, transparent 1px);
     background-size: 32px 32px;
   }
+
+  /* Blog prose styles */
+  .prose-custom h2 {
+    @apply font-heading font-bold text-foreground text-2xl mb-4 mt-10;
+    letter-spacing: -0.02em;
+  }
+
+  .prose-custom h3 {
+    @apply font-heading font-bold text-foreground text-xl mb-3 mt-8;
+    letter-spacing: -0.01em;
+  }
+
+  .prose-custom p {
+    @apply text-muted-foreground font-body leading-relaxed mb-4;
+  }
+
+  .prose-custom ul {
+    @apply list-disc pl-6 space-y-2 mb-6 text-muted-foreground font-body leading-relaxed;
+  }
+
+  .prose-custom li {
+    @apply text-muted-foreground font-body leading-relaxed;
+  }
+
+  .prose-custom strong {
+    @apply text-foreground font-semibold;
+  }
+
+  .prose-custom code {
+    @apply text-sm px-1.5 py-0.5 rounded font-mono;
+    background: hsl(220 20% 96%);
+    color: hsl(220 35% 20%);
+  }
 }

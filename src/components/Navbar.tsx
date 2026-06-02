@@ -6,6 +6,7 @@ import logo from "@/assets/thalia-logo.jpg";
 const navLinks = [
   { label: "Home",     path: "/" },
   { label: "Products", path: "/apps" },
+  { label: "Blog",     path: "/blog" },
   { label: "About",    path: "/about" },
   { label: "Careers",  path: "/careers" },
   { label: "Contact",  path: "/contact" },
