@@ -84,6 +84,12 @@ const Footer = () => {
                 About
               </Link>
               <Link
+                to="/blog"
+                className="text-sm opacity-70 hover:opacity-100 hover:text-primary transition-all duration-150"
+              >
+                Blog
+              </Link>
+              <Link
                 to="/careers"
                 className="text-sm opacity-70 hover:opacity-100 hover:text-primary transition-all duration-150"
               >
