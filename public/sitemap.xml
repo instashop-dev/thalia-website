@@ -32,6 +32,48 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.thaliatechnologies.com/blog</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.thaliatechnologies.com/blog/how-to-bulk-edit-shopify-prices</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.thaliatechnologies.com/blog/amazon-to-shopify-dropshipping-guide</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.thaliatechnologies.com/blog/reduce-cart-abandonment-shopify</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.thaliatechnologies.com/blog/sync-inventory-across-channels</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.thaliatechnologies.com/blog/shopify-app-store-optimization</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.thaliatechnologies.com/blog/automated-gst-invoicing-shopify</loc>
+    <lastmod>2026-06-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.thaliatechnologies.com/apps/spreadr</loc>
     <lastmod>2026-05-08</lastmod>
     <changefreq>weekly</changefreq>
