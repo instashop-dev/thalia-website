@@ -17,6 +17,7 @@ export const blogPosts: BlogPost[] = [
 undefined,
 undefined,
 undefined,
+undefined,
   {
     slug: "how-to-bulk-edit-shopify-prices",
     title: "How to Bulk Edit Shopify Product Prices Like a Pro",
