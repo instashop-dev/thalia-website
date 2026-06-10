@@ -227,11 +227,11 @@ const Blog = () => {
                     </span>
                   </div>
                 </div>
-                <div className="hidden md:flex items-center justify-center"
+                <div className="hidden md:flex items-center justify-center min-h-[320px]"
                   style={{ background: "hsl(var(--section-alt))" }}
                 >
                   {featuredPost.coverImage ? (
-                    <div className="w-full h-full overflow-hidden rounded-tr-2xl rounded-br-2xl">
+                    <div className="w-full h-full min-h-[320px] overflow-hidden rounded-tr-2xl rounded-br-2xl">
                       <img
                         src={featuredPost.coverImage}
                         alt={featuredPost.title}
