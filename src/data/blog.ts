@@ -20,7 +20,7 @@ export const blogPosts: BlogPost[] = [
     excerpt:
       "Learn how to update thousands of product prices in minutes using bulk editing tools, scheduled campaigns, and rollback strategies that protect your margins.",
     date: "2025-05-15",
-    author: "Tejas Sangoi",
+    author: "Thalia Technologies",
     authorRole: "Founder & CEO",
     tags: ["Shopify", "Pricing", "Tutorial"],
     coverImage: "/How%20to%20Bulk%20Edit%20Shopify%20Product%20Prices%20Like%20a%20Pro.jpg",
@@ -90,7 +90,7 @@ Pricing is one of the highest-leverage activities in ecommerce. A 1% improvement
     excerpt:
       "Everything you need to know about importing Amazon products to Shopify, earning affiliate commissions, and building a profitable dropshipping business.",
     date: "2025-04-22",
-    author: "Pawan More",
+    author: "Thalia Technologies",
     authorRole: "Tech Lead",
     tags: ["Amazon", "Shopify", "Dropshipping"],
     readTime: "8 min read",
@@ -193,7 +193,7 @@ This approach creates defensible value that pure price arbitrage can't match.
     excerpt:
       "Cart abandonment costs ecommerce stores billions in lost revenue. Here are five data-backed strategies to recover those sales and boost your conversion rate.",
     date: "2025-03-28",
-    author: "Ankit Kothari",
+    author: "Thalia Technologies",
     authorRole: "Product Manager",
     tags: ["Shopify", "Conversion", "Strategy"],
     readTime: "5 min read",
@@ -294,7 +294,7 @@ Start with price drop alerts and abandoned cart emails (highest ROI), then layer
     excerpt:
       "Overselling is every merchant's nightmare. Learn how real-time inventory synchronization keeps stock levels accurate across all your sales channels.",
     date: "2025-02-14",
-    author: "Aniket Rane",
+    author: "Thalia Technologies",
     authorRole: "Lead Software Engineer",
     tags: ["Inventory", "Multi-channel", "Operations"],
     readTime: "7 min read",
@@ -437,7 +437,7 @@ Treat inventory sync as a core system, not an afterthought, and you'll unlock th
     excerpt:
       "The Shopify App Store is fiercely competitive. Here's how top-performing apps optimize their listings to stand out, rank higher, and convert more browsers into users.",
     date: "2025-01-20",
-    author: "Tejas Sangoi",
+    author: "Thalia Technologies",
     authorRole: "Founder & CEO",
     tags: ["Shopify", "App Store", "Growth"],
     readTime: "6 min read",
@@ -596,7 +596,7 @@ Start with your screenshots and description (highest impact), then layer in pric
     excerpt:
       "GST compliance doesn't have to be manual. Learn how Indian Shopify merchants are automating invoice generation, tax calculations, and monthly filing.",
     date: "2024-12-10",
-    author: "Ankit Mane",
+    author: "Thalia Technologies",
     authorRole: "Support Lead",
     tags: ["Shopify", "GST", "India"],
     readTime: "5 min read",
