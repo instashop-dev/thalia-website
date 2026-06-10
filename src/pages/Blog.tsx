@@ -227,18 +227,30 @@ const Blog = () => {
                     </span>
                   </div>
                 </div>
-                <div className="hidden md:flex items-center justify-center p-10"
+                <div className="hidden md:flex items-center justify-center"
                   style={{ background: "hsl(var(--section-alt))" }}
                 >
-                  <div
-                    className="w-full h-full rounded-2xl flex items-center justify-center"
-                    style={{
-                      background: "linear-gradient(135deg, rgba(0,192,255,0.08) 0%, rgba(124,58,237,0.06) 100%)",
-                      border: "1px solid rgba(0,192,255,0.12)",
-                    }}
-                  >
-                    <BookOpen className="h-20 w-20 text-primary/30" />
-                  </div>
+                  {featuredPost.coverImage ? (
+                    <div className="w-full h-full overflow-hidden rounded-tr-2xl rounded-br-2xl">
+                      <img
+                        src={featuredPost.coverImage}
+                        alt={featuredPost.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+                    </div>
+                  ) : (
+                    <div className="w-full h-full p-10">
+                      <div
+                        className="w-full h-full rounded-2xl flex items-center justify-center"
+                        style={{
+                          background: "linear-gradient(135deg, rgba(0,192,255,0.08) 0%, rgba(124,58,237,0.06) 100%)",
+                          border: "1px solid rgba(0,192,255,0.12)",
+                        }}
+                      >
+                        <BookOpen className="h-20 w-20 text-primary/30" />
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             </Link>
