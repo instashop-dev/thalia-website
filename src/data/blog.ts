@@ -23,7 +23,7 @@ export const blogPosts: BlogPost[] = [
     author: "Tejas Sangoi",
     authorRole: "Founder & CEO",
     tags: ["Shopify", "Pricing", "Tutorial"],
-    coverImage: "/How to Bulk Edit Shopify Product Prices Like a Pro.jpg",
+    coverImage: "/How%20to%20Bulk%20Edit%20Shopify%20Product%20Prices%20Like%20a%20Pro.jpg",
     readTime: "6 min read",
     seoTitle: "How to Bulk Edit Shopify Product Prices Like a Pro | Thalia Blog",
     seoDescription:
