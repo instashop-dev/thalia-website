@@ -325,30 +325,6 @@ const Blog = () => {
                     className="group block card-elevated h-full flex flex-col"
                     style={{ borderTop: "2px solid rgba(0,192,255,0.22)" }}
                   >
-                    {/* Cover image / placeholder */}
-                    {post.coverImage ? (
-                      <div
-                        className="h-44 w-full overflow-hidden"
-                        style={{ borderBottom: "1px solid hsl(220 15% 90%)" }}
-                      >
-                        <img
-                          src={post.coverImage}
-                          alt={post.title}
-                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                        />
-                      </div>
-                    ) : (
-                      <div
-                        className="h-44 w-full flex items-center justify-center"
-                        style={{
-                          background: "linear-gradient(135deg, rgba(0,192,255,0.06) 0%, rgba(124,58,237,0.04) 100%)",
-                          borderBottom: "1px solid hsl(220 15% 90%)",
-                        }}
-                      >
-                        <BookOpen className="h-10 w-10 text-primary/25" />
-                      </div>
-                    )}
-
                     <div className="p-6 flex flex-col flex-1">
                       <div className="flex flex-wrap gap-2 mb-3">
                         {post.tags.slice(0, 2).map((tag) => (

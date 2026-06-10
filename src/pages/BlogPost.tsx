@@ -255,8 +255,6 @@ const BlogPost = () => {
                 </span>
                 <span>
                   <span className="text-white/80 font-medium">{post.author}</span>
-                  <span className="mx-1.5">·</span>
-                  <span>{post.authorRole}</span>
                 </span>
               </span>
               <span className="inline-flex items-center gap-1.5">
