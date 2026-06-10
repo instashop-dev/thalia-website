@@ -182,75 +182,48 @@ const Blog = () => {
               className="group block card-elevated overflow-hidden"
               style={{ borderTop: "2px solid rgba(0,192,255,0.22)" }}
             >
-              <div className="grid md:grid-cols-2 gap-0">
-                <div className="p-8 md:p-10 flex flex-col justify-center">
-                  <div className="flex flex-wrap items-center gap-3 mb-4">
-                    {featuredPost.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-[11px] font-semibold uppercase tracking-[0.08em] font-body"
-                        style={{
-                          background: "rgba(0,192,255,0.08)",
-                          color: "#0099cc",
-                          border: "1px solid rgba(0,192,255,0.18)",
-                        }}
-                      >
-                        <Tag className="h-3 w-3" />
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <h3 className="font-heading font-bold text-foreground text-2xl md:text-3xl mb-4 group-hover:text-primary transition-colors"
-                    style={{ letterSpacing: "-0.02em" }}
-                  >
-                    {featuredPost.title}
-                  </h3>
-                  <p className="text-muted-foreground font-body leading-relaxed mb-6">
-                    {featuredPost.excerpt}
-                  </p>
-                  <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground font-body">
-                    <span className="inline-flex items-center gap-1.5">
-                      <Calendar className="h-3.5 w-3.5" />
-                      {new Date(featuredPost.date).toLocaleDateString("en-US", {
-                        year: "numeric",
-                        month: "long",
-                        day: "numeric",
-                      })}
+              <div className="p-8 md:p-10">
+                <div className="flex flex-wrap items-center gap-3 mb-4">
+                  {featuredPost.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-[11px] font-semibold uppercase tracking-[0.08em] font-body"
+                      style={{
+                        background: "rgba(0,192,255,0.08)",
+                        color: "#0099cc",
+                        border: "1px solid rgba(0,192,255,0.18)",
+                      }}
+                    >
+                      <Tag className="h-3 w-3" />
+                      {tag}
                     </span>
-                    <span className="inline-flex items-center gap-1.5">
-                      <Clock className="h-3.5 w-3.5" />
-                      {featuredPost.readTime}
-                    </span>
-                    <span className="inline-flex items-center gap-1.5 text-primary font-semibold group-hover:underline">
-                      Read article
-                      <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
-                    </span>
-                  </div>
+                  ))}
                 </div>
-                <div className="hidden md:flex items-center justify-center min-h-[320px]"
-                  style={{ background: "hsl(var(--section-alt))" }}
+                <h3 className="font-heading font-bold text-foreground text-2xl md:text-3xl mb-4 group-hover:text-primary transition-colors"
+                  style={{ letterSpacing: "-0.02em" }}
                 >
-                  {featuredPost.coverImage ? (
-                    <div className="w-full h-full min-h-[320px] overflow-hidden rounded-tr-2xl rounded-br-2xl">
-                      <img
-                        src={featuredPost.coverImage}
-                        alt={featuredPost.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                      />
-                    </div>
-                  ) : (
-                    <div className="w-full h-full p-10">
-                      <div
-                        className="w-full h-full rounded-2xl flex items-center justify-center"
-                        style={{
-                          background: "linear-gradient(135deg, rgba(0,192,255,0.08) 0%, rgba(124,58,237,0.06) 100%)",
-                          border: "1px solid rgba(0,192,255,0.12)",
-                        }}
-                      >
-                        <BookOpen className="h-20 w-20 text-primary/30" />
-                      </div>
-                    </div>
-                  )}
+                  {featuredPost.title}
+                </h3>
+                <p className="text-muted-foreground font-body leading-relaxed mb-6">
+                  {featuredPost.excerpt}
+                </p>
+                <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground font-body">
+                  <span className="inline-flex items-center gap-1.5">
+                    <Calendar className="h-3.5 w-3.5" />
+                    {new Date(featuredPost.date).toLocaleDateString("en-US", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })}
+                  </span>
+                  <span className="inline-flex items-center gap-1.5">
+                    <Clock className="h-3.5 w-3.5" />
+                    {featuredPost.readTime}
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 text-primary font-semibold group-hover:underline">
+                    Read article
+                    <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+                  </span>
                 </div>
               </div>
             </Link>
