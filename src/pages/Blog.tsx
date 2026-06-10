@@ -115,7 +115,7 @@ const Blog = () => {
               }}
             >
               Insights for{" "}
-              <span className="gradient-text-cyan">Modern Merchants.</span>
+              <span className="gradient-text-cyan">Ecommerce Merchants.</span>
             </motion.h2>
 
             {/* Sub-copy */}
