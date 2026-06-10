@@ -93,6 +93,7 @@ Pricing is one of the highest-leverage activities in ecommerce. A 1% improvement
     author: "Thalia Technologies",
     authorRole: "Tech Lead",
     tags: ["Amazon", "Shopify", "Dropshipping"],
+    coverImage: "/The%20Complete%20Guide%20to%20Amazon-to-Shopify%20Dropshipping.jpg",
     readTime: "8 min read",
     seoTitle: "Amazon to Shopify Dropshipping Guide | Thalia Blog",
     seoDescription:
@@ -196,6 +197,7 @@ This approach creates defensible value that pure price arbitrage can't match.
     author: "Thalia Technologies",
     authorRole: "Product Manager",
     tags: ["Shopify", "Conversion", "Strategy"],
+    coverImage: "/5%20Proven%20Strategies%20to%20Reduce%20Cart%20Abandonment.jpg",
     readTime: "5 min read",
     seoTitle: "5 Strategies to Reduce Cart Abandonment on Shopify | Thalia Blog",
     seoDescription:
