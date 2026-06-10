@@ -1,4 +1,3 @@
-import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import {
@@ -13,14 +12,12 @@ import {
   Coffee,
   Gift,
   Clock,
-  MapPin,
-  Briefcase,
+  ExternalLink,
 } from "lucide-react";
 import Layout from "@/components/Layout";
 import Seo from "@/components/Seo";
 
-/** External careers / job listings (opens in new tab from Apply CTAs). */
-const JOB_LISTINGS_URL = "https://wellfound.com/company/thalia-technologies-1";
+const JOB_LISTINGS_URL = "https://wellfound.com/company/thalia-technologies-1/jobs";
 
 const perks = [
   { icon: Building, title: "Hybrid & Flexible", desc: "We work in a hybrid model with flexible hours. Work from office or home — whatever helps you do your best work." },
@@ -38,24 +35,6 @@ const benefits = [
   { icon: Clock,         title: "Flexible Hours",       desc: "No rigid 9-to-5. Work during your most productive hours as long as you deliver results and collaborate." },
 ];
 
-type Job = { title: string; type: string; location: string; dept: string };
-
-const openings: Job[] = [
-  { title: "Senior Full-Stack Engineer",         type: "Full-time", location: "Hybrid – India",    dept: "Engineering" },
-  { title: "Product Designer (UX/UI)",           type: "Full-time", location: "Hybrid / Remote",   dept: "Design" },
-  { title: "Growth Marketing Manager",           type: "Full-time", location: "Hybrid – India",    dept: "Marketing" },
-  { title: "Customer Success Specialist",        type: "Full-time", location: "Hybrid / Remote",   dept: "Support" },
-  { title: "DevOps / Site Reliability Engineer", type: "Full-time", location: "Hybrid / Remote",   dept: "Infrastructure" },
-];
-
-const DEPT_COLORS: Record<string, string> = {
-  Engineering:    "#00c0ff",
-  Design:         "#7c55ff",
-  Marketing:      "#00C896",
-  Support:        "#FF9900",
-  Infrastructure: "#8B7CF6",
-};
-
 const inView = (delay = 0) => ({
   initial: { opacity: 0, y: 22 },
   whileInView: { opacity: 1, y: 0 },
@@ -64,14 +43,6 @@ const inView = (delay = 0) => ({
 });
 
 const Careers = () => {
-  const departments = useMemo(() => {
-    const set = new Set<string>();
-    openings.forEach((j) => set.add(j.dept));
-    return ["All", ...Array.from(set)];
-  }, []);
-  const [dept, setDept] = useState<string>("All");
-  const filtered = dept === "All" ? openings : openings.filter((j) => j.dept === dept);
-
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -83,15 +54,10 @@ const Careers = () => {
 
   const careersItemListSchema = {
     "@context": "https://schema.org",
-    "@type": "ItemList",
-    name: "Open Positions at Thalia Technologies",
-    numberOfItems: openings.length,
-    itemListElement: openings.map((job, i) => ({
-      "@type": "ListItem",
-      position: i + 1,
-      name: job.title,
-      url: JOB_LISTINGS_URL,
-    })),
+    "@type": "Organization",
+    name: "Thalia Technologies",
+    url: "https://www.thaliatechnologies.com",
+    sameAs: [JOB_LISTINGS_URL],
   };
 
   return (
@@ -172,8 +138,8 @@ const Careers = () => {
               className="flex flex-wrap justify-center gap-3 mb-10"
             >
               {[
-                { value: `${openings.length}+`, label: "Open Roles" },
-                { value: `${departments.length - 1}`, label: "Departments" },
+                { value: "Hiring",  label: "Open Roles" },
+                { value: "5+",      label: "Departments" },
                 { value: "Hybrid",               label: "Work Style" },
                 { value: "100k+",                label: "Users We Serve" },
               ].map((s) => (
@@ -301,7 +267,7 @@ const Careers = () => {
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════
-          OPENINGS — filterable list
+          OPEN ROLES — live via Wellfound
       ════════════════════════════════════════════════════════════════ */}
       <section id="openings" className="bg-white" style={{ paddingTop: 96, paddingBottom: 96 }}>
         <div className="section-container">
@@ -319,104 +285,40 @@ const Careers = () => {
               Current Openings
             </motion.h2>
             <motion.p {...inView(0.16)} className="text-muted-foreground leading-relaxed font-body">
-              Filter by department to find your fit. Don't see your role? Scroll down — we still want to hear from you.
+              All our open positions are listed live on Wellfound. Click below to browse current roles and apply directly.
             </motion.p>
           </div>
 
-          {/* Filter tabs */}
-          <motion.div
-            {...inView(0.2)}
-            className="flex flex-wrap gap-2 mb-8"
-            role="tablist"
-            aria-label="Filter openings by department"
-          >
-            {departments.map((d) => {
-              const active = dept === d;
-              const count = d === "All" ? openings.length : openings.filter((j) => j.dept === d).length;
-              return (
-                <button
-                  key={d}
-                  onClick={() => setDept(d)}
-                  aria-pressed={active}
-                  role="tab"
-                  className="inline-flex items-center gap-2 px-4 h-10 rounded-full text-sm font-semibold font-body transition-all"
-                  style={{
-                    background: active ? "rgba(0,192,255,0.1)" : "white",
-                    color: active ? "#0099cc" : "hsl(220 10% 35%)",
-                    border: active ? "1px solid rgba(0,192,255,0.4)" : "1px solid hsl(220 15% 90%)",
-                    boxShadow: active ? "0 2px 12px rgba(0,192,255,0.12)" : "none",
-                  }}
-                >
-                  {d}
-                  <span
-                    className="text-[11px] font-bold px-1.5 rounded-md"
-                    style={{
-                      background: active ? "rgba(0,192,255,0.15)" : "hsl(220 20% 96%)",
-                      color: active ? "#0099cc" : "hsl(220 10% 48%)",
-                    }}
-                  >
-                    {count}
-                  </span>
-                </button>
-              );
-            })}
-          </motion.div>
-
-          {/* Job cards */}
-          <div className="max-w-4xl space-y-4">
-            {filtered.map((job, i) => (
-              <motion.div
-                key={job.title}
-                {...inView(Math.min(i * 0.06, 0.3))}
-                className="card-elevated p-5 flex flex-col sm:flex-row sm:items-center gap-4"
-                style={{ borderTop: "2px solid rgba(0,192,255,0.22)" }}
-              >
+          <motion.div {...inView(0.22)}>
+            <a
+              href={JOB_LISTINGS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group block card-elevated p-8 md:p-10 max-w-2xl"
+              style={{ borderTop: "2px solid rgba(0,192,255,0.22)" }}
+            >
+              <div className="flex items-start gap-5">
                 <div
-                  className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
-                  style={{ background: "rgba(0,192,255,0.1)", border: "1px solid rgba(0,192,255,0.18)" }}
+                  className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
+                  style={{ background: "rgba(0,192,255,0.1)", border: "1px solid rgba(0,192,255,0.2)" }}
                 >
-                  <Briefcase className="h-5 w-5 text-primary" />
+                  <ExternalLink className="h-6 w-6 text-primary" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <h3 className="font-heading font-bold text-foreground text-base mb-1">{job.title}</h3>
-                  <div className="flex flex-wrap items-center gap-2 text-xs font-body text-muted-foreground">
-                    <span
-                      className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full font-semibold"
-                      style={{
-                        background: `${DEPT_COLORS[job.dept] ?? "#00c0ff"}14`,
-                        color: DEPT_COLORS[job.dept] ?? "#00c0ff",
-                      }}
-                    >
-                      <span
-                        className="w-1.5 h-1.5 rounded-full"
-                        style={{ background: DEPT_COLORS[job.dept] ?? "#00c0ff" }}
-                      />
-                      {job.dept}
-                    </span>
-                    <span>·</span>
-                    <span>{job.type}</span>
-                    <span>·</span>
-                    <span className="inline-flex items-center gap-1">
-                      <MapPin className="h-3 w-3" /> {job.location}
-                    </span>
-                  </div>
+                  <h3 className="font-heading font-bold text-foreground text-xl mb-2 group-hover:text-primary transition-colors">
+                    View All Open Positions on Wellfound
+                  </h3>
+                  <p className="text-muted-foreground font-body text-sm leading-relaxed mb-4">
+                    Our job listings are managed on Wellfound. All current openings across Engineering, Design, Marketing, and more are always up to date there.
+                  </p>
+                  <span className="inline-flex items-center gap-2 text-sm font-semibold text-primary font-body group-hover:underline">
+                    Browse open roles
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                  </span>
                 </div>
-                <a
-                  href={JOB_LISTINGS_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-primary text-sm shrink-0"
-                >
-                  Apply Now <ArrowRight className="ml-1.5 h-3 w-3 inline" />
-                </a>
-              </motion.div>
-            ))}
-            {filtered.length === 0 && (
-              <div className="card-elevated p-10 text-center">
-                <p className="text-muted-foreground font-body">No openings in this department right now.</p>
               </div>
-            )}
-          </div>
+            </a>
+          </motion.div>
         </div>
       </section>
 

@@ -33,6 +33,7 @@ import primeLogo from "@/assets/Prime.webp";
 import proBulkPriceEditorLogo from "@/assets/Pro Bulk Price Editor.webp";
 import csvBoxLogo from "@/assets/CSV Box.png";
 import fyleboxLogo from "@/assets/fylebox-logo.png";
+import productDataExporterLogo from "@/assets/Exporter logo.webp";
 import roboWebsiteHero from "@/assets/Robo website Image.png";
 import proBulkWebsiteHero from "@/assets/Pro Bulk Price Editor website.png";
 import t2WebsiteHero from "@/assets/app-t2.jpg";
@@ -122,6 +123,7 @@ const appLogos: Record<string, string> = {
   probulkpriceeditor: proBulkPriceEditorLogo,
   csvbox: csvBoxLogo,
   fylebox: fyleboxLogo,
+  "product-data-exporter": productDataExporterLogo,
 };
 
 export const getAppLogo = (slug: string): string | undefined => appLogos[slug];
@@ -1437,6 +1439,141 @@ export const apps: AppData[] = [
     seoDescription: "Let customers upload files with their orders. Support for images, documents, and custom file types.",
     h1: "Fylebox — Customer File Uploads for Shopify Orders",
     comingSoon: true,
+  },
+  {
+    slug: "product-data-exporter",
+    name: "Product Data Exporter Pro",
+    tagline: "Export your entire Shopify product catalog to CSV, Excel, or JSON in one click.",
+    description: "Bulk export Shopify product data — titles, descriptions, prices, variants, images, metafields, and more — into clean, ready-to-use files.",
+    longDescription: "Product Data Exporter Pro gives Shopify merchants full control over their product data. Whether you need a backup, a feed for a third-party tool, or a bulk edit starting point, simply choose your fields, pick your format (CSV, Excel, JSON), and export in seconds. Supports custom metafields, variant-level data, inventory, and image URLs — everything in one structured file.",
+    platform: "Shopify",
+    color: "#00AAFF",
+    icon: "📦",
+    externalUrl: "https://apps.shopify.com/product-data-exporter",
+    features: [
+      "Export products to CSV, Excel, or JSON",
+      "Choose exactly which fields to include",
+      "Export metafields and custom data",
+      "Variant-level and inventory data export",
+      "Image URLs included in exports",
+      "Bulk export entire catalog in seconds",
+      "Schedule automated recurring exports",
+      "Filter by collection, tag, or product type",
+    ],
+    featureDetails: [
+      {
+        title: "Full Catalog Export",
+        desc: "Export your entire Shopify product catalog — titles, descriptions, prices, SKUs, barcodes, tags, vendors, and more — into a single structured file.",
+      },
+      {
+        title: "Flexible Field Selection",
+        desc: "Pick exactly the fields you need. Include or exclude metafields, variants, inventory levels, image URLs, and SEO fields to get a clean, focused export.",
+      },
+      {
+        title: "Multiple Export Formats",
+        desc: "Download as CSV for spreadsheets, Excel (.xlsx) for formatted reports, or JSON for developer integrations and third-party tool imports.",
+      },
+    ],
+    benefits: [
+      "No coding or technical skills required",
+      "Export thousands of products in under a minute",
+      "Use exports for backups, migrations, or bulk edits",
+      "Compatible with Google Sheets, Excel, and most ETL tools",
+      "Supports Shopify metafields and custom fields",
+      "Schedule automatic exports for regular backups",
+    ],
+    howItWorks: [
+      {
+        step: "01",
+        title: "Select Your Fields",
+        desc: "Choose which product fields to include in your export — titles, prices, variants, metafields, images, inventory, and more.",
+      },
+      {
+        step: "02",
+        title: "Apply Filters",
+        desc: "Narrow your export by collection, product type, tag, or vendor. Export your full catalog or just the products you need.",
+      },
+      {
+        step: "03",
+        title: "Download Instantly",
+        desc: "Click Export and download your file in CSV, Excel, or JSON format. Ready to open in any spreadsheet or import into any tool.",
+      },
+    ],
+    stats: [
+      { value: "10,000+", label: "Merchants" },
+      { value: "4.8★", label: "Avg Rating" },
+      { value: "1-click", label: "Export" },
+      { value: "3 Formats", label: "CSV / Excel / JSON" },
+    ],
+    testimonial: {
+      quote: "We export our full product catalog every week for our warehouse system. Product Data Exporter makes it effortless — takes 30 seconds instead of hours.",
+      author: "Marcus T.",
+      role: "Operations Manager, Home Goods Store",
+    },
+    plans: [
+      {
+        name: "Free",
+        price: "$0",
+        period: "/month",
+        features: [
+          "Up to 50 products per export",
+          "CSV format",
+          "Basic fields only",
+          "Manual exports",
+        ],
+      },
+      {
+        name: "Pro",
+        price: "$9",
+        period: "/month",
+        highlighted: true,
+        features: [
+          "Unlimited products",
+          "CSV, Excel & JSON formats",
+          "All fields including metafields",
+          "Scheduled automatic exports",
+          "Filter by collection / tag / type",
+          "Priority support",
+        ],
+      },
+      {
+        name: "Business",
+        price: "$19",
+        period: "/month",
+        features: [
+          "Everything in Pro",
+          "Multiple export profiles",
+          "FTP / SFTP delivery",
+          "Dedicated account manager",
+        ],
+      },
+    ],
+    reviews: [
+      {
+        rating: 5,
+        quote: "Exactly what I needed. I export my catalog weekly for our ERP system and it works perfectly every time.",
+        author: "Sarah K.",
+        role: "eCommerce Manager",
+        date: "2025-03-10",
+      },
+      {
+        rating: 5,
+        quote: "Super easy to set up. The metafield export saved us hours of manual work copying data out of Shopify.",
+        author: "James R.",
+        role: "Shopify Developer",
+        date: "2025-02-18",
+      },
+      {
+        rating: 5,
+        quote: "We use it to feed product data into our marketing tools. The JSON export option is a huge plus.",
+        author: "Priya N.",
+        role: "Digital Marketing Lead",
+        date: "2025-01-25",
+      },
+    ],
+    seoTitle: "Product Data Exporter Pro — Export Shopify Products to CSV, Excel & JSON",
+    seoDescription: "Export your entire Shopify product catalog to CSV, Excel, or JSON in one click. Supports metafields, variants, inventory, and image URLs. Try free.",
+    h1: "Shopify Product Data Exporter — Bulk Export to CSV, Excel & JSON",
   },
 ];
 
