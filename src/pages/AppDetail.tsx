@@ -9,6 +9,16 @@ import type { AppData } from "@/data/apps";
 import { apps, getPlatformColor, getPlatformLabel, getAppImage, getAppLogo } from "@/data/apps";
 import NotFound from "./NotFound";
 
+const withUtm = (url: string, content: string) => {
+  if (!url || url === "#") return url;
+  const u = new URL(url);
+  u.searchParams.set("utm_source", "thaliatechnologies.com");
+  u.searchParams.set("utm_medium", "website");
+  u.searchParams.set("utm_campaign", "app_install");
+  u.searchParams.set("utm_content", content);
+  return u.toString();
+};
+
 const getPrimaryCtaLabel = (app: AppData) => {
   if (app.platform === "BigCommerce") return "Install on BigCommerce";
   if (app.platform === "API") return "Visit website";
@@ -278,7 +288,7 @@ const AppDetail = () => {
                   >
                     {app.externalUrl !== "#" && (
                       <a
-                        href={app.externalUrl}
+                        href={withUtm(app.externalUrl, "hero")}
                         target="_blank"
                         rel="noopener noreferrer"
                         className={`${primaryCtaClass} text-base px-8 h-12 inline-flex items-center justify-center gap-2`}
@@ -531,7 +541,7 @@ const AppDetail = () => {
                       </ul>
                       {app.externalUrl !== "#" ? (
                         <a
-                          href={app.externalUrl}
+                          href={withUtm(app.externalUrl, "pricing")}
                           target="_blank"
                           rel="noopener noreferrer"
                           className={plan.highlighted ? "btn-primary w-full text-center block" : "btn-outline w-full text-center block"}
@@ -665,7 +675,7 @@ const AppDetail = () => {
               {app.externalUrl !== "#" && (
                 <motion.a
                   {...inView(0.2)}
-                  href={app.externalUrl}
+                  href={withUtm(app.externalUrl, "cta")}
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`${
