@@ -13,6 +13,20 @@ import {
   Lightbulb,
   BarChart3,
 } from "lucide-react";
+
+const APP_STORE_URLS: Record<string, string> = {
+  "bulk-price-editor-pro": "https://apps.shopify.com/pro-bulk-price-editor",
+};
+
+const withUtm = (url: string, content: string) => {
+  if (!url) return url;
+  const u = new URL(url);
+  u.searchParams.set("utm_source", "thaliatechnologies.com");
+  u.searchParams.set("utm_medium", "website");
+  u.searchParams.set("utm_campaign", "case_study");
+  u.searchParams.set("utm_content", content);
+  return u.toString();
+};
 import Layout from "@/components/Layout";
 import Seo from "@/components/Seo";
 import { caseStudies } from "@/data/caseStudies";
@@ -485,12 +499,23 @@ const CaseStudyDetail = () => {
               </p>
             </div>
             <div className="flex flex-wrap gap-3 flex-shrink-0">
-              <Link
-                to={`/apps/${cs.appSlug}`}
-                className="btn-primary text-sm whitespace-nowrap"
-              >
-                View App Details <ArrowRight className="ml-2 h-4 w-4 inline" />
-              </Link>
+              {APP_STORE_URLS[cs.appSlug] ? (
+                <a
+                  href={withUtm(APP_STORE_URLS[cs.appSlug], `case_study_cta_${cs.slug}`)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary text-sm whitespace-nowrap"
+                >
+                  Install on Shopify <ArrowRight className="ml-2 h-4 w-4 inline" />
+                </a>
+              ) : (
+                <Link
+                  to={`/apps/${cs.appSlug}`}
+                  className="btn-primary text-sm whitespace-nowrap"
+                >
+                  View App Details <ArrowRight className="ml-2 h-4 w-4 inline" />
+                </Link>
+              )}
               <Link
                 to="/case-studies"
                 className="btn-outline text-sm whitespace-nowrap"
