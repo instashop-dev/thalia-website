@@ -41,6 +41,12 @@ export default {
       return Response.redirect(url.toString(), 301);
     }
 
+    // Remove trailing slashes to prevent duplicate-canonical alternate pages
+    if (url.pathname !== "/" && url.pathname.endsWith("/")) {
+      url.pathname = url.pathname.slice(0, -1);
+      return Response.redirect(url.toString(), 301);
+    }
+
     // Try to serve the request directly from static assets
     // (handles .js, .css, images, robots.txt, sitemap.xml, og-image.png, etc.)
     const assetResponse = await env.ASSETS.fetch(request);
