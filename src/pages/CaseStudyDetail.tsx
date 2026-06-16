@@ -4,6 +4,8 @@ import { ArrowLeft, ArrowRight, CheckCircle2, Star, ExternalLink, MapPin, Tag, C
 import Layout from "@/components/Layout";
 import Seo from "@/components/Seo";
 import { caseStudies } from "@/data/caseStudies";
+import firstvibeLogoSrc from "@/assets/firstvibe-logo.png";
+import sndyCoffeeLogoSrc from "@/assets/sndy-coffee-logo.png";
 
 /* ──────────────────────────────────────────────────────────
    App store URLs (UTM-ready)
@@ -88,9 +90,9 @@ const HEADLINES: Record<string, string> = {
     "SNDY Coffee Cuts EOFY Pricing Effort by Up to 75% with Scheduled Bulk Updates",
 };
 
-const merchantColors: Record<string, string> = {
-  "Firstvibe":   "#ec4899",
-  "SNDY Coffee": "#92400e",
+const merchantLogos: Record<string, string> = {
+  "Firstvibe":   firstvibeLogoSrc,
+  "SNDY Coffee": sndyCoffeeLogoSrc,
 };
 
 /* ══════════════════════════════════════════════════════════
@@ -104,7 +106,7 @@ const CaseStudyDetail = () => {
 
   const storeUrl = APP_STORE_URLS[cs.appSlug];
   const ctaUrl   = storeUrl ? withUtm(storeUrl, `case_study_cta_${slug}`) : `/apps/${cs.appSlug}`;
-  const avatarColor = merchantColors[cs.merchant] ?? "#00c0ff";
+  const logo     = merchantLogos[cs.merchant];
   const headline = HEADLINES[cs.slug] ?? `How ${cs.merchant} Transformed Their Pricing Workflow`;
 
   const related = caseStudies.filter((c) => c.slug !== cs.slug).slice(0, 2);
@@ -180,10 +182,14 @@ const CaseStudyDetail = () => {
               className="flex items-center gap-3"
             >
               <div
-                className="w-10 h-10 rounded-xl flex-shrink-0 flex items-center justify-center text-white font-heading font-extrabold text-base"
-                style={{ background: avatarColor }}
+                className="w-14 h-10 rounded-xl flex-shrink-0 flex items-center justify-center overflow-hidden"
+                style={{ background: "rgba(255,255,255,0.95)" }}
               >
-                {cs.merchant[0]}
+                {logo ? (
+                  <img src={logo} alt={`${cs.merchant} logo`} className="w-full h-full object-contain p-1.5" />
+                ) : (
+                  <span className="text-foreground font-heading font-extrabold">{cs.merchant[0]}</span>
+                )}
               </div>
               <div>
                 <div className="text-sm font-heading font-bold text-white">{cs.merchant}</div>
@@ -515,10 +521,14 @@ const CaseStudyDetail = () => {
                 {cs.quoteName && (
                   <div className="flex items-center gap-3">
                     <div
-                      className="w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-heading font-bold flex-shrink-0"
-                      style={{ background: avatarColor }}
+                      className="w-10 h-8 rounded-lg flex-shrink-0 flex items-center justify-center overflow-hidden"
+                      style={{ background: "rgba(255,255,255,0.9)" }}
                     >
-                      {cs.quoteName[0]}
+                      {logo ? (
+                        <img src={logo} alt={cs.merchant} className="w-full h-full object-contain p-1" />
+                      ) : (
+                        <span className="text-foreground text-xs font-heading font-bold">{cs.quoteName[0]}</span>
+                      )}
                     </div>
                     <div>
                       <div className="text-sm font-heading font-bold text-white">{cs.quoteName}</div>
@@ -621,7 +631,7 @@ const CaseStudyDetail = () => {
             </motion.div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {related.map((r, i) => {
-                const aColor = merchantColors[r.merchant] ?? "#00c0ff";
+                const rLogo = merchantLogos[r.merchant];
                 return (
                   <motion.div key={r.slug} {...inView(i * 0.1)}>
                     <Link
@@ -640,10 +650,14 @@ const CaseStudyDetail = () => {
                     >
                       <div className="flex items-center gap-3 mb-4">
                         <div
-                          className="w-10 h-10 rounded-xl flex-shrink-0 flex items-center justify-center text-white font-heading font-extrabold"
-                          style={{ background: aColor }}
+                          className="w-14 h-10 rounded-xl flex-shrink-0 flex items-center justify-center overflow-hidden"
+                          style={{ background: "hsl(var(--section-alt))", border: "1px solid hsl(var(--border))" }}
                         >
-                          {r.merchant[0]}
+                          {rLogo ? (
+                            <img src={rLogo} alt={`${r.merchant} logo`} className="w-full h-full object-contain p-1.5" />
+                          ) : (
+                            <span className="text-foreground font-heading font-extrabold">{r.merchant[0]}</span>
+                          )}
                         </div>
                         <div>
                           <div className="text-sm font-heading font-bold text-foreground">{r.merchant}</div>

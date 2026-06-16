@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, TrendingUp, ShoppingBag, Coffee, Tag } from "lucide-react";
+import { ArrowRight, TrendingUp } from "lucide-react";
 import Layout from "@/components/Layout";
 import Seo from "@/components/Seo";
 import { caseStudies } from "@/data/caseStudies";
+import firstvibeLogoSrc from "@/assets/firstvibe-logo.png";
+import sndyCoffeeLogoSrc from "@/assets/sndy-coffee-logo.png";
 
 const inView = (delay = 0) => ({
   initial: { opacity: 0, y: 20 },
@@ -12,14 +14,9 @@ const inView = (delay = 0) => ({
   transition: { duration: 0.5, delay, ease: [0.25, 0.46, 0.45, 0.94] as const },
 });
 
-const industryIcons: Record<string, React.ElementType> = {
-  "Fashion & Apparel": ShoppingBag,
-  "Food & Beverage":   Coffee,
-};
-
-const merchantColors: Record<string, string> = {
-  "Firstvibe":    "#ec4899",
-  "SNDY Coffee":  "#92400e",
+const merchantLogos: Record<string, string> = {
+  "Firstvibe":   firstvibeLogoSrc,
+  "SNDY Coffee": sndyCoffeeLogoSrc,
 };
 
 const HEADLINES: Record<string, string> = {
@@ -163,9 +160,7 @@ const CaseStudies = () => {
           {/* Cards grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {caseStudies.map((cs, i) => {
-              const Icon = industryIcons[cs.industry] ?? Tag;
-              const avatarColor = merchantColors[cs.merchant] ?? "#00c0ff";
-              const initial = cs.merchant[0].toUpperCase();
+              const logo = merchantLogos[cs.merchant];
 
               return (
                 <motion.div
@@ -190,17 +185,26 @@ const CaseStudies = () => {
                       {/* Merchant identity */}
                       <div className="flex items-center gap-3 mb-4">
                         <div
-                          className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 text-white font-heading font-extrabold text-lg"
-                          style={{ background: avatarColor }}
+                          className="w-14 h-11 rounded-xl flex-shrink-0 flex items-center justify-center overflow-hidden"
+                          style={{ background: "hsl(var(--section-alt))", border: "1px solid hsl(var(--border))" }}
                         >
-                          {initial}
+                          {logo ? (
+                            <img
+                              src={logo}
+                              alt={`${cs.merchant} logo`}
+                              className="w-full h-full object-contain p-1.5"
+                            />
+                          ) : (
+                            <span className="text-foreground font-heading font-extrabold text-lg">
+                              {cs.merchant[0]}
+                            </span>
+                          )}
                         </div>
                         <div>
                           <div className="font-heading font-bold text-foreground text-sm leading-tight">
                             {cs.merchant}
                           </div>
-                          <div className="text-xs font-body text-muted-foreground mt-0.5 flex items-center gap-1">
-                            <Icon className="h-3 w-3" />
+                          <div className="text-xs font-body text-muted-foreground mt-0.5">
                             {cs.location}
                           </div>
                         </div>
