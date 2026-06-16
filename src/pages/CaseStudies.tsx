@@ -8,6 +8,7 @@ import {
   Quote,
   ShoppingBag,
   Coffee,
+  Zap,
 } from "lucide-react";
 import Layout from "@/components/Layout";
 import Seo from "@/components/Seo";
@@ -24,6 +25,12 @@ const inView = (delay = 0) => ({
 const industryIcons: Record<string, React.ElementType> = {
   "Fashion & Apparel": ShoppingBag,
   "Food & Beverage": Coffee,
+};
+
+/* Per-slug display headlines (mirrors CaseStudyDetail) */
+const HEADLINES: Record<string, string> = {
+  "firstvibe-bulk-pricing": "Firstvibe replaces hours of manual price edits with one-click promo launches",
+  "sndy-coffee-eofy":       "SNDY Coffee cuts EOFY pricing effort by up to 75% with scheduled bulk updates",
 };
 
 const CaseStudies = () => {
@@ -193,7 +200,7 @@ const CaseStudies = () => {
                 className="lg:col-span-2 relative flex flex-col justify-between p-10 lg:p-12"
                 style={{
                   background: "linear-gradient(150deg, hsl(var(--hero-bg)) 0%, #0a1628 100%)",
-                  minHeight: 380,
+                  minHeight: 400,
                 }}
               >
                 <div
@@ -218,7 +225,7 @@ const CaseStudies = () => {
                   </div>
 
                   <div className="flex flex-col gap-6">
-                    {featured.results.map((r) => (
+                    {featured.keyResults.map((r) => (
                       <div key={r.label}>
                         <div
                           className="font-heading font-extrabold leading-none mb-1"
@@ -240,16 +247,18 @@ const CaseStudies = () => {
                   </div>
                 </div>
 
-                <div className="relative mt-10">
-                  <Quote className="h-5 w-5 mb-3" style={{ color: "rgba(0,192,255,0.45)" }} />
-                  <p className="text-white/75 font-body leading-relaxed text-sm italic mb-3">
-                    "{featured.quote}"
-                  </p>
-                  <div className="text-white font-heading font-semibold text-sm">{featured.quoteName}</div>
-                  <div className="text-xs font-body" style={{ color: "rgba(255,255,255,0.5)" }}>
-                    {featured.quoteRole}
+                {featured.quote && (
+                  <div className="relative mt-10">
+                    <Quote className="h-5 w-5 mb-3" style={{ color: "rgba(0,192,255,0.45)" }} />
+                    <p className="text-white/75 font-body leading-relaxed text-sm italic mb-3">
+                      "{featured.quote}"
+                    </p>
+                    <div className="text-white font-heading font-semibold text-sm">{featured.quoteName}</div>
+                    <div className="text-xs font-body" style={{ color: "rgba(255,255,255,0.5)" }}>
+                      {featured.quoteRole}
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
 
               {/* Right panel — story */}
@@ -260,13 +269,31 @@ const CaseStudies = () => {
                   </div>
                   <h3
                     className="font-heading font-extrabold text-foreground mb-4"
-                    style={{ fontSize: "clamp(20px, 2.2vw, 26px)", letterSpacing: "-0.02em", lineHeight: 1.25 }}
+                    style={{ fontSize: "clamp(18px, 2vw, 24px)", letterSpacing: "-0.02em", lineHeight: 1.3 }}
                   >
-                    {featured.headline}
+                    {HEADLINES[featured.slug]}
                   </h3>
                   <p className="text-muted-foreground font-body leading-relaxed mb-6 text-sm">
-                    {featured.summary}
+                    {featured.aboutMerchant}
                   </p>
+
+                  {/* Sales events */}
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {featured.salesEvents.map((e) => (
+                      <span
+                        key={e}
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold font-body"
+                        style={{
+                          background: "rgba(0,192,255,0.08)",
+                          border: "1px solid rgba(0,192,255,0.22)",
+                          color: "#00c0ff",
+                        }}
+                      >
+                        <Zap className="h-3 w-3" />
+                        {e}
+                      </span>
+                    ))}
+                  </div>
 
                   {/* Snapshot */}
                   <div
@@ -287,7 +314,9 @@ const CaseStudies = () => {
                           background: i % 2 === 0 ? "hsl(var(--section-alt))" : "white",
                         }}
                       >
-                        <span className="font-semibold text-primary w-32 flex-shrink-0">{row.label}</span>
+                        <span className="font-semibold text-primary w-32 flex-shrink-0 text-xs uppercase tracking-wide">
+                          {row.label}
+                        </span>
                         <span className="text-muted-foreground">{row.value}</span>
                       </div>
                     ))}
@@ -354,7 +383,7 @@ const CaseStudies = () => {
                           className="font-heading font-bold text-foreground mb-1"
                           style={{ fontSize: 17, lineHeight: 1.35 }}
                         >
-                          {cs.headline}
+                          {HEADLINES[cs.slug]}
                         </h3>
                         <div className="text-xs font-body text-muted-foreground mb-4">
                           {cs.merchant} · {cs.location}
@@ -366,7 +395,7 @@ const CaseStudies = () => {
                         className="mx-6 mb-5 rounded-xl p-4 grid grid-cols-3 gap-2"
                         style={{ background: "hsl(var(--section-alt))", border: "1px solid hsl(var(--border))" }}
                       >
-                        {cs.results.map((r) => (
+                        {cs.keyResults.map((r) => (
                           <div key={r.label} className="text-center">
                             <div
                               className="font-heading font-extrabold text-lg leading-none mb-0.5"
@@ -381,24 +410,32 @@ const CaseStudies = () => {
                         ))}
                       </div>
 
-                      {/* Quote */}
+                      {/* About snippet + quote */}
                       <div className="px-6 pb-6 flex-1 flex flex-col justify-between">
-                        <div
-                          className="rounded-xl p-4 mb-5"
-                          style={{
-                            background: "rgba(0,192,255,0.04)",
-                            border: "1px solid rgba(0,192,255,0.1)",
-                          }}
-                        >
-                          <Quote className="h-4 w-4 mb-2" style={{ color: "rgba(0,192,255,0.4)" }} />
-                          <p className="text-xs font-body text-muted-foreground leading-relaxed italic">
-                            "{cs.quote}"
-                          </p>
-                          <div className="mt-3">
-                            <div className="text-xs font-heading font-semibold text-foreground">{cs.quoteName}</div>
-                            <div className="text-[10px] font-body text-muted-foreground">{cs.quoteRole}</div>
+                        <p className="text-xs font-body text-muted-foreground leading-relaxed mb-4 line-clamp-3">
+                          {cs.aboutMerchant}
+                        </p>
+
+                        {cs.quote && (
+                          <div
+                            className="rounded-xl p-4 mb-5"
+                            style={{
+                              background: "rgba(0,192,255,0.04)",
+                              border: "1px solid rgba(0,192,255,0.1)",
+                            }}
+                          >
+                            <Quote className="h-4 w-4 mb-2" style={{ color: "rgba(0,192,255,0.4)" }} />
+                            <p className="text-xs font-body text-muted-foreground leading-relaxed italic">
+                              "{cs.quote}"
+                            </p>
+                            {cs.quoteName && (
+                              <div className="mt-3">
+                                <div className="text-xs font-heading font-semibold text-foreground">{cs.quoteName}</div>
+                                <div className="text-[10px] font-body text-muted-foreground">{cs.quoteRole}</div>
+                              </div>
+                            )}
                           </div>
-                        </div>
+                        )}
 
                         <Link
                           to={`/case-studies/${cs.slug}`}
