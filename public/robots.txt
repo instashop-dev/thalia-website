@@ -1,5 +1,5 @@
 # Thalia Technologies — robots.txt
-# Last updated: 2026-05-08
+# Last updated: 2026-06-16
 
 User-agent: *
 Allow: /
@@ -7,6 +7,17 @@ Disallow: /404
 Disallow: /*?ref=
 Disallow: /*?utm_
 
+# Allow AI search crawlers so pages appear in AI Overviews, Gemini, Siri & Meta AI
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+# Block AI training crawlers (not search/answer visibility)
 User-agent: GPTBot
 Disallow: /
 

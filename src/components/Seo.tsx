@@ -2,7 +2,8 @@ import { Helmet } from "react-helmet";
 
 const SITE_NAME = "Thalia Technologies";
 const SITE_URL = "https://www.thaliatechnologies.com";
-const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.svg`;
+const DEFAULT_OG_IMAGE = `${SITE_URL}/og-image.png`;
+const TWITTER_SITE = "@ThaliaApps";
 
 type SeoProps = {
   title: string;
@@ -60,7 +61,11 @@ const Seo = ({
       contactType: "customer support",
       email: "info@thaliatechnologies.com",
     },
-    sameAs: ["https://www.linkedin.com/company/thalia-technologies"],
+    sameAs: [
+      "https://www.linkedin.com/company/thalia-technologies",
+      "https://apps.shopify.com/partners/thalia-technologies",
+      "https://twitter.com/ThaliaApps",
+    ],
   };
   const extraSchemas = structuredData
     ? Array.isArray(structuredData)
@@ -84,9 +89,13 @@ const Seo = ({
       <meta property="og:description" content={description} />
       <meta property="og:url" content={canonical} />
       <meta property="og:image" content={image} />
+      <meta property="og:image:type" content="image/png" />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
       <meta property="og:image:alt" content={title} />
 
       <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:site" content={TWITTER_SITE} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={image} />
