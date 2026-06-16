@@ -54,13 +54,13 @@ const AppDetail = () => {
   const primaryCtaLabel = getPrimaryCtaLabel(app);
   const primaryCtaClass = primaryCtaLabel === "Install on Shopify" ? "btn-shopify" : "btn-primary";
   const appPageName =
-    app.slug === "duplicate"
+    app.slug === "duplicate-sku-sync"
       ? "Duplicate SKU Sync Master"
-      : app.slug === "clever"
+      : app.slug === "clever-variant-images"
         ? "Clever Variant Images"
-        : app.slug === "clean"
+        : app.slug === "clean-info-tables"
           ? "Clean Info Tables & Charts"
-          : app.slug === "prime"
+          : app.slug === "prime-product-badges"
             ? "Prime Product Badges Stickers"
             : app.slug === "csvbox"
               ? "CSV Box"

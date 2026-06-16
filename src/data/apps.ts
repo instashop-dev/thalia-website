@@ -429,7 +429,7 @@ export const apps: AppData[] = [
 
   },
   {
-    slug: "bolt",
+    slug: "bolt-bulk-editor",
     name: "Bolt",
     tagline: "The fastest bulk product editor for Shopify. Edit thousands of products in seconds.",
     description: "Edit titles, descriptions, prices, tags, images, and more for thousands of products simultaneously with a powerful spreadsheet-like interface.",
@@ -511,7 +511,7 @@ export const apps: AppData[] = [
 
   },
   {
-    slug: "dual",
+    slug: "dual-price-display",
     name: "Dual",
     tagline: "Display VAT/GST tax-inclusive and exclusive prices side by side to stay compliant and transparent.",
     description: "Show both tax-inclusive and tax-exclusive prices on your Shopify store, helping B2B and B2C customers see the prices most relevant to them.",
@@ -650,7 +650,7 @@ export const apps: AppData[] = [
 
   },
   {
-    slug: "robo",
+    slug: "robo-product-importer",
     name: "Robo",
     tagline: "Import products from virtually any ecommerce website into your Shopify store automatically.",
     description: "Paste a product URL from any ecommerce site and Robo imports it into your Shopify store — images, variants, descriptions, and all.",
@@ -697,7 +697,7 @@ export const apps: AppData[] = [
 
   },
   {
-    slug: "t2icons",
+    slug: "t2-product-icons",
     name: "T2 Icons",
     tagline: "Access 100,000+ icons to enrich your product descriptions and boost your store's design.",
     description: "Add beautiful, professionally designed icons to your Shopify product descriptions, pages, and blog posts with a simple drag-and-drop interface.",
@@ -859,7 +859,7 @@ export const apps: AppData[] = [
 
   },
   {
-    slug: "duplicate",
+    slug: "duplicate-sku-sync",
     name: "Duplicate",
     tagline: "Sync stock levels between products and variants that share the same SKU — no more overselling.",
     description: "Automatically sync inventory between products and variants sharing the same SKU, ensuring consistent stock levels across your catalog.",
@@ -961,7 +961,7 @@ export const apps: AppData[] = [
 
   },
   {
-    slug: "sleek",
+    slug: "sleek-gst-invoicing",
     name: "Sleek",
     tagline: "Generate GST-compliant invoices for Indian Shopify merchants automatically with every order.",
     description: "Automate your invoicing workflow with professional, GST-compliant invoices for every order. Perfect for Indian merchants.",
@@ -1010,7 +1010,7 @@ export const apps: AppData[] = [
 
   },
   {
-    slug: "clever",
+    slug: "clever-variant-images",
     name: "Clever",
     tagline: "Manage variant images effortlessly — assign specific images to each product variant.",
     description: "Assign, reorder, and manage images for product variants to create a better shopping experience on your Shopify store.",
@@ -1069,7 +1069,7 @@ export const apps: AppData[] = [
 
   },
   {
-    slug: "super",
+    slug: "super-product-badges",
     name: "Super",
     tagline: "Add product badges, labels, and stickers to your BigCommerce store to drive conversions.",
     description: "Create eye-catching product badges for BigCommerce — highlight sales, new arrivals, bestsellers, low stock, and more.",
@@ -1117,7 +1117,7 @@ export const apps: AppData[] = [
 
   },
   {
-    slug: "clean",
+    slug: "clean-info-tables",
     name: "Clean",
     tagline: "Display product specifications and comparison tables beautifully inside product descriptions.",
     description: "Create responsive data tables for product specs, comparisons, and detailed information. Make product pages informative and professional.",
@@ -1174,7 +1174,7 @@ export const apps: AppData[] = [
 
   },
   {
-    slug: "prime",
+    slug: "prime-product-badges",
     name: "Prime",
     tagline: "Add trust-building badges, labels, and stickers to your Shopify product pages instantly.",
     description: "Create stunning product badges for Shopify — 50+ templates, smart rules, scheduling, and performance analytics.",

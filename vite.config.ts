@@ -25,4 +25,23 @@ export default defineConfig({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // Framework core — always needed
+          "vendor-react": ["react", "react-dom"],
+          "vendor-router": ["react-router-dom"],
+          // Heavy UI libs split from route chunks
+          "vendor-motion": ["framer-motion"],
+          "vendor-ui": ["@radix-ui/react-dialog", "@radix-ui/react-tooltip", "@radix-ui/react-dropdown-menu"],
+          // Route-level splits (React.lazy handles these automatically,
+          // but manual chunks ensure vendor deps aren't duplicated)
+          "chunk-blog": ["./src/pages/Blog", "./src/pages/BlogPost"],
+          "chunk-apps": ["./src/pages/Apps", "./src/pages/AppDetail"],
+          "chunk-case-studies": ["./src/pages/CaseStudies", "./src/pages/CaseStudyDetail"],
+        },
+      },
+    },
+  },
 });
