@@ -1,36 +1,37 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import {
-  ArrowRight,
-  TrendingUp,
-  Tag,
-  ChevronRight,
-  Quote,
-  ShoppingBag,
-  Coffee,
-  Zap,
-} from "lucide-react";
+import { ArrowRight, TrendingUp, ShoppingBag, Coffee, Tag } from "lucide-react";
 import Layout from "@/components/Layout";
 import Seo from "@/components/Seo";
-import SectionHeading from "@/components/SectionHeading";
 import { caseStudies } from "@/data/caseStudies";
 
 const inView = (delay = 0) => ({
-  initial: { opacity: 0, y: 22 },
+  initial: { opacity: 0, y: 20 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true, margin: "-60px" },
-  transition: { duration: 0.55, delay, ease: [0.25, 0.46, 0.45, 0.94] as const },
+  transition: { duration: 0.5, delay, ease: [0.25, 0.46, 0.45, 0.94] as const },
 });
 
 const industryIcons: Record<string, React.ElementType> = {
   "Fashion & Apparel": ShoppingBag,
-  "Food & Beverage": Coffee,
+  "Food & Beverage":   Coffee,
 };
 
-/* Per-slug display headlines (mirrors CaseStudyDetail) */
+const merchantColors: Record<string, string> = {
+  "Firstvibe":    "#ec4899",
+  "SNDY Coffee":  "#92400e",
+};
+
 const HEADLINES: Record<string, string> = {
-  "firstvibe-bulk-pricing": "Firstvibe replaces hours of manual price edits with one-click promo launches",
-  "sndy-coffee-eofy":       "SNDY Coffee cuts EOFY pricing effort by up to 75% with scheduled bulk updates",
+  "firstvibe-bulk-pricing": "Firstvibe Replaces Hours of Manual Price Edits with One-Click Promo Launches",
+  "sndy-coffee-eofy":       "SNDY Coffee Cuts EOFY Pricing Effort by Up to 75% with Scheduled Bulk Updates",
+};
+
+const EXCERPTS: Record<string, string> = {
+  "firstvibe-bulk-pricing":
+    "Firstvibe was spending 1–3 hours editing prices by hand for every promotion. With Pro Bulk Price Editor, they ran three sales events in their first three months — holiday, seasonal, and flash — completing each update in under 30 minutes.",
+  "sndy-coffee-eofy":
+    "Manual pricing through Shopify Admin and CSV imports was costing SNDY Coffee hours before every sale. Pro Bulk Price Editor cut their pricing management effort by 50–75%, letting them launch their EOFY sale on schedule with zero manual reversals.",
 };
 
 const CaseStudies = () => {
@@ -49,15 +50,8 @@ const CaseStudies = () => {
     name: "Case Studies — Thalia Technologies",
     description: "Real results from real merchants using Thalia's Shopify apps.",
     url: "https://www.thaliatechnologies.com/case-studies",
-    publisher: {
-      "@type": "Organization",
-      name: "Thalia Technologies",
-      url: "https://www.thaliatechnologies.com",
-    },
+    publisher: { "@type": "Organization", name: "Thalia Technologies", url: "https://www.thaliatechnologies.com" },
   };
-
-  const [featured, ...rest] = caseStudies;
-  const FeaturedIcon = industryIcons[featured.industry] ?? Tag;
 
   return (
     <Layout>
@@ -79,11 +73,9 @@ const CaseStudies = () => {
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
-            background:
-              "radial-gradient(ellipse 70% 55% at 50% -5%, rgba(0,192,255,0.13) 0%, transparent 65%)",
+            background: "radial-gradient(ellipse 70% 55% at 50% -5%, rgba(0,192,255,0.13) 0%, transparent 65%)",
           }}
         />
-
         <div className="section-container relative">
           <div className="max-w-3xl mx-auto text-center">
             <motion.div
@@ -91,11 +83,7 @@ const CaseStudies = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 text-xs font-semibold font-body select-none"
-              style={{
-                border: "1px solid rgba(0,192,255,0.28)",
-                background: "rgba(0,192,255,0.08)",
-                color: "#00c0ff",
-              }}
+              style={{ border: "1px solid rgba(0,192,255,0.28)", background: "rgba(0,192,255,0.08)", color: "#00c0ff" }}
             >
               <TrendingUp className="w-3.5 h-3.5" />
               CUSTOMER SUCCESS STORIES
@@ -107,12 +95,8 @@ const CaseStudies = () => {
               initial={{ opacity: 0, y: 28 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.65, delay: 0.08 }}
-              className="font-heading font-extrabold text-white mb-6"
-              style={{
-                fontSize: "clamp(40px, 5.5vw, 64px)",
-                lineHeight: 1.08,
-                letterSpacing: "-0.03em",
-              }}
+              className="font-heading font-extrabold text-white mb-5"
+              style={{ fontSize: "clamp(40px, 5.5vw, 64px)", lineHeight: 1.08, letterSpacing: "-0.03em" }}
             >
               Real Merchants.{" "}
               <span className="gradient-text-cyan">Real Results.</span>
@@ -125,15 +109,15 @@ const CaseStudies = () => {
               className="text-lg leading-relaxed mb-10 font-body mx-auto max-w-2xl"
               style={{ color: "rgba(255,255,255,0.68)" }}
             >
-              See exactly how merchants use Thalia's apps to save hours, cut pricing effort, and
-              launch promotions faster — with the numbers to prove it.
+              See how merchants across industries use Thalia's Shopify apps to save hours, reduce manual
+              effort, and launch promotions with confidence.
             </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.26 }}
-              className="flex flex-wrap justify-center gap-3 mb-10"
+              className="flex flex-wrap justify-center gap-3"
             >
               {[
                 { value: "50–75%",  label: "Less manual effort" },
@@ -144,11 +128,7 @@ const CaseStudies = () => {
                 <div
                   key={s.label}
                   className="flex items-baseline gap-2 px-4 py-2 rounded-full font-body"
-                  style={{
-                    background: "rgba(255,255,255,0.04)",
-                    border: "1px solid rgba(255,255,255,0.08)",
-                    backdropFilter: "blur(12px)",
-                  }}
+                  style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.08)" }}
                 >
                   <span className="gradient-text-cyan text-base font-heading font-bold">{s.value}</span>
                   <span className="text-xs uppercase tracking-[0.12em]" style={{ color: "rgba(255,255,255,0.55)" }}>
@@ -157,249 +137,123 @@ const CaseStudies = () => {
                 </div>
               ))}
             </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 14 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.34 }}
-            >
-              <a href="#stories" className="btn-primary text-sm">
-                Read the Stories <ArrowRight className="ml-2 h-4 w-4 inline" />
-              </a>
-            </motion.div>
           </div>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════
-          FEATURED CASE STUDY
+          CASE STUDY CARD GRID
       ════════════════════════════════════════════════════════════════ */}
-      <section className="bg-white" style={{ paddingTop: 96, paddingBottom: 96 }}>
+      <section className="bg-white" style={{ paddingTop: 80, paddingBottom: 96 }}>
         <div className="section-container">
-          <motion.div {...inView(0)} className="mb-2">
-            <span className="inline-block text-xs font-semibold uppercase tracking-[0.12em] text-primary font-body">
-              FEATURED STORY
+
+          {/* Section label */}
+          <motion.div {...inView(0)} className="mb-10">
+            <span className="inline-block text-xs font-semibold uppercase tracking-[0.14em] text-primary font-body mb-3">
+              ALL STORIES
             </span>
+            <h2
+              className="font-heading font-extrabold text-foreground"
+              style={{ fontSize: "clamp(22px, 2.6vw, 30px)", letterSpacing: "-0.02em" }}
+            >
+              Merchant Success Stories
+            </h2>
           </motion.div>
-          <motion.h2
-            {...inView(0.06)}
-            className="font-heading font-extrabold text-foreground mb-10"
-            style={{ fontSize: "clamp(22px, 2.8vw, 32px)", letterSpacing: "-0.02em" }}
-          >
-            How {featured.merchant} Transformed Their Pricing Workflow
-          </motion.h2>
 
-          <motion.div
-            {...inView(0.1)}
-            className="card-elevated overflow-hidden"
-            style={{ borderTop: "3px solid #00c0ff" }}
-          >
-            <div className="grid lg:grid-cols-5 gap-0">
-              {/* Left panel — dark with metrics */}
-              <div
-                className="lg:col-span-2 relative flex flex-col justify-between p-10 lg:p-12"
-                style={{
-                  background: "linear-gradient(150deg, hsl(var(--hero-bg)) 0%, #0a1628 100%)",
-                  minHeight: 400,
-                }}
-              >
-                <div
-                  className="absolute inset-0 pointer-events-none opacity-15"
-                  style={{
-                    backgroundImage: "radial-gradient(rgba(0,192,255,0.3) 1px, transparent 1px)",
-                    backgroundSize: "22px 22px",
-                  }}
-                />
+          {/* Cards grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {caseStudies.map((cs, i) => {
+              const Icon = industryIcons[cs.industry] ?? Tag;
+              const avatarColor = merchantColors[cs.merchant] ?? "#00c0ff";
+              const initial = cs.merchant[0].toUpperCase();
 
-                <div className="relative">
-                  <div
-                    className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full mb-8 text-xs font-semibold font-body"
+              return (
+                <motion.div
+                  key={cs.slug}
+                  {...inView(i * 0.08)}
+                >
+                  <Link
+                    to={`/case-studies/${cs.slug}`}
+                    className="group flex flex-col h-full bg-white rounded-2xl transition-shadow duration-200"
                     style={{
-                      background: "rgba(0,192,255,0.15)",
-                      border: "1px solid rgba(0,192,255,0.3)",
-                      color: "#00c0ff",
+                      border: "1px solid hsl(var(--border))",
+                      boxShadow: "0 1px 4px rgba(0,0,0,0.05)",
+                    }}
+                    onMouseEnter={(e) => {
+                      (e.currentTarget as HTMLElement).style.boxShadow = "0 8px 32px rgba(0,0,0,0.1)";
+                    }}
+                    onMouseLeave={(e) => {
+                      (e.currentTarget as HTMLElement).style.boxShadow = "0 1px 4px rgba(0,0,0,0.05)";
                     }}
                   >
-                    <FeaturedIcon className="w-3 h-3" />
-                    {featured.industry}
-                  </div>
-
-                  <div className="flex flex-col gap-6">
-                    {featured.keyResults.map((r) => (
-                      <div key={r.label}>
+                    <div className="p-6 flex flex-col h-full">
+                      {/* Merchant identity */}
+                      <div className="flex items-center gap-3 mb-4">
                         <div
-                          className="font-heading font-extrabold leading-none mb-1"
-                          style={{
-                            fontSize: "clamp(28px, 3.5vw, 40px)",
-                            color: r.accent ? "#00c0ff" : "white",
-                          }}
+                          className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 text-white font-heading font-extrabold text-lg"
+                          style={{ background: avatarColor }}
                         >
-                          {r.metric}
+                          {initial}
                         </div>
-                        <div
-                          className="text-xs font-body uppercase tracking-wide"
-                          style={{ color: "rgba(255,255,255,0.5)" }}
-                        >
-                          {r.label}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {featured.quote && (
-                  <div className="relative mt-10">
-                    <Quote className="h-5 w-5 mb-3" style={{ color: "rgba(0,192,255,0.45)" }} />
-                    <p className="text-white/75 font-body leading-relaxed text-sm italic mb-3">
-                      "{featured.quote}"
-                    </p>
-                    <div className="text-white font-heading font-semibold text-sm">{featured.quoteName}</div>
-                    <div className="text-xs font-body" style={{ color: "rgba(255,255,255,0.5)" }}>
-                      {featured.quoteRole}
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              {/* Right panel — story */}
-              <div className="lg:col-span-3 p-10 lg:p-12 flex flex-col justify-between">
-                <div>
-                  <div className="mb-1 text-xs font-body text-muted-foreground uppercase tracking-[0.1em]">
-                    {featured.app} · {featured.location}
-                  </div>
-                  <h3
-                    className="font-heading font-extrabold text-foreground mb-4"
-                    style={{ fontSize: "clamp(18px, 2vw, 24px)", letterSpacing: "-0.02em", lineHeight: 1.3 }}
-                  >
-                    {HEADLINES[featured.slug]}
-                  </h3>
-                  <p className="text-muted-foreground font-body leading-relaxed mb-6 text-sm">
-                    {featured.aboutMerchant}
-                  </p>
-
-                  {/* Sales events */}
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {featured.salesEvents.map((e) => (
-                      <span
-                        key={e}
-                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold font-body"
-                        style={{
-                          background: "rgba(0,192,255,0.08)",
-                          border: "1px solid rgba(0,192,255,0.22)",
-                          color: "#00c0ff",
-                        }}
-                      >
-                        <Zap className="h-3 w-3" />
-                        {e}
-                      </span>
-                    ))}
-                  </div>
-
-                  {/* Snapshot */}
-                  <div
-                    className="rounded-xl overflow-hidden mb-8"
-                    style={{ border: "1px solid hsl(var(--border))" }}
-                  >
-                    {[
-                      { label: "Industry",       value: featured.industry },
-                      { label: "Catalogue size", value: featured.catalogueSize },
-                      { label: "Time with app",  value: featured.timeWithApp },
-                      { label: "Primary use",    value: featured.primaryUse },
-                    ].map((row, i) => (
-                      <div
-                        key={row.label}
-                        className="flex items-start gap-4 px-4 py-3 text-sm font-body"
-                        style={{
-                          borderTop: i > 0 ? "1px solid hsl(var(--border))" : undefined,
-                          background: i % 2 === 0 ? "hsl(var(--section-alt))" : "white",
-                        }}
-                      >
-                        <span className="font-semibold text-primary w-32 flex-shrink-0 text-xs uppercase tracking-wide">
-                          {row.label}
-                        </span>
-                        <span className="text-muted-foreground">{row.value}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <Link
-                  to={`/case-studies/${featured.slug}`}
-                  className="inline-flex items-center gap-2 btn-primary text-sm self-start"
-                >
-                  Read Full Story <ArrowRight className="h-4 w-4" />
-                </Link>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ═══════════════════════════════════════════════════════════════
-          MORE CASE STUDIES GRID
-      ════════════════════════════════════════════════════════════════ */}
-      <section id="stories" style={{ background: "hsl(var(--section-alt))", paddingTop: 96, paddingBottom: 96 }}>
-        <div className="section-container">
-          {rest.length > 0 && (
-            <>
-              <SectionHeading
-                label="MORE STORIES"
-                title="More Merchant Wins"
-                description="Every business is different — but the impact is consistent."
-              />
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
-                {rest.map((cs, i) => {
-                  const Icon = industryIcons[cs.industry] ?? Tag;
-                  return (
-                    <motion.div
-                      key={cs.slug}
-                      {...inView(i * 0.08)}
-                      className="card-elevated flex flex-col"
-                      style={{ borderTop: "2px solid rgba(0,192,255,0.22)" }}
-                    >
-                      {/* Header */}
-                      <div className="p-6 pb-0">
-                        <div className="flex items-center justify-between mb-5">
-                          <div
-                            className="w-10 h-10 rounded-xl flex items-center justify-center"
-                            style={{ background: "rgba(0,192,255,0.1)", border: "1px solid rgba(0,192,255,0.18)" }}
-                          >
-                            <Icon className="h-5 w-5 text-primary" />
+                        <div>
+                          <div className="font-heading font-bold text-foreground text-sm leading-tight">
+                            {cs.merchant}
                           </div>
-                          <span
-                            className="text-[10px] font-semibold uppercase tracking-[0.1em] font-body px-2.5 py-1 rounded-full"
-                            style={{
-                              background: "rgba(0,192,255,0.08)",
-                              color: "#00c0ff",
-                              border: "1px solid rgba(0,192,255,0.2)",
-                            }}
-                          >
-                            {cs.industry}
-                          </span>
-                        </div>
-                        <div className="mb-1 text-xs font-body text-muted-foreground">{cs.app}</div>
-                        <h3
-                          className="font-heading font-bold text-foreground mb-1"
-                          style={{ fontSize: 17, lineHeight: 1.35 }}
-                        >
-                          {HEADLINES[cs.slug]}
-                        </h3>
-                        <div className="text-xs font-body text-muted-foreground mb-4">
-                          {cs.merchant} · {cs.location}
+                          <div className="text-xs font-body text-muted-foreground mt-0.5 flex items-center gap-1">
+                            <Icon className="h-3 w-3" />
+                            {cs.location}
+                          </div>
                         </div>
                       </div>
 
-                      {/* Metrics strip */}
-                      <div
-                        className="mx-6 mb-5 rounded-xl p-4 grid grid-cols-3 gap-2"
-                        style={{ background: "hsl(var(--section-alt))", border: "1px solid hsl(var(--border))" }}
+                      {/* Divider */}
+                      <div className="border-t mb-4" style={{ borderColor: "hsl(var(--border))" }} />
+
+                      {/* Tags */}
+                      <div className="flex flex-wrap gap-1.5 mb-3">
+                        <span
+                          className="px-2 py-0.5 rounded text-[10px] font-semibold uppercase tracking-wider font-body"
+                          style={{ background: "hsl(var(--section-alt))", color: "hsl(var(--muted-foreground))" }}
+                        >
+                          {cs.industry}
+                        </span>
+                        <span
+                          className="px-2 py-0.5 rounded text-[10px] font-semibold uppercase tracking-wider font-body"
+                          style={{ background: "hsl(var(--section-alt))", color: "hsl(var(--muted-foreground))" }}
+                        >
+                          {cs.category}
+                        </span>
+                        <span
+                          className="px-2 py-0.5 rounded text-[10px] font-semibold uppercase tracking-wider font-body"
+                          style={{ background: "rgba(0,192,255,0.08)", color: "#00c0ff" }}
+                        >
+                          Shopify
+                        </span>
+                      </div>
+
+                      {/* Headline */}
+                      <h3
+                        className="font-heading font-bold text-foreground mb-3 leading-snug group-hover:text-primary transition-colors"
+                        style={{ fontSize: 16 }}
                       >
-                        {cs.keyResults.map((r) => (
-                          <div key={r.label} className="text-center">
+                        {HEADLINES[cs.slug]}
+                      </h3>
+
+                      {/* Excerpt */}
+                      <p className="text-sm font-body text-muted-foreground leading-relaxed mb-5 flex-1">
+                        {EXCERPTS[cs.slug]}
+                      </p>
+
+                      {/* Key metrics strip */}
+                      <div
+                        className="flex gap-4 mb-5 pb-5"
+                        style={{ borderBottom: "1px solid hsl(var(--border))" }}
+                      >
+                        {cs.keyResults.slice(0, 2).map((r) => (
+                          <div key={r.label}>
                             <div
-                              className="font-heading font-extrabold text-lg leading-none mb-0.5"
-                              style={{ color: r.accent ? "#00c0ff" : "hsl(var(--foreground))" }}
+                              className="font-heading font-extrabold leading-none mb-0.5"
+                              style={{ fontSize: 18, color: r.accent ? "#00c0ff" : "hsl(var(--foreground))" }}
                             >
                               {r.metric}
                             </div>
@@ -410,53 +264,23 @@ const CaseStudies = () => {
                         ))}
                       </div>
 
-                      {/* About snippet + quote */}
-                      <div className="px-6 pb-6 flex-1 flex flex-col justify-between">
-                        <p className="text-xs font-body text-muted-foreground leading-relaxed mb-4 line-clamp-3">
-                          {cs.aboutMerchant}
-                        </p>
-
-                        {cs.quote && (
-                          <div
-                            className="rounded-xl p-4 mb-5"
-                            style={{
-                              background: "rgba(0,192,255,0.04)",
-                              border: "1px solid rgba(0,192,255,0.1)",
-                            }}
-                          >
-                            <Quote className="h-4 w-4 mb-2" style={{ color: "rgba(0,192,255,0.4)" }} />
-                            <p className="text-xs font-body text-muted-foreground leading-relaxed italic">
-                              "{cs.quote}"
-                            </p>
-                            {cs.quoteName && (
-                              <div className="mt-3">
-                                <div className="text-xs font-heading font-semibold text-foreground">{cs.quoteName}</div>
-                                <div className="text-[10px] font-body text-muted-foreground">{cs.quoteRole}</div>
-                              </div>
-                            )}
-                          </div>
-                        )}
-
-                        <Link
-                          to={`/case-studies/${cs.slug}`}
-                          className="inline-flex items-center gap-1.5 text-sm font-semibold font-body text-primary hover:underline"
-                        >
-                          Read Full Story <ChevronRight className="h-4 w-4" />
-                        </Link>
-                      </div>
-                    </motion.div>
-                  );
-                })}
-              </div>
-            </>
-          )}
+                      {/* Read more */}
+                      <span className="inline-flex items-center gap-1.5 text-sm font-semibold font-body text-primary group-hover:underline">
+                        Read More <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+                      </span>
+                    </div>
+                  </Link>
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════════════════════════════
           CTA BANNER
       ════════════════════════════════════════════════════════════════ */}
-      <section className="bg-white" style={{ paddingTop: 96, paddingBottom: 96 }}>
+      <section style={{ background: "hsl(var(--section-alt))", paddingTop: 80, paddingBottom: 80 }}>
         <div className="section-container">
           <motion.div
             {...inView(0)}
@@ -467,9 +291,9 @@ const CaseStudies = () => {
             }}
           >
             <div
-              className="absolute inset-0 pointer-events-none opacity-30"
+              className="absolute inset-0 pointer-events-none opacity-25"
               style={{
-                backgroundImage: "radial-gradient(rgba(255,255,255,0.18) 1px, transparent 1px)",
+                backgroundImage: "radial-gradient(rgba(255,255,255,0.2) 1px, transparent 1px)",
                 backgroundSize: "22px 22px",
               }}
             />
@@ -482,7 +306,7 @@ const CaseStudies = () => {
               </h2>
               <p className="text-white/85 font-body max-w-xl mx-auto mb-8 leading-relaxed">
                 Join 100,000+ merchants who use Thalia's apps to save time, reduce effort, and
-                launch promotions faster — tools built for real business challenges.
+                launch promotions faster.
               </p>
               <div className="flex flex-wrap items-center justify-center gap-4">
                 <Link
