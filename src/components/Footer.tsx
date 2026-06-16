@@ -90,6 +90,12 @@ const Footer = () => {
                 Blog
               </Link>
               <Link
+                to="/case-studies"
+                className="text-sm opacity-70 hover:opacity-100 hover:text-primary transition-all duration-150"
+              >
+                Case Studies
+              </Link>
+              <Link
                 to="/careers"
                 className="text-sm opacity-70 hover:opacity-100 hover:text-primary transition-all duration-150"
               >

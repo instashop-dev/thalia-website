@@ -4,12 +4,13 @@ import { Menu, X } from "lucide-react";
 import logo from "@/assets/thalia-logo.jpg";
 
 const navLinks = [
-  { label: "Home",     path: "/" },
-  { label: "Products", path: "/apps" },
-  { label: "Blog",     path: "/blog" },
-  { label: "About",    path: "/about" },
-  { label: "Careers",  path: "/careers" },
-  { label: "Contact",  path: "/contact" },
+  { label: "Home",          path: "/" },
+  { label: "Products",      path: "/apps" },
+  { label: "Case Studies",  path: "/case-studies" },
+  { label: "Blog",          path: "/blog" },
+  { label: "About",         path: "/about" },
+  { label: "Careers",       path: "/careers" },
+  { label: "Contact",       path: "/contact" },
 ];
 
 const Navbar = () => {
