@@ -9,7 +9,6 @@ import sndyCoffeeLogoSrc from "@/assets/sndy-coffee-logo.png";
 import waywardLogoSrc from "@/assets/wayward logo.avif";
 import saazLogoSrc from "@/assets/saaz_1.avif";
 import herbalistsLogoSrc from "@/assets/theherbalists logo.avif";
-import proBulkWebsiteSrc from "@/assets/Pro Bulk Price Editor website.png";
 
 /* ──────────────────────────────────────────────────────────
    App store URLs (UTM-ready)
@@ -112,9 +111,6 @@ const merchantLogos: Record<string, string> = {
   "The Herbalists": herbalistsLogoSrc,
 };
 
-const APP_WEBSITE_IMAGES: Record<string, string> = {
-  "bulk-price-editor-pro": proBulkWebsiteSrc,
-};
 
 /* ══════════════════════════════════════════════════════════
    PAGE
@@ -402,7 +398,7 @@ const CaseStudyDetail = () => {
               </p>
 
               {/* Feature grid */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {cs.topFeatures.map((f) => (
                   <div
                     key={f.title}
@@ -419,25 +415,6 @@ const CaseStudyDetail = () => {
                   </div>
                 ))}
               </div>
-
-              {/* App screenshot */}
-              {APP_WEBSITE_IMAGES[cs.appSlug] && (
-                <motion.div {...inView(0.05)}>
-                  <div
-                    className="rounded-2xl overflow-hidden"
-                    style={{ border: "1px solid hsl(var(--border))", boxShadow: "0 8px 32px rgba(0,0,0,0.08)" }}
-                  >
-                    <img
-                      src={APP_WEBSITE_IMAGES[cs.appSlug]}
-                      alt={`${cs.app} interface`}
-                      className="w-full h-auto block"
-                    />
-                  </div>
-                  <p className="text-xs font-body text-muted-foreground text-center mt-3">
-                    {cs.app} — available on the Shopify App Store
-                  </p>
-                </motion.div>
-              )}
             </motion.div>
 
             {/* Divider */}
