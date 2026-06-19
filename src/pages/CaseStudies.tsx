@@ -6,6 +6,9 @@ import Seo from "@/components/Seo";
 import { caseStudies } from "@/data/caseStudies";
 import firstvibeLogoSrc from "@/assets/firstvibe-logo.png";
 import sndyCoffeeLogoSrc from "@/assets/sndy-coffee-logo.png";
+import waywardLogoSrc from "@/assets/wayward logo.avif";
+import saazLogoSrc from "@/assets/saaz_1.avif";
+import herbalistsLogoSrc from "@/assets/theherbalists logo.avif";
 
 const inView = (delay = 0) => ({
   initial: { opacity: 0, y: 20 },
@@ -15,8 +18,11 @@ const inView = (delay = 0) => ({
 });
 
 const merchantLogos: Record<string, string> = {
-  "Firstvibe":   firstvibeLogoSrc,
-  "SNDY Coffee": sndyCoffeeLogoSrc,
+  "Firstvibe":      firstvibeLogoSrc,
+  "SNDY Coffee":    sndyCoffeeLogoSrc,
+  "Wayward":        waywardLogoSrc,
+  "SAAZ":           saazLogoSrc,
+  "The Herbalists": herbalistsLogoSrc,
 };
 
 const HEADLINES: Record<string, string> = {
