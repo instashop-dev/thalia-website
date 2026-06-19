@@ -20,8 +20,13 @@ const merchantLogos: Record<string, string> = {
 };
 
 const HEADLINES: Record<string, string> = {
-  "firstvibe-bulk-pricing": "Firstvibe Replaces Hours of Manual Price Edits with One-Click Promo Launches",
-  "sndy-coffee-eofy":       "SNDY Coffee Cuts EOFY Pricing Effort by Up to 75% with Scheduled Bulk Updates",
+  "firstvibe-bulk-pricing":               "Firstvibe Replaces Hours of Manual Price Edits with One-Click Promo Launches",
+  "sndy-coffee-eofy":                     "SNDY Coffee Cuts EOFY Pricing Effort by Up to 75% with Scheduled Bulk Updates",
+  "wayward-bulk-pricing":                 "Wayward Unlocks Store-Wide Pricing That Was Previously Impossible — Saving 6+ Hours Per Update",
+  "saaz-bulk-pricing":                    "SAAZ Slashes Flash Sale Prep Time by 50–75% with Bulk Pricing Automation",
+  "herbalists-seasonal-pricing":          "The Herbalists Schedules Seasonal Sales with Per-Product Bulk Pricing — No Percentage Rules Required",
+  "sokobox-flash-sale-pricing":           "Sokobox Powers Black Friday Campaigns Across 1,000–5,000 Products with Scheduled Pricing",
+  "ultimatestorefront-supplier-pricing":  "Ultimatestorefront Manages 50,000+ Supplier Price Updates Monthly with Pro Bulk Price Editor",
 };
 
 const EXCERPTS: Record<string, string> = {
@@ -29,6 +34,16 @@ const EXCERPTS: Record<string, string> = {
     "Firstvibe was spending 1–3 hours editing prices by hand for every promotion. With Pro Bulk Price Editor, they ran three sales events in their first three months — holiday, seasonal, and flash — completing each update in under 30 minutes.",
   "sndy-coffee-eofy":
     "Manual pricing through Shopify Admin and CSV imports was costing SNDY Coffee hours before every sale. Pro Bulk Price Editor cut their pricing management effort by 50–75%, letting them launch their EOFY sale on schedule with zero manual reversals.",
+  "wayward-bulk-pricing":
+    "Wayward had no reliable system for store-wide price management. Pro Bulk Price Editor changed that — enabling bulk updates across their catalogue that would have been completely impossible before, while saving more than 6 hours per pricing cycle.",
+  "saaz-bulk-pricing":
+    "For SAAZ, flash sale pricing meant 3–6 hours of manual work through Shopify Admin and CSV imports every time. Pro Bulk Price Editor cut that down by 50–75%, letting the team run and revert promotions in a fraction of the time.",
+  "herbalists-seasonal-pricing":
+    "The Herbalists needed something most apps don't offer: scheduled bulk pricing where each product has a different sale price — not a blanket percentage. Pro Bulk Price Editor delivered exactly that, saving up to an hour per seasonal campaign.",
+  "sokobox-flash-sale-pricing":
+    "Sokobox manages $50,000–$100,000 in campaign revenue across a 1,000–5,000 product beauty catalogue. Pro Bulk Price Editor replaced their CSV import workflow with scheduled, collection-based pricing for Black Friday and flash campaigns.",
+  "ultimatestorefront-supplier-pricing":
+    "Ultimatestorefront operates a 10,000+ product multi-category Shopify store driven by supplier cost changes. Pro Bulk Price Editor powers monthly bulk updates across 50,000+ products — keeping margins aligned as supplier costs shift.",
 };
 
 const CaseStudies = () => {

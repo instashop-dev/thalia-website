@@ -88,6 +88,16 @@ const HEADLINES: Record<string, string> = {
     "Firstvibe Replaces Hours of Manual Price Edits with One-Click Promo Launches",
   "sndy-coffee-eofy":
     "SNDY Coffee Cuts EOFY Pricing Effort by Up to 75% with Scheduled Bulk Updates",
+  "wayward-bulk-pricing":
+    "Wayward Unlocks Store-Wide Pricing That Was Previously Impossible — Saving 6+ Hours Per Update",
+  "saaz-bulk-pricing":
+    "SAAZ Slashes Flash Sale Prep Time by 50–75% with Bulk Pricing Automation",
+  "herbalists-seasonal-pricing":
+    "The Herbalists Schedules Seasonal Sales with Per-Product Bulk Pricing — No Percentage Rules Required",
+  "sokobox-flash-sale-pricing":
+    "Sokobox Powers Black Friday Campaigns Across 1,000–5,000 Products with Scheduled Pricing",
+  "ultimatestorefront-supplier-pricing":
+    "Ultimatestorefront Manages 50,000+ Supplier Price Updates Monthly with Pro Bulk Price Editor",
 };
 
 const merchantLogos: Record<string, string> = {
