@@ -16,6 +16,7 @@ Full URL inventory: https://www.thaliatechnologies.com/llms-full.txt
 - [Apps](https://www.thaliatechnologies.com/apps): Complete listing of all 17 Shopify and ecommerce apps.
 - [Case Studies](https://www.thaliatechnologies.com/case-studies): Real merchant stories showing measurable results from Thalia apps.
 - [Blog](https://www.thaliatechnologies.com/blog): Guides and tutorials for Shopify merchants on pricing, inventory, and multi-channel selling.
+- [FAQ](https://www.thaliatechnologies.com/faq): Frequently asked questions covering Thalia apps, pricing, billing, getting started, integrations, privacy, and support — 70+ answers across 12 topics.
 - [Careers](https://www.thaliatechnologies.com/careers): Open positions at Thalia Technologies.
 - [Contact](https://www.thaliatechnologies.com/contact): Reach the Thalia team.
 

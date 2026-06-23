@@ -17,14 +17,14 @@ Allow: /
 User-agent: meta-externalagent
 Allow: /
 
-# Block AI training crawlers (not search/answer visibility)
+# Allow AI chatbot crawlers for answer/citation visibility
 User-agent: GPTBot
-Disallow: /
+Allow: /
 
 User-agent: ClaudeBot
-Disallow: /
+Allow: /
 
 User-agent: CCBot
-Disallow: /
+Allow: /
 
 Sitemap: https://www.thaliatechnologies.com/sitemap.xml
