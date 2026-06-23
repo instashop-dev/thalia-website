@@ -1,16 +1,25 @@
-# Thalia Technologies - Full URL Inventory
+# Thalia Technologies — Full URL Inventory
 
 Canonical: https://www.thaliatechnologies.com
 Sitemap: https://www.thaliatechnologies.com/sitemap.xml
+LLM summary: https://www.thaliatechnologies.com/llms.txt
+
+---
 
 ## Main Pages
+
 - https://www.thaliatechnologies.com/
 - https://www.thaliatechnologies.com/about
 - https://www.thaliatechnologies.com/apps
+- https://www.thaliatechnologies.com/case-studies
+- https://www.thaliatechnologies.com/blog
 - https://www.thaliatechnologies.com/contact
 - https://www.thaliatechnologies.com/careers
 
+---
+
 ## App Pages
+
 - https://www.thaliatechnologies.com/apps/spreadr
 - https://www.thaliatechnologies.com/apps/probulkpriceeditor
 - https://www.thaliatechnologies.com/apps/watchlyst
@@ -27,6 +36,29 @@ Sitemap: https://www.thaliatechnologies.com/sitemap.xml
 - https://www.thaliatechnologies.com/apps/super
 - https://www.thaliatechnologies.com/apps/clean
 - https://www.thaliatechnologies.com/apps/prime
-- https://www.thaliatechnologies.com/apps/fetchr
 - https://www.thaliatechnologies.com/apps/csvbox
 - https://www.thaliatechnologies.com/apps/fylebox
+- https://www.thaliatechnologies.com/apps/product-data-exporter
+
+---
+
+## Blog Posts
+
+- https://www.thaliatechnologies.com/blog/how-to-bulk-edit-shopify-product-prices
+- https://www.thaliatechnologies.com/blog/amazon-to-shopify-dropshipping-guide
+- https://www.thaliatechnologies.com/blog/reduce-cart-abandonment-shopify
+- https://www.thaliatechnologies.com/blog/sync-inventory-shopify-amazon-bigcommerce
+- https://www.thaliatechnologies.com/blog/optimize-shopify-app-store-listing
+- https://www.thaliatechnologies.com/blog/automated-gst-invoicing-shopify-india
+
+---
+
+## Case Studies
+
+- https://www.thaliatechnologies.com/case-studies/firstvibe
+- https://www.thaliatechnologies.com/case-studies/sndy-coffee
+- https://www.thaliatechnologies.com/case-studies/wayward
+- https://www.thaliatechnologies.com/case-studies/saaz
+- https://www.thaliatechnologies.com/case-studies/the-herbalists
+- https://www.thaliatechnologies.com/case-studies/sokobox
+- https://www.thaliatechnologies.com/case-studies/ultimatestorefront
