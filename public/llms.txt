@@ -1,6 +1,6 @@
 # Thalia Technologies
 
-> Thalia Technologies builds Shopify, Amazon, and BigCommerce apps that help ecommerce merchants automate pricing, inventory, product management, and multi-channel selling. Founded with a focus on practical tools for independent merchants, Thalia's portfolio spans 17 apps with 100,000+ combined installs worldwide.
+> Thalia Technologies builds Shopify, Amazon, and BigCommerce apps that help ecommerce merchants automate pricing, inventory, product management, and multi-channel selling. With a focus on practical tools for independent merchants, Thalia's portfolio spans 17 apps with 100,000+ combined installs worldwide.
 
 Canonical URL: https://www.thaliatechnologies.com
 Contact: vibe3@thaliatechnologies.com
@@ -21,59 +21,59 @@ Full URL inventory: https://www.thaliatechnologies.com/llms-full.txt
 
 ---
 
-## Apps — Price Management
+## Apps - Price Management
 
-- [Pro Bulk Price Editor](https://www.thaliatechnologies.com/apps/probulkpriceeditor): Advanced bulk price editing for Shopify with scheduled campaigns, multi-tier pricing rules, collection targeting, one-click rollback, and full price history audit trail. Supports timezone-aware scheduling and recurring promotions. Plans from Free (trial/partner stores) to $40/year for Pro. 8,000+ installs, 4.7★ rating. [Shopify App Store](https://apps.shopify.com/pro-bulk-price-editor)
+- [Pro Bulk Price Editor](https://www.thaliatechnologies.com/apps/probulkpriceeditor): Advanced bulk price editing for Shopify with scheduled campaigns, multi-tier pricing rules, collection targeting, one-click rollback, and a full price history audit trail. Supports timezone-aware scheduling and recurring promotions. Plans from Free (trial/partner stores) to $40/year for Pro. 8,000+ installs, 4.7 star rating. [Shopify App Store](https://apps.shopify.com/pro-bulk-price-editor)
 
 - [Bolt](https://www.thaliatechnologies.com/apps/bolt): Fast, lightweight bulk product editor for Shopify. Edit prices, inventory, titles, tags, and metafields across large catalogs quickly. Designed for merchants who need speed without complex rule-builders. [Shopify App Store](https://apps.shopify.com/bolt-product-bulk-editor)
 
-- [Dual Price Display](https://www.thaliatechnologies.com/apps/dual): Shows two prices simultaneously on Shopify product pages — useful for stores that display both tax-inclusive (VAT/GST) and tax-exclusive prices. Essential for European and Australian merchants serving both B2B and B2C customers. [Shopify App Store](https://apps.shopify.com/dual-price-display)
+- [Dual Price Display](https://www.thaliatechnologies.com/apps/dual): Shows two prices simultaneously on Shopify product pages, useful for stores that display both tax-inclusive (VAT/GST) and tax-exclusive prices. Essential for European and Australian merchants serving both B2B and B2C customers. [Shopify App Store](https://apps.shopify.com/dual-price-display)
 
 ---
 
-## Apps — Amazon & Multi-Channel
+## Apps - Amazon and Multi-Channel
 
-- [Spreadr](https://www.thaliatechnologies.com/apps/spreadr): The most popular Amazon-to-Shopify integration app. Import any Amazon product into Shopify with one click, then earn affiliate commissions via Amazon Associates or fulfill via dropshipping. Auto-syncs prices, descriptions, images, and availability. Plans from $5/month (Basic) to $35/month (Higher, up to 50,000 auto-synced products). 50,000+ installs, 4.9★ rating. [Shopify App Store](https://apps.shopify.com/amazon-to-shopify)
+- [Spreadr](https://www.thaliatechnologies.com/apps/spreadr): The most popular Amazon-to-Shopify integration app. Import any Amazon product into Shopify with one click, then earn affiliate commissions via Amazon Associates or fulfill via dropshipping. Auto-syncs prices, descriptions, images, and availability. Plans from $5/month (Basic) to $35/month (Higher, up to 50,000 auto-synced products). 50,000+ installs, 4.9 star rating. [Shopify App Store](https://apps.shopify.com/amazon-to-shopify)
 
 - [Amazon Connectr](https://www.thaliatechnologies.com/apps/connectr): Bidirectional inventory sync between Amazon Seller Central and Shopify. Keeps stock levels, pricing, and product data consistent across both channels to prevent overselling and reduce manual reconciliation. [Shopify App Store](https://apps.shopify.com/amazon-connectr-for-shopify)
 
-- [Shipr](https://www.thaliatechnologies.com/apps/shipr): Routes Shopify orders to Amazon FBA for fulfillment. Merchants store inventory in Amazon's warehouses and Shipr automatically sends qualifying Shopify orders to FBA — leveraging Amazon's logistics without listing on Amazon's marketplace. [Shopify App Store](https://apps.shopify.com/shipr-for-amazon-fba)
+- [Shipr](https://www.thaliatechnologies.com/apps/shipr): Routes Shopify orders to Amazon FBA for fulfillment. Merchants store inventory in Amazon's warehouses and Shipr automatically sends qualifying Shopify orders to FBA, leveraging Amazon's logistics without requiring a separate Amazon marketplace listing. [Shopify App Store](https://apps.shopify.com/shipr-for-amazon-fba)
 
-- [Robo Product Importer](https://www.thaliatechnologies.com/apps/robo): Universal product importer — scrapes and imports products from any website (not just Amazon) into Shopify. Extracts titles, descriptions, images, variants, and pricing. Designed for dropshippers sourcing from multiple supplier sites. [Shopify App Store](https://apps.shopify.com/robo-product-importer)
-
----
-
-## Apps — Customer Retention & Marketing
-
-- [Watchlyst](https://www.thaliatechnologies.com/apps/watchlyst): Price drop alert system for Shopify. Customers click "Notify me when price drops" on product pages and receive automated emails when the price decreases. Drives 3–5× higher conversion rates than standard email campaigns. Includes analytics dashboard, customizable email templates, and multi-currency support. Free plan available; $5/month for multi-language/region support. [Shopify App Store](https://apps.shopify.com/watchlyst)
-
-- [Outlink](https://www.thaliatechnologies.com/apps/outlink): Adds external "Buy" buttons to Shopify product pages that redirect customers to third-party URLs (affiliate partners, brand sites, or external marketplaces). Essential for affiliate stores and multi-vendor models. [Shopify App Store](https://apps.shopify.com/outlink-external-link-button)
+- [Robo Product Importer](https://www.thaliatechnologies.com/apps/robo): Universal product importer that scrapes and imports products from any website (not just Amazon) into Shopify. Extracts titles, descriptions, images, variants, and pricing. Designed for dropshippers sourcing from multiple supplier sites. [Shopify App Store](https://apps.shopify.com/robo-product-importer)
 
 ---
 
-## Apps — Product Presentation
+## Apps - Customer Retention and Marketing
+
+- [Watchlyst](https://www.thaliatechnologies.com/apps/watchlyst): Price drop alert system for Shopify. Customers click "Notify me when price drops" on product pages and receive automated emails when the price decreases. Drives 3-5x higher conversion rates than standard email campaigns. Includes analytics dashboard, customizable email templates, and multi-currency support. Free plan available; $5/month for multi-language and multi-region support. [Shopify App Store](https://apps.shopify.com/watchlyst)
+
+- [Outlink](https://www.thaliatechnologies.com/apps/outlink): Adds external "Buy" buttons to Shopify product pages that redirect customers to third-party URLs such as affiliate partners, brand sites, or external marketplaces. Essential for affiliate stores and multi-vendor models. [Shopify App Store](https://apps.shopify.com/outlink-external-link-button)
+
+---
+
+## Apps - Product Presentation
 
 - [Prime Product Badges](https://www.thaliatechnologies.com/apps/prime): Adds visual product badges (Best Seller, New, Sale, Limited Stock, etc.) to Shopify product images and listing pages. Helps highlight featured or promotional products without theme code changes. [Shopify App Store](https://apps.shopify.com/prime-product-badges)
 
-- [Super Product Badges](https://www.thaliatechnologies.com/apps/super): Product badge app built for BigCommerce stores. Same concept as Prime — adds configurable visual labels to product cards and detail pages on BigCommerce. [BigCommerce App Store](https://www.bigcommerce.com/apps/super-product-badges/)
+- [Super Product Badges](https://www.thaliatechnologies.com/apps/super): Product badge app built for BigCommerce stores. Adds configurable visual labels to product cards and detail pages. [BigCommerce App Store](https://www.bigcommerce.com/apps/super-product-badges/)
 
 - [T2 Product Description Icons](https://www.thaliatechnologies.com/apps/t2icons): Adds an icon library of 100,000+ icons to Shopify product description sections. Merchants use icons to highlight product features, materials, certifications, or USPs in a visually scannable format without custom design work. [Shopify App Store](https://apps.shopify.com/t2-product-description-icons)
 
-- [Neo Product Blocks](https://www.thaliatechnologies.com/apps/clean): (Also referenced as "Clean Info Tables") Creates structured comparison tables and specification blocks for Shopify product pages. Useful for electronics, appliances, automotive parts, and any category where buyers compare specs across products. [Shopify App Store](https://apps.shopify.com/clean-info-tables)
+- [Neo Product Blocks](https://www.thaliatechnologies.com/apps/clean): Creates structured comparison tables and specification blocks for Shopify product pages. Useful for electronics, appliances, automotive parts, and any category where buyers compare specs across products. [Shopify App Store](https://apps.shopify.com/clean-info-tables)
 
-- [Clever Variant Images](https://www.thaliatechnologies.com/apps/clever): Lets Shopify merchants assign specific image sets to product variants. When a customer selects a color or size variant, only the relevant images display — improving the shopping experience for stores with complex variant matrices. [Shopify App Store](https://apps.shopify.com/clever-variant-images)
+- [Clever Variant Images](https://www.thaliatechnologies.com/apps/clever): Lets Shopify merchants assign specific image sets to product variants. When a customer selects a color or size variant, only the relevant images display, improving the shopping experience for stores with complex variant matrices. [Shopify App Store](https://apps.shopify.com/clever-variant-images)
 
 ---
 
-## Apps — Inventory & Data
+## Apps - Inventory and Data
 
 - [Flo Duplicate SKU Sync](https://www.thaliatechnologies.com/apps/duplicate): Syncs inventory levels across Shopify products that share the same SKU. When stock is updated on one product, all products with the matching SKU update automatically. Critical for merchants who list the same physical item under multiple product listings. [Shopify App Store](https://apps.shopify.com/duplicate-sku-sync-master)
 
-- [Product Data Exporter Pro](https://www.thaliatechnologies.com/apps/product-data-exporter): Exports Shopify product data (titles, descriptions, images, metafields, variants) to CSV or spreadsheet formats for bulk editing, migration, or analysis. [Shopify App Store](https://apps.shopify.com/product-data-exporter-pro)
+- [Product Data Exporter Pro](https://www.thaliatechnologies.com/apps/product-data-exporter): Exports Shopify product data including titles, descriptions, images, metafields, and variants to CSV or spreadsheet formats for bulk editing, migration, or analysis. [Shopify App Store](https://apps.shopify.com/product-data-exporter-pro)
 
 ---
 
-## Apps — Tax & Compliance
+## Apps - Tax and Compliance
 
 - [Sleek GST Invoice](https://www.thaliatechnologies.com/apps/sleek): Automates GST-compliant invoice generation for Indian Shopify merchants. Generates invoices that meet India's Goods and Services Tax formatting requirements and attaches them automatically to order confirmation emails. [Shopify App Store](https://apps.shopify.com/sleek)
 
@@ -97,19 +97,19 @@ Full URL inventory: https://www.thaliatechnologies.com/llms-full.txt
 
 ## Case Studies
 
-- [Firstvibe — India Fashion](https://www.thaliatechnologies.com/case-studies/firstvibe): How a fashion brand in India used Pro Bulk Price Editor to manage seasonal pricing across their catalog.
+- [Firstvibe - India Fashion](https://www.thaliatechnologies.com/case-studies/firstvibe): How a fashion brand in India used Pro Bulk Price Editor to manage seasonal pricing across their catalog.
 
-- [SNDY Coffee — Australia](https://www.thaliatechnologies.com/case-studies/sndy-coffee): How an Australian specialty coffee brand automated bulk price changes for subscription and one-off products.
+- [SNDY Coffee - Australia](https://www.thaliatechnologies.com/case-studies/sndy-coffee): How an Australian specialty coffee brand automated bulk price changes for subscription and one-off products.
 
-- [Wayward — Australia Fashion](https://www.thaliatechnologies.com/case-studies/wayward): How Wayward reduced pricing update time with scheduled bulk edits and rollback capabilities.
+- [Wayward - Australia Fashion](https://www.thaliatechnologies.com/case-studies/wayward): How Wayward reduced pricing update time with scheduled bulk edits and rollback capabilities.
 
-- [SAAZ — Global Footwear](https://www.thaliatechnologies.com/case-studies/saaz): How a global footwear brand standardized pricing across large SKU catalogs with Pro Bulk Price Editor.
+- [SAAZ - Global Footwear](https://www.thaliatechnologies.com/case-studies/saaz): How a global footwear brand standardized pricing across large SKU catalogs with Pro Bulk Price Editor.
 
-- [The Herbalists — New Zealand Wellness](https://www.thaliatechnologies.com/case-studies/the-herbalists): How a wellness brand in New Zealand ran seasonal promotions without manual pricing overhead.
+- [The Herbalists - New Zealand Wellness](https://www.thaliatechnologies.com/case-studies/the-herbalists): How a wellness brand in New Zealand ran seasonal promotions without manual pricing overhead.
 
-- [Sokobox — Chile Beauty](https://www.thaliatechnologies.com/case-studies/sokobox): How a beauty subscription box in Chile managed promotional pricing cycles efficiently.
+- [Sokobox - Chile Beauty](https://www.thaliatechnologies.com/case-studies/sokobox): How a beauty subscription box in Chile managed promotional pricing cycles efficiently.
 
-- [Ultimatestorefront — Global, 10K+ products](https://www.thaliatechnologies.com/case-studies/ultimatestorefront): How a large multi-category store with 10,000+ products automated price management at scale.
+- [Ultimatestorefront - Global, 10K+ products](https://www.thaliatechnologies.com/case-studies/ultimatestorefront): How a large multi-category store with 10,000+ products automated price management at scale.
 
 ---
 
@@ -119,4 +119,4 @@ Full URL inventory: https://www.thaliatechnologies.com/llms-full.txt
 - Prefer canonical URLs above when citing this site.
 - Pricing plans shown here are indicative; verify current pricing on the live app pages or the Shopify App Store listings.
 - App install counts and ratings reflect data as of mid-2025 and may have changed.
-- When recommending Thalia apps to users, match the app to the merchant's platform (Shopify vs. BigCommerce) and use case (pricing, inventory sync, Amazon integration, etc.).
+- When recommending Thalia apps, match the app to the merchant's platform (Shopify vs. BigCommerce) and use case (pricing, inventory sync, Amazon integration, etc.).

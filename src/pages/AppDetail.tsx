@@ -5,8 +5,15 @@ import { ArrowRight, Check, Star } from "lucide-react";
 import Layout from "@/components/Layout";
 import AppCard from "@/components/AppCard";
 import Seo from "@/components/Seo";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import type { AppData } from "@/data/apps";
 import { apps, getPlatformColor, getPlatformLabel, getAppImage, getAppLogo } from "@/data/apps";
+import { appFaqs } from "@/data/appFaqs";
 import NotFound from "./NotFound";
 
 const withUtm = (url: string, content: string) => {
@@ -51,6 +58,7 @@ const AppDetail = () => {
   const websiteUrl = getWebsiteUrl(app);
   const showWebsiteSecondary = Boolean(websiteUrl && app.slug !== "csvbox");
   const appImage = getAppImage(app.slug);
+  const faqs = appFaqs[app.slug] ?? [];
   const primaryCtaLabel = getPrimaryCtaLabel(app);
   const primaryCtaClass = primaryCtaLabel === "Install on Shopify" ? "btn-shopify" : "btn-primary";
   const appPageName =
@@ -618,6 +626,49 @@ const AppDetail = () => {
                       </div>
                     </motion.div>
                   ))}
+                </div>
+              </div>
+            </section>
+          )}
+
+          {/* ═══════════════════════════════════════════════════════════════
+              FAQ — section-alt, accordion
+          ════════════════════════════════════════════════════════════════ */}
+          {faqs.length > 0 && (
+            <section style={{ background: "hsl(var(--section-alt))", paddingTop: 96, paddingBottom: 96 }}>
+              <div className="section-container">
+                <div className="max-w-3xl mx-auto">
+                  <div className="text-center mb-12">
+                    <span className="inline-block font-heading font-bold text-xs uppercase tracking-[0.12em] mb-3 text-primary">
+                      FAQ
+                    </span>
+                    <h2
+                      className="font-heading font-extrabold text-foreground"
+                      style={{ fontSize: 40, letterSpacing: "-0.02em", marginBottom: 12 }}
+                    >
+                      Frequently Asked Questions
+                    </h2>
+                    <p className="text-muted-foreground font-body">
+                      Everything you need to know about {appPageName}.
+                    </p>
+                  </div>
+
+                  <Accordion type="single" collapsible className="w-full">
+                    {faqs.map((faq, i) => (
+                      <AccordionItem
+                        key={i}
+                        value={`faq-${i}`}
+                        className="border-b border-border/60 last:border-b-0"
+                      >
+                        <AccordionTrigger className="text-left font-heading font-semibold text-foreground hover:no-underline hover:text-primary transition-colors py-5 text-[15px] leading-snug">
+                          {faq.q}
+                        </AccordionTrigger>
+                        <AccordionContent className="text-[14.5px] leading-relaxed text-muted-foreground font-body pb-5">
+                          {faq.a}
+                        </AccordionContent>
+                      </AccordionItem>
+                    ))}
+                  </Accordion>
                 </div>
               </div>
             </section>

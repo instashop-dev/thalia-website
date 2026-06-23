@@ -107,6 +107,12 @@ const Footer = () => {
               >
                 Contact
               </Link>
+              <Link
+                to="/faq"
+                className="text-sm opacity-70 hover:opacity-100 hover:text-primary transition-all duration-150"
+              >
+                FAQ
+              </Link>
             </div>
           </div>
 
