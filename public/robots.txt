@@ -1,5 +1,5 @@
 # Thalia Technologies — robots.txt
-# Last updated: 2026-06-16
+# Last updated: 2026-06-24
 
 User-agent: *
 Allow: /
@@ -7,7 +7,7 @@ Disallow: /404
 Disallow: /*?ref=
 Disallow: /*?utm_
 
-# Allow AI search crawlers so pages appear in AI Overviews, Gemini, Siri & Meta AI
+# Allow AI search crawlers — AI Overviews, Gemini, Siri, Meta AI
 User-agent: Google-Extended
 Allow: /
 
@@ -17,14 +17,41 @@ Allow: /
 User-agent: meta-externalagent
 Allow: /
 
-# Allow AI chatbot crawlers for answer/citation visibility
+# Allow AI chatbot crawlers — ChatGPT, Claude, Perplexity, Bing AI, Grok
 User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
 Allow: /
 
 User-agent: ClaudeBot
 Allow: /
 
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
 User-agent: CCBot
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: YouBot
 Allow: /
 
 Sitemap: https://www.thaliatechnologies.com/sitemap.xml

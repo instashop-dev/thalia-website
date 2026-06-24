@@ -74,8 +74,75 @@ export default {
       return Response.redirect(url.toString(), 301);
     }
 
+    // Serve robots.txt explicitly so Cloudflare's managed AI-blocker injection
+    // (which prepends Disallow rules into asset responses) cannot override our intent.
+    if (url.pathname === "/robots.txt") {
+      const body = [
+        "# Thalia Technologies — robots.txt",
+        "# Last updated: 2026-06-24",
+        "",
+        "User-agent: *",
+        "Allow: /",
+        "Disallow: /404",
+        "Disallow: /*?ref=",
+        "Disallow: /*?utm_",
+        "",
+        "# Allow AI search crawlers — AI Overviews, Gemini, Siri, Meta AI",
+        "User-agent: Google-Extended",
+        "Allow: /",
+        "",
+        "User-agent: Applebot-Extended",
+        "Allow: /",
+        "",
+        "User-agent: meta-externalagent",
+        "Allow: /",
+        "",
+        "# Allow AI chatbot crawlers — ChatGPT, Claude, Perplexity, Bing AI, Grok",
+        "User-agent: GPTBot",
+        "Allow: /",
+        "",
+        "User-agent: OAI-SearchBot",
+        "Allow: /",
+        "",
+        "User-agent: ChatGPT-User",
+        "Allow: /",
+        "",
+        "User-agent: ClaudeBot",
+        "Allow: /",
+        "",
+        "User-agent: anthropic-ai",
+        "Allow: /",
+        "",
+        "User-agent: Claude-Web",
+        "Allow: /",
+        "",
+        "User-agent: PerplexityBot",
+        "Allow: /",
+        "",
+        "User-agent: Perplexity-User",
+        "Allow: /",
+        "",
+        "User-agent: cohere-ai",
+        "Allow: /",
+        "",
+        "User-agent: CCBot",
+        "Allow: /",
+        "",
+        "User-agent: Diffbot",
+        "Allow: /",
+        "",
+        "User-agent: YouBot",
+        "Allow: /",
+        "",
+        "Sitemap: https://www.thaliatechnologies.com/sitemap.xml",
+      ].join("\n");
+      return new Response(body, {
+        headers: { "Content-Type": "text/plain; charset=utf-8" },
+      });
+    }
+
     // Try to serve the request directly from static assets
-    // (handles .js, .css, images, robots.txt, sitemap.xml, og-image.png, etc.)
+    // (handles .js, .css, images, sitemap.xml, og-image.png, etc.)
     const assetResponse = await env.ASSETS.fetch(request);
 
     // Asset found — return it as-is
