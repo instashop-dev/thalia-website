@@ -224,17 +224,11 @@ const faqData: FAQCategory[] = [
       {
         q: "Can I request a custom feature or integration for a Thalia app?",
         schemaA:
-          "Yes — we love hearing from merchants! You can submit a feature request via our Freshdesk support portal or use our Contact page. We actively review requests and frequently ship features suggested by the merchant community.",
+          "Yes — we love hearing from merchants! You can submit a feature request via our Contact page. We actively review requests and frequently ship features suggested by the merchant community.",
         a: (
           <>
             We love hearing from merchants! Submit a feature request via our{" "}
-            <A
-              href="https://thaliaapps.freshdesk.com/support/tickets/new"
-              content="feature_request"
-            >
-              support portal
-            </A>{" "}
-            or use our <IL to="/contact">Contact page</IL>. We actively review requests and
+            <IL to="/contact">Contact page</IL>. We actively review requests and
             frequently ship features suggested by the merchant community.
           </>
         ),
@@ -313,13 +307,7 @@ const faqData: FAQCategory[] = [
             in Shopify. App-specific data (e.g. saved price schedules, alert subscriber lists) may
             be retained for a short period per our data retention policy and then deleted. You can
             request immediate data deletion by contacting our{" "}
-            <A
-              href="https://thaliaapps.freshdesk.com/support/tickets/new"
-              content="data_deletion"
-            >
-              support team
-            </A>
-            .
+            <IL to="/contact">support team</IL>.
           </>
         ),
       },
@@ -366,36 +354,24 @@ const faqData: FAQCategory[] = [
       {
         q: "Is onboarding support available?",
         schemaA:
-          "Yes. If you need help getting started, you can raise a support ticket through our Freshdesk portal. Our team typically responds within 24 hours on business days and can guide you through the initial setup.",
+          "Yes. If you need help getting started, you can reach our support team through the Contact page. Our team typically responds within 24 hours on business days and can guide you through the initial setup.",
         a: (
           <>
-            Yes. If you need help getting started, you can raise a support ticket through our{" "}
-            <A
-              href="https://thaliaapps.freshdesk.com/support/tickets/new"
-              content="onboarding_support"
-            >
-              Freshdesk portal
-            </A>
-            . Our team typically responds within 24 hours on business days and can guide you through
-            the initial setup.
+            Yes. If you need help getting started, you can reach our support team through our{" "}
+            <IL to="/contact">Contact page</IL>. Our team typically responds within 24 hours on
+            business days and can guide you through the initial setup.
           </>
         ),
       },
       {
         q: "Where can I find documentation and help guides?",
         schemaA:
-          "Detailed documentation for all Thalia apps is available in our Freshdesk knowledge base at thaliaapps.freshdesk.com. Each article covers step-by-step instructions with screenshots.",
+          "Detailed documentation for all Thalia apps is available by reaching out to our support team, who can walk you through setup and every feature.",
         a: (
           <>
-            Detailed documentation for all Thalia apps is available in our{" "}
-            <A
-              href="https://thaliaapps.freshdesk.com/support/solutions"
-              content="docs_help_guides"
-            >
-              Freshdesk knowledge base
-            </A>
-            . Each article covers step-by-step instructions with screenshots to help you get the
-            most out of every feature.
+            Detailed documentation and setup guidance for all Thalia apps is available from our{" "}
+            <IL to="/contact">support team</IL>. Reach out and we'll walk you through step-by-step
+            instructions for the feature you need.
           </>
         ),
       },
@@ -662,15 +638,8 @@ const faqData: FAQCategory[] = [
         a: (
           <>
             Watchlyst can work alongside email marketing platforms. For deeper Klaviyo flows
-            triggered by back-in-stock events, you can use Shopify Flow or contact our team for
-            integration guidance. Visit our{" "}
-            <A
-              href="https://thaliaapps.freshdesk.com/support/solutions"
-              content="watchlyst_klaviyo"
-            >
-              knowledge base
-            </A>{" "}
-            for the latest integration documentation.
+            triggered by back-in-stock events, you can use Shopify Flow or{" "}
+            <IL to="/contact">contact our team</IL> for the latest integration guidance.
           </>
         ),
       },
@@ -835,17 +804,10 @@ const faqData: FAQCategory[] = [
       {
         q: "How do I contact Thalia Technologies support?",
         schemaA:
-          "The fastest way to get help is to raise a ticket through our Freshdesk support portal at thaliaapps.freshdesk.com. You can also email supportteam@thaliatechnologies.com or use our Contact page.",
+          "The fastest way to get help is to email supportteam@thaliatechnologies.com or use our Contact page.",
         a: (
           <>
-            The fastest way to get help is to raise a ticket through our{" "}
-            <A
-              href="https://thaliaapps.freshdesk.com/support/tickets/new"
-              content="support_ticket"
-            >
-              Freshdesk support portal
-            </A>
-            . You can also reach us via email at{" "}
+            The fastest way to get help is to reach us via email at{" "}
             <a
               href="mailto:supportteam@thaliatechnologies.com"
               className="text-primary underline underline-offset-2 hover:opacity-80 transition-opacity"
@@ -865,49 +827,38 @@ const faqData: FAQCategory[] = [
       {
         q: "Do you offer live chat support?",
         schemaA:
-          "Live chat is available inside select Thalia apps directly from your Shopify admin. For general inquiries and detailed technical questions, ticket-based support ensures your issue is logged, tracked, and handled by the right team member.",
+          "Live chat is available inside select Thalia apps directly from your Shopify admin. For general inquiries and detailed technical questions, email-based support ensures your issue is logged, tracked, and handled by the right team member.",
         a: (
           <>
             Live chat is available inside select Thalia apps directly from your Shopify admin. For
             general inquiries and detailed technical questions, our{" "}
-            <A
-              href="https://thaliaapps.freshdesk.com/support/tickets/new"
-              content="support_livechat"
-            >
-              ticket-based support
-            </A>{" "}
-            ensures your issue is logged, tracked, and handled by the right team member.
+            <IL to="/contact">email-based support</IL> ensures your issue is logged, tracked, and
+            handled by the right team member.
           </>
         ),
       },
       {
         q: "Where can I find the knowledge base and help articles?",
         schemaA:
-          "Visit thaliaapps.freshdesk.com for our full library of help articles, setup guides, and troubleshooting tips covering all Thalia apps.",
+          "Reach out through our Contact page for setup guides and troubleshooting help covering all Thalia apps.",
         a: (
           <>
-            Visit our{" "}
-            <A href="https://thaliaapps.freshdesk.com/support/solutions" content="support_kb">
-              Freshdesk knowledge base
-            </A>{" "}
-            for our full library of help articles, setup guides, video walkthroughs, and
-            troubleshooting tips covering all Thalia apps.
+            Reach out through our{" "}
+            <IL to="/contact">Contact page</IL> for setup guides, walkthroughs, and
+            troubleshooting help covering all Thalia apps.
           </>
         ),
       },
       {
         q: "How do I report a bug in a Thalia app?",
         schemaA:
-          "Please raise a bug report via our support portal with your store URL, a description of the issue, steps to reproduce it, and any screenshots. Our engineering team reviews all reported bugs and ships fixes in our regular update cycle.",
+          "Please report bugs through our Contact page with your store URL, a description of the issue, steps to reproduce it, and any screenshots. Our engineering team reviews all reported bugs and ships fixes in our regular update cycle.",
         a: (
           <>
-            Please raise a bug report via our{" "}
-            <A href="https://thaliaapps.freshdesk.com/support/tickets/new" content="bug_report">
-              support portal
-            </A>{" "}
-            with your store URL, a description of the issue, steps to reproduce it, and any
-            screenshots. Our engineering team reviews all reported bugs and ships fixes in our
-            regular update cycle.
+            Please report bugs through our{" "}
+            <IL to="/contact">Contact page</IL> with your store URL, a description of the issue,
+            steps to reproduce it, and any screenshots. Our engineering team reviews all reported
+            bugs and ships fixes in our regular update cycle.
           </>
         ),
       },
@@ -938,19 +889,13 @@ const faqData: FAQCategory[] = [
       {
         q: "Do Thalia apps integrate with Klaviyo?",
         schemaA:
-          "Thalia apps are designed to work within the Shopify ecosystem. Watchlyst back-in-stock events can be used alongside email platforms via Shopify customer data. For deeper Klaviyo flows, see our knowledge base for the latest integration guides.",
+          "Thalia apps are designed to work within the Shopify ecosystem. Watchlyst back-in-stock events can be used alongside email platforms via Shopify customer data. For deeper Klaviyo flows, contact our team for the latest integration guidance.",
         a: (
           <>
             Thalia apps are designed to work within the Shopify ecosystem. Watchlyst back-in-stock
             events can be used alongside email platforms via Shopify customer data. For deeper
-            Klaviyo flows, see our{" "}
-            <A
-              href="https://thaliaapps.freshdesk.com/support/solutions"
-              content="integration_klaviyo"
-            >
-              knowledge base
-            </A>{" "}
-            for the latest integration guides.
+            Klaviyo flows, <IL to="/contact">contact our team</IL> for the latest integration
+            guidance.
           </>
         ),
       },
@@ -1062,7 +1007,7 @@ const faqData: FAQCategory[] = [
       {
         q: "How do I request deletion of my data?",
         schemaA:
-          "To request deletion of your store or customer data held by Thalia apps, please contact us at info@thaliatechnologies.com or raise a ticket via our Freshdesk support portal. We process data deletion requests within 30 days.",
+          "To request deletion of your store or customer data held by Thalia apps, please contact us at info@thaliatechnologies.com or through our Contact page. We process data deletion requests within 30 days.",
         a: (
           <>
             To request deletion of your store or customer data held by Thalia apps, please contact
@@ -1073,15 +1018,8 @@ const faqData: FAQCategory[] = [
             >
               info@thaliatechnologies.com
             </a>{" "}
-            or raise a ticket via our{" "}
-            <A
-              href="https://thaliaapps.freshdesk.com/support/tickets/new"
-              content="data_deletion_request"
-            >
-              Freshdesk support portal
-            </A>
-            . We process data deletion requests within 30 days in compliance with GDPR and
-            applicable data protection laws.
+            or through our <IL to="/contact">Contact page</IL>. We process data deletion requests
+            within 30 days in compliance with GDPR and applicable data protection laws.
           </>
         ),
       },
@@ -1351,13 +1289,8 @@ const FAQ = () => {
             className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto"
           >
             {/* Contact support */}
-            <a
-              href={utm(
-                "https://thaliaapps.freshdesk.com/support/tickets/new",
-                "faq_bottom_support_cta"
-              )}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/contact?utm_source=faq_page&utm_medium=internal&utm_campaign=organic_faq&utm_content=faq_bottom_support_cta"
               className="card-elevated p-8 block group"
               style={{ borderTop: "2px solid rgba(0,192,255,0.22)" }}
             >
@@ -1374,14 +1307,14 @@ const FAQ = () => {
                 Still have a question?
               </h3>
               <p className="text-sm text-muted-foreground font-body leading-relaxed mb-4">
-                Our support team typically responds within 24 hours on business days. Raise a
-                ticket and we'll get right back to you.
+                Our support team typically responds within 24 hours on business days. Send us a
+                message and we'll get right back to you.
               </p>
               <span className="inline-flex items-center gap-1.5 text-sm font-medium text-primary font-body group-hover:underline">
-                Open a Support Ticket
+                Contact Support
                 <ArrowRight className="h-3.5 w-3.5" aria-hidden />
               </span>
-            </a>
+            </Link>
 
             {/* Browse apps */}
             <div

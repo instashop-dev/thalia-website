@@ -126,14 +126,12 @@ const Footer = () => {
               >
                 Privacy Policy
               </Link>
-              <a
-                href="https://thaliaapps.freshdesk.com/support/solutions/articles/29000047456-terms-of-use"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to="/terms"
                 className="text-sm opacity-70 hover:opacity-100 hover:text-primary transition-all duration-150"
               >
                 Terms of Service
-              </a>
+              </Link>
             </div>
           </div>
 

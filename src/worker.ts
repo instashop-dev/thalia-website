@@ -25,6 +25,9 @@ const STATIC_ROUTES = new Set([
   "/careers",
   "/blog",
   "/case-studies",
+  "/faq",
+  "/privacy-policy",
+  "/terms",
 ]);
 
 // Dynamic route prefixes — a single path segment must follow the slash

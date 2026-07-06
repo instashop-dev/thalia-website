@@ -24,7 +24,6 @@ const FORM_SUBMIT_ENDPOINT = "https://formsubmit.co/ajax/info@thaliatechnologies
 const OFFICE_MAP_URL = "https://maps.app.goo.gl/kFtQe6m18qMZF7zH7";
 const OFFICE_ADDRESS =
   "Naman Midtown, 1702, Senapati Bapat Marg, Dadar West, Prabhadevi, Mumbai, Maharashtra 400013";
-const SUPPORT_TICKET_URL = "https://thaliaapps.freshdesk.com/support/tickets/new";
 
 const initialForm = {
   firstName: "",
@@ -47,9 +46,9 @@ const channels = [
     icon: Ticket,
     label: "App Support",
     desc: "Technical issues with one of our apps.",
-    href: SUPPORT_TICKET_URL,
-    value: "Raise a ticket →",
-    external: true,
+    href: "mailto:supportteam@thaliatechnologies.com",
+    value: "supportteam@thaliatechnologies.com",
+    external: false,
   },
   {
     icon: MapPin,

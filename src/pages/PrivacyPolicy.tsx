@@ -162,15 +162,10 @@ const sections = [
         >
           info@thaliatechnologies.com
         </a>{" "}
-        or raise a ticket through our{" "}
-        <a
-          href="https://thaliaapps.freshdesk.com/support/tickets/new"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-primary underline underline-offset-2 hover:opacity-80"
-        >
-          support portal
-        </a>
+        or through our{" "}
+        <Link to="/contact" className="text-primary underline underline-offset-2 hover:opacity-80">
+          Contact page
+        </Link>
         . You can also write to us at Thalia Technologies Private Limited, Naman Midtown, Senapati
         Bapat Marg, Dadar West, Prabhadevi, Mumbai 400013, India.
       </>
