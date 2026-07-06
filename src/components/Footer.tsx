@@ -120,14 +120,12 @@ const Footer = () => {
           <div>
             <h4 className="font-heading font-bold text-xs uppercase tracking-widest mb-5 opacity-60">Legal</h4>
             <div className="flex flex-col gap-3">
-              <a
-                href="https://thaliaapps.freshdesk.com/support/solutions/articles/29000038536-privacy-policy"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to="/privacy-policy"
                 className="text-sm opacity-70 hover:opacity-100 hover:text-primary transition-all duration-150"
               >
                 Privacy Policy
-              </a>
+              </Link>
               <a
                 href="https://thaliaapps.freshdesk.com/support/solutions/articles/29000047456-terms-of-use"
                 target="_blank"

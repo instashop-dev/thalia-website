@@ -216,12 +216,7 @@ const faqData: FAQCategory[] = [
             Yes. All Thalia apps go through Shopify's app review process before being listed. We
             only request permissions strictly necessary for each app's functionality, and we do not
             sell or share your data with third parties. See our{" "}
-            <A
-              href="https://thaliaapps.freshdesk.com/support/solutions/articles/29000038536-privacy-policy"
-              content="safety_privacy"
-            >
-              Privacy Policy
-            </A>{" "}
+            <IL to="/privacy-policy">Privacy Policy</IL>{" "}
             for full details.
           </>
         ),
@@ -1020,14 +1015,7 @@ const faqData: FAQCategory[] = [
             Yes. Thalia Technologies follows industry-standard security practices — data is
             transmitted over HTTPS, app access tokens are stored securely, and we only access the
             Shopify API scopes strictly required for each app's functionality. Full details are in
-            our{" "}
-            <A
-              href="https://thaliaapps.freshdesk.com/support/solutions/articles/29000038536-privacy-policy"
-              content="privacy_safe"
-            >
-              Privacy Policy
-            </A>
-            .
+            our <IL to="/privacy-policy">Privacy Policy</IL>.
           </>
         ),
       },
@@ -1066,12 +1054,7 @@ const faqData: FAQCategory[] = [
             No. Thalia Technologies does not sell, rent, or share your store data or your
             customers' personal data with third parties. Data collected by our apps is used solely
             to provide and improve the app's functionality. Read our full{" "}
-            <A
-              href="https://thaliaapps.freshdesk.com/support/solutions/articles/29000038536-privacy-policy"
-              content="privacy_sell"
-            >
-              Privacy Policy
-            </A>{" "}
+            <IL to="/privacy-policy">Privacy Policy</IL>{" "}
             for complete information.
           </>
         ),
