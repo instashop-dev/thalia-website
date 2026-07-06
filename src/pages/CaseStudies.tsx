@@ -9,6 +9,8 @@ import sndyCoffeeLogoSrc from "@/assets/sndy-coffee-logo.png";
 import waywardLogoSrc from "@/assets/wayward logo.avif";
 import saazLogoSrc from "@/assets/saaz_1.avif";
 import herbalistsLogoSrc from "@/assets/theherbalists logo.avif";
+import outlinkLogoSrc from "@/assets/Outlink Logo.webp";
+import sleekLogoSrc from "@/assets/sleek.png";
 
 const inView = (delay = 0) => ({
   initial: { opacity: 0, y: 20 },
@@ -23,6 +25,11 @@ const merchantLogos: Record<string, string> = {
   "Wayward":        waywardLogoSrc,
   "SAAZ":           saazLogoSrc,
   "The Herbalists": herbalistsLogoSrc,
+  "Synergywoman":                              outlinkLogoSrc,
+  "Online Dreams Retailers":                   outlinkLogoSrc,
+  "Official Echo & The Bunnymen Merchandise":  outlinkLogoSrc,
+  "The Gaima Label":                           sleekLogoSrc,
+  "Bruijn":                                    sleekLogoSrc,
 };
 
 const HEADLINES: Record<string, string> = {
@@ -32,7 +39,12 @@ const HEADLINES: Record<string, string> = {
   "saaz-bulk-pricing":                    "SAAZ Slashes Flash Sale Prep Time by 50–75% with Bulk Pricing Automation",
   "herbalists-seasonal-pricing":          "The Herbalists Schedules Seasonal Sales with Per-Product Bulk Pricing — No Percentage Rules Required",
   "sokobox-flash-sale-pricing":           "Sokobox Powers Black Friday Campaigns Across 1,000–5,000 Products with Scheduled Pricing",
-  "ultimatestorefront-supplier-pricing":  "Ultimatestorefront Manages 50,000+ Supplier Price Updates Monthly with Pro Bulk Price Editor",
+  "ultimatestorefront-supplier-pricing":      "Ultimatestorefront Manages 50,000+ Supplier Price Updates Monthly with Pro Bulk Price Editor",
+  "synergywoman-affiliate-links":             "Synergywoman Unlocks Affiliate Revenue with Zero-Code Product Link Setup — Up to 10 Minutes to Go Live",
+  "online-dreams-retailers-affiliate-links":  "Online Dreams Retailers Powers Amazon Affiliate Links Through Shopify with Outlink",
+  "echo-bunnymen-affiliate-links":            "Official Echo & The Bunnymen Merchandise Drives 15% Revenue Growth and 25% More Affiliate Clicks with Outlink",
+  "gaima-label-gst-invoicing":               "The Gaima Label Saves 5 Hours Every Week by Automating GST Invoicing with Sleek",
+  "bruijn-gst-invoicing":                    "Bruijn Eliminates Manual GST Invoice Creation for B2B and D2C Orders with Sleek",
 };
 
 const EXCERPTS: Record<string, string> = {
@@ -50,6 +62,16 @@ const EXCERPTS: Record<string, string> = {
     "Sokobox manages $50,000–$100,000 in campaign revenue across a 1,000–5,000 product beauty catalogue. Pro Bulk Price Editor replaced their CSV import workflow with scheduled, collection-based pricing for Black Friday and flash campaigns.",
   "ultimatestorefront-supplier-pricing":
     "Ultimatestorefront operates a 10,000+ product multi-category Shopify store driven by supplier cost changes. Pro Bulk Price Editor powers monthly bulk updates across 50,000+ products — keeping margins aligned as supplier costs shift.",
+  "synergywoman-affiliate-links":
+    "Synergywoman had no way to attach affiliate links to Shopify products — rating the challenge 5 out of 5. Outlink changed that in under 10 minutes: affiliated clicks increased and the store now earns commission on every partner product referral.",
+  "online-dreams-retailers-affiliate-links":
+    "Online Dreams Retailers needed Amazon affiliate links embedded directly in their Shopify store. Outlink delivered on day one — including a dedicated 'SPECIAL ORDERS' product that now drives commission from customers who source independently.",
+  "echo-bunnymen-affiliate-links":
+    "The official Echo & The Bunnymen merch store wanted to cross-sell album purchases from music platforms. Outlink added external buy buttons in 30 minutes — resulting in a 15% revenue uplift and 25% more affiliate clicks across linked product pages.",
+  "gaima-label-gst-invoicing":
+    "The Gaima Label was spending 3–5 hours a week generating GST invoices manually through external accounting software. Sleek automated the entire process — saving 5 hours per week and improving product update speed by 30%.",
+  "bruijn-gst-invoicing":
+    "Bruijn's accounts team manually created GST invoices for every B2B and D2C order. Sleek automated it all — the migration took hours, not days, and was simple enough for the store's CA to pick up immediately.",
 };
 
 const CaseStudies = () => {

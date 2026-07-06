@@ -542,4 +542,313 @@ export const caseStudies: CaseStudy[] = [
     quoteName: "Dustin Titta",
     quoteRole: "Store Owner, Ultimatestorefront",
   },
+
+  // ─── Synergywoman (Outlink) ────────────────────────────────────────────────
+  {
+    slug: "synergywoman-affiliate-links",
+    app: "Outlink",
+    appSlug: "external-affiliate-product-links",
+    category: "Affiliate Linking",
+    industry: "Health & Wellness",
+    merchant: "Synergywoman",
+    location: "Global",
+    merchantUrl: "synergywoman.com",
+    catalogueSize: "Under 100 products",
+    productsUpdated: "Under 100 affiliate-linked products",
+    timeWithApp: "Active user",
+    usageFrequency: "Ongoing",
+    primaryUse: "Adding affiliate product links to redirect customers to partner stores",
+    featuredBy: "Luba Vitti, Health Practitioner & Store Owner — synergywoman.com",
+
+    aboutMerchant:
+      "Synergywoman is a health practitioner-run Shopify store focused on wellness products and partner recommendations. Store owner Luba Vitti wanted a simple, no-code way to connect her customers with affiliate products from partner retailers — without needing a developer or custom workaround.",
+
+    previousMethods: ["No prior solution — affiliate linking to partner products was simply not possible"],
+    timeBeforeApp: "Extremely difficult — rated 5 out of 5 with no working solution",
+    challengeBody:
+      "Luba needed a way to add affiliate links directly to products in her Shopify store, redirecting customers to partner retailers when they clicked to buy. Without a dedicated solution, she rated the challenge a full 5 out of 5 in difficulty — as no straightforward option existed for a non-developer to embed external affiliate links inside a Shopify product listing.",
+    challengeBullets: [
+      "No existing Shopify-native solution for attaching affiliate links to product pages.",
+      "Embedding external redirect links required developer knowledge she didn't have.",
+      "Affiliate product recommendations had no reliable click-through path to partner stores.",
+      "Manual workarounds consumed time and delivered inconsistent results.",
+    ],
+
+    solutionBody:
+      "Outlink gave Synergywoman exactly what was missing: a simple, no-code way to attach affiliate product links to any Shopify listing. Setup took under 10 minutes. Once live, every product with an affiliate link automatically redirected customers to the partner retailer — with Luba's affiliate tracking intact and no custom code required.",
+    topFeatures: [
+      {
+        title: "Affiliate Product Links",
+        desc: "Attach affiliate redirect URLs directly to Shopify product listings — no code, no workarounds, instant setup.",
+      },
+    ],
+
+    keyResults: [
+      { metric: "5 / 5",   label: "Satisfaction & likelihood to recommend", accent: true },
+      { metric: "10–25%",  label: "Improvement in affiliate metrics", accent: true },
+      { metric: "1–3 hrs", label: "Saved per week on manual link management" },
+    ],
+    resultBody:
+      "After switching to Outlink, Synergywoman saw affiliated clicks increase measurably — with an estimated 10–25% improvement across affiliate metrics. The store owner saved 1–3 hours per week previously spent on workarounds, and gave Outlink a perfect 5 out of 5 for both satisfaction and likelihood to recommend. Setup was completed in under 10 minutes with zero technical knowledge required.",
+    businessOutcomes: ["Increased affiliate commissions", "Improved customer journey", "Saved time", "Reduced manual work"],
+    salesEvents: [],
+    effortReduction: "10–25%",
+    satisfactionScore: 5,
+    recommendScore: 5,
+    helpedWith: ["Monetise affiliate partnerships", "Remove manual link workarounds", "Increase product visibility"],
+
+    quote:
+      "Outlink makes it so easy for me to plug in my affiliate link to any products. It works perfect in my Shopify store.",
+    quoteName: "Luba Vitti",
+    quoteRole: "Health Practitioner & Store Owner, Synergywoman",
+  },
+
+  // ─── Online Dreams Retailers (Outlink) ────────────────────────────────────
+  {
+    slug: "online-dreams-retailers-affiliate-links",
+    app: "Outlink",
+    appSlug: "external-affiliate-product-links",
+    category: "Affiliate Linking",
+    industry: "Online Marketplace",
+    merchant: "Online Dreams Retailers",
+    location: "Global",
+    catalogueSize: "Under 100 products",
+    productsUpdated: "Under 100 affiliate-linked products",
+    timeWithApp: "Active user",
+    usageFrequency: "Ongoing",
+    primaryUse: "Managing Amazon affiliate links to let customers source products independently or through the store",
+    featuredBy: "Jeremy Iles, Store Owner — Online Dreams Retailers",
+
+    aboutMerchant:
+      "Online Dreams Retailers is a growing Shopify marketplace connecting customers with products across multiple sources. Owner Jeremy Iles manages a unique hybrid model — offering customers the choice to order directly through his store or source independently via affiliate links, earning commission either way.",
+
+    previousMethods: ["Another Shopify app — which didn't fully meet his affiliate linking needs"],
+    timeBeforeApp: "Moderate effort managing affiliate links without a dedicated tool",
+    challengeBody:
+      "Jeremy needed a reliable way to embed affiliate product links — particularly for Amazon — directly within his Shopify store. Previously relying on another Shopify app that didn't fully deliver, managing external links manually was slowing him down and limiting the affiliate revenue potential of his catalogue.",
+    challengeBullets: [
+      "Previous Shopify app didn't deliver the full affiliate link functionality needed.",
+      "Managing affiliate links to Amazon and other retailers manually was time-consuming.",
+      "No streamlined way for customers to choose between ordering through the store or self-sourcing.",
+      "Affiliate commission potential was underutilised without a clean product-level link system.",
+    ],
+
+    solutionBody:
+      "Outlink gave Jeremy a clean way to attach affiliate links directly to product listings, live on the same day he installed it. Customers browsing his store can now choose whether to order through Online Dreams Retailers or visit the affiliate destination themselves — with commission flowing to Jeremy either way. His 'SPECIAL ORDERS' product became a direct entry point to Amazon affiliate revenue.",
+    topFeatures: [
+      {
+        title: "Affiliate Product Links",
+        desc: "Attach external affiliate URLs to any Shopify product so customers can self-source with your commission tracking intact.",
+      },
+    ],
+
+    keyResults: [
+      { metric: "5 / 5", label: "Likelihood to recommend", accent: true },
+      { metric: "4 / 5", label: "Overall satisfaction" },
+      { metric: "< 1 hr", label: "Saved per week on manual link management" },
+    ],
+    resultBody:
+      "Jeremy is still growing his store, but the impact of Outlink on his affiliate revenue potential is already clear. His 'SPECIAL ORDERS' product now drives direct Amazon affiliate traffic, and the hybrid model — where customers choose between store ordering and self-sourcing — is powered entirely by Outlink. He gave Outlink a 5 out of 5 for likelihood to recommend, citing 'the opportunities it brings.'",
+    businessOutcomes: ["Reduced manual work", "Unlocked Amazon affiliate revenue channel"],
+    salesEvents: [],
+    effortReduction: "Under 25%",
+    satisfactionScore: 4,
+    recommendScore: 5,
+    helpedWith: ["Monetise affiliate partnerships", "Remove manual link workarounds"],
+
+    quote:
+      "I'm still new and growing, but the potential Outlink gives me is very satisfying.",
+    quoteName: "Jeremy Iles",
+    quoteRole: "Store Owner, Online Dreams Retailers",
+  },
+
+  // ─── Echo & The Bunnymen Merchandise (Outlink) ────────────────────────────
+  {
+    slug: "echo-bunnymen-affiliate-links",
+    app: "Outlink",
+    appSlug: "external-affiliate-product-links",
+    category: "Affiliate Linking",
+    industry: "Music Merchandise",
+    merchant: "Official Echo & The Bunnymen Merchandise",
+    location: "United Kingdom",
+    catalogueSize: "Under 100 products",
+    productsUpdated: "Under 100 externally-linked products",
+    timeWithApp: "Active user",
+    usageFrequency: "Ongoing",
+    primaryUse: "Linking merchandise products to external album sales pages to grow affiliate commissions",
+    featuredBy: "Peter Allen, Merchandise Manager — Official Echo & The Bunnymen Merchandise",
+
+    aboutMerchant:
+      "Official Echo & The Bunnymen Merchandise runs the official Shopify storefront for the legendary British post-punk band Echo & The Bunnymen. The store sells physical band merchandise while also cross-promoting the band's music catalogue — linking fans to album purchases on third-party music platforms.",
+
+    previousMethods: ["No prior solution — external product links were simply not possible in Shopify"],
+    timeBeforeApp: "Some difficulty — no built-in Shopify solution for external linking existed",
+    challengeBody:
+      "The Bunnymen merchandise team wanted to link their Shopify product listings to album pages on external music platforms — allowing fans browsing merchandise to discover and purchase the band's music in the same session. Without Outlink, there was no native Shopify way to add external 'buy this album' buttons that redirected to an affiliate destination.",
+    challengeBullets: [
+      "No Shopify-native method for adding external buy buttons on product pages.",
+      "Album cross-promotion required manual workarounds or developer customisation.",
+      "Affiliate commission on music sales from external platforms couldn't be activated.",
+      "Fans browsing merch had no in-store path to discovering and buying the band's music.",
+    ],
+
+    solutionBody:
+      "Outlink unlocked external linking for the Bunnymen merchandise store within 30 minutes of setup. Product listings now include external buy buttons pointing to album pages on music retail platforms, generating affiliate commission revenue and increasing fan engagement across the band's catalogue — with custom button text to match the band's voice.",
+    topFeatures: [
+      {
+        title: "External Buy Buttons",
+        desc: "Add branded buy buttons on product pages that redirect customers to external purchase destinations.",
+      },
+      {
+        title: "Affiliate Product Links",
+        desc: "Attach affiliate tracking to external links so every click to a music platform generates trackable commission.",
+      },
+      {
+        title: "Custom Button Text",
+        desc: "Customise button labels to match the brand voice — 'Buy Album', 'Stream Now', or any other call to action.",
+      },
+    ],
+
+    keyResults: [
+      { metric: "15%",   label: "Revenue growth from affiliate-linked listings", accent: true },
+      { metric: "25%",   label: "Increase in affiliate clicks", accent: true },
+      { metric: "5 / 5", label: "Satisfaction & likelihood to recommend" },
+    ],
+    resultBody:
+      "Since implementing Outlink, the Official Echo & The Bunnymen Merchandise store has recorded a 15% uplift in revenue from affiliate-linked product pages and a 25% increase in affiliate clicks. Setup took under 30 minutes — saving the team 1–3 hours per week compared to earlier manual workarounds. Peter Allen gave Outlink a perfect 5 out of 5 for both satisfaction and recommendation.",
+    businessOutcomes: ["Increased revenue", "Increased affiliate commissions", "Improved fan engagement"],
+    salesEvents: [],
+    effortReduction: "10–25%",
+    satisfactionScore: 5,
+    recommendScore: 5,
+    helpedWith: ["Monetise affiliate partnerships", "Cross-promote music catalogue", "Increase product visibility"],
+
+    quote:
+      "We sell merchandise for a band and it allows us to link to the band's albums on websites which sell them.",
+    quoteName: "Peter Allen",
+    quoteRole: "Merchandise Manager, Official Echo & The Bunnymen Merchandise",
+  },
+
+  // ─── The Gaima Label (Sleek) ───────────────────────────────────────────────
+  {
+    slug: "gaima-label-gst-invoicing",
+    app: "Sleek GST Invoices India",
+    appSlug: "gst-invoices-india",
+    category: "GST Invoicing",
+    industry: "Fashion & Apparel",
+    merchant: "The Gaima Label",
+    location: "India",
+    merchantUrl: "thegaimalabel.com",
+    catalogueSize: "Growing catalogue",
+    productsUpdated: "N/A",
+    timeWithApp: "Active user",
+    usageFrequency: "Ongoing",
+    primaryUse: "Automating GST invoice generation to eliminate manual accounting software and invoice printing delays",
+    featuredBy: "Garima Batra, Store Owner — thegaimalabel.com",
+
+    aboutMerchant:
+      "The Gaima Label is an Indian fashion and apparel Shopify store run by Garima Batra. As a growing DTC brand shipping across India, GST-compliant invoicing is a mandatory part of every order's fulfilment process — and one that was causing delays and consuming team hours before Sleek.",
+
+    previousMethods: ["Manual invoice generation using external accounting software"],
+    timeBeforeApp: "3–5 hours per week managing invoices manually through external accounting software",
+    challengeBody:
+      "Before Sleek GST Invoices India, The Gaima Label was generating GST invoices manually using external accounting software — a process that introduced friction and delays at the despatch stage for every order. The team was spending 3–5 hours per week on invoice handling alone, and without automation, scaling would soon require additional headcount.",
+    challengeBullets: [
+      "Manual invoice printing was causing delays in order despatch.",
+      "GST compliance required meticulous, time-consuming invoice generation for every order.",
+      "External accounting software created an additional workflow step outside Shopify.",
+      "Growing order volumes meant the manual approach would soon require extra staff.",
+    ],
+
+    solutionBody:
+      "Sleek GST Invoices India brought automated, GST-compliant invoicing directly into The Gaima Label's Shopify workflow. Invoices are now generated automatically at fulfilment — no manual data entry, no switching between software platforms, no printing delays. The team saves approximately 5 hours every week and has seen a 30% improvement in product update speed.",
+    topFeatures: [
+      {
+        title: "Automated GST Invoicing",
+        desc: "Invoices are generated and attached automatically when orders are fulfilled — zero manual input required.",
+      },
+    ],
+
+    keyResults: [
+      { metric: "5 hrs",  label: "Saved per week on invoice generation", accent: true },
+      { metric: "30%",    label: "Improvement in product update speed", accent: true },
+      { metric: "~25%",   label: "Reduction in manual operational tasks" },
+    ],
+    resultBody:
+      "The Gaima Label now saves approximately 5 hours every week — time previously spent on manual invoice generation and handling despatch delays caused by external accounting software. Product update speed has improved by an estimated 30%, and manual operational tasks have reduced by around 25%. Garima Batra rated Sleek 4 out of 5 for satisfaction and would recommend it to other Shopify merchants in India.",
+    businessOutcomes: ["Saved time", "Better productivity", "Reduced manual work", "Fewer mistakes"],
+    salesEvents: [],
+    effortReduction: "~25%",
+    satisfactionScore: 4,
+    recommendScore: 5,
+    helpedWith: ["Automate GST compliance", "Eliminate invoice printing delays", "Scale without extra headcount"],
+
+    quote: "Must have for growing Shopify stores.",
+    quoteName: "Garima Batra",
+    quoteRole: "Store Owner, The Gaima Label",
+  },
+
+  // ─── Bruijn (Sleek) ────────────────────────────────────────────────────────
+  {
+    slug: "bruijn-gst-invoicing",
+    app: "Sleek GST Invoices India",
+    appSlug: "gst-invoices-india",
+    category: "GST Invoicing",
+    industry: "Food & Beverage",
+    merchant: "Bruijn",
+    location: "India",
+    merchantUrl: "bruijn.in",
+    catalogueSize: "Growing catalogue",
+    productsUpdated: "N/A",
+    timeWithApp: "Active user",
+    usageFrequency: "Ongoing",
+    primaryUse: "Automating GST invoicing for both B2B and D2C customers, freeing the accounts team from manual work",
+    featuredBy: "Mandavi Kanchan, Store Owner — bruijn.in",
+
+    aboutMerchant:
+      "Bruijn is an Indian food and beverage Shopify store operating a mixed B2B and D2C model. Store owner Mandavi Kanchan manages a customer base with differing GST compliance requirements between business and consumer orders — creating complexity that manual invoicing could not efficiently handle at scale.",
+
+    previousMethods: ["Manual GST invoice creation by the accounts team for every order"],
+    timeBeforeApp: "Accounts team manually creating GST invoices across all B2B and D2C orders",
+    challengeBody:
+      "Bruijn's accounts team was manually creating GST invoices for every order — a process that consumed significant time and introduced complexity, particularly given the different compliance requirements for their B2B vs D2C customers. The manual approach was not sustainable as order volumes grew, and left the team exposed to errors and compliance gaps.",
+    challengeBullets: [
+      "Accounts team manually created GST invoices for every order — B2B and D2C alike.",
+      "B2B compliance requirements differ from D2C, complicating manual invoice workflows.",
+      "No automated system to generate and attach GST-compliant invoices within Shopify.",
+      "Manual processes left the team exposed to errors and compliance gaps as volumes grew.",
+    ],
+
+    solutionBody:
+      "Sleek GST Invoices India integrated directly into Bruijn's Shopify store, automating invoice generation for every order type. The migration was seamless — intuitive enough that even Bruijn's CA understood how to use it immediately. B2B and D2C invoicing is now handled automatically, with correct GST treatment applied to each customer type without any manual intervention.",
+    topFeatures: [
+      {
+        title: "Automated GST Invoicing",
+        desc: "Automatically generate GST-compliant invoices for every order, with correct handling for both B2B and D2C customers.",
+      },
+      {
+        title: "B2B & D2C Support",
+        desc: "Manage different compliance requirements for business and consumer customers without separate workflows.",
+      },
+    ],
+
+    keyResults: [
+      { metric: "5 / 5",   label: "Satisfaction score", accent: true },
+      { metric: "~25%",    label: "Reduction in manual operational tasks", accent: true },
+      { metric: "1–3 hrs", label: "Saved per week on invoicing" },
+    ],
+    resultBody:
+      "Bruijn's accounts team no longer manually creates GST invoices — Sleek handles it automatically for every order, with correct handling for both B2B and D2C customers. Manual operational tasks have been reduced by approximately 25%, saving 1–3 hours per week. Mandavi Kanchan gave Sleek a perfect 5 out of 5 for satisfaction and has already recommended it to 3 other merchants. The migration was 'quite seamless' — simple enough that the store's CA understood the app immediately.",
+    businessOutcomes: ["Reduced manual work", "Improved B2B compliance", "Saved time", "Reduced operational costs"],
+    salesEvents: [],
+    effortReduction: "~25%",
+    satisfactionScore: 5,
+    recommendScore: 5,
+    helpedWith: ["Automate GST compliance", "Simplify B2B invoicing", "Free up accounts team"],
+
+    quote:
+      "I've recommended Sleek to 3 customers already. I'm really happy with the service and the fact that someone does not manually need to make GST invoices. Given that some of my business is B2B, the ease of use of managing B2B vs D2C customers makes using Sleek a no brainer.",
+    quoteName: "Mandavi Kanchan",
+    quoteRole: "Store Owner, Bruijn",
+  },
 ];

@@ -9,6 +9,8 @@ import sndyCoffeeLogoSrc from "@/assets/sndy-coffee-logo.png";
 import waywardLogoSrc from "@/assets/wayward logo.avif";
 import saazLogoSrc from "@/assets/saaz_1.avif";
 import herbalistsLogoSrc from "@/assets/theherbalists logo.avif";
+import outlinkLogoSrc from "@/assets/Outlink Logo.webp";
+import sleekLogoSrc from "@/assets/sleek.png";
 
 /* ──────────────────────────────────────────────────────────
    App store URLs (UTM-ready)
@@ -16,6 +18,10 @@ import herbalistsLogoSrc from "@/assets/theherbalists logo.avif";
 const APP_STORE_URLS: Record<string, string> = {
   "bulk-price-editor-pro":
     "https://apps.shopify.com/pro-bulk-price-editor",
+  "external-affiliate-product-links":
+    "https://apps.shopify.com/external-affiliate-product-links",
+  "gst-invoices-india":
+    "https://apps.shopify.com/gst-invoices-india",
 };
 
 const withUtm = (base: string, content: string) =>
@@ -24,10 +30,10 @@ const withUtm = (base: string, content: string) =>
 /* ──────────────────────────────────────────────────────────
    Inline app name → hyperlink helper
 ────────────────────────────────────────────────────────── */
-const linkifyAppName = (text: string, appSlug: string, slug: string) => {
+const linkifyAppName = (text: string, appSlug: string, slug: string, appName?: string) => {
   const url = APP_STORE_URLS[appSlug];
   if (!url) return <>{text}</>;
-  const APP_NAME = "Pro Bulk Price Editor";
+  const APP_NAME = appName ?? "Pro Bulk Price Editor";
   const parts = text.split(new RegExp(`(${APP_NAME})`, "g"));
   return (
     <>
@@ -101,6 +107,16 @@ const HEADLINES: Record<string, string> = {
     "Sokobox Powers Black Friday Campaigns Across 1,000–5,000 Products with Scheduled Pricing",
   "ultimatestorefront-supplier-pricing":
     "Ultimatestorefront Manages 50,000+ Supplier Price Updates Monthly with Pro Bulk Price Editor",
+  "synergywoman-affiliate-links":
+    "Synergywoman Unlocks Affiliate Revenue with Zero-Code Product Link Setup — Up to 10 Minutes to Go Live",
+  "online-dreams-retailers-affiliate-links":
+    "Online Dreams Retailers Powers Amazon Affiliate Links Through Shopify with Outlink",
+  "echo-bunnymen-affiliate-links":
+    "Official Echo & The Bunnymen Merchandise Drives 15% Revenue Growth and 25% More Affiliate Clicks with Outlink",
+  "gaima-label-gst-invoicing":
+    "The Gaima Label Saves 5 Hours Every Week by Automating GST Invoicing with Sleek",
+  "bruijn-gst-invoicing":
+    "Bruijn Eliminates Manual GST Invoice Creation for B2B and D2C Orders with Sleek",
 };
 
 const merchantLogos: Record<string, string> = {
@@ -109,6 +125,11 @@ const merchantLogos: Record<string, string> = {
   "Wayward":        waywardLogoSrc,
   "SAAZ":           saazLogoSrc,
   "The Herbalists": herbalistsLogoSrc,
+  "Synergywoman":                              outlinkLogoSrc,
+  "Online Dreams Retailers":                   outlinkLogoSrc,
+  "Official Echo & The Bunnymen Merchandise":  outlinkLogoSrc,
+  "The Gaima Label":                           sleekLogoSrc,
+  "Bruijn":                                    sleekLogoSrc,
 };
 
 
@@ -334,7 +355,7 @@ const CaseStudyDetail = () => {
                 The Old Way Wasn't Working
               </h2>
               <p className="font-body text-muted-foreground leading-relaxed text-base mb-6">
-                {linkifyAppName(cs.challengeBody, cs.appSlug, cs.slug)}
+                {linkifyAppName(cs.challengeBody, cs.appSlug, cs.slug, cs.app)}
               </p>
               <ul className="space-y-3">
                 {cs.challengeBullets.map((b) => (
@@ -394,7 +415,7 @@ const CaseStudyDetail = () => {
                 </a>
               </h2>
               <p className="font-body text-muted-foreground leading-relaxed text-base mb-8">
-                {linkifyAppName(cs.solutionBody, cs.appSlug, cs.slug)}
+                {linkifyAppName(cs.solutionBody, cs.appSlug, cs.slug, cs.app)}
               </p>
 
               {/* Feature grid */}
@@ -437,7 +458,7 @@ const CaseStudyDetail = () => {
                 What Changed
               </h2>
               <p className="font-body text-muted-foreground leading-relaxed text-base mb-8">
-                {linkifyAppName(cs.resultBody, cs.appSlug, cs.slug)}
+                {linkifyAppName(cs.resultBody, cs.appSlug, cs.slug, cs.app)}
               </p>
 
               {/* Sales events */}
