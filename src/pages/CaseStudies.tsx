@@ -1,6 +1,7 @@
+import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { ArrowRight, TrendingUp } from "lucide-react";
+import { ArrowRight, LayoutGrid, TrendingUp } from "lucide-react";
 import Layout from "@/components/Layout";
 import Seo from "@/components/Seo";
 import { caseStudies } from "@/data/caseStudies";
@@ -74,7 +75,30 @@ const EXCERPTS: Record<string, string> = {
     "Bruijn's accounts team manually created GST invoices for every B2B and D2C order. Sleek automated it all — the migration took hours, not days, and was simple enough for the store's CA to pick up immediately.",
 };
 
+const APP_FILTER_COLORS = ["#00c0ff", "#00C896", "#8B7CF6", "#FF9900", "#F472B6"];
+
 const CaseStudies = () => {
+  const [appFilter, setAppFilter] = useState<string>("all");
+
+  // Only apps with at least one published case study appear here — apps
+  // without one yet are simply left out of the filter list.
+  const appFilters = useMemo(() => {
+    const seen: string[] = [];
+    for (const cs of caseStudies) {
+      if (!seen.includes(cs.app)) seen.push(cs.app);
+    }
+    return seen.map((app, i) => ({
+      app,
+      color: APP_FILTER_COLORS[i % APP_FILTER_COLORS.length],
+      count: caseStudies.filter((cs) => cs.app === app).length,
+    }));
+  }, []);
+
+  const filteredCaseStudies = useMemo(() => {
+    if (appFilter === "all") return caseStudies;
+    return caseStudies.filter((cs) => cs.app === appFilter);
+  }, [appFilter]);
+
   const breadcrumbSchema = {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -188,7 +212,7 @@ const CaseStudies = () => {
         <div className="section-container">
 
           {/* Section label */}
-          <motion.div {...inView(0)} className="mb-10">
+          <motion.div {...inView(0)} className="mb-8">
             <span className="inline-block text-xs font-semibold uppercase tracking-[0.14em] text-primary font-body mb-3">
               ALL STORIES
             </span>
@@ -200,9 +224,75 @@ const CaseStudies = () => {
             </h2>
           </motion.div>
 
+          {/* Filter by app */}
+          <motion.div {...inView(0.05)} className="mb-10">
+            <div
+              className="flex items-center gap-3 overflow-x-auto pb-1"
+              style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+            >
+              <LayoutGrid className="h-4 w-4 text-muted-foreground shrink-0" />
+              <span className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground shrink-0 font-body mr-1">
+                Filter by app
+              </span>
+
+              <button
+                onClick={() => setAppFilter("all")}
+                aria-pressed={appFilter === "all"}
+                className="shrink-0 inline-flex items-center gap-2 px-4 h-10 rounded-full text-sm font-semibold font-body transition-all"
+                style={{
+                  background: appFilter === "all" ? "rgba(0,192,255,0.1)" : "white",
+                  color: appFilter === "all" ? "#0099cc" : "hsl(220 10% 35%)",
+                  border: appFilter === "all" ? "1px solid rgba(0,192,255,0.4)" : "1px solid hsl(220 15% 90%)",
+                  boxShadow: appFilter === "all" ? "0 2px 12px rgba(0,192,255,0.12)" : "none",
+                }}
+              >
+                All Stories
+                <span
+                  className="text-[11px] font-bold px-1.5 rounded-md"
+                  style={{
+                    background: appFilter === "all" ? "rgba(0,192,255,0.15)" : "hsl(220 20% 96%)",
+                    color: appFilter === "all" ? "#0099cc" : "hsl(220 10% 48%)",
+                  }}
+                >
+                  {caseStudies.length}
+                </span>
+              </button>
+
+              {appFilters.map((f) => {
+                const active = appFilter === f.app;
+                return (
+                  <button
+                    key={f.app}
+                    onClick={() => setAppFilter(f.app)}
+                    aria-pressed={active}
+                    className="shrink-0 inline-flex items-center gap-2 px-4 h-10 rounded-full text-sm font-semibold font-body transition-all"
+                    style={{
+                      background: active ? "rgba(0,192,255,0.1)" : "white",
+                      color: active ? "#0099cc" : "hsl(220 10% 35%)",
+                      border: active ? "1px solid rgba(0,192,255,0.4)" : "1px solid hsl(220 15% 90%)",
+                      boxShadow: active ? "0 2px 12px rgba(0,192,255,0.12)" : "none",
+                    }}
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full" style={{ background: f.color }} />
+                    {f.app}
+                    <span
+                      className="text-[11px] font-bold px-1.5 rounded-md"
+                      style={{
+                        background: active ? "rgba(0,192,255,0.15)" : "hsl(220 20% 96%)",
+                        color: active ? "#0099cc" : "hsl(220 10% 48%)",
+                      }}
+                    >
+                      {f.count}
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          </motion.div>
+
           {/* Cards grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {caseStudies.map((cs, i) => {
+            {filteredCaseStudies.map((cs, i) => {
               const logo = merchantLogos[cs.merchant];
 
               return (
