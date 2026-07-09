@@ -1,6 +1,6 @@
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { ArrowRight, LayoutGrid, TrendingUp } from "lucide-react";
 import Layout from "@/components/Layout";
 import Seo from "@/components/Seo";
@@ -78,25 +78,32 @@ const EXCERPTS: Record<string, string> = {
 const APP_FILTER_COLORS = ["#00c0ff", "#00C896", "#8B7CF6", "#FF9900", "#F472B6"];
 
 const CaseStudies = () => {
-  const [appFilter, setAppFilter] = useState<string>("all");
+  const [searchParams] = useSearchParams();
+  const appFilter = searchParams.get("app") ?? "all";
 
   // Only apps with at least one published case study appear here — apps
   // without one yet are simply left out of the filter list.
   const appFilters = useMemo(() => {
     const seen: string[] = [];
     for (const cs of caseStudies) {
-      if (!seen.includes(cs.app)) seen.push(cs.app);
+      if (!seen.includes(cs.appSlug)) seen.push(cs.appSlug);
     }
-    return seen.map((app, i) => ({
-      app,
-      color: APP_FILTER_COLORS[i % APP_FILTER_COLORS.length],
-      count: caseStudies.filter((cs) => cs.app === app).length,
-    }));
+    return seen.map((appSlug, i) => {
+      const app = caseStudies.find((cs) => cs.appSlug === appSlug)!.app;
+      return {
+        app,
+        appSlug,
+        color: APP_FILTER_COLORS[i % APP_FILTER_COLORS.length],
+        count: caseStudies.filter((cs) => cs.appSlug === appSlug).length,
+      };
+    });
   }, []);
 
+  // Each filter has its own shareable URL — e.g. /case-studies?app=outlink —
+  // so the selection can be linked to, bookmarked, or navigated to directly.
   const filteredCaseStudies = useMemo(() => {
     if (appFilter === "all") return caseStudies;
-    return caseStudies.filter((cs) => cs.app === appFilter);
+    return caseStudies.filter((cs) => cs.appSlug === appFilter);
   }, [appFilter]);
 
   const breadcrumbSchema = {
@@ -235,9 +242,9 @@ const CaseStudies = () => {
                 Filter by app
               </span>
 
-              <button
-                onClick={() => setAppFilter("all")}
-                aria-pressed={appFilter === "all"}
+              <Link
+                to="/case-studies"
+                aria-current={appFilter === "all" ? "true" : undefined}
                 className="shrink-0 inline-flex items-center gap-2 px-4 h-10 rounded-full text-sm font-semibold font-body transition-all"
                 style={{
                   background: appFilter === "all" ? "rgba(0,192,255,0.1)" : "white",
@@ -256,15 +263,15 @@ const CaseStudies = () => {
                 >
                   {caseStudies.length}
                 </span>
-              </button>
+              </Link>
 
               {appFilters.map((f) => {
-                const active = appFilter === f.app;
+                const active = appFilter === f.appSlug;
                 return (
-                  <button
-                    key={f.app}
-                    onClick={() => setAppFilter(f.app)}
-                    aria-pressed={active}
+                  <Link
+                    key={f.appSlug}
+                    to={`/case-studies?app=${f.appSlug}`}
+                    aria-current={active ? "true" : undefined}
                     className="shrink-0 inline-flex items-center gap-2 px-4 h-10 rounded-full text-sm font-semibold font-body transition-all"
                     style={{
                       background: active ? "rgba(0,192,255,0.1)" : "white",
@@ -284,7 +291,7 @@ const CaseStudies = () => {
                     >
                       {f.count}
                     </span>
-                  </button>
+                  </Link>
                 );
               })}
             </div>
