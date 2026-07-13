@@ -698,7 +698,7 @@ const CaseStudyDetail = () => {
                       <h3
                         className="font-heading font-bold text-foreground text-sm leading-snug mb-3 group-hover:text-primary transition-colors flex-1"
                       >
-                        {HEADLINES[r.slug]}
+                        {r.headline}
                       </h3>
                       <span className="inline-flex items-center gap-1.5 text-sm font-semibold font-body text-primary group-hover:underline mt-2">
                         Read More <ArrowRight className="h-3.5 w-3.5" />
