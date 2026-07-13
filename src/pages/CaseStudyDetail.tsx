@@ -11,9 +11,7 @@ import saazLogoSrc from "@/assets/saaz_1.avif";
 import herbalistsLogoSrc from "@/assets/theherbalists logo.avif";
 import outlinkLogoSrc from "@/assets/Outlink Logo.webp";
 import sleekLogoSrc from "@/assets/sleek.png";
-import spreadrLogoSrc from "@/assets/app-spreadr.jpg";
-import roboLogoSrc from "@/assets/app-robo.jpg";
-import shiprLogoSrc from "@/assets/app-shipr (1).jpg";
+import { getAppLogo } from "@/data/apps";
 
 /* ──────────────────────────────────────────────────────────
    App store URLs (UTM-ready)
@@ -39,31 +37,12 @@ const withUtm = (base: string, content: string) =>
 /* ──────────────────────────────────────────────────────────
    Inline app name → hyperlink helper
 ────────────────────────────────────────────────────────── */
-const linkifyAppName = (text: string, appSlug: string, slug: string, appName?: string) => {
+const linkifyAppNameHtml = (html: string, appSlug: string, slug: string, appName?: string) => {
   const url = APP_STORE_URLS[appSlug];
-  if (!url) return <>{text}</>;
+  if (!url) return html;
   const APP_NAME = appName ?? "Pro Bulk Price Editor";
-  const parts = text.split(new RegExp(`(${APP_NAME})`, "g"));
-  return (
-    <>
-      {parts.map((part, i) =>
-        part === APP_NAME ? (
-          <a
-            key={i}
-            href={withUtm(url, `inline_${slug}`)}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-semibold underline underline-offset-2 decoration-[#00c0ff]/60 hover:decoration-[#00c0ff] transition-colors"
-            style={{ color: "#00c0ff" }}
-          >
-            {part}
-          </a>
-        ) : (
-          part
-        )
-      )}
-    </>
-  );
+  const link = `<a href="${withUtm(url, `inline_${slug}`)}" target="_blank" rel="noopener noreferrer" class="font-semibold underline underline-offset-2 decoration-[#00c0ff]/60 hover:decoration-[#00c0ff] transition-colors" style="color:#00c0ff">${APP_NAME}</a>`;
+  return html.split(APP_NAME).join(link);
 };
 
 /* ──────────────────────────────────────────────────────────
@@ -155,14 +134,6 @@ const merchantLogos: Record<string, string> = {
   "Official Echo & The Bunnymen Merchandise":  outlinkLogoSrc,
   "The Gaima Label":                           sleekLogoSrc,
   "Bruijn":                                    sleekLogoSrc,
-  "Best Wear":                                 spreadrLogoSrc,
-  "Fat Guy Scuba Supply LLC":                  spreadrLogoSrc,
-  "SaumyasStore":                              spreadrLogoSrc,
-  "Giftexx":                                   spreadrLogoSrc,
-  "Realmdrop.com":                             spreadrLogoSrc,
-  "citycarparts.co.uk":                        roboLogoSrc,
-  "Okne.mx":                                   roboLogoSrc,
-  "Inlay Sticker's Jockomo":                   shiprLogoSrc,
 };
 
 
@@ -178,6 +149,7 @@ const CaseStudyDetail = () => {
   const storeUrl = APP_STORE_URLS[cs.appSlug];
   const ctaUrl   = storeUrl ? withUtm(storeUrl, `case_study_cta_${slug}`) : `/apps/${cs.appSlug}`;
   const logo     = merchantLogos[cs.merchant];
+  const appLogo  = getAppLogo(cs.appSlug);
   const headline = HEADLINES[cs.slug] ?? `How ${cs.merchant} Transformed Their Pricing Workflow`;
 
   const related = caseStudies.filter((c) => c.slug !== cs.slug).slice(0, 2);
@@ -186,7 +158,7 @@ const CaseStudyDetail = () => {
     <Layout>
       <Seo
         title={`${cs.merchant} Case Study — ${cs.app} | Thalia Technologies`}
-        description={`How ${cs.merchant} used ${cs.app} to streamline promotional pricing on Shopify. ${cs.resultBody.slice(0, 120)}…`}
+        description={`How ${cs.merchant} used ${cs.app} to streamline promotional pricing on Shopify. ${cs.sections.results.replace(/<[^>]+>/g, "").slice(0, 120)}…`}
         keywords={`${cs.merchant}, ${cs.app}, Shopify case study, bulk pricing Shopify, ${cs.industry}`}
         path={`/case-studies/${cs.slug}`}
       />
@@ -252,14 +224,24 @@ const CaseStudyDetail = () => {
               transition={{ duration: 0.5, delay: 0.14 }}
               className="flex items-center gap-3"
             >
-              <div
-                className="w-14 h-10 rounded-xl flex-shrink-0 flex items-center justify-center overflow-hidden"
-                style={{ background: "rgba(255,255,255,0.95)" }}
-              >
-                {logo ? (
-                  <img src={logo} alt={`${cs.merchant} logo`} className="w-full h-full object-contain p-1.5" />
-                ) : (
-                  <span className="text-foreground font-heading font-extrabold">{cs.merchant[0]}</span>
+              <div className="relative w-14 h-10 flex-shrink-0">
+                <div
+                  className="w-full h-full rounded-xl flex items-center justify-center overflow-hidden"
+                  style={{ background: "rgba(255,255,255,0.95)" }}
+                >
+                  {logo ? (
+                    <img src={logo} alt={`${cs.merchant} logo`} className="w-full h-full object-contain p-1.5" />
+                  ) : (
+                    <span className="text-foreground font-heading font-extrabold">{cs.merchant[0]}</span>
+                  )}
+                </div>
+                {appLogo && (
+                  <img
+                    src={appLogo}
+                    alt={`${cs.app} logo`}
+                    className="absolute -bottom-1.5 -right-1.5 w-5 h-5 rounded-md object-contain bg-white p-0.5"
+                    style={{ border: "1.5px solid white", boxShadow: "0 1px 3px rgba(0,0,0,0.25)" }}
+                  />
                 )}
               </div>
               <div>
@@ -363,9 +345,10 @@ const CaseStudyDetail = () => {
               >
                 Who is {cs.merchant}?
               </h2>
-              <p className="font-body text-muted-foreground leading-relaxed text-base">
-                {cs.aboutMerchant}
-              </p>
+              <div
+                className="font-body text-muted-foreground leading-relaxed text-base [&_p]:mb-0"
+                dangerouslySetInnerHTML={{ __html: cs.sections.about }}
+              />
             </motion.div>
 
             {/* Divider */}
@@ -387,9 +370,12 @@ const CaseStudyDetail = () => {
               >
                 The Old Way Wasn't Working
               </h2>
-              <p className="font-body text-muted-foreground leading-relaxed text-base mb-6">
-                {linkifyAppName(cs.challengeBody, cs.appSlug, cs.slug, cs.app)}
-              </p>
+              <div
+                className="font-body text-muted-foreground leading-relaxed text-base mb-6 [&_p]:mb-0"
+                dangerouslySetInnerHTML={{
+                  __html: linkifyAppNameHtml(cs.sections.challenge, cs.appSlug, cs.slug, cs.app),
+                }}
+              />
               <ul className="space-y-3">
                 {cs.challengeBullets.map((b) => (
                   <li key={b} className="flex items-start gap-3">
@@ -447,9 +433,12 @@ const CaseStudyDetail = () => {
                   {cs.app}
                 </a>
               </h2>
-              <p className="font-body text-muted-foreground leading-relaxed text-base mb-8">
-                {linkifyAppName(cs.solutionBody, cs.appSlug, cs.slug, cs.app)}
-              </p>
+              <div
+                className="font-body text-muted-foreground leading-relaxed text-base mb-8 [&_p]:mb-0"
+                dangerouslySetInnerHTML={{
+                  __html: linkifyAppNameHtml(cs.sections.solution, cs.appSlug, cs.slug, cs.app),
+                }}
+              />
 
               {/* Feature grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -490,9 +479,12 @@ const CaseStudyDetail = () => {
               >
                 What Changed
               </h2>
-              <p className="font-body text-muted-foreground leading-relaxed text-base mb-8">
-                {linkifyAppName(cs.resultBody, cs.appSlug, cs.slug, cs.app)}
-              </p>
+              <div
+                className="font-body text-muted-foreground leading-relaxed text-base mb-8 [&_p]:mb-0"
+                dangerouslySetInnerHTML={{
+                  __html: linkifyAppNameHtml(cs.sections.results, cs.appSlug, cs.slug, cs.app),
+                }}
+              />
 
               {/* Sales events */}
               {cs.salesEvents.length > 0 && (
@@ -703,6 +695,7 @@ const CaseStudyDetail = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {related.map((r, i) => {
                 const rLogo = merchantLogos[r.merchant];
+                const rAppLogo = getAppLogo(r.appSlug);
                 return (
                   <motion.div key={r.slug} {...inView(i * 0.1)}>
                     <Link
@@ -720,14 +713,24 @@ const CaseStudyDetail = () => {
                       }}
                     >
                       <div className="flex items-center gap-3 mb-4">
-                        <div
-                          className="w-14 h-10 rounded-xl flex-shrink-0 flex items-center justify-center overflow-hidden"
-                          style={{ background: "hsl(var(--section-alt))", border: "1px solid hsl(var(--border))" }}
-                        >
-                          {rLogo ? (
-                            <img src={rLogo} alt={`${r.merchant} logo`} className="w-full h-full object-contain p-1.5" />
-                          ) : (
-                            <span className="text-foreground font-heading font-extrabold">{r.merchant[0]}</span>
+                        <div className="relative w-14 h-10 flex-shrink-0">
+                          <div
+                            className="w-full h-full rounded-xl flex items-center justify-center overflow-hidden"
+                            style={{ background: "hsl(var(--section-alt))", border: "1px solid hsl(var(--border))" }}
+                          >
+                            {rLogo ? (
+                              <img src={rLogo} alt={`${r.merchant} logo`} className="w-full h-full object-contain p-1.5" />
+                            ) : (
+                              <span className="text-foreground font-heading font-extrabold">{r.merchant[0]}</span>
+                            )}
+                          </div>
+                          {rAppLogo && (
+                            <img
+                              src={rAppLogo}
+                              alt={`${r.app} logo`}
+                              className="absolute -bottom-1.5 -right-1.5 w-5 h-5 rounded-md object-contain bg-white p-0.5"
+                              style={{ border: "1.5px solid white", boxShadow: "0 1px 3px rgba(0,0,0,0.18)" }}
+                            />
                           )}
                         </div>
                         <div>

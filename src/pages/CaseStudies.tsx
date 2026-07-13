@@ -5,6 +5,7 @@ import { ArrowRight, LayoutGrid, TrendingUp } from "lucide-react";
 import Layout from "@/components/Layout";
 import Seo from "@/components/Seo";
 import { caseStudies } from "@/data/caseStudies";
+import { getAppLogo } from "@/data/apps";
 import firstvibeLogoSrc from "@/assets/firstvibe-logo.png";
 import sndyCoffeeLogoSrc from "@/assets/sndy-coffee-logo.png";
 import waywardLogoSrc from "@/assets/wayward logo.avif";
@@ -12,9 +13,6 @@ import saazLogoSrc from "@/assets/saaz_1.avif";
 import herbalistsLogoSrc from "@/assets/theherbalists logo.avif";
 import outlinkLogoSrc from "@/assets/Outlink Logo.webp";
 import sleekLogoSrc from "@/assets/sleek.png";
-import spreadrLogoSrc from "@/assets/app-spreadr.jpg";
-import roboLogoSrc from "@/assets/app-robo.jpg";
-import shiprLogoSrc from "@/assets/app-shipr (1).jpg";
 
 const inView = (delay = 0) => ({
   initial: { opacity: 0, y: 20 },
@@ -34,14 +32,6 @@ const merchantLogos: Record<string, string> = {
   "Official Echo & The Bunnymen Merchandise":  outlinkLogoSrc,
   "The Gaima Label":                           sleekLogoSrc,
   "Bruijn":                                    sleekLogoSrc,
-  "Best Wear":                                 spreadrLogoSrc,
-  "Fat Guy Scuba Supply LLC":                  spreadrLogoSrc,
-  "SaumyasStore":                              spreadrLogoSrc,
-  "Giftexx":                                   spreadrLogoSrc,
-  "Realmdrop.com":                             spreadrLogoSrc,
-  "citycarparts.co.uk":                        roboLogoSrc,
-  "Okne.mx":                                   roboLogoSrc,
-  "Inlay Sticker's Jockomo":                   shiprLogoSrc,
 };
 
 const HEADLINES: Record<string, string> = {
@@ -268,10 +258,7 @@ const CaseStudies = () => {
 
           {/* Filter by app */}
           <motion.div {...inView(0.05)} className="mb-10">
-            <div
-              className="flex items-center gap-3 overflow-x-auto pb-1"
-              style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-            >
+            <div className="flex items-center flex-wrap gap-3">
               <LayoutGrid className="h-4 w-4 text-muted-foreground shrink-0" />
               <span className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground shrink-0 font-body mr-1">
                 Filter by app
@@ -336,6 +323,7 @@ const CaseStudies = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredCaseStudies.map((cs, i) => {
               const logo = merchantLogos[cs.merchant];
+              const appLogo = getAppLogo(cs.appSlug);
 
               return (
                 <motion.div
@@ -359,20 +347,30 @@ const CaseStudies = () => {
                     <div className="p-6 flex flex-col h-full">
                       {/* Merchant identity */}
                       <div className="flex items-center gap-3 mb-4">
-                        <div
-                          className="w-14 h-11 rounded-xl flex-shrink-0 flex items-center justify-center overflow-hidden"
-                          style={{ background: "hsl(var(--section-alt))", border: "1px solid hsl(var(--border))" }}
-                        >
-                          {logo ? (
+                        <div className="relative w-14 h-11 flex-shrink-0">
+                          <div
+                            className="w-full h-full rounded-xl flex items-center justify-center overflow-hidden"
+                            style={{ background: "hsl(var(--section-alt))", border: "1px solid hsl(var(--border))" }}
+                          >
+                            {logo ? (
+                              <img
+                                src={logo}
+                                alt={`${cs.merchant} logo`}
+                                className="w-full h-full object-contain p-1.5"
+                              />
+                            ) : (
+                              <span className="text-foreground font-heading font-extrabold text-lg">
+                                {cs.merchant[0]}
+                              </span>
+                            )}
+                          </div>
+                          {appLogo && (
                             <img
-                              src={logo}
-                              alt={`${cs.merchant} logo`}
-                              className="w-full h-full object-contain p-1.5"
+                              src={appLogo}
+                              alt={`${cs.app} logo`}
+                              className="absolute -bottom-1.5 -right-1.5 w-5 h-5 rounded-md object-contain bg-white p-0.5"
+                              style={{ border: "1.5px solid white", boxShadow: "0 1px 3px rgba(0,0,0,0.18)" }}
                             />
-                          ) : (
-                            <span className="text-foreground font-heading font-extrabold text-lg">
-                              {cs.merchant[0]}
-                            </span>
                           )}
                         </div>
                         <div>

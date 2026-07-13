@@ -57,83 +57,6 @@ const BlogPost = () => {
     keywords: post.tags.join(", "),
   };
 
-  // Parse markdown-like content into structured elements
-  const renderContent = (content: string) => {
-    const lines = content.split("\n");
-    const elements: JSX.Element[] = [];
-    let inList = false;
-    let listItems: string[] = [];
-    let key = 0;
-
-    const flushList = () => {
-      if (listItems.length > 0) {
-        elements.push(
-          <ul key={`list-${key++}`} className="list-disc pl-6 space-y-2 mb-6 text-muted-foreground font-body leading-relaxed">
-            {listItems.map((item, i) => (
-              <li key={i} dangerouslySetInnerHTML={{ __html: item }} />
-            ))}
-          </ul>
-        );
-        listItems = [];
-        inList = false;
-      }
-    };
-
-    lines.forEach((line) => {
-      const trimmed = line.trim();
-
-      if (trimmed.startsWith("## ")) {
-        flushList();
-        elements.push(
-          <h2
-            key={`h2-${key++}`}
-            className="font-heading font-bold text-foreground text-2xl mb-4 mt-10"
-            style={{ letterSpacing: "-0.02em" }}
-          >
-            {trimmed.replace("## ", "")}
-          </h2>
-        );
-      } else if (trimmed.startsWith("### ")) {
-        flushList();
-        elements.push(
-          <h3
-            key={`h3-${key++}`}
-            className="font-heading font-bold text-foreground text-xl mb-3 mt-8"
-            style={{ letterSpacing: "-0.01em" }}
-          >
-            {trimmed.replace("### ", "")}
-          </h3>
-        );
-      } else if (trimmed.startsWith("- ")) {
-        inList = true;
-        listItems.push(trimmed.replace("- ", ""));
-      } else if (trimmed.startsWith("**") && trimmed.endsWith("**") && trimmed.length < 100) {
-        flushList();
-        elements.push(
-          <p key={`bold-${key++}`} className="font-body font-semibold text-foreground mb-4">
-            {trimmed.replace(/\*\*/g, "")}
-          </p>
-        );
-      } else if (trimmed.length > 0) {
-        flushList();
-        // Inline bold formatting
-        const formatted = trimmed
-          .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
-          .replace(/`(.+?)`/g, "<code>$1</code>");
-        elements.push(
-          <p
-            key={`p-${key++}`}
-            className="text-muted-foreground font-body leading-relaxed mb-4"
-            dangerouslySetInnerHTML={{ __html: formatted }}
-          />
-        );
-      }
-    });
-
-    flushList();
-    return elements;
-  };
-
   // Find previous and next posts by date
   const sortedPosts = [...blogPosts].sort(
     (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
@@ -280,9 +203,11 @@ const BlogPost = () => {
       <section className="bg-white" style={{ paddingTop: 80, paddingBottom: 80 }}>
         <div className="section-container">
           <div className="max-w-3xl mx-auto">
-            <motion.article {...inView(0)} className="prose-custom">
-              {renderContent(post.content)}
-            </motion.article>
+            <motion.article
+              {...inView(0)}
+              className="prose-custom"
+              dangerouslySetInnerHTML={{ __html: post.contentHtml }}
+            />
 
             {/* Tags bottom */}
             <motion.div {...inView(0.1)} className="mt-12 pt-8" style={{ borderTop: "1px solid hsl(220 15% 90%)" }}>
