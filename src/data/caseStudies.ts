@@ -851,4 +851,463 @@ export const caseStudies: CaseStudy[] = [
     quoteName: "Mandavi Kanchan",
     quoteRole: "Store Owner, Bruijn",
   },
+
+  // ─── Best Wear (Spreadr) ────────────────────────────────────────────────
+  {
+    slug: "best-wear-amazon-import",
+    app: "Spreadr",
+    appSlug: "spreadr",
+    category: "Amazon Product Import",
+    industry: "Fashion & Apparel",
+    merchant: "Best Wear",
+    location: "United States, Canada, Europe, UK & Australia",
+    merchantUrl: "see-through-shirts.com",
+    catalogueSize: "Growing catalogue",
+    productsUpdated: "1,000 products imported via Spreadr",
+    timeWithApp: "1–2 years",
+    usageFrequency: "Ongoing",
+    primaryUse: "Importing Amazon products and setting up affiliate links across five markets",
+    featuredBy: "Stefan Koelsch, Founder — see-through-shirts.com",
+
+    aboutMerchant:
+      "Best Wear is a fashion and apparel Shopify store run by founder Stefan Koelsch, selling to customers across the United States, Canada, Europe, the UK, and Australia. With no existing tooling in place, the store needed a reliable way to bring Amazon products into Shopify and turn them into affiliate revenue across every market it served.",
+
+    previousMethods: ["No prior solution"],
+    timeBeforeApp: "No streamlined way to import Amazon products",
+    challengeBody:
+      "Before Spreadr, Best Wear had no method at all for bringing Amazon products into its Shopify store. The core frustration was simple but blocking: figuring out how to import Amazon listings into Shopify in the first place, across five different sales markets, without a dedicated tool to handle it.",
+    challengeBullets: [
+      "No existing method for importing Amazon products into Shopify.",
+      "Needed both product importing and affiliate link setup handled in one place.",
+      "Had to support five markets — US, Canada, Europe, UK, and Australia — at once.",
+      "Rated the challenge a 3 out of 5 in severity with no workaround in place.",
+    ],
+
+    solutionBody:
+      "Spreadr gave Best Wear a single tool for both Amazon product import and affiliate product linking. Stefan imported 1,000 products through Spreadr, growing the catalogue by an estimated 70% within a month of adoption, with Amazon's full product data — images, descriptions, pricing — brought in automatically.",
+    topFeatures: [
+      { title: "Amazon Product Import", desc: "Import full Amazon listings — title, images, description, and pricing — directly into Shopify with all data intact." },
+      { title: "Affiliate Product Linking", desc: "Attach affiliate tracking to imported products so every sale routed through Amazon earns commission." },
+    ],
+
+    keyResults: [
+      { metric: "1,000",  label: "Products imported via Spreadr", accent: true },
+      { metric: "70%",    label: "Increase in catalogue size", accent: true },
+      { metric: "10 / 10", label: "Overall experience rating" },
+    ],
+    resultBody:
+      "Within a month, Best Wear grew its catalogue by an estimated 70% after importing 1,000 Amazon products through Spreadr. The store saw a 50% increase in attributable traffic and a 10% lift in revenue, along with a stronger presence in Google search. Stefan rated his overall experience with Spreadr a perfect 10 out of 10 and gave support a perfect 5 out of 5.",
+    businessOutcomes: ["More products listed", "Increased traffic", "Higher presence in Google search"],
+    salesEvents: [],
+    effortReduction: "1–5 hours saved per week",
+    satisfactionScore: 5,
+    recommendScore: 3,
+    helpedWith: ["Import Amazon products", "Grow product catalogue", "Increase site traffic"],
+
+    quote: "Easy to use app.",
+    quoteName: "Stefan Koelsch",
+    quoteRole: "Founder, Best Wear",
+  },
+
+  // ─── Fat Guy Scuba Supply (Spreadr) ─────────────────────────────────────
+  {
+    slug: "fat-guy-scuba-supply-catalog-growth",
+    app: "Spreadr",
+    appSlug: "spreadr",
+    category: "Amazon Product Import",
+    industry: "Sports & Outdoor",
+    merchant: "Fat Guy Scuba Supply LLC",
+    location: "United States & Canada",
+    merchantUrl: "fatguyscubasupply.com",
+    catalogueSize: "Growing catalogue",
+    productsUpdated: "1,000 products imported via Spreadr",
+    timeWithApp: "1–2 years",
+    usageFrequency: "Ongoing",
+    primaryUse: "Importing and syncing Amazon scuba gear listings to expand the product catalogue",
+    featuredBy: "Robert Wesler, Founder — fatguyscubasupply.com",
+
+    aboutMerchant:
+      "Fat Guy Scuba Supply LLC is a US and Canada-focused scuba and diving equipment retailer on Shopify, founded by Robert Wesler. Selling specialty sports gear meant the store needed a way to list a wide range of Amazon scuba products quickly, without building out inventory of its own.",
+
+    previousMethods: ["No prior solution"],
+    timeBeforeApp: "Low product count with no import tooling",
+    challengeBody:
+      "Before Spreadr, Fat Guy Scuba Supply's biggest frustration was simply having too few products listed. With no method in place to bring in Amazon inventory at scale, growing a scuba-specific catalogue was slow and limited.",
+    challengeBullets: [
+      "Low product count was holding back the store's growth.",
+      "No existing tool for importing or syncing Amazon products.",
+      "Needed pricing and inventory to stay accurate as Amazon listings changed.",
+      "Rated the challenge a 4 out of 5 in severity.",
+    ],
+
+    solutionBody:
+      "Spreadr let Fat Guy Scuba Supply import Amazon products directly into Shopify with product syncing, pricing sync, and inventory sync all running automatically. Robert imported 1,000 products, growing the catalogue by an estimated 500% and giving the store a genuine scuba equipment range for the first time.",
+    topFeatures: [
+      { title: "Amazon Product Import", desc: "Bring Amazon scuba and diving gear listings into Shopify with full product data in one action." },
+      { title: "Product & Pricing Sync", desc: "Keep imported listings and their prices automatically up to date as source listings change." },
+      { title: "Inventory Sync", desc: "Avoid overselling by keeping stock levels synced between Amazon and Shopify automatically." },
+    ],
+
+    keyResults: [
+      { metric: "500%",   label: "Increase in catalogue size", accent: true },
+      { metric: "$2,500", label: "Revenue increase attributable to Spreadr", accent: true },
+      { metric: "9 / 10", label: "Overall experience rating" },
+    ],
+    resultBody:
+      "Fat Guy Scuba Supply grew its catalogue by an estimated 500% after importing 1,000 products through Spreadr, with a corresponding $2,500 revenue increase and a 500% lift in attributable traffic. Robert rated his overall experience with Spreadr a 9 out of 10 and support a perfect 5 out of 5, saving 5–10 hours a week compared to building listings manually.",
+    businessOutcomes: ["More products listed", "Increased revenue", "Increased traffic", "Faster product management", "Less manual work"],
+    salesEvents: [],
+    effortReduction: "5–10 hours saved per week",
+    satisfactionScore: 5,
+    recommendScore: 4,
+    helpedWith: ["Import Amazon products", "Grow product catalogue", "Sync pricing and inventory"],
+
+    quote: "Spreadr has drastically improved my success online.",
+    quoteName: "Robert Wesler",
+    quoteRole: "Founder, Fat Guy Scuba Supply LLC",
+  },
+
+  // ─── SaumyasStore (Spreadr) ─────────────────────────────────────────────
+  {
+    slug: "saumyasstore-amazon-catalog-scale",
+    app: "Spreadr",
+    appSlug: "spreadr",
+    category: "Amazon Product Import",
+    industry: "Fashion & Apparel",
+    merchant: "SaumyasStore",
+    location: "India",
+    merchantUrl: "saumyasstores.com",
+    catalogueSize: "38,000+ products imported",
+    productsUpdated: "38,010 products imported via Spreadr",
+    timeWithApp: "More than 3 years",
+    usageFrequency: "Ongoing",
+    primaryUse: "Importing Amazon products at scale with automatic removal of out-of-stock listings",
+    featuredBy: "Sanskriti Srivastava, Founder — saumyasstores.com",
+
+    aboutMerchant:
+      "SaumyasStore is an India-based fashion and apparel Shopify store founded by Sanskriti Srivastava. After starting out with dropshipping apps and researching Amazon Associates, the team turned to Spreadr and has used it as the backbone of the store's product catalogue for more than three years.",
+
+    previousMethods: ["Dropshipping apps", "Amazon Associates research"],
+    timeBeforeApp: "Rated the challenge a 5 out of 5 in severity",
+    challengeBody:
+      "Before settling on Spreadr, SaumyasStore experimented with dropshipping apps and researched the Amazon Associates program before finding Spreadr on the Shopify App Store. The team's biggest frustration wasn't finding Amazon products to list — it was that their plan didn't allow prices to update in time, since the store already had a large number of products imported from Amazon.",
+    challengeBullets: [
+      "Started with dropshipping apps before discovering Spreadr and Amazon Associates.",
+      "Rated the overall challenge a maximum 5 out of 5 in severity.",
+      "Needed pricing to update in a timely way across a very large imported catalogue.",
+      "Required a tool reliable enough to run as the store's core catalogue engine for years.",
+    ],
+
+    solutionBody:
+      "Spreadr became the lifeline of SaumyasStore's catalogue strategy. Using Amazon Product Import, Affiliate Product Linking, Auto Sync, and Inventory Sync together, Sanskriti's team imported over 38,000 products — with automatic removal of listings the moment they go out of stock on Amazon.",
+    topFeatures: [
+      { title: "Amazon Product Import", desc: "Import Amazon listings at large scale, forming the foundation of the store's entire product catalogue." },
+      { title: "Auto Sync & Inventory Sync", desc: "Automatically detect and remove products the moment they go out of stock on Amazon, keeping the storefront accurate." },
+      { title: "Affiliate Product Linking", desc: "Earn commission on every Amazon product sold through the store via affiliate tracking." },
+    ],
+
+    keyResults: [
+      { metric: "38,010", label: "Products imported via Spreadr", accent: true },
+      { metric: "80%",    label: "Revenue increase attributable to Spreadr", accent: true },
+      { metric: "10 / 10", label: "Overall experience rating" },
+    ],
+    resultBody:
+      "SaumyasStore has imported over 38,000 products through Spreadr, growing its catalogue by more than 60% and driving an 80% increase in both revenue and traffic attributable to the app. Sanskriti's Amazon Associates traffic has grown steadily, adding commission on top of Spreadr's own impact. She rated her experience with Spreadr a perfect 10 out of 10 and support a perfect 5 out of 5, calling it the 'lifeline' of her website.",
+    businessOutcomes: ["More products listed", "Increased revenue", "Increased traffic", "Better conversion rate", "Faster product management", "Less manual work"],
+    salesEvents: [],
+    effortReduction: "5–10 hours saved per week",
+    satisfactionScore: 5,
+    recommendScore: 5,
+    helpedWith: ["Import Amazon products at scale", "Auto-remove out-of-stock listings", "Grow revenue and traffic"],
+
+    quote: "I think right now, \"Spreadr\" is lifeline of my website.",
+    quoteName: "Sanskriti Srivastava",
+    quoteRole: "Founder, SaumyasStore",
+  },
+
+  // ─── Giftexx (Spreadr) ──────────────────────────────────────────────────
+  {
+    slug: "giftexx-amazon-product-listing",
+    app: "Spreadr",
+    appSlug: "spreadr",
+    category: "Amazon Product Import",
+    industry: "Beauty & Cosmetics",
+    merchant: "Giftexx",
+    location: "United States",
+    catalogueSize: "Growing catalogue",
+    productsUpdated: "100+ products imported via Spreadr",
+    timeWithApp: "6–12 months",
+    usageFrequency: "Ongoing",
+    primaryUse: "Listing Amazon products to build out a beauty product catalogue",
+    featuredBy: "Yun, Owner — Giftexx",
+
+    aboutMerchant:
+      "Giftexx is a US-based beauty and cosmetics Shopify store owned by Yun. Before Spreadr, the store had no method for listing Amazon products, and building out even a modest catalogue meant listing every item by hand.",
+
+    previousMethods: ["Manual listing"],
+    timeBeforeApp: "Rated the challenge a 3 out of 5 in severity",
+    challengeBody:
+      "Giftexx's biggest frustration before Spreadr was simply listing products — there was no tool in place to bring Amazon items into the store efficiently. Yun turned to Spreadr's Amazon Product Import feature to solve the immediate need to get more products live.",
+    challengeBullets: [
+      "No existing method for listing Amazon products in the store.",
+      "Product listing itself was the single biggest frustration.",
+      "Rated the challenge a 3 out of 5 in severity.",
+    ],
+
+    solutionBody:
+      "Spreadr's Amazon Product Import let Giftexx list Amazon products directly into Shopify without manual data entry, helping the store list products from Amazon with far less friction than before.",
+    topFeatures: [
+      { title: "Amazon Product Import", desc: "Bring Amazon beauty product listings into Shopify without manual data entry." },
+    ],
+
+    keyResults: [
+      { metric: "100+",   label: "Products imported via Spreadr" },
+      { metric: "20%",    label: "Increase in catalogue size", accent: true },
+      { metric: "5 / 10", label: "Overall experience rating" },
+    ],
+    resultBody:
+      "Giftexx grew its catalogue by an estimated 20% after listing 100+ products through Spreadr. Yun rated the overall experience 5 out of 10 and support 3 out of 5, noting the app helped list products from Amazon without much issue — while flagging room to improve the interface.",
+    businessOutcomes: ["More products listed"],
+    salesEvents: [],
+    effortReduction: "Under 1 hour saved per week",
+    satisfactionScore: 3,
+    recommendScore: 3,
+    helpedWith: ["List Amazon products", "Grow product catalogue"],
+
+    quote: "Need a better interface.",
+    quoteName: "Yun",
+    quoteRole: "Owner, Giftexx",
+  },
+
+  // ─── Realmdrop (Spreadr) ────────────────────────────────────────────────
+  {
+    slug: "realmdrop-amazon-product-listing",
+    app: "Spreadr",
+    appSlug: "spreadr",
+    category: "Amazon Product Import",
+    industry: "Home & Garden",
+    merchant: "Realmdrop.com",
+    location: "United States, Canada & United Kingdom",
+    merchantUrl: "realmdrop.com",
+    catalogueSize: "Growing catalogue",
+    productsUpdated: "100+ products imported via Spreadr",
+    timeWithApp: "2+ years",
+    usageFrequency: "Ongoing",
+    primaryUse: "Listing Amazon home & garden products across three markets",
+    featuredBy: "Zuber Patel, Operations Manager — realmdrop.com",
+
+    aboutMerchant:
+      "Realmdrop.com is a home and garden Shopify store selling across the United States, Canada, and the United Kingdom, managed by Operations Manager Zuber Patel. Before Spreadr, the team relied entirely on manual methods to list Amazon products.",
+
+    previousMethods: ["Manual listing"],
+    timeBeforeApp: "Rated the challenge a 3 out of 5 in severity",
+    challengeBody:
+      "Realmdrop's biggest frustration before Spreadr was listing products manually across three markets — a slow process with no automated way to bring Amazon listings into Shopify.",
+    challengeBullets: [
+      "Manual product listing was the primary workflow before Spreadr.",
+      "Listing products was the biggest recurring frustration for the team.",
+      "Needed to support three markets — US, Canada, and the UK — consistently.",
+      "Rated the challenge a 3 out of 5 in severity.",
+    ],
+
+    solutionBody:
+      "Spreadr's Amazon Product Import, paired with pricing awareness, let Realmdrop list Amazon products from Amazon without much issue, replacing the team's manual listing process across all three markets it serves.",
+    topFeatures: [
+      { title: "Amazon Product Import", desc: "List Amazon home & garden products into Shopify without the manual work required before." },
+    ],
+
+    keyResults: [
+      { metric: "100+", label: "Products imported via Spreadr" },
+      { metric: "20%",  label: "Increase in catalogue size", accent: true },
+      { metric: "5 / 10", label: "Overall experience rating" },
+    ],
+    resultBody:
+      "Realmdrop grew its catalogue by an estimated 20% after listing 100+ Amazon products through Spreadr, now able to list products from Amazon without much issue across its three markets. Zuber rated the overall experience 5 out of 10 and support 3 out of 5, and has used Spreadr for more than two years.",
+    businessOutcomes: ["More products listed"],
+    salesEvents: [],
+    effortReduction: "Under 1 hour saved per week",
+    satisfactionScore: 3,
+    recommendScore: 3,
+    helpedWith: ["List Amazon products", "Grow product catalogue across multiple markets"],
+
+    quote: "List products from Amazon without much issues.",
+    quoteName: "Zuber Patel",
+    quoteRole: "Operations Manager, Realmdrop.com",
+  },
+
+  // ─── City Car Parts (Robo) ──────────────────────────────────────────────
+  {
+    slug: "citycarparts-automotive-parts-import",
+    app: "Robo",
+    appSlug: "robo-product-importer",
+    category: "Product Importing",
+    industry: "Automotive",
+    merchant: "citycarparts.co.uk",
+    location: "United Kingdom",
+    merchantUrl: "citycarparts.co.uk",
+    catalogueSize: "1,000–5,000 products",
+    productsUpdated: "101–500 products imported using Robo",
+    timeWithApp: "Active user",
+    usageFrequency: "Ongoing",
+    primaryUse: "Importing automotive parts from supplier websites via product URL",
+    featuredBy: "Michael, Store Owner — citycarparts.co.uk",
+
+    aboutMerchant:
+      "citycarparts.co.uk is a UK-based automotive parts retail brand on Shopify, managing a catalogue of 1,000–5,000 products. Store owner Michael needed a fast, reliable way to import supplier parts listings into Shopify without hours of manual copy-paste work.",
+
+    previousMethods: ["Manual copy-paste from supplier websites"],
+    timeBeforeApp: "More than 20 minutes per product imported manually",
+    challengeBody:
+      "Before Robo, importing a single automotive part into Shopify took Michael more than 20 minutes of manual work — copying titles, descriptions, images, prices, and tags from supplier websites one field at a time. For a store managing thousands of products, that pace was unsustainable.",
+    challengeBullets: [
+      "Manually importing a single product took more than 20 minutes.",
+      "All product data — titles, images, descriptions, pricing, tags — had to be copied by hand.",
+      "Managing a 1,000–5,000 product automotive catalogue at that pace was a major bottleneck.",
+    ],
+
+    solutionBody:
+      "Robo let Michael paste a supplier product URL and import the full listing — title, images, description, price, and tags — automatically. What used to take over 20 minutes per product now takes under 30 seconds, and Robo has become an essential part of the business.",
+    topFeatures: [
+      { title: "Product URL Import", desc: "Paste a supplier product URL and Robo pulls in the full listing automatically." },
+      { title: "Image Import", desc: "Product images are downloaded and hosted directly on the Shopify store — no manual uploads." },
+      { title: "Description Import", desc: "Full product descriptions are imported and formatted automatically, saving manual write-up time." },
+    ],
+
+    keyResults: [
+      { metric: "<30 sec", label: "Per product import (down from 20+ min)", accent: true },
+      { metric: ">90%",    label: "Time saved on product importing", accent: true },
+      { metric: "10–25%",  label: "Catalogue growth since using Robo" },
+    ],
+    resultBody:
+      "citycarparts.co.uk cut product import time from more than 20 minutes down to under 30 seconds per product using Robo — a time saving of more than 90%. The store's catalogue has grown by an estimated 10–25% since adoption, with faster product launches and more products available to customers. Michael rated Robo a 4 out of 5 for likelihood to recommend.",
+    businessOutcomes: ["More products available", "Saved significant operational costs", "Increased catalog size", "Improved team efficiency", "Reduced repetitive work"],
+    salesEvents: [],
+    effortReduction: "More than 90%",
+    satisfactionScore: 4,
+    recommendScore: 4,
+    helpedWith: ["Save time importing products", "Launch products faster", "Expand automotive catalogue"],
+
+    quote: "Robo Product Importer helped my business by helping my business.",
+    quoteName: "Michael",
+    quoteRole: "Store Owner, citycarparts.co.uk",
+  },
+
+  // ─── Okne.mx (Robo) ─────────────────────────────────────────────────────
+  {
+    slug: "okne-mx-multi-category-import",
+    app: "Robo",
+    appSlug: "robo-product-importer",
+    category: "Product Importing",
+    industry: "Multi-Category Retail",
+    merchant: "Okne.mx",
+    location: "Mexico",
+    merchantUrl: "okne.mx",
+    catalogueSize: "5,000+ products",
+    productsUpdated: "101–500 products imported using Robo",
+    timeWithApp: "Active user",
+    usageFrequency: "Ongoing",
+    primaryUse: "Importing products across electronics, home & garden, beauty, automotive, jewelry, health, and baby categories via Chrome Extension",
+    featuredBy: "Mauricio Fajardo, Store Owner — okne.mx",
+
+    aboutMerchant:
+      "Okne.mx is a multi-category Shopify retailer in Mexico managing a catalogue of 5,000+ products spanning electronics, home & garden, beauty, automotive, jewelry, health, and baby products. Store owner Mauricio Fajardo needed a way to save time importing, avoid manual copy-paste, source from supplier websites, build the catalogue faster, and test new products quickly — all at once.",
+
+    previousMethods: ["Manual copy-paste from supplier websites"],
+    timeBeforeApp: "5–10 minutes per product imported manually",
+    challengeBody:
+      "Before Robo, Okne.mx spent 5–10 minutes manually importing each product across a wide range of categories — a significant drag when trying to expand a 5,000+ product multi-category catalogue and test new products quickly.",
+    challengeBullets: [
+      "Manually importing each product took 5–10 minutes.",
+      "Needed to import across seven+ distinct product categories.",
+      "Testing new products quickly was blocked by the speed of manual imports.",
+      "Building out the catalogue faster required a faster import pipeline.",
+    ],
+
+    solutionBody:
+      "Robo's Chrome Extension let Mauricio import products directly while browsing supplier sites, capturing titles, descriptions, images, and tags automatically. Import time dropped from 5–10 minutes to 1–2 minutes per product, and the catalogue grew by 25–50% as a result.",
+    topFeatures: [
+      { title: "Chrome Extension", desc: "Import products directly from any supplier website while browsing, without leaving the page." },
+      { title: "One-Click Import & Speed", desc: "Capture titles, images, descriptions, and tags automatically for fast, repeatable imports." },
+      { title: "Ease of Use", desc: "A simple enough workflow that the team could scale imports across seven+ product categories confidently." },
+    ],
+
+    keyResults: [
+      { metric: "1–2 min", label: "Per product import (down from 5–10 min)", accent: true },
+      { metric: ">90%",    label: "Time saved on product importing", accent: true },
+      { metric: "25–50%",  label: "Catalogue growth since using Robo" },
+    ],
+    resultBody:
+      "Okne.mx cut product import time from 5–10 minutes down to 1–2 minutes per product with Robo — a time saving of more than 90%. The catalogue grew by an estimated 25–50%, with faster product launches, faster store setup, and more products published across all seven categories the store sells in. Mauricio gave Robo a perfect 5 out of 5 for likelihood to recommend.",
+    businessOutcomes: ["Faster store launch", "More products available", "Increased sales opportunities", "Faster testing of new products", "Improved productivity", "Easier supplier imports", "Better operational efficiency"],
+    salesEvents: [],
+    effortReduction: "More than 90%",
+    satisfactionScore: 5,
+    recommendScore: 5,
+    helpedWith: ["Save time importing products", "Avoid manual copy-paste", "Test new products quickly", "Build catalogue faster"],
+
+    quote:
+      "We have opened up market opportunities that would be difficult to add manually, it has saved us hundreds of hours of work, and it is a core part of our ability to innovate and quickly expand our catalog.",
+    quoteName: "Mauricio Fajardo",
+    quoteRole: "Store Owner, Okne.mx",
+  },
+
+  // ─── Inlay Stickers (Shipr) ─────────────────────────────────────────────
+  {
+    slug: "inlay-stickers-amazon-fba-fulfillment",
+    app: "Shipr for Amazon FBA / MCF",
+    appSlug: "shipr",
+    category: "Amazon FBA Fulfillment",
+    industry: "Novelty & Custom Products",
+    merchant: "Inlay Sticker's Jockomo",
+    location: "United States",
+    merchantUrl: "inlaystickers.com",
+    catalogueSize: "Growing catalogue",
+    productsUpdated: "100–500 Shopify orders processed per month via Shipr",
+    timeWithApp: "6–12 months",
+    usageFrequency: "Nearly all orders routed through Shipr",
+    primaryUse: "Automating Amazon FBA / MCF fulfillment and inventory sync for Shopify orders",
+    featuredBy: "Nasa, Store Owner — inlaystickers.com",
+
+    aboutMerchant:
+      "Inlay Sticker's Jockomo is a US-based novelty and custom sticker Shopify store. Before Shipr, the team fulfilled every Amazon FBA order manually, and inventory counts between Shopify and Amazon regularly fell out of sync — a long-standing operational headache for the business.",
+
+    previousMethods: ["Manual Amazon FBA order fulfillment"],
+    timeBeforeApp: "All Shopify orders fulfilled through Amazon FBA manually",
+    challengeBody:
+      "Before Shipr, every Shopify order that needed Amazon FBA fulfillment was handled manually — a slow, error-prone process that also left inventory levels out of sync between Shopify and Amazon. Staff had to constantly manually check stock counts to avoid overselling or shipping delays.",
+    challengeBullets: [
+      "Manual Amazon FBA order fulfillment for every Shopify order.",
+      "Persistent inventory mismatch between Shopify and Amazon.",
+      "Tracking updates and shipping status required manual checking.",
+      "Slow operations made scaling order volume difficult.",
+      "Staff workload increased with every order that needed manual handling.",
+    ],
+
+    solutionBody:
+      "Shipr for Amazon FBA / MCF automated order fulfillment directly from Shopify, with automatic order fulfillment, manual fulfillment fallback, inventory sync, tracking sync, order tagging, and blacklisting rules all running together. Nearly all of Inlay Sticker's Jockomo's monthly orders now flow through Shipr automatically.",
+    topFeatures: [
+      { title: "Automatic Order Fulfillment", desc: "Shopify orders route to Amazon FBA / MCF automatically without manual intervention." },
+      { title: "Inventory & Tracking Sync", desc: "Stock levels and shipment tracking stay accurate between Amazon and Shopify at all times." },
+      { title: "Order Tagging & Blacklisting Rules", desc: "Control exactly which orders route through Amazon fulfillment and which are excluded." },
+    ],
+
+    keyResults: [
+      { metric: "75–90%", label: "Reduction in manual fulfillment work", accent: true },
+      { metric: "5–10 hrs", label: "Saved per week on fulfillment", accent: true },
+      { metric: "Nearly all", label: "Monthly orders processed through Shipr" },
+    ],
+    resultBody:
+      "Shipr eliminated 75–90% of Inlay Sticker's Jockomo's manual fulfillment work, saving the team 5–10 hours every week and improving operations by an estimated 50–75%. Nearly all monthly Shopify orders now route through Amazon FBA / MCF automatically, with accurate stock levels showing in Shopify at all times. Nasa rated Shipr 4 out of 5 for satisfaction and confirmed the business is comfortable leaving a Shopify review.",
+    businessOutcomes: ["Faster shipping", "Better inventory management", "Improved team efficiency", "Saved employee time", "Reduced fulfillment costs", "Increased order capacity", "Improved profitability"],
+    salesEvents: [],
+    effortReduction: "50–75%",
+    satisfactionScore: 4,
+    recommendScore: 5,
+    helpedWith: ["Automate Amazon FBA fulfillment", "Fix Amazon inventory sync", "Reduce manual order handling"],
+
+    quote:
+      "Shipr has helped our business by solving a long-standing issue with Amazon inventory sync, allowing us to show accurate stock levels in Shopify and automate MCF orders without constant manual checks.",
+    quoteName: "Nasa",
+    quoteRole: "Store Owner, Inlay Sticker's Jockomo",
+  },
 ];

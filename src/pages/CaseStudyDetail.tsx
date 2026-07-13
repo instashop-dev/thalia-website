@@ -11,6 +11,9 @@ import saazLogoSrc from "@/assets/saaz_1.avif";
 import herbalistsLogoSrc from "@/assets/theherbalists logo.avif";
 import outlinkLogoSrc from "@/assets/Outlink Logo.webp";
 import sleekLogoSrc from "@/assets/sleek.png";
+import spreadrLogoSrc from "@/assets/app-spreadr.jpg";
+import roboLogoSrc from "@/assets/app-robo.jpg";
+import shiprLogoSrc from "@/assets/app-shipr (1).jpg";
 
 /* ──────────────────────────────────────────────────────────
    App store URLs (UTM-ready)
@@ -22,6 +25,12 @@ const APP_STORE_URLS: Record<string, string> = {
     "https://apps.shopify.com/external-affiliate-product-links",
   "gst-invoices-india":
     "https://apps.shopify.com/gst-invoices-india",
+  "spreadr":
+    "https://apps.shopify.com/amazon-to-shopify",
+  "robo-product-importer":
+    "https://apps.shopify.com/robo-product-importer",
+  "shipr":
+    "https://apps.shopify.com/amazon-fba-shipr",
 };
 
 const withUtm = (base: string, content: string) =>
@@ -117,6 +126,22 @@ const HEADLINES: Record<string, string> = {
     "The Gaima Label Saves 5 Hours Every Week by Automating GST Invoicing with Sleek",
   "bruijn-gst-invoicing":
     "Bruijn Eliminates Manual GST Invoice Creation for B2B and D2C Orders with Sleek",
+  "best-wear-amazon-import":
+    "Best Wear Grows Its Catalogue 70% After Importing 1,000 Amazon Products with Spreadr",
+  "fat-guy-scuba-supply-catalog-growth":
+    "Fat Guy Scuba Supply Grows Its Catalogue 500% Importing Amazon Products with Spreadr",
+  "saumyasstore-amazon-catalog-scale":
+    "SaumyasStore Imports 38,000+ Amazon Products and Calls Spreadr the 'Lifeline' of Its Website",
+  "giftexx-amazon-product-listing":
+    "Giftexx Lists Amazon Products in Shopify Without the Manual Work Using Spreadr",
+  "realmdrop-amazon-product-listing":
+    "Realmdrop.com Lists Amazon Products Across Three Markets with Spreadr",
+  "citycarparts-automotive-parts-import":
+    "citycarparts.co.uk Cuts Product Import Time from 20+ Minutes to Under 30 Seconds with Robo",
+  "okne-mx-multi-category-import":
+    "Okne.mx Imports Products Across 7+ Categories in 1–2 Minutes with Robo",
+  "inlay-stickers-amazon-fba-fulfillment":
+    "Inlay Sticker's Jockomo Cuts Manual Fulfillment by 75–90% with Shipr for Amazon FBA",
 };
 
 const merchantLogos: Record<string, string> = {
@@ -130,6 +155,14 @@ const merchantLogos: Record<string, string> = {
   "Official Echo & The Bunnymen Merchandise":  outlinkLogoSrc,
   "The Gaima Label":                           sleekLogoSrc,
   "Bruijn":                                    sleekLogoSrc,
+  "Best Wear":                                 spreadrLogoSrc,
+  "Fat Guy Scuba Supply LLC":                  spreadrLogoSrc,
+  "SaumyasStore":                              spreadrLogoSrc,
+  "Giftexx":                                   spreadrLogoSrc,
+  "Realmdrop.com":                             spreadrLogoSrc,
+  "citycarparts.co.uk":                        roboLogoSrc,
+  "Okne.mx":                                   roboLogoSrc,
+  "Inlay Sticker's Jockomo":                   shiprLogoSrc,
 };
 
 

@@ -12,6 +12,9 @@ import saazLogoSrc from "@/assets/saaz_1.avif";
 import herbalistsLogoSrc from "@/assets/theherbalists logo.avif";
 import outlinkLogoSrc from "@/assets/Outlink Logo.webp";
 import sleekLogoSrc from "@/assets/sleek.png";
+import spreadrLogoSrc from "@/assets/app-spreadr.jpg";
+import roboLogoSrc from "@/assets/app-robo.jpg";
+import shiprLogoSrc from "@/assets/app-shipr (1).jpg";
 
 const inView = (delay = 0) => ({
   initial: { opacity: 0, y: 20 },
@@ -31,6 +34,14 @@ const merchantLogos: Record<string, string> = {
   "Official Echo & The Bunnymen Merchandise":  outlinkLogoSrc,
   "The Gaima Label":                           sleekLogoSrc,
   "Bruijn":                                    sleekLogoSrc,
+  "Best Wear":                                 spreadrLogoSrc,
+  "Fat Guy Scuba Supply LLC":                  spreadrLogoSrc,
+  "SaumyasStore":                              spreadrLogoSrc,
+  "Giftexx":                                   spreadrLogoSrc,
+  "Realmdrop.com":                             spreadrLogoSrc,
+  "citycarparts.co.uk":                        roboLogoSrc,
+  "Okne.mx":                                   roboLogoSrc,
+  "Inlay Sticker's Jockomo":                   shiprLogoSrc,
 };
 
 const HEADLINES: Record<string, string> = {
@@ -46,6 +57,14 @@ const HEADLINES: Record<string, string> = {
   "echo-bunnymen-affiliate-links":            "Official Echo & The Bunnymen Merchandise Drives 15% Revenue Growth and 25% More Affiliate Clicks with Outlink",
   "gaima-label-gst-invoicing":               "The Gaima Label Saves 5 Hours Every Week by Automating GST Invoicing with Sleek",
   "bruijn-gst-invoicing":                    "Bruijn Eliminates Manual GST Invoice Creation for B2B and D2C Orders with Sleek",
+  "best-wear-amazon-import":                 "Best Wear Grows Its Catalogue 70% After Importing 1,000 Amazon Products with Spreadr",
+  "fat-guy-scuba-supply-catalog-growth":     "Fat Guy Scuba Supply Grows Its Catalogue 500% Importing Amazon Products with Spreadr",
+  "saumyasstore-amazon-catalog-scale":       "SaumyasStore Imports 38,000+ Amazon Products and Calls Spreadr the 'Lifeline' of Its Website",
+  "giftexx-amazon-product-listing":          "Giftexx Lists Amazon Products in Shopify Without the Manual Work Using Spreadr",
+  "realmdrop-amazon-product-listing":        "Realmdrop.com Lists Amazon Products Across Three Markets with Spreadr",
+  "citycarparts-automotive-parts-import":    "citycarparts.co.uk Cuts Product Import Time from 20+ Minutes to Under 30 Seconds with Robo",
+  "okne-mx-multi-category-import":           "Okne.mx Imports Products Across 7+ Categories in 1–2 Minutes with Robo",
+  "inlay-stickers-amazon-fba-fulfillment":   "Inlay Sticker's Jockomo Cuts Manual Fulfillment by 75–90% with Shipr for Amazon FBA",
 };
 
 const EXCERPTS: Record<string, string> = {
@@ -73,6 +92,22 @@ const EXCERPTS: Record<string, string> = {
     "The Gaima Label was spending 3–5 hours a week generating GST invoices manually through external accounting software. Sleek automated the entire process — saving 5 hours per week and improving product update speed by 30%.",
   "bruijn-gst-invoicing":
     "Bruijn's accounts team manually created GST invoices for every B2B and D2C order. Sleek automated it all — the migration took hours, not days, and was simple enough for the store's CA to pick up immediately.",
+  "best-wear-amazon-import":
+    "Best Wear had no way to import Amazon products across the five markets it sells in. Spreadr let the team import 1,000 products, growing the catalogue by 70% and lifting traffic 50% within a month.",
+  "fat-guy-scuba-supply-catalog-growth":
+    "Fat Guy Scuba Supply's biggest problem was too few products listed, with no tool to bring in Amazon inventory. Spreadr grew the catalogue by 500% and added $2,500 in attributable revenue.",
+  "saumyasstore-amazon-catalog-scale":
+    "SaumyasStore has run on Spreadr for more than three years, importing over 38,000 Amazon products with automatic removal of out-of-stock listings — driving an 80% lift in revenue and traffic.",
+  "giftexx-amazon-product-listing":
+    "Giftexx had no way to list Amazon products efficiently. Spreadr's Amazon Product Import grew the catalogue by 20%, letting the team list products from Amazon without the manual work.",
+  "realmdrop-amazon-product-listing":
+    "Realmdrop.com relied on manual listing to bring Amazon products into its US, Canada, and UK storefronts. Spreadr grew the catalogue by 20% and removed the manual listing bottleneck.",
+  "citycarparts-automotive-parts-import":
+    "citycarparts.co.uk spent 20+ minutes manually importing each automotive part. Robo cut that to under 30 seconds per product — a 90%+ time saving that grew the catalogue by 10–25%.",
+  "okne-mx-multi-category-import":
+    "Okne.mx needed to import products across seven+ categories quickly. Robo's Chrome Extension cut import time from 5–10 minutes to 1–2 minutes per product, growing the catalogue by 25–50%.",
+  "inlay-stickers-amazon-fba-fulfillment":
+    "Inlay Sticker's Jockomo fulfilled every Amazon FBA order manually, with inventory constantly out of sync. Shipr automated fulfillment and inventory sync, cutting manual work by 75–90%.",
 };
 
 const APP_FILTER_COLORS = ["#00c0ff", "#00C896", "#8B7CF6", "#FF9900", "#F472B6"];
