@@ -121,6 +121,8 @@ const HEADLINES: Record<string, string> = {
     "Okne.mx Imports Products Across 7+ Categories in 1–2 Minutes with Robo",
   "inlay-stickers-amazon-fba-fulfillment":
     "Inlay Sticker's Jockomo Cuts Manual Fulfillment by 75–90% with Shipr for Amazon FBA",
+  "littolo-house-gst-invoicing":
+    "Littolo.House Makes GST Reporting 'Much Easier' with Sleek's Fast, Direct Support",
 };
 
 const merchantLogos: Record<string, string> = {

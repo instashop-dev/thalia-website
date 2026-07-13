@@ -55,6 +55,7 @@ const HEADLINES: Record<string, string> = {
   "citycarparts-automotive-parts-import":    "citycarparts.co.uk Cuts Product Import Time from 20+ Minutes to Under 30 Seconds with Robo",
   "okne-mx-multi-category-import":           "Okne.mx Imports Products Across 7+ Categories in 1–2 Minutes with Robo",
   "inlay-stickers-amazon-fba-fulfillment":   "Inlay Sticker's Jockomo Cuts Manual Fulfillment by 75–90% with Shipr for Amazon FBA",
+  "littolo-house-gst-invoicing":              "Littolo.House Makes GST Reporting 'Much Easier' with Sleek's Fast, Direct Support",
 };
 
 const EXCERPTS: Record<string, string> = {
@@ -98,6 +99,8 @@ const EXCERPTS: Record<string, string> = {
     "Okne.mx needed to import products across seven+ categories quickly. Robo's Chrome Extension cut import time from 5–10 minutes to 1–2 minutes per product, growing the catalogue by 25–50%.",
   "inlay-stickers-amazon-fba-fulfillment":
     "Inlay Sticker's Jockomo fulfilled every Amazon FBA order manually, with inventory constantly out of sync. Shipr automated fulfillment and inventory sync, cutting manual work by 75–90%.",
+  "littolo-house-gst-invoicing":
+    "Littolo.House wanted reliable GST reporting and accurate product data without extra manual work. Sleek's Import/Export and fast, direct support cut manual tasks by 25% and saved 1–3 hours a week.",
 };
 
 const APP_FILTER_COLORS = ["#00c0ff", "#00C896", "#8B7CF6", "#FF9900", "#F472B6"];
