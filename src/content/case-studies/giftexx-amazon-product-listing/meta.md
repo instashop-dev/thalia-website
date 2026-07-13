@@ -11,6 +11,8 @@ timeWithApp: 6–12 months
 usageFrequency: Ongoing
 primaryUse: Listing Amazon products to build out a beauty product catalogue
 featuredBy: Yun, Owner — Giftexx
+headline: Giftexx Lists Amazon Products in Shopify Without the Manual Work Using Spreadr
+excerpt: Giftexx had no way to list Amazon products efficiently. Spreadr's Amazon Product Import grew the catalogue by 20%, letting the team list products from Amazon without the manual work.
 previousMethods:
   - Manual listing
 timeBeforeApp: Rated the challenge a 3 out of 5 in severity

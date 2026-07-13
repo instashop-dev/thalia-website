@@ -12,6 +12,8 @@ timeWithApp: 1–3 months
 usageFrequency: During promotions only
 primaryUse: EOFY promotional pricing
 featuredBy: Lynden, Store Owner — shared anonymously
+headline: SNDY Coffee Cuts EOFY Pricing Effort by Up to 75% with Scheduled Bulk Updates
+excerpt: Manual pricing through Shopify Admin and CSV imports was costing SNDY Coffee hours before every sale. Pro Bulk Price Editor cut their pricing management effort by 50–75%, letting them launch their EOFY sale on schedule with zero manual reversals.
 previousMethods:
   - Shopify Admin
   - CSV Imports

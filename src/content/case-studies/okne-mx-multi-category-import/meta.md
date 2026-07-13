@@ -12,6 +12,8 @@ timeWithApp: Active user
 usageFrequency: Ongoing
 primaryUse: Importing products across electronics, home & garden, beauty, automotive, jewelry, health, and baby categories via Chrome Extension
 featuredBy: Mauricio Fajardo, Store Owner — okne.mx
+headline: Okne.mx Imports Products Across 7+ Categories in 1–2 Minutes with Robo
+excerpt: Okne.mx needed to import products across seven+ categories quickly. Robo's Chrome Extension cut import time from 5–10 minutes to 1–2 minutes per product, growing the catalogue by 25–50%.
 previousMethods:
   - Manual copy-paste from supplier websites
 timeBeforeApp: 5–10 minutes per product imported manually

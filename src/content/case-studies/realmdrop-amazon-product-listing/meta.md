@@ -12,6 +12,8 @@ timeWithApp: 2+ years
 usageFrequency: Ongoing
 primaryUse: Listing Amazon home & garden products across three markets
 featuredBy: Zuber Patel, Operations Manager — realmdrop.com
+headline: Realmdrop.com Lists Amazon Products Across Three Markets with Spreadr
+excerpt: Realmdrop.com relied on manual listing to bring Amazon products into its US, Canada, and UK storefronts. Spreadr grew the catalogue by 20% and removed the manual listing bottleneck.
 previousMethods:
   - Manual listing
 timeBeforeApp: Rated the challenge a 3 out of 5 in severity

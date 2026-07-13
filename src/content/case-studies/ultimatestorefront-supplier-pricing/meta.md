@@ -12,6 +12,8 @@ timeWithApp: 1–3 months
 usageFrequency: Monthly
 primaryUse: Supplier cost-driven pricing updates across a large multi-category catalogue
 featuredBy: Dustin Titta, Store Owner — ultimatestorefront.com
+headline: Ultimatestorefront Manages 50,000+ Supplier Price Updates Monthly with Pro Bulk Price Editor
+excerpt: Ultimatestorefront operates a 10,000+ product multi-category Shopify store driven by supplier cost changes. Pro Bulk Price Editor powers monthly bulk updates across 50,000+ products — keeping margins aligned as supplier costs shift.
 previousMethods:
   - Automated supplier-to-Shopify sync
 timeBeforeApp: 1–3 hours per pricing update

@@ -12,6 +12,8 @@ timeWithApp: 1–3 months
 usageFrequency: During Promotions Only
 primaryUse: Scheduled seasonal sale pricing with per-product prices
 featuredBy: Operations Team — theherbalists.co.nz
+headline: The Herbalists Schedules Seasonal Sales with Per-Product Bulk Pricing — No Percentage Rules Required
+excerpt: 'The Herbalists needed something most apps don''t offer: scheduled bulk pricing where each product has a different sale price — not a blanket percentage. Pro Bulk Price Editor delivered exactly that, saving up to an hour per seasonal campaign.'
 previousMethods:
   - Manual Editing
 timeBeforeApp: 1–3 hours per pricing update

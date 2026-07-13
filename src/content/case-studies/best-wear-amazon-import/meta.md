@@ -12,6 +12,8 @@ timeWithApp: 1–2 years
 usageFrequency: Ongoing
 primaryUse: Importing Amazon products and setting up affiliate links across five markets
 featuredBy: Stefan Koelsch, Founder — see-through-shirts.com
+headline: Best Wear Grows Its Catalogue 70% After Importing 1,000 Amazon Products with Spreadr
+excerpt: Best Wear had no way to import Amazon products across the five markets it sells in. Spreadr let the team import 1,000 products, growing the catalogue by 70% and lifting traffic 50% within a month.
 previousMethods:
   - No prior solution
 timeBeforeApp: No streamlined way to import Amazon products

@@ -11,6 +11,8 @@ timeWithApp: Active user
 usageFrequency: Ongoing
 primaryUse: Managing Amazon affiliate links to let customers source products independently or through the store
 featuredBy: Jeremy Iles, Store Owner — Online Dreams Retailers
+headline: Online Dreams Retailers Powers Amazon Affiliate Links Through Shopify with Outlink
+excerpt: Online Dreams Retailers needed Amazon affiliate links embedded directly in their Shopify store. Outlink delivered on day one — including a dedicated 'SPECIAL ORDERS' product that now drives commission from customers who source independently.
 previousMethods:
   - Another Shopify app — which didn't fully meet his affiliate linking needs
 timeBeforeApp: Moderate effort managing affiliate links without a dedicated tool

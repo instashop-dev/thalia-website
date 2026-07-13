@@ -12,6 +12,8 @@ timeWithApp: 3–6 months
 usageFrequency: During Promotions Only
 primaryUse: Flash sale pricing
 featuredBy: Aleena Mughal, Founder — saazstore.com
+headline: SAAZ Slashes Flash Sale Prep Time by 50–75% with Bulk Pricing Automation
+excerpt: For SAAZ, flash sale pricing meant 3–6 hours of manual work through Shopify Admin and CSV imports every time. Pro Bulk Price Editor cut that down by 50–75%, letting the team run and revert promotions in a fraction of the time.
 previousMethods:
   - Shopify Admin
   - CSV Imports

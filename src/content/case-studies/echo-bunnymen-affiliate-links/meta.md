@@ -11,6 +11,8 @@ timeWithApp: Active user
 usageFrequency: Ongoing
 primaryUse: Linking merchandise products to external album sales pages to grow affiliate commissions
 featuredBy: Peter Allen, Merchandise Manager — Official Echo & The Bunnymen Merchandise
+headline: Official Echo & The Bunnymen Merchandise Drives 15% Revenue Growth and 25% More Affiliate Clicks with Outlink
+excerpt: The official Echo & The Bunnymen merch store wanted to cross-sell album purchases from music platforms. Outlink added external buy buttons in 30 minutes — resulting in a 15% revenue uplift and 25% more affiliate clicks across linked product pages.
 previousMethods:
   - No prior solution — external product links were simply not possible in Shopify
 timeBeforeApp: Some difficulty — no built-in Shopify solution for external linking existed

@@ -12,6 +12,8 @@ timeWithApp: 6–12 months
 usageFrequency: Nearly all orders routed through Shipr
 primaryUse: Automating Amazon FBA / MCF fulfillment and inventory sync for Shopify orders
 featuredBy: Nasa, Store Owner — inlaystickers.com
+headline: Inlay Sticker's Jockomo Cuts Manual Fulfillment by 75–90% with Shipr for Amazon FBA
+excerpt: Inlay Sticker's Jockomo fulfilled every Amazon FBA order manually, with inventory constantly out of sync. Shipr automated fulfillment and inventory sync, cutting manual work by 75–90%.
 previousMethods:
   - Manual Amazon FBA order fulfillment
 timeBeforeApp: All Shopify orders fulfilled through Amazon FBA manually

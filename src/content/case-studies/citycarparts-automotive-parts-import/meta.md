@@ -12,6 +12,8 @@ timeWithApp: Active user
 usageFrequency: Ongoing
 primaryUse: Importing automotive parts from supplier websites via product URL
 featuredBy: Michael, Store Owner — citycarparts.co.uk
+headline: citycarparts.co.uk Cuts Product Import Time from 20+ Minutes to Under 30 Seconds with Robo
+excerpt: citycarparts.co.uk spent 20+ minutes manually importing each automotive part. Robo cut that to under 30 seconds per product — a 90%+ time saving that grew the catalogue by 10–25%.
 previousMethods:
   - Manual copy-paste from supplier websites
 timeBeforeApp: More than 20 minutes per product imported manually

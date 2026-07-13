@@ -12,6 +12,8 @@ timeWithApp: Active user
 usageFrequency: Ongoing
 primaryUse: Automating GST invoicing for both B2B and D2C customers, freeing the accounts team from manual work
 featuredBy: Mandavi Kanchan, Store Owner — bruijn.in
+headline: Bruijn Eliminates Manual GST Invoice Creation for B2B and D2C Orders with Sleek
+excerpt: Bruijn's accounts team manually created GST invoices for every B2B and D2C order. Sleek automated it all — the migration took hours, not days, and was simple enough for the store's CA to pick up immediately.
 previousMethods:
   - Manual GST invoice creation by the accounts team for every order
 timeBeforeApp: Accounts team manually creating GST invoices across all B2B and D2C orders

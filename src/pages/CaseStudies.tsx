@@ -34,75 +34,6 @@ const merchantLogos: Record<string, string> = {
   "Bruijn":                                    sleekLogoSrc,
 };
 
-const HEADLINES: Record<string, string> = {
-  "firstvibe-bulk-pricing":               "Firstvibe Replaces Hours of Manual Price Edits with One-Click Promo Launches",
-  "sndy-coffee-eofy":                     "SNDY Coffee Cuts EOFY Pricing Effort by Up to 75% with Scheduled Bulk Updates",
-  "wayward-bulk-pricing":                 "Wayward Unlocks Store-Wide Pricing That Was Previously Impossible — Saving 6+ Hours Per Update",
-  "saaz-bulk-pricing":                    "SAAZ Slashes Flash Sale Prep Time by 50–75% with Bulk Pricing Automation",
-  "herbalists-seasonal-pricing":          "The Herbalists Schedules Seasonal Sales with Per-Product Bulk Pricing — No Percentage Rules Required",
-  "sokobox-flash-sale-pricing":           "Sokobox Powers Black Friday Campaigns Across 1,000–5,000 Products with Scheduled Pricing",
-  "ultimatestorefront-supplier-pricing":      "Ultimatestorefront Manages 50,000+ Supplier Price Updates Monthly with Pro Bulk Price Editor",
-  "synergywoman-affiliate-links":             "Synergywoman Unlocks Affiliate Revenue with Zero-Code Product Link Setup — Up to 10 Minutes to Go Live",
-  "online-dreams-retailers-affiliate-links":  "Online Dreams Retailers Powers Amazon Affiliate Links Through Shopify with Outlink",
-  "echo-bunnymen-affiliate-links":            "Official Echo & The Bunnymen Merchandise Drives 15% Revenue Growth and 25% More Affiliate Clicks with Outlink",
-  "gaima-label-gst-invoicing":               "The Gaima Label Saves 5 Hours Every Week by Automating GST Invoicing with Sleek",
-  "bruijn-gst-invoicing":                    "Bruijn Eliminates Manual GST Invoice Creation for B2B and D2C Orders with Sleek",
-  "best-wear-amazon-import":                 "Best Wear Grows Its Catalogue 70% After Importing 1,000 Amazon Products with Spreadr",
-  "fat-guy-scuba-supply-catalog-growth":     "Fat Guy Scuba Supply Grows Its Catalogue 500% Importing Amazon Products with Spreadr",
-  "saumyasstore-amazon-catalog-scale":       "SaumyasStore Imports 38,000+ Amazon Products and Calls Spreadr the 'Lifeline' of Its Website",
-  "giftexx-amazon-product-listing":          "Giftexx Lists Amazon Products in Shopify Without the Manual Work Using Spreadr",
-  "realmdrop-amazon-product-listing":        "Realmdrop.com Lists Amazon Products Across Three Markets with Spreadr",
-  "citycarparts-automotive-parts-import":    "citycarparts.co.uk Cuts Product Import Time from 20+ Minutes to Under 30 Seconds with Robo",
-  "okne-mx-multi-category-import":           "Okne.mx Imports Products Across 7+ Categories in 1–2 Minutes with Robo",
-  "inlay-stickers-amazon-fba-fulfillment":   "Inlay Sticker's Jockomo Cuts Manual Fulfillment by 75–90% with Shipr for Amazon FBA",
-  "littolo-house-gst-invoicing":              "Littolo.House Makes GST Reporting 'Much Easier' with Sleek's Fast, Direct Support",
-};
-
-const EXCERPTS: Record<string, string> = {
-  "firstvibe-bulk-pricing":
-    "Firstvibe was spending 1–3 hours editing prices by hand for every promotion. With Pro Bulk Price Editor, they ran three sales events in their first three months — holiday, seasonal, and flash — completing each update in under 30 minutes.",
-  "sndy-coffee-eofy":
-    "Manual pricing through Shopify Admin and CSV imports was costing SNDY Coffee hours before every sale. Pro Bulk Price Editor cut their pricing management effort by 50–75%, letting them launch their EOFY sale on schedule with zero manual reversals.",
-  "wayward-bulk-pricing":
-    "Wayward had no reliable system for store-wide price management. Pro Bulk Price Editor changed that — enabling bulk updates across their catalogue that would have been completely impossible before, while saving more than 6 hours per pricing cycle.",
-  "saaz-bulk-pricing":
-    "For SAAZ, flash sale pricing meant 3–6 hours of manual work through Shopify Admin and CSV imports every time. Pro Bulk Price Editor cut that down by 50–75%, letting the team run and revert promotions in a fraction of the time.",
-  "herbalists-seasonal-pricing":
-    "The Herbalists needed something most apps don't offer: scheduled bulk pricing where each product has a different sale price — not a blanket percentage. Pro Bulk Price Editor delivered exactly that, saving up to an hour per seasonal campaign.",
-  "sokobox-flash-sale-pricing":
-    "Sokobox manages $50,000–$100,000 in campaign revenue across a 1,000–5,000 product beauty catalogue. Pro Bulk Price Editor replaced their CSV import workflow with scheduled, collection-based pricing for Black Friday and flash campaigns.",
-  "ultimatestorefront-supplier-pricing":
-    "Ultimatestorefront operates a 10,000+ product multi-category Shopify store driven by supplier cost changes. Pro Bulk Price Editor powers monthly bulk updates across 50,000+ products — keeping margins aligned as supplier costs shift.",
-  "synergywoman-affiliate-links":
-    "Synergywoman had no way to attach affiliate links to Shopify products — rating the challenge 5 out of 5. Outlink changed that in under 10 minutes: affiliated clicks increased and the store now earns commission on every partner product referral.",
-  "online-dreams-retailers-affiliate-links":
-    "Online Dreams Retailers needed Amazon affiliate links embedded directly in their Shopify store. Outlink delivered on day one — including a dedicated 'SPECIAL ORDERS' product that now drives commission from customers who source independently.",
-  "echo-bunnymen-affiliate-links":
-    "The official Echo & The Bunnymen merch store wanted to cross-sell album purchases from music platforms. Outlink added external buy buttons in 30 minutes — resulting in a 15% revenue uplift and 25% more affiliate clicks across linked product pages.",
-  "gaima-label-gst-invoicing":
-    "The Gaima Label was spending 3–5 hours a week generating GST invoices manually through external accounting software. Sleek automated the entire process — saving 5 hours per week and improving product update speed by 30%.",
-  "bruijn-gst-invoicing":
-    "Bruijn's accounts team manually created GST invoices for every B2B and D2C order. Sleek automated it all — the migration took hours, not days, and was simple enough for the store's CA to pick up immediately.",
-  "best-wear-amazon-import":
-    "Best Wear had no way to import Amazon products across the five markets it sells in. Spreadr let the team import 1,000 products, growing the catalogue by 70% and lifting traffic 50% within a month.",
-  "fat-guy-scuba-supply-catalog-growth":
-    "Fat Guy Scuba Supply's biggest problem was too few products listed, with no tool to bring in Amazon inventory. Spreadr grew the catalogue by 500% and added $2,500 in attributable revenue.",
-  "saumyasstore-amazon-catalog-scale":
-    "SaumyasStore has run on Spreadr for more than three years, importing over 38,000 Amazon products with automatic removal of out-of-stock listings — driving an 80% lift in revenue and traffic.",
-  "giftexx-amazon-product-listing":
-    "Giftexx had no way to list Amazon products efficiently. Spreadr's Amazon Product Import grew the catalogue by 20%, letting the team list products from Amazon without the manual work.",
-  "realmdrop-amazon-product-listing":
-    "Realmdrop.com relied on manual listing to bring Amazon products into its US, Canada, and UK storefronts. Spreadr grew the catalogue by 20% and removed the manual listing bottleneck.",
-  "citycarparts-automotive-parts-import":
-    "citycarparts.co.uk spent 20+ minutes manually importing each automotive part. Robo cut that to under 30 seconds per product — a 90%+ time saving that grew the catalogue by 10–25%.",
-  "okne-mx-multi-category-import":
-    "Okne.mx needed to import products across seven+ categories quickly. Robo's Chrome Extension cut import time from 5–10 minutes to 1–2 minutes per product, growing the catalogue by 25–50%.",
-  "inlay-stickers-amazon-fba-fulfillment":
-    "Inlay Sticker's Jockomo fulfilled every Amazon FBA order manually, with inventory constantly out of sync. Shipr automated fulfillment and inventory sync, cutting manual work by 75–90%.",
-  "littolo-house-gst-invoicing":
-    "Littolo.House wanted reliable GST reporting and accurate product data without extra manual work. Sleek's Import/Export and fast, direct support cut manual tasks by 25% and saved 1–3 hours a week.",
-};
-
 const APP_FILTER_COLORS = ["#00c0ff", "#00C896", "#8B7CF6", "#FF9900", "#F472B6"];
 
 const CaseStudies = () => {
@@ -416,12 +347,12 @@ const CaseStudies = () => {
                         className="font-heading font-bold text-foreground mb-3 leading-snug group-hover:text-primary transition-colors"
                         style={{ fontSize: 16 }}
                       >
-                        {HEADLINES[cs.slug]}
+                        {cs.headline}
                       </h3>
 
                       {/* Excerpt */}
                       <p className="text-sm font-body text-muted-foreground leading-relaxed mb-5 flex-1">
-                        {EXCERPTS[cs.slug]}
+                        {cs.excerpt}
                       </p>
 
                       {/* Key metrics strip */}

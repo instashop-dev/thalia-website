@@ -80,51 +80,6 @@ const inView = (delay = 0) => ({
   transition: { duration: 0.5, delay, ease: [0.25, 0.46, 0.45, 0.94] as const },
 });
 
-const HEADLINES: Record<string, string> = {
-  "firstvibe-bulk-pricing":
-    "Firstvibe Replaces Hours of Manual Price Edits with One-Click Promo Launches",
-  "sndy-coffee-eofy":
-    "SNDY Coffee Cuts EOFY Pricing Effort by Up to 75% with Scheduled Bulk Updates",
-  "wayward-bulk-pricing":
-    "Wayward Unlocks Store-Wide Pricing That Was Previously Impossible — Saving 6+ Hours Per Update",
-  "saaz-bulk-pricing":
-    "SAAZ Slashes Flash Sale Prep Time by 50–75% with Bulk Pricing Automation",
-  "herbalists-seasonal-pricing":
-    "The Herbalists Schedules Seasonal Sales with Per-Product Bulk Pricing — No Percentage Rules Required",
-  "sokobox-flash-sale-pricing":
-    "Sokobox Powers Black Friday Campaigns Across 1,000–5,000 Products with Scheduled Pricing",
-  "ultimatestorefront-supplier-pricing":
-    "Ultimatestorefront Manages 50,000+ Supplier Price Updates Monthly with Pro Bulk Price Editor",
-  "synergywoman-affiliate-links":
-    "Synergywoman Unlocks Affiliate Revenue with Zero-Code Product Link Setup — Up to 10 Minutes to Go Live",
-  "online-dreams-retailers-affiliate-links":
-    "Online Dreams Retailers Powers Amazon Affiliate Links Through Shopify with Outlink",
-  "echo-bunnymen-affiliate-links":
-    "Official Echo & The Bunnymen Merchandise Drives 15% Revenue Growth and 25% More Affiliate Clicks with Outlink",
-  "gaima-label-gst-invoicing":
-    "The Gaima Label Saves 5 Hours Every Week by Automating GST Invoicing with Sleek",
-  "bruijn-gst-invoicing":
-    "Bruijn Eliminates Manual GST Invoice Creation for B2B and D2C Orders with Sleek",
-  "best-wear-amazon-import":
-    "Best Wear Grows Its Catalogue 70% After Importing 1,000 Amazon Products with Spreadr",
-  "fat-guy-scuba-supply-catalog-growth":
-    "Fat Guy Scuba Supply Grows Its Catalogue 500% Importing Amazon Products with Spreadr",
-  "saumyasstore-amazon-catalog-scale":
-    "SaumyasStore Imports 38,000+ Amazon Products and Calls Spreadr the 'Lifeline' of Its Website",
-  "giftexx-amazon-product-listing":
-    "Giftexx Lists Amazon Products in Shopify Without the Manual Work Using Spreadr",
-  "realmdrop-amazon-product-listing":
-    "Realmdrop.com Lists Amazon Products Across Three Markets with Spreadr",
-  "citycarparts-automotive-parts-import":
-    "citycarparts.co.uk Cuts Product Import Time from 20+ Minutes to Under 30 Seconds with Robo",
-  "okne-mx-multi-category-import":
-    "Okne.mx Imports Products Across 7+ Categories in 1–2 Minutes with Robo",
-  "inlay-stickers-amazon-fba-fulfillment":
-    "Inlay Sticker's Jockomo Cuts Manual Fulfillment by 75–90% with Shipr for Amazon FBA",
-  "littolo-house-gst-invoicing":
-    "Littolo.House Makes GST Reporting 'Much Easier' with Sleek's Fast, Direct Support",
-};
-
 const merchantLogos: Record<string, string> = {
   "Firstvibe":      firstvibeLogoSrc,
   "SNDY Coffee":    sndyCoffeeLogoSrc,
@@ -152,7 +107,7 @@ const CaseStudyDetail = () => {
   const ctaUrl   = storeUrl ? withUtm(storeUrl, `case_study_cta_${slug}`) : `/apps/${cs.appSlug}`;
   const logo     = merchantLogos[cs.merchant];
   const appLogo  = getAppLogo(cs.appSlug);
-  const headline = HEADLINES[cs.slug] ?? `How ${cs.merchant} Transformed Their Pricing Workflow`;
+  const headline = cs.headline;
 
   const related = caseStudies.filter((c) => c.slug !== cs.slug).slice(0, 2);
 

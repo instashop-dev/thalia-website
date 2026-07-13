@@ -12,6 +12,8 @@ timeWithApp: 1–2 years
 usageFrequency: Ongoing
 primaryUse: Importing and syncing Amazon scuba gear listings to expand the product catalogue
 featuredBy: Robert Wesler, Founder — fatguyscubasupply.com
+headline: Fat Guy Scuba Supply Grows Its Catalogue 500% Importing Amazon Products with Spreadr
+excerpt: Fat Guy Scuba Supply's biggest problem was too few products listed, with no tool to bring in Amazon inventory. Spreadr grew the catalogue by 500% and added $2,500 in attributable revenue.
 previousMethods:
   - No prior solution
 timeBeforeApp: Low product count with no import tooling

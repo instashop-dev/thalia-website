@@ -34,6 +34,8 @@ export interface CaseStudy {
   primaryUse: string;
   featuredBy: string;
   featured?: boolean;
+  headline: string;
+  excerpt: string;
 
   // Before
   previousMethods: string[];

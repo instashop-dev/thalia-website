@@ -12,6 +12,8 @@ timeWithApp: 1–3 months
 usageFrequency: Monthly
 primaryUse: Store-wide price management
 featuredBy: Michael, Store Owner — wayward.biz
+headline: Wayward Unlocks Store-Wide Pricing That Was Previously Impossible — Saving 6+ Hours Per Update
+excerpt: Wayward had no reliable system for store-wide price management. Pro Bulk Price Editor changed that — enabling bulk updates across their catalogue that would have been completely impossible before, while saving more than 6 hours per pricing cycle.
 featured: true
 previousMethods:
   - No formal pricing system

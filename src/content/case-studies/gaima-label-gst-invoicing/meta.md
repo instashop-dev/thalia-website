@@ -12,6 +12,8 @@ timeWithApp: Active user
 usageFrequency: Ongoing
 primaryUse: Automating GST invoice generation to eliminate manual accounting software and invoice printing delays
 featuredBy: Garima Batra, Store Owner — thegaimalabel.com
+headline: The Gaima Label Saves 5 Hours Every Week by Automating GST Invoicing with Sleek
+excerpt: The Gaima Label was spending 3–5 hours a week generating GST invoices manually through external accounting software. Sleek automated the entire process — saving 5 hours per week and improving product update speed by 30%.
 previousMethods:
   - Manual invoice generation using external accounting software
 timeBeforeApp: 3–5 hours per week managing invoices manually through external accounting software

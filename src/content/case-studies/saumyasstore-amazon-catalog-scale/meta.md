@@ -12,6 +12,8 @@ timeWithApp: More than 3 years
 usageFrequency: Ongoing
 primaryUse: Importing Amazon products at scale with automatic removal of out-of-stock listings
 featuredBy: Sanskriti Srivastava, Founder — saumyasstores.com
+headline: SaumyasStore Imports 38,000+ Amazon Products and Calls Spreadr the 'Lifeline' of Its Website
+excerpt: SaumyasStore has run on Spreadr for more than three years, importing over 38,000 Amazon products with automatic removal of out-of-stock listings — driving an 80% lift in revenue and traffic.
 previousMethods:
   - Dropshipping apps
   - Amazon Associates research

@@ -12,6 +12,8 @@ timeWithApp: 1–3 months
 usageFrequency: During Promotions Only
 primaryUse: Black Friday & flash sale campaign pricing
 featuredBy: Ecommerce Team — sokobox.cl
+headline: Sokobox Powers Black Friday Campaigns Across 1,000–5,000 Products with Scheduled Pricing
+excerpt: Sokobox manages $50,000–$100,000 in campaign revenue across a 1,000–5,000 product beauty catalogue. Pro Bulk Price Editor replaced their CSV import workflow with scheduled, collection-based pricing for Black Friday and flash campaigns.
 previousMethods:
   - CSV Imports
 timeBeforeApp: 1–3 hours per pricing update

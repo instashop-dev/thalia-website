@@ -12,6 +12,8 @@ timeWithApp: 1–3 months
 usageFrequency: During promotions only
 primaryUse: Promotional pricing — holiday, seasonal & flash sales
 featuredBy: Sirajudheen, Founder — firstvibe.in
+headline: Firstvibe Replaces Hours of Manual Price Edits with One-Click Promo Launches
+excerpt: Firstvibe was spending 1–3 hours editing prices by hand for every promotion. With Pro Bulk Price Editor, they ran three sales events in their first three months — holiday, seasonal, and flash — completing each update in under 30 minutes.
 featured: true
 previousMethods:
   - Shopify Admin

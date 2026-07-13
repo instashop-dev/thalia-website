@@ -12,6 +12,8 @@ timeWithApp: Active user
 usageFrequency: Ongoing
 primaryUse: Adding affiliate product links to redirect customers to partner stores
 featuredBy: Luba Vitti, Health Practitioner & Store Owner — synergywoman.com
+headline: Synergywoman Unlocks Affiliate Revenue with Zero-Code Product Link Setup — Up to 10 Minutes to Go Live
+excerpt: 'Synergywoman had no way to attach affiliate links to Shopify products — rating the challenge 5 out of 5. Outlink changed that in under 10 minutes: affiliated clicks increased and the store now earns commission on every partner product referral.'
 previousMethods:
   - No prior solution — affiliate linking to partner products was simply not possible
 timeBeforeApp: Extremely difficult — rated 5 out of 5 with no working solution
