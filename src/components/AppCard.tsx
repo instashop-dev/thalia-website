@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import type { AppData } from "@/data/apps";
 import { getAppLogo, getPlatformColor, getPlatformLabel } from "@/data/apps";
+import BfsBadge from "@/components/BfsBadge";
 
 const AppCard = ({ app }: { app: AppData; index?: number }) => {
   const logo = getAppLogo(app.slug);
@@ -23,7 +24,10 @@ const AppCard = ({ app }: { app: AppData; index?: number }) => {
   }
 
   return (
-    <Link to={`/apps/${app.slug}`} className="block card-elevated p-6 h-full group">
+    <Link to={`/apps/${app.slug}`} className="block card-elevated p-6 h-full group relative">
+      {app.bfsBadge && (
+        <BfsBadge variant="light" className="absolute top-4 right-4" />
+      )}
       {logo && (
         <div className="w-12 h-12 rounded-[14px] flex items-center justify-center mb-4 overflow-hidden" style={{ backgroundColor: `${app.color}18` }}>
           <img src={logo} alt={`${app.name} logo`} className="w-full h-full object-contain p-1" width={48} height={48} />

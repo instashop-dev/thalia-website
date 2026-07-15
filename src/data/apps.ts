@@ -71,6 +71,7 @@ export interface AppData {
   stats: { value: string; label: string }[];
   testimonial: { quote: string; author: string; role: string };
   comingSoon?: boolean;
+  bfsBadge?: boolean;
   seoTitle?: string;
   seoDescription?: string;
   h1?: string;
@@ -229,6 +230,7 @@ export const apps: AppData[] = [
   },
   {
     slug: "probulkpriceeditor",
+    bfsBadge: true,
     name: "Pro Bulk Price Editor",
     tagline: "Advanced bulk pricing with complex rules, scheduling, and one-click rollback.",
     description: "An advanced bulk price editing solution with complex pricing rules, scheduling capabilities, and one-click rollback for large Shopify catalogs.",
@@ -559,6 +561,7 @@ export const apps: AppData[] = [
   },
   {
     slug: "outlink",
+    bfsBadge: true,
     name: "Outlink",
     tagline: "Add external affiliate buy buttons to your Shopify products and earn commissions effortlessly.",
     description: "Replace or augment the Add to Cart button with external links. Perfect for affiliate marketing, comparison sites, and referral-based stores.",
@@ -651,6 +654,7 @@ export const apps: AppData[] = [
   },
   {
     slug: "robo-product-importer",
+    bfsBadge: true,
     name: "Robo",
     tagline: "Import products from virtually any ecommerce website into your Shopify store automatically.",
     description: "Paste a product URL from any ecommerce site and Robo imports it into your Shopify store — images, variants, descriptions, and all.",
@@ -784,6 +788,7 @@ export const apps: AppData[] = [
   },
   {
     slug: "shipr",
+    bfsBadge: true,
     name: "Shipr for Amazon FBA / MCF",
     tagline: "Fulfill Shopify orders via Amazon FBA and keep inventory perfectly synced across both platforms.",
     description: "Connect your Shopify store with Amazon FBA for order fulfillment. Automatically sync inventory and route orders through Amazon's logistics network.",
@@ -962,6 +967,7 @@ export const apps: AppData[] = [
   },
   {
     slug: "sleek-gst-invoicing",
+    bfsBadge: true,
     name: "Sleek",
     tagline: "Generate GST-compliant invoices for Indian Shopify merchants automatically with every order.",
     description: "Automate your invoicing workflow with professional, GST-compliant invoices for every order. Perfect for Indian merchants.",
@@ -1011,6 +1017,7 @@ export const apps: AppData[] = [
   },
   {
     slug: "clever-variant-images",
+    bfsBadge: true,
     name: "Clever",
     tagline: "Manage variant images effortlessly — assign specific images to each product variant.",
     description: "Assign, reorder, and manage images for product variants to create a better shopping experience on your Shopify store.",
@@ -1442,6 +1449,7 @@ export const apps: AppData[] = [
   },
   {
     slug: "product-data-exporter",
+    bfsBadge: true,
     name: "Product Data Exporter Pro",
     tagline: "Export your entire Shopify product catalog to CSV, Excel, or JSON in one click.",
     description: "Bulk export Shopify product data — titles, descriptions, prices, variants, images, metafields, and more — into clean, ready-to-use files.",

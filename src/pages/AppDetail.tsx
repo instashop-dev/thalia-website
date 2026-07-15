@@ -4,6 +4,7 @@ import { useState } from "react";
 import { ArrowRight, Check, Star } from "lucide-react";
 import Layout from "@/components/Layout";
 import AppCard from "@/components/AppCard";
+import BfsBadge from "@/components/BfsBadge";
 import Seo from "@/components/Seo";
 import {
   Accordion,
@@ -228,6 +229,18 @@ const AppDetail = () => {
                 <span className="w-1.5 h-1.5 rounded-full" style={{ background: platformColor }} />
                 {getPlatformLabel(app.platform)}
               </motion.div>
+
+              {/* Built for Shopify badge */}
+              {app.bfsBadge && (
+                <motion.div
+                  initial={{ opacity: 0, y: 16 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.14 }}
+                  className="flex justify-center mb-6"
+                >
+                  <BfsBadge variant="dark" />
+                </motion.div>
+              )}
 
               {/* Hidden SEO H1 */}
               <h1 className="sr-only">{app.h1 || appPageName}</h1>
