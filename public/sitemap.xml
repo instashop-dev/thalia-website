@@ -250,6 +250,12 @@
 
   <!-- Blog posts -->
   <url>
+    <loc>https://www.thaliatechnologies.com/blog/scaling-amazon-sourced-shopify-store</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.thaliatechnologies.com/blog/bulk-price-editor-pro-flash-sale-pricing</loc>
     <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
