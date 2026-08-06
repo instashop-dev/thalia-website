@@ -29,6 +29,8 @@ const APP_STORE_URLS: Record<string, string> = {
     "https://apps.shopify.com/robo-product-importer",
   "shipr":
     "https://apps.shopify.com/amazon-fba-shipr",
+  "product-data-exporter":
+    "https://apps.shopify.com/product-data-exporter",
 };
 
 const withUtm = (base: string, content: string) =>
@@ -40,7 +42,7 @@ const withUtm = (base: string, content: string) =>
 const linkifyAppNameHtml = (html: string, appSlug: string, slug: string, appName?: string) => {
   const url = APP_STORE_URLS[appSlug];
   if (!url) return html;
-  const APP_NAME = appName ?? "Pro Bulk Price Editor";
+  const APP_NAME = appName ?? "Bulk Price Editor Pro";
   const link = `<a href="${withUtm(url, `inline_${slug}`)}" target="_blank" rel="noopener noreferrer" class="font-semibold underline underline-offset-2 decoration-[#00c0ff]/60 hover:decoration-[#00c0ff] transition-colors" style="color:#00c0ff">${APP_NAME}</a>`;
   return html.split(APP_NAME).join(link);
 };
@@ -111,13 +113,64 @@ const CaseStudyDetail = () => {
 
   const related = caseStudies.filter((c) => c.slug !== cs.slug).slice(0, 2);
 
+  const plainResults = cs.sections.results.replace(/<[^>]+>/g, "").trim();
+  const plainAbout = cs.sections.about.replace(/<[^>]+>/g, "").trim();
+  const canonicalPath = `/case-studies/${cs.slug}`;
+  const canonicalUrl = `https://www.thaliatechnologies.com${canonicalPath}`;
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://www.thaliatechnologies.com/" },
+      { "@type": "ListItem", position: 2, name: "Case Studies", item: "https://www.thaliatechnologies.com/case-studies" },
+      { "@type": "ListItem", position: 3, name: cs.headline, item: canonicalUrl },
+    ],
+  };
+
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: cs.headline,
+    description: plainResults.slice(0, 200),
+    url: canonicalUrl,
+    about: { "@type": "SoftwareApplication", name: cs.app, applicationCategory: "BusinessApplication" },
+    author: { "@type": "Organization", name: "Thalia Technologies", url: "https://www.thaliatechnologies.com" },
+    publisher: {
+      "@type": "Organization",
+      name: "Thalia Technologies",
+      logo: { "@type": "ImageObject", url: "https://www.thaliatechnologies.com/thalia-logo.jpg" },
+    },
+    mainEntityOfPage: { "@type": "WebPage", "@id": canonicalUrl },
+  };
+
+  const reviewSchema = {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    itemReviewed: {
+      "@type": "SoftwareApplication",
+      name: cs.app,
+      applicationCategory: "BusinessApplication",
+      operatingSystem: "Shopify",
+    },
+    author: { "@type": "Organization", name: cs.merchant },
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: cs.satisfactionScore,
+      bestRating: 5,
+      worstRating: 1,
+    },
+    reviewBody: cs.quote ?? plainAbout.slice(0, 200),
+  };
+
   return (
     <Layout>
       <Seo
         title={`${cs.merchant} Case Study — ${cs.app} | Thalia Technologies`}
-        description={`How ${cs.merchant} used ${cs.app} to streamline promotional pricing on Shopify. ${cs.sections.results.replace(/<[^>]+>/g, "").slice(0, 120)}…`}
+        description={`How ${cs.merchant} used ${cs.app} to streamline promotional pricing on Shopify. ${plainResults.slice(0, 120)}…`}
         keywords={`${cs.merchant}, ${cs.app}, Shopify case study, bulk pricing Shopify, ${cs.industry}`}
-        path={`/case-studies/${cs.slug}`}
+        path={canonicalPath}
+        structuredData={[breadcrumbSchema, articleSchema, reviewSchema]}
       />
 
       {/* ════════════════════════════════════════════════
@@ -204,10 +257,14 @@ const CaseStudyDetail = () => {
               <div>
                 <div className="text-sm font-heading font-bold text-white">{cs.merchant}</div>
                 <div className="text-xs font-body flex items-center gap-1.5" style={{ color: "rgba(255,255,255,0.5)" }}>
-                  <MapPin className="h-3 w-3" /> {cs.location}
+                  {cs.location && (
+                    <>
+                      <MapPin className="h-3 w-3" /> {cs.location}
+                    </>
+                  )}
                   {cs.merchantUrl && (
                     <>
-                      <span className="opacity-40 mx-1">·</span>
+                      {cs.location && <span className="opacity-40 mx-1">·</span>}
                       <a
                         href={`https://${cs.merchantUrl}`}
                         target="_blank"
@@ -267,7 +324,9 @@ const CaseStudyDetail = () => {
                 {[
                   { icon: Tag,      label: "App",           value: cs.app },
                   { icon: Package,  label: "Catalogue",     value: cs.catalogueSize },
-                  { icon: MapPin,   label: "Location",      value: `${cs.merchant}, ${cs.location}` },
+                  ...(cs.location
+                    ? [{ icon: MapPin, label: "Location", value: `${cs.merchant}, ${cs.location}` }]
+                    : []),
                   { icon: Calendar, label: "Time with app", value: cs.timeWithApp },
                   { icon: Tag,      label: "Usage",         value: cs.usageFrequency },
                   { icon: Tag,      label: "Primary use",   value: cs.primaryUse },
@@ -692,7 +751,9 @@ const CaseStudyDetail = () => {
                         </div>
                         <div>
                           <div className="text-sm font-heading font-bold text-foreground">{r.merchant}</div>
-                          <div className="text-xs font-body text-muted-foreground">{r.location} · {r.industry}</div>
+                          <div className="text-xs font-body text-muted-foreground">
+                            {r.location ? `${r.location} · ${r.industry}` : r.industry}
+                          </div>
                         </div>
                       </div>
                       <h3

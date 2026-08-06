@@ -37,7 +37,7 @@ const sections = [
       <>
         These Terms of Service ("Terms") govern your access to and use of the Shopify apps
         published by Thalia Technologies Private Limited ("Thalia Technologies", "we", "us",
-        "our") — including Spreadr, Pro Bulk Price Editor, Watchlyst, Outlink, Prime Product
+        "our") — including Spreadr, Bulk Price Editor Pro, Watchlyst, Outlink, Prime Product
         Badges, Shipr, Connectr, Robo Product Importer, and our other apps (collectively, the
         "Apps") — and our website at{" "}
         <Link to="/" className="text-primary underline underline-offset-2 hover:opacity-80">

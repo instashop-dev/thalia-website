@@ -87,7 +87,7 @@ const CaseStudies = () => {
     <Layout>
       <Seo
         title="Case Studies — Real Results from Thalia's Shopify Apps"
-        description="See how merchants use Pro Bulk Price Editor and other Thalia Technologies apps to save hours, slash effort, and launch promotions faster."
+        description="See how merchants use Bulk Price Editor Pro and other Thalia Technologies apps to save hours, slash effort, and launch promotions faster."
         keywords="Shopify app case studies, bulk price editor results, ecommerce success stories, Thalia Technologies, promotional pricing Shopify"
         path="/case-studies"
         structuredData={[pageSchema, breadcrumbSchema]}
@@ -311,9 +311,11 @@ const CaseStudies = () => {
                           <div className="font-heading font-bold text-foreground text-sm leading-tight">
                             {cs.merchant}
                           </div>
-                          <div className="text-xs font-body text-muted-foreground mt-0.5">
-                            {cs.location}
-                          </div>
+                          {cs.location && (
+                            <div className="text-xs font-body text-muted-foreground mt-0.5">
+                              {cs.location}
+                            </div>
+                          )}
                         </div>
                       </div>
 

@@ -131,13 +131,13 @@ const faqData: FAQCategory[] = [
       {
         q: "Has Thalia Technologies won any awards or recognition?",
         schemaA:
-          "Several Thalia apps have been featured in Shopify's App Store editorial picks and have earned high ratings from thousands of verified merchant reviews. Spreadr and Pro Bulk Price Editor consistently rank among the top apps in their categories.",
+          "Several Thalia apps have been featured in Shopify's App Store editorial picks and have earned high ratings from thousands of verified merchant reviews. Spreadr and Bulk Price Editor Pro consistently rank among the top apps in their categories.",
         a: (
           <>
             Several Thalia apps have been featured in Shopify's App Store editorial picks and have
             earned high ratings from thousands of verified merchant reviews.{" "}
             <IL to="/apps/spreadr">Spreadr</IL> and{" "}
-            <IL to="/apps/probulkpriceeditor">Pro Bulk Price Editor</IL> consistently rank among
+            <IL to="/apps/probulkpriceeditor">Bulk Price Editor Pro</IL> consistently rank among
             the top apps in their categories.
           </>
         ),
@@ -154,12 +154,12 @@ const faqData: FAQCategory[] = [
       {
         q: "What types of Shopify apps does Thalia offer?",
         schemaA:
-          "Thalia's app portfolio spans six categories: Product Importing (Spreadr, Robo Product Importer), Price Management (Pro Bulk Price Editor, Bolt Bulk Editor), Inventory & Alerts (Watchlyst), Product Display (Prime Badges, Clever Variant Images, T2 Icons, Clean Tables, Dual Price Display), Affiliate & External Links (Outlink), and Amazon & FBA (Connectr, Shipr).",
+          "Thalia's app portfolio spans six categories: Product Importing (Spreadr, Robo Product Importer), Price Management (Bulk Price Editor Pro, Bolt Bulk Editor), Inventory & Alerts (Watchlyst), Product Display (Prime Badges, Clever Variant Images, T2 Icons, Clean Tables, Dual Price Display), Affiliate & External Links (Outlink), and Amazon & FBA (Connectr, Shipr).",
         a: (
           <>
             Thalia's app portfolio spans six categories:{" "}
             <strong>Product Importing</strong> (Spreadr, Robo Product Importer),{" "}
-            <strong>Price Management</strong> (Pro Bulk Price Editor, Bolt Bulk Editor),{" "}
+            <strong>Price Management</strong> (Bulk Price Editor Pro, Bolt Bulk Editor),{" "}
             <strong>Inventory &amp; Alerts</strong> (Watchlyst),{" "}
             <strong>Product Display</strong> (Prime Badges, Clever Variant Images, T2 Icons, Clean
             Tables, Dual Price Display), <strong>Affiliate &amp; External Links</strong> (Outlink),
@@ -193,7 +193,7 @@ const faqData: FAQCategory[] = [
         q: "Can I use multiple Thalia apps on the same store?",
         schemaA:
           "Absolutely. Many merchants run three or more Thalia apps simultaneously. Our apps are built to be lightweight and non-conflicting.",
-        a: "Absolutely. Many merchants run three or more Thalia apps simultaneously. Our apps are built to be lightweight and non-conflicting, so using Spreadr alongside Pro Bulk Price Editor and Watchlyst, for example, will not cause conflicts.",
+        a: "Absolutely. Many merchants run three or more Thalia apps simultaneously. Our apps are built to be lightweight and non-conflicting, so using Spreadr alongside Bulk Price Editor Pro and Watchlyst, for example, will not cause conflicts.",
       },
       {
         q: "Are Thalia apps compatible with Shopify 2.0 themes?",
@@ -510,13 +510,13 @@ const faqData: FAQCategory[] = [
     emoji: "💲",
     items: [
       {
-        q: "What is Pro Bulk Price Editor?",
+        q: "What is Bulk Price Editor Pro?",
         schemaA:
-          "Pro Bulk Price Editor is a Shopify app that lets you update prices for thousands of products simultaneously — using percentage increases, fixed amounts, or custom rules. It's ideal for sale campaigns, margin adjustments, seasonal pricing, or syncing prices with supplier rate cards.",
+          "Bulk Price Editor Pro is a Shopify app that lets you update prices for thousands of products simultaneously — using percentage increases, fixed amounts, or custom rules. It's ideal for sale campaigns, margin adjustments, seasonal pricing, or syncing prices with supplier rate cards.",
         a: (
           <>
             <A href="https://apps.shopify.com/pro-bulk-price-editor" content="bpe_what">
-              Pro Bulk Price Editor
+              Bulk Price Editor Pro
             </A>{" "}
             is a Shopify app that lets you update prices for thousands of products simultaneously —
             using percentage increases, fixed amounts, or custom rules. It's ideal for sale
@@ -528,12 +528,12 @@ const faqData: FAQCategory[] = [
       {
         q: "Can I schedule price changes in advance?",
         schemaA:
-          "Yes. Pro Bulk Price Editor includes scheduled pricing, so you can set a sale to start on Black Friday and automatically revert on Cyber Monday — without being at your computer.",
+          "Yes. Bulk Price Editor Pro includes scheduled pricing, so you can set a sale to start on Black Friday and automatically revert on Cyber Monday — without being at your computer.",
         a: (
           <>
             Yes.{" "}
             <A href="https://apps.shopify.com/pro-bulk-price-editor" content="bpe_schedule">
-              Pro Bulk Price Editor
+              Bulk Price Editor Pro
             </A>{" "}
             includes scheduled pricing, so you can set a sale to start on Black Friday and
             automatically revert on Cyber Monday — without being at your computer. This is one of
@@ -550,11 +550,11 @@ const faqData: FAQCategory[] = [
       {
         q: "How many products can I update at once?",
         schemaA:
-          "Pro Bulk Price Editor can process tens of thousands of product variants in a single job on paid plans. Jobs run in the background, so you don't need to leave the page open.",
+          "Bulk Price Editor Pro can process tens of thousands of product variants in a single job on paid plans. Jobs run in the background, so you don't need to leave the page open.",
         a: (
           <>
             <A href="https://apps.shopify.com/pro-bulk-price-editor" content="bpe_limits">
-              Pro Bulk Price Editor
+              Bulk Price Editor Pro
             </A>{" "}
             can process tens of thousands of product variants in a single job on paid plans. Jobs
             run in the background, so you don't need to leave the page open. Free plan limits are
@@ -565,8 +565,8 @@ const faqData: FAQCategory[] = [
       {
         q: "Can I undo price changes made with Bulk Price Editor?",
         schemaA:
-          "Yes. Pro Bulk Price Editor keeps a history of every price job, and you can revert any job to restore the original prices. This safety net makes it risk-free to experiment with pricing strategies.",
-        a: "Yes. Pro Bulk Price Editor keeps a history of every price job, and you can revert any job to restore the original prices. This safety net makes it risk-free to experiment with pricing strategies.",
+          "Yes. Bulk Price Editor Pro keeps a history of every price job, and you can revert any job to restore the original prices. This safety net makes it risk-free to experiment with pricing strategies.",
+        a: "Yes. Bulk Price Editor Pro keeps a history of every price job, and you can revert any job to restore the original prices. This safety net makes it risk-free to experiment with pricing strategies.",
       },
       {
         q: "Can I filter which products get updated in a bulk price job?",
@@ -578,7 +578,7 @@ const faqData: FAQCategory[] = [
             before running a price update. This gives precise control so you never accidentally
             reprice the wrong products. Learn more on the{" "}
             <A href="https://apps.shopify.com/pro-bulk-price-editor" content="bpe_filters">
-              Pro Bulk Price Editor page
+              Bulk Price Editor Pro page
             </A>
             .
           </>
@@ -909,7 +909,7 @@ const faqData: FAQCategory[] = [
         q: "Do Thalia apps support Shopify Markets and multi-currency?",
         schemaA:
           "Yes. Our price management apps are Shopify Markets-aware, and our front-end display apps respect Shopify's currency conversion. Specific Markets support varies by app — check individual app documentation or contact support for details.",
-        a: "Yes. Our price management apps (Pro Bulk Price Editor) are Shopify Markets-aware, and our front-end display apps respect Shopify's currency conversion. Specific Markets support varies by app — check individual app documentation or contact support for details.",
+        a: "Yes. Our price management apps (Bulk Price Editor Pro) are Shopify Markets-aware, and our front-end display apps respect Shopify's currency conversion. Specific Markets support varies by app — check individual app documentation or contact support for details.",
       },
       {
         q: "Are Thalia apps compatible with Shopify Plus?",
@@ -1084,7 +1084,7 @@ const FAQ = () => {
     <Layout>
       <Seo
         title="FAQ — Thalia Technologies | Shopify Apps Help & Answers"
-        description={`Find answers to ${totalQuestions}+ frequently asked questions about Thalia Technologies, our Shopify apps (Spreadr, Pro Bulk Price Editor, Watchlyst, Outlink, and more), pricing, support, and data privacy.`}
+        description={`Find answers to ${totalQuestions}+ frequently asked questions about Thalia Technologies, our Shopify apps (Spreadr, Bulk Price Editor Pro, Watchlyst, Outlink, and more), pricing, support, and data privacy.`}
         keywords="Thalia Technologies FAQ, Shopify app help, Spreadr FAQ, bulk price editor help, Watchlyst support, Thalia apps pricing, Shopify affiliate app questions, ecommerce app FAQ"
         path="/faq"
         structuredData={[faqSchema, breadcrumbSchema]}

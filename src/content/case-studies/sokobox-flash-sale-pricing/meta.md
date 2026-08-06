@@ -1,5 +1,5 @@
 ---
-app: Pro Bulk Price Editor
+app: Bulk Price Editor Pro
 appSlug: bulk-price-editor-pro
 category: Price Management
 industry: Beauty & Cosmetics
@@ -13,7 +13,7 @@ usageFrequency: During Promotions Only
 primaryUse: Black Friday & flash sale campaign pricing
 featuredBy: Ecommerce Team — sokobox.cl
 headline: Sokobox Powers Black Friday Campaigns Across 1,000–5,000 Products with Scheduled Pricing
-excerpt: Sokobox manages $50,000–$100,000 in campaign revenue across a 1,000–5,000 product beauty catalogue. Pro Bulk Price Editor replaced their CSV import workflow with scheduled, collection-based pricing for Black Friday and flash campaigns.
+excerpt: Sokobox manages $50,000–$100,000 in campaign revenue across a 1,000–5,000 product beauty catalogue. Bulk Price Editor Pro replaced their CSV import workflow with scheduled, collection-based pricing for Black Friday and flash campaigns.
 previousMethods:
   - CSV Imports
 timeBeforeApp: 1–3 hours per pricing update

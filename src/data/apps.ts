@@ -231,10 +231,10 @@ export const apps: AppData[] = [
   {
     slug: "probulkpriceeditor",
     bfsBadge: true,
-    name: "Pro Bulk Price Editor",
+    name: "Bulk Price Editor Pro",
     tagline: "Advanced bulk pricing with complex rules, scheduling, and one-click rollback.",
     description: "An advanced bulk price editing solution with complex pricing rules, scheduling capabilities, and one-click rollback for large Shopify catalogs.",
-    longDescription: "Pro Bulk Price Editor is the advanced version of our pricing tools, built specifically for Shopify merchants managing large catalogs with complex pricing needs. It supports multi-tier pricing rules, compound discounts, collection-based targeting, and advanced scheduling with timezone support. The one-click rollback system maintains a complete price history, letting you revert any change instantly. Perfect for Shopify Plus merchants running enterprise-level promotional campaigns.",
+    longDescription: "Bulk Price Editor Pro is the advanced version of our pricing tools, built specifically for Shopify merchants managing large catalogs with complex pricing needs. It supports multi-tier pricing rules, compound discounts, collection-based targeting, and advanced scheduling with timezone support. The one-click rollback system maintains a complete price history, letting you revert any change instantly. Perfect for Shopify Plus merchants running enterprise-level promotional campaigns.",
     platform: "Shopify",
     features: ["Advanced discount scheduling", "Complex pricing rules", "One-click rollback", "Collection-based targeting", "Price history log", "Conflict prevention"],
     featureDetails: [
@@ -306,9 +306,9 @@ export const apps: AppData[] = [
     icon: "🏷️",
     stats: [{ value: "8K+", label: "Installs" }, { value: "4.7★", label: "Rating" }, { value: "30M+", label: "Prices Changed" }],
     testimonial: { quote: "The scheduling and rollback features are game changers for our seasonal campaigns.", author: "Anna F.", role: "eCommerce Manager, Sweden" },
-    seoTitle: "Pro Bulk Price Editor — Shopify Bulk Price Editor App",
+    seoTitle: "Bulk Price Editor Pro — Shopify Bulk Price Editor App",
     seoDescription: "Edit thousands of Shopify product prices in bulk with scheduled updates, rules, and automated workflows. Save hours every week.",
-    h1: "Pro Bulk Price Editor — Bulk Edit Shopify Product Prices & Schedule Updates",
+    h1: "Bulk Price Editor Pro — Bulk Edit Shopify Product Prices & Schedule Updates",
 
   },
   {

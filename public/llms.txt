@@ -24,7 +24,7 @@ Full URL inventory: https://www.thaliatechnologies.com/llms-full.txt
 
 ## Apps - Price Management
 
-- [Pro Bulk Price Editor](https://www.thaliatechnologies.com/apps/probulkpriceeditor): Advanced bulk price editing for Shopify with scheduled campaigns, multi-tier pricing rules, collection targeting, one-click rollback, and a full price history audit trail. Supports timezone-aware scheduling and recurring promotions. Plans from Free (trial/partner stores) to $40/year for Pro. 8,000+ installs, 4.7 star rating. [Shopify App Store](https://apps.shopify.com/pro-bulk-price-editor)
+- [Bulk Price Editor Pro](https://www.thaliatechnologies.com/apps/probulkpriceeditor): Advanced bulk price editing for Shopify with scheduled campaigns, multi-tier pricing rules, collection targeting, one-click rollback, and a full price history audit trail. Supports timezone-aware scheduling and recurring promotions. Plans from Free (trial/partner stores) to $40/year for Pro. 8,000+ installs, 4.7 star rating. [Shopify App Store](https://apps.shopify.com/pro-bulk-price-editor)
 
 - [Bolt](https://www.thaliatechnologies.com/apps/bolt): Fast, lightweight bulk product editor for Shopify. Edit prices, inventory, titles, tags, and metafields across large catalogs quickly. Designed for merchants who need speed without complex rule-builders. [Shopify App Store](https://apps.shopify.com/bolt-product-bulk-editor)
 
@@ -98,13 +98,13 @@ Full URL inventory: https://www.thaliatechnologies.com/llms-full.txt
 
 ## Case Studies
 
-- [Firstvibe - India Fashion](https://www.thaliatechnologies.com/case-studies/firstvibe): How a fashion brand in India used Pro Bulk Price Editor to manage seasonal pricing across their catalog.
+- [Firstvibe - India Fashion](https://www.thaliatechnologies.com/case-studies/firstvibe): How a fashion brand in India used Bulk Price Editor Pro to manage seasonal pricing across their catalog.
 
 - [SNDY Coffee - Australia](https://www.thaliatechnologies.com/case-studies/sndy-coffee): How an Australian specialty coffee brand automated bulk price changes for subscription and one-off products.
 
 - [Wayward - Australia Fashion](https://www.thaliatechnologies.com/case-studies/wayward): How Wayward reduced pricing update time with scheduled bulk edits and rollback capabilities.
 
-- [SAAZ - Global Footwear](https://www.thaliatechnologies.com/case-studies/saaz): How a global footwear brand standardized pricing across large SKU catalogs with Pro Bulk Price Editor.
+- [SAAZ - Global Footwear](https://www.thaliatechnologies.com/case-studies/saaz): How a global footwear brand standardized pricing across large SKU catalogs with Bulk Price Editor Pro.
 
 - [The Herbalists - New Zealand Wellness](https://www.thaliatechnologies.com/case-studies/the-herbalists): How a wellness brand in New Zealand ran seasonal promotions without manual pricing overhead.
 

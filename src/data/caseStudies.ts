@@ -25,7 +25,7 @@ export interface CaseStudy {
   category: string;
   industry: string;
   merchant: string;
-  location: string;
+  location?: string;
   merchantUrl?: string;
   catalogueSize: string;
   productsUpdated: string;

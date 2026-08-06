@@ -33,7 +33,7 @@ export const appFaqs: Record<string, AppFaq[]> = {
 
   probulkpriceeditor: [
     {
-      q: "What types of price changes can Pro Bulk Price Editor make?",
+      q: "What types of price changes can Bulk Price Editor Pro make?",
       a: "You can increase or decrease prices by a fixed amount, by percentage, or set a specific price. The same rules apply to compare-at prices (strike-through prices). You can also round prices to a specific format (e.g. .99) after applying the change.",
     },
     {
@@ -53,7 +53,7 @@ export const appFaqs: Record<string, AppFaq[]> = {
       a: "Paid plans support unlimited products and variants per job. Jobs are queued and processed in the background using Shopify's bulk operations API, so even a 100,000-variant catalogue can be updated without timeout issues.",
     },
     {
-      q: "Does Pro Bulk Price Editor work with Shopify Plus?",
+      q: "Does Bulk Price Editor Pro work with Shopify Plus?",
       a: "Yes. The app is fully compatible with Shopify Plus and takes advantage of Plus's higher API rate limits, meaning large catalogues are processed significantly faster than on standard Shopify plans.",
     },
   ],
@@ -110,8 +110,8 @@ export const appFaqs: Record<string, AppFaq[]> = {
 
   "bolt-bulk-editor": [
     {
-      q: "What is Bolt Bulk Editor and how is it different from Pro Bulk Price Editor?",
-      a: "Bolt Bulk Editor is a fast, flexible spreadsheet-style editor for bulk-editing any Shopify product field — title, description, price, compare-at price, tags, vendor, weight, and more — all in one place. Pro Bulk Price Editor focuses exclusively on price changes with advanced scheduling. Bolt is the go-to tool when you need to edit any field across your catalogue at once.",
+      q: "What is Bolt Bulk Editor and how is it different from Bulk Price Editor Pro?",
+      a: "Bolt Bulk Editor is a fast, flexible spreadsheet-style editor for bulk-editing any Shopify product field — title, description, price, compare-at price, tags, vendor, weight, and more — all in one place. Bulk Price Editor Pro focuses exclusively on price changes with advanced scheduling. Bolt is the go-to tool when you need to edit any field across your catalogue at once.",
     },
     {
       q: "What product fields can I edit in bulk with Bolt?",
