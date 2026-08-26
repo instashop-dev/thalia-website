@@ -1077,10 +1077,10 @@ export const apps: AppData[] = [
   },
   {
     slug: "super-product-badges",
-    name: "Super",
+    name: "Supr Product Badges & Labels",
     tagline: "Add product badges, labels, and stickers to your BigCommerce store to drive conversions.",
     description: "Create eye-catching product badges for BigCommerce — highlight sales, new arrivals, bestsellers, low stock, and more.",
-    longDescription: "Super is the most popular product badge and label app for BigCommerce. It lets merchants add eye-catching visual badges to product images — 'Sale', 'New', 'Bestseller', 'Limited Stock', 'Free Shipping', and more. Badges can be applied manually or automatically using smart rules based on inventory levels, pricing, tags, categories, or dates. With 30+ pre-designed badge templates and a full custom badge builder, Super gives you complete control over how products are visually highlighted. Studies show that product badges can increase conversion rates by 10-20%.",
+    longDescription: "Supr is the most popular product badge and label app for BigCommerce. It lets merchants add eye-catching visual badges to product images — 'Sale', 'New', 'Bestseller', 'Limited Stock', 'Free Shipping', and more. Badges can be applied manually or automatically using smart rules based on inventory levels, pricing, tags, categories, or dates. With 30+ pre-designed badge templates and a full custom badge builder, Supr gives you complete control over how products are visually highlighted. Studies show that product badges can increase conversion rates by 10-20%.",
     platform: "BigCommerce",
     features: ["30+ badge presets", "Custom badge designer", "Rule-based auto-apply", "Position customization", "Mobile responsive", "Performance optimized"],
     featureDetails: [
@@ -1089,7 +1089,7 @@ export const apps: AppData[] = [
       { title: "Smart Rule Engine", desc: "Apply badges automatically based on rules — products on sale, new arrivals (added in last 7 days), low stock (under 5 units), specific categories, or date ranges." },
       { title: "Position Customization", desc: "Place badges anywhere on product images — top-left, top-right, bottom-left, bottom-right, or custom positions. Stack multiple badges on a single product." },
       { title: "Mobile Responsive", desc: "Badges are fully responsive and look great on all screen sizes. Automatically resize on mobile to maintain readability without covering product images." },
-      { title: "Performance Optimized", desc: "Super is built for speed. Badges are rendered using lightweight CSS and optimized images, adding less than 50ms to page load time." },
+      { title: "Performance Optimized", desc: "Supr is built for speed. Badges are rendered using lightweight CSS and optimized images, adding less than 50ms to page load time." },
     ],
     benefits: [
       "Increase conversion rates by 10-20% with visual product highlights",
@@ -1100,7 +1100,7 @@ export const apps: AppData[] = [
       "Zero impact on page speed — performance optimized",
     ],
     howItWorks: [
-      { step: "01", title: "Install Super", desc: "Add Super to your BigCommerce store. It integrates with your theme and adds badge support to all product images." },
+      { step: "01", title: "Install Supr", desc: "Add Supr to your BigCommerce store. It integrates with your theme and adds badge support to all product images." },
       { step: "02", title: "Choose or Create Badges", desc: "Select from 30+ preset badges or design custom ones. Set up smart rules for automatic badge application." },
       { step: "03", title: "Watch Conversions Climb", desc: "Badges appear on product images across your store. Track the impact on click-through and conversion rates through analytics." },
     ],
@@ -1118,9 +1118,9 @@ export const apps: AppData[] = [
     icon: "🏷️",
     stats: [{ value: "3K+", label: "Installs" }, { value: "4.7★", label: "Rating" }, { value: "1M+", label: "Badges Displayed" }],
     testimonial: { quote: "Super badges boosted our click-through rates significantly. Great tool for BigCommerce.", author: "Jake R.", role: "BigCommerce Merchant, USA" },
-    seoTitle: "Super — Shopify Bulk Actions",
+    seoTitle: "Supr — Shopify Bulk Actions",
     seoDescription: "Perform bulk operations on products, orders, and customers. Filter, edit, and export at scale.",
-    h1: "Super — Bulk Product, Order & Customer Actions for Shopify",
+    h1: "Supr — Bulk Product, Order & Customer Actions for Shopify",
 
   },
   {

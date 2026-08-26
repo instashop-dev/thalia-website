@@ -321,12 +321,12 @@ export const appFaqs: Record<string, AppFaq[]> = {
 
   "super-product-badges": [
     {
-      q: "What is Super Product Badges and which platform is it for?",
-      a: "Super Product Badges is a product labelling app for BigCommerce stores. It adds customisable badges and stickers to product images and listing cards — such as 'Sale', 'New', 'Best Seller', or any custom label — to draw attention to key products and drive click-throughs.",
+      q: "What is Supr Product Badges & Labels and which platform is it for?",
+      a: "Supr Product Badges & Labels is a product labelling app for BigCommerce stores. It adds customisable badges and stickers to product images and listing cards — such as 'Sale', 'New', 'Best Seller', or any custom label — to draw attention to key products and drive click-throughs.",
     },
     {
       q: "Can I create custom badge text and designs?",
-      a: "Yes. Super Product Badges includes a library of pre-designed badge templates and a customiser where you can set your own text, font, colour, size, shape, and position. No design tools or coding skills are needed.",
+      a: "Yes. Supr Product Badges & Labels includes a library of pre-designed badge templates and a customiser where you can set your own text, font, colour, size, shape, and position. No design tools or coding skills are needed.",
     },
     {
       q: "Can badges be applied automatically based on product rules?",
