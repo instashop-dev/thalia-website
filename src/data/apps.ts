@@ -1187,6 +1187,7 @@ export const apps: AppData[] = [
     description: "Create stunning product badges for Shopify — 50+ templates, smart rules, scheduling, and performance analytics.",
     longDescription: "Prime is the ultimate product badge and label toolkit for Shopify merchants. With 50+ professionally designed badge templates and a powerful custom badge builder, Prime lets you add eye-catching visual elements to product images that drive clicks and conversions. Apply badges manually or let the smart rule engine do it automatically based on product conditions — on sale, new arrival, low stock, bestseller, or custom tags. Schedule badges for promotional periods, track their impact on conversions with built-in analytics, and optimize your badge strategy based on real performance data.",
     platform: "Shopify",
+    bfsBadge: true,
     features: ["50+ badge templates", "Custom badge builder", "Smart rule engine", "Schedule-based badges", "Sale & inventory triggers", "Performance analytics"],
     featureDetails: [
       { title: "50+ Professional Templates", desc: "Choose from an extensive library of badge designs — ribbons, circles, stickers, banners, and corner badges. Each template is professionally designed and fully customizable." },
