@@ -1,0 +1,144 @@
+<p>Shopify's <a href="https://www.shopify.com/editions/spring2026">Spring 2026 release</a> highlights faster inventory syncing during busy periods. That matters when the same stock serves more than one sales channel. Meanwhile, <a href="https://group.dhl.com/en/media-relations/press-releases/2025/dhl-e-commerce-trends-report-2025.html">DHL's 2025 survey</a> found that 81% of shoppers would leave without their preferred delivery option. An <strong>Amazon FBA Shopify integration</strong> can connect your storefront to stock held at Amazon, but the handoff needs to work as reliably as your checkout.</p>
+<h2>TL;DR</h2>
+<ul>
+<li>Amazon Multi-Channel Fulfillment, or MCF, handles orders from channels outside Amazon using inventory held in Amazon fulfillment centers.</li>
+<li>Before enabling automatic fulfillment, check SKU mapping, available inventory, fulfillment routing, and shipping options.</li>
+<li>Test the entire order journey, including tracking updates and what happens when an order cannot ship.</li>
+<li>Choose your integration plan around the inventory-sync behavior you need, then monitor exceptions after launch.</li>
+</ul>
+<h2>Why Available Stock Does Not Always Mean Ready to Ship</h2>
+<p>An order can be paid in Shopify while still needing attention before a warehouse can ship it. The product must match the right inventory record. The fulfillment request must reach the right service. The delivery option must be valid for that destination.</p>
+<p>This is where lean teams feel the strain. Someone checks the order, opens another system, confirms the SKU, submits the shipment, and returns later for tracking. Repeating those steps turns each extra order into more admin work.</p>
+<p>Consider an <strong>illustrative example</strong>, not a customer result: a store receives 40 orders a day and spends three minutes manually processing each one. That is 120 minutes of daily work before returns or delivery questions. The useful question is how much of that work is routine and how much requires a decision.</p>
+<p>Routine transfers are candidates for automation. Address problems, uncertain stock, and changes requested by a customer need a clear exception process. Connecting the systems should make both types easier to manage.</p>
+<p>It also helps to separate two terms that often get used interchangeably. <strong>FBA serves Amazon marketplace orders; MCF serves orders from other channels</strong>, including your website. <a href="https://sell.amazon.com/fulfillment-by-amazon/fba-multichannel">Amazon explains the distinction</a> and how existing FBA inventory can support off-Amazon orders.</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Term</th>
+<th>What it means for your Shopify store</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FBA inventory</td>
+<td>Stock held in Amazon fulfillment centers that may also support MCF orders</td>
+</tr>
+<tr>
+<td>MCF</td>
+<td>Amazon's service for fulfilling orders from channels outside Amazon</td>
+</tr>
+<tr>
+<td>Integration app</td>
+<td>Software connecting order, inventory, and shipment information between systems</td>
+</tr>
+</tbody>
+</table></div>
+<p>Treat <strong>multi-channel fulfillment</strong> as an operating process. Your integration handles the connection, while your team still decides what can ship, from where, and under which conditions. Those decisions should be documented before order volume grows.</p>
+<h2>How to Set Up Your Amazon FBA Shopify Integration</h2>
+<h3>Step 1: Check Your Products, Market, and Costs</h3>
+<p>Start with the products you intend to fulfill through Amazon. Confirm that the relevant Amazon account has eligible, available stock and supports the destinations you sell to. An account connection alone does not establish that every item can ship everywhere.</p>
+<p>Build a small launch worksheet with these fields:</p>
+<ul>
+<li>Shopify product and variant.</li>
+<li>Corresponding Amazon SKU.</li>
+<li>Marketplace and intended shipping destinations.</li>
+<li>Available inventory and replenishment owner.</li>
+<li>Delivery service and expected fulfillment cost.</li>
+</ul>
+<p>Keep the first batch manageable. A standard product with one variant is easier to investigate than a mixed order with several fulfillment sources. Once that path works, add the combinations your store actually sells.</p>
+<p>Calculate costs using the applicable Amazon rate card and your product dimensions. Include storage, inbound movement, fulfillment, returns, and the integration subscription where relevant. Avoid comparing the app fee alone with your current shipping bill.</p>
+<p>For US merchants, <a href="https://supplychain.amazon.com/docs/rate-card">Amazon's rate card effective May 2, 2026</a> specifies a 3.5% fuel and logistics surcharge on MCF fulfillment fees. Check the current rate card for your market before setting margins or checkout prices.</p>
+<h3>Step 2: Match SKUs and Check Available Inventory</h3>
+<p>A SKU match should identify the exact sellable unit. A single item and a pack of two are different units, even if their product titles look almost identical. Check every variant and pack size in your launch batch.</p>
+<p>Where identifiers differ, confirm how your chosen integration maps the Shopify variant to the Amazon SKU. Keep a record of that mapping so another team member can investigate it later.</p>
+<p>Next, decide how <strong>Shopify inventory sync</strong> will be maintained. Check which plan includes it, what quantity is synchronized, and how updates are triggered. Do not assume that order forwarding automatically includes continuous inventory updates.</p>
+<p>Use a simple reconciliation exercise. If your test product starts with 20 available units and you submit an order for two, inspect the resulting counts in both systems. That is a test scenario, not a claim that every service updates instantly or handles reserved stock identically.</p>
+<p>Also record the time of the last successful sync. A number without a timestamp tells you less than it appears to. When counts differ, your team should know which source to investigate before accepting more orders.</p>
+<blockquote>
+<p><strong>Explore the Shipr case studies</strong></p>
+<p>Evaluating how this workflow fits your store? Visit <a href="https://www.thaliatechnologies.com/case-studies?app=shipr&#x26;utm_source=blog&#x26;utm_medium=organic&#x26;utm_campaign=shipr&#x26;utm_content=amazon-fba-shopify-integration-mid-article">Thalia's Shipr case studies</a> as you assess your fulfillment setup. Keep your own SKU structure, order mix, and inventory needs in mind while reviewing the examples.</p>
+</blockquote>
+<h3>Step 3: Decide Which Orders Should Be Sent</h3>
+<p>Before you <strong>automate Shopify fulfillment</strong>, write down the conditions that make an order ready. Payment, stock, destination, and any required review should all be considered. Document how your chosen app and Shopify settings implement those conditions.</p>
+<p><a href="https://help.shopify.com/en/manual/fulfillment/setup/order-routing">Shopify's order-routing documentation</a> explains how routing determines which fulfillment locations receive orders. Review those settings alongside the integration configuration, especially when you also ship from your own warehouse.</p>
+<p>Define a path for mixed orders. If one item ships through Amazon and another ships elsewhere, each line needs an appropriate fulfillment route. Your customer communication should also account for separate packages where applicable.</p>
+<p>Check the relationship between checkout shipping options and fulfillment delivery speeds. A label such as "Express" needs a deliberate mapping and a realistic promise. Confirm any processing time, destination limitations, and service availability before showing a delivery estimate.</p>
+<h3>Step 4: Run a Complete Order Test</h3>
+<p>Test a real fulfillment path with an order you control. A connection-success message only confirms one part of the process. You need evidence that the right item reaches the right fulfillment service and the shipment information returns correctly.</p>
+<p>Use this four-part acceptance check:</p>
+<ol>
+<li>The intended item, quantity, and address reach the fulfillment service.</li>
+<li>The request is accepted, or a failure becomes visible to the person responsible.</li>
+<li>Shipment status and tracking return to the matching Shopify order.</li>
+<li>The customer-facing notification contains the expected information.</li>
+</ol>
+<p><img src="/blog/amazon-fba-shopify-integration/amazon-mcf-shopify-workflow.svg" alt="Diagram of Amazon MCF for Shopify from order readiness through fulfillment and tracking">
+<em>Source: original Thalia editorial diagram. A conceptual workflow, not a screenshot of app controls.</em></p>
+<p>Then inspect exception handling for unavailable stock and an order that needs a change. Use supported test methods and check cancellation behavior before submitting another request. A refund, cancellation request, and confirmed warehouse cancellation are separate events to verify.</p>
+<p>Document what passed, what failed, and who handles each exception. Broaden the rollout after that evidence is clear.</p>
+<h2>Four Mistakes That Create Fulfillment Rework</h2>
+<h3>Treating a Shared Product Name as a SKU Match</h3>
+<p>Similar titles can hide different colors, sizes, or bundle quantities. A connection may be functioning while the underlying mapping is wrong. Review the sellable unit, not just the display name, and repeat the check when you add variants.</p>
+<h3>Measuring Speed but Ignoring the Delivery Promise</h3>
+<p>An order leaving the warehouse quickly does not prove it met the checkout promise. Measure the journey the buyer sees, including processing time and the delivery estimate. Use the same definitions when comparing your current process with a new one.</p>
+<h3>Leaving Returns Out of the Setup</h3>
+<p>In <a href="https://group.dhl.com/en/media-relations/press-releases/2025/dhl-e-commerce-trends-report-2025.html">DHL's 2025 research</a>, 79% of surveyed shoppers said they would abandon a purchase if returns did not meet their expectations. That is a survey finding, not a prediction of your store's abandonment rate.</p>
+<p>Assign responsibility for customer requests, return instructions, received stock, and refunds. Make sure your published policy reflects the process your team can actually support. Connecting outbound fulfillment does not finish the returns workflow.</p>
+<h3>Watching Only the Orders That Shipped</h3>
+<p>Successful shipments are easy to count. The more useful daily queue includes rejected requests, orders waiting too long, missing tracking, and inventory discrepancies. Give someone responsibility for reviewing it, even when most orders run automatically.</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Check</th>
+<th>What to record</th>
+<th>Why it helps</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fulfillment exceptions</td>
+<td>Count and reason</td>
+<td>Reveals recurring setup problems</td>
+</tr>
+<tr>
+<td>Missing tracking</td>
+<td>Shipped orders without tracking in Shopify</td>
+<td>Identifies gaps in customer visibility</td>
+</tr>
+<tr>
+<td>Inventory differences</td>
+<td>SKU, quantity difference, last sync time</td>
+<td>Supports investigation before stock runs short</td>
+</tr>
+<tr>
+<td>Manual work</td>
+<td>Minutes spent resolving exceptions</td>
+<td>Tests whether the workflow is saving effort</td>
+</tr>
+</tbody>
+</table></div>
+<p>Start with a seven-day baseline for your own store. Compare equivalent periods and order mixes after launch. The 40-order example above provides a way to calculate effort, but only your measurements can establish actual savings.</p>
+<h2>How Shipr Connects Your Store to Amazon Fulfillment</h2>
+<p>We built <strong>Shipr for Amazon FBA / MCF</strong> to connect Shopify orders with Amazon fulfillment. It sends fulfillment requests and brings shipment status and tracking back to Shopify. Its <a href="https://apps.shopify.com/amazon-fba-shipr?utm_source=blog&#x26;utm_medium=organic&#x26;utm_campaign=shipr&#x26;utm_content=amazon-fba-shopify-integration">Shopify App Store listing</a> lists automatic and manual modes, SKU mapping, delivery-speed options, and multi-region support.</p>
+<p>Choose the plan around your inventory needs. As checked on September 21, 2026, Basic is $10/month, Pro is $20/month with inventory sync, and Gold is $50/month with continuous automatic sync. All three list a seven-day free trial. Amazon service charges are separate.</p>
+<p>That lets you evaluate order handling and <strong>Shopify order tracking</strong> while selecting the level of inventory automation your store requires. Review the current listing before installing, since pricing and features can change.</p>
+<p>One merchant describes the experience this way:</p>
+<blockquote>
+<p>"Great app to enable order fulfillment via FBA, definitely recommend"</p>
+<p>global.timeresistance.com, Shopify App Store review, August 7, 2026.</p>
+</blockquote>
+<p><strong><a href="https://apps.shopify.com/amazon-fba-shipr?utm_source=blog&#x26;utm_medium=organic&#x26;utm_campaign=shipr&#x26;utm_content=amazon-fba-shopify-integration">Start your Shipr free trial on Shopify</a>.</strong></p>
+<h2>Frequently Asked Questions</h2>
+<h3>Can Amazon Fulfill Orders From My Shopify Store?</h3>
+<p>Yes, Amazon MCF can fulfill eligible Shopify orders using inventory stored in Amazon fulfillment centers. You need a supported integration and an account, inventory, and destination setup that meet the service requirements. Check availability for your market.</p>
+<h3>What Is the Difference Between Amazon FBA and MCF?</h3>
+<p>FBA fulfills Amazon marketplace orders, while MCF fulfills orders from other sales channels. They can use a shared inventory pool, but their fulfillment services and fees differ. A Shopify order is an off-Amazon order.</p>
+<h3>Do I Need Matching SKUs on Shopify and Amazon?</h3>
+<p>You need an accurate correspondence between each Shopify variant and its Amazon inventory SKU. Matching identifiers simplify this, while supported SKU mapping can handle differences. Check pack sizes and variants before enabling automatic fulfillment.</p>
+<h3>Does an Amazon Integration Automatically Sync Inventory?</h3>
+<p>Inventory syncing depends on the app, plan, and configuration. Confirm whether your setup offers manual, scheduled, or continuous updates. Test the result before relying on it for stock availability.</p>
+<h2>Build the Connection Around Your Daily Workflow</h2>
+<p>Using <strong>Amazon MCF for Shopify</strong> starts with knowing which stock can fulfill which orders. Map the products, check costs and shipping options, test the whole journey, and assign ownership of exceptions. Then measure the work your team still has to do.</p>
+<p>For stores ready to connect these steps, <a href="https://apps.shopify.com/amazon-fba-shipr?utm_source=blog&#x26;utm_medium=organic&#x26;utm_campaign=shipr&#x26;utm_content=amazon-fba-shopify-integration">explore Shipr on the Shopify App Store</a>. You can also return to <a href="https://www.thaliatechnologies.com/case-studies?app=shipr&#x26;utm_source=blog&#x26;utm_medium=organic&#x26;utm_campaign=shipr&#x26;utm_content=amazon-fba-shopify-integration-conclusion">the Shipr case studies</a> as you evaluate the fit. Begin with a small product batch, verify what happens after checkout, and expand when the process is working for your team.</p>
+<p>Written by the <a href="https://www.thaliatechnologies.com/">Thalia Technologies team</a>.</p>

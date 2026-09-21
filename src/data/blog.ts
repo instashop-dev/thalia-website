@@ -13,6 +13,7 @@ export interface BlogPost {
   readTime: string;
   seoTitle?: string;
   seoDescription?: string;
+  faqs?: { question: string; answer: string }[];
 }
 
 type BlogMeta = Omit<BlogPost, "slug" | "contentHtml">;

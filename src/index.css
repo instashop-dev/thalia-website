@@ -174,6 +174,38 @@
     @apply list-disc pl-6 space-y-2 mb-6 text-muted-foreground font-body leading-relaxed;
   }
 
+  .prose-custom ol {
+    @apply list-decimal pl-6 space-y-2 mb-6 text-muted-foreground font-body leading-relaxed;
+  }
+
+  .prose-custom a {
+    @apply text-primary underline underline-offset-4;
+  }
+
+  .prose-custom blockquote {
+    @apply border-l-4 border-primary pl-5 py-2 my-6 bg-primary/5;
+  }
+
+  .prose-custom .table-scroll {
+    @apply overflow-x-auto mb-6;
+  }
+
+  .prose-custom table {
+    @apply w-full text-left text-sm font-body;
+  }
+
+  .prose-custom th, .prose-custom td {
+    @apply border border-border p-3 align-top;
+  }
+
+  .prose-custom th {
+    @apply bg-muted font-semibold;
+  }
+
+  .prose-custom img {
+    @apply w-full h-auto rounded-xl my-6;
+  }
+
   .prose-custom li {
     @apply text-muted-foreground font-body leading-relaxed;
   }

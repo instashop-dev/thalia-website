@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="690" viewBox="0 0 900 690" role="img" aria-labelledby="title desc">
+  <title id="title">Amazon MCF for Shopify: order to tracking</title>
+  <desc id="desc">Check order readiness, send the fulfillment request through the integration, let Amazon MCF fulfill the order, then return shipment status and tracking to Shopify. Review rejected requests and inventory discrepancies.</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10" fill="#0099cc"/></marker></defs>
+  <rect width="900" height="690" rx="24" fill="#f1f5f9"/>
+  <g font-family="Arial, sans-serif" text-anchor="middle">
+    <text x="450" y="53" font-size="28" font-weight="700" fill="#14243b">From Shopify order to shipment tracking</text>
+    <text x="450" y="85" font-size="17" fill="#526174">A conceptual Amazon MCF workflow</text>
+    <g fill="#fff" stroke="#cbd5e1" stroke-width="2">
+      <rect x="110" y="115" width="680" height="90" rx="14"/>
+      <rect x="110" y="245" width="680" height="90" rx="14"/>
+      <rect x="110" y="375" width="680" height="90" rx="14"/>
+      <rect x="110" y="505" width="680" height="90" rx="14"/>
+    </g>
+    <g fill="#14243b" font-size="23" font-weight="700">
+      <text x="450" y="151">1. Check order readiness</text>
+      <text x="450" y="281">2. Send the fulfillment request</text>
+      <text x="450" y="411">3. Amazon MCF fulfills the order</text>
+      <text x="450" y="541">4. Return status and tracking to Shopify</text>
+    </g>
+    <g fill="#526174" font-size="18">
+      <text x="450" y="182">Payment · SKU mapping · Stock · Destination · Routing</text>
+      <text x="450" y="312">Integration forwards the item, quantity, address, and service</text>
+      <text x="450" y="442">Eligible inventory is picked, packed, and shipped</text>
+      <text x="450" y="572">Match the order and verify customer notifications</text>
+    </g>
+    <path d="M450 210V238 M450 340V368 M450 470V498" stroke="#0099cc" stroke-width="3" marker-end="url(#arrow)"/>
+    <text x="450" y="637" font-size="18" fill="#14243b">Review exceptions: rejected requests, stock differences, missing tracking.</text>
+    <text x="450" y="668" font-size="14" fill="#526174">Thalia Technologies · Editorial diagram, not an app interface</text>
+  </g>
+</svg>

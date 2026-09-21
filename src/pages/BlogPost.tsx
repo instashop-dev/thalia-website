@@ -45,7 +45,7 @@ const BlogPost = () => {
     url: `https://www.thaliatechnologies.com/blog/${post.slug}`,
     datePublished: post.date,
     author: {
-      "@type": "Person",
+      "@type": post.author === "Thalia Technologies" ? "Organization" : "Person",
       name: post.author,
       jobTitle: post.authorRole,
     },
@@ -72,7 +72,15 @@ const BlogPost = () => {
         description={post.seoDescription || post.excerpt}
         keywords={post.tags.join(", ")}
         path={`/blog/${post.slug}`}
-        structuredData={[blogPostingSchema, breadcrumbSchema]}
+        structuredData={[blogPostingSchema, breadcrumbSchema, ...(post.faqs?.length ? [{
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: post.faqs.map(({ question, answer }) => ({
+            "@type": "Question",
+            name: question,
+            acceptedAnswer: { "@type": "Answer", text: answer },
+          })),
+        }] : [])]}
       />
 
       {/* ═══════════════════════════════════════════════════════════════
