@@ -1,0 +1,25 @@
+---
+title: 'Shopify Product Badges That Match Your Stock Plan'
+excerpt: 'Plan inventory with Prediko, then use Prime Product Badges to highlight offers your stock can support. A practical guide to smarter Shopify promotions.'
+date: '2026-09-29'
+author: 'Thalia Technologies'
+authorRole: 'Shopify App Development Team'
+tags:
+  - 'Shopify'
+  - 'Inventory'
+  - 'Product Badges'
+  - 'BFCM'
+readTime: '10 min read'
+coverImage: '/images/blog/shopify-product-badges-inventory-promotions/shopify-product-badges-inventory-hero.svg'
+seoTitle: 'Shopify Product Badges: Stock-Smart Promotions | Thalia'
+seoDescription: 'Use Shopify product badges to promote the right stock. Plan inventory with Prediko, then highlight eligible offers with Prime Product Badges.'
+faqs:
+  - question: 'How do I add product badges to Shopify?'
+    answer: 'You can use your theme''s supported badge options or a badge app. Set the message and display conditions, then preview collection and product pages on desktop and mobile before publishing.'
+  - question: 'How do I know when to reorder inventory?'
+    answer: 'Compare expected demand during supplier lead time with the stock you can use, then allow for uncertainty. A basic reorder point combines lead-time demand with a safety buffer; revise it when demand or delivery timing changes.'
+  - question: 'What is the difference between inventory forecasting and inventory tracking?'
+    answer: 'Inventory tracking records stock quantities and changes, while inventory forecasting estimates future demand. Use tracking to understand current availability and forecasting to plan purchases and promotional capacity.'
+  - question: 'Should I promote products with low stock?'
+    answer: 'Promote them only when the likely demand and fulfillment plan support the decision. If stock may run out before replenishment, consider reducing exposure or featuring another suitable product with more cover.'
+---
