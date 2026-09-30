@@ -4,6 +4,7 @@ import { Link, useParams, Navigate } from "react-router-dom";
 import { ArrowLeft, ArrowRight, BookOpen, Calendar, Clock, Tag, User } from "lucide-react";
 import Layout from "@/components/Layout";
 import Seo from "@/components/Seo";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { blogPosts, getBlogPostBySlug, getRelatedPosts } from "@/data/blog";
 
 const inView = (delay = 0) => ({
@@ -13,6 +14,22 @@ const inView = (delay = 0) => ({
   transition: { duration: 0.55, delay, ease: [0.25, 0.46, 0.45, 0.94] as const },
 });
 
+const textFromHtml = (value: string) => value.replace(/<[^>]+>/g, "").replace(/&mdash;/g, "—").trim();
+
+const getLegacyFaqs = (html: string) => {
+  const section = html.match(/<h2>(?:FAQ|Frequently Asked Questions)<\/h2>([\s\S]*?)(?=<h2>|$)/i);
+  if (!section) return { section: undefined, faqs: [] as { question: string; answer: string }[] };
+
+  const headingPairs = [...section[1].matchAll(/<h3>([\s\S]*?)<\/h3>\s*<p>([\s\S]*?)<\/p>/gi)];
+  const strongPairs = [...section[1].matchAll(/<p><strong>([\s\S]*?)<\/strong><\/p>\s*<p>([\s\S]*?)<\/p>/gi)];
+  const pairs = headingPairs.length ? headingPairs : strongPairs;
+
+  return {
+    section: section[0],
+    faqs: pairs.map((pair) => ({ question: textFromHtml(pair[1]), answer: textFromHtml(pair[2]) })),
+  };
+};
+
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
   const post = useMemo(() => (slug ? getBlogPostBySlug(slug) : undefined), [slug]);
@@ -21,6 +38,12 @@ const BlogPost = () => {
   if (!post) {
     return <Navigate to="/blog" replace />;
   }
+
+  const legacyFaq = getLegacyFaqs(post.contentHtml);
+  const faqItems = post.faqs?.length ? post.faqs : legacyFaq.faqs;
+  const articleContent = legacyFaq.section
+    ? post.contentHtml.replace(legacyFaq.section, "")
+    : post.contentHtml;
 
   const breadcrumbSchema = {
     "@context": "https://schema.org",
@@ -72,10 +95,10 @@ const BlogPost = () => {
         description={post.seoDescription || post.excerpt}
         keywords={post.tags.join(", ")}
         path={`/blog/${post.slug}`}
-        structuredData={[blogPostingSchema, breadcrumbSchema, ...(post.faqs?.length ? [{
+        structuredData={[blogPostingSchema, breadcrumbSchema, ...(faqItems.length ? [{
           "@context": "https://schema.org",
           "@type": "FAQPage",
-          mainEntity: post.faqs.map(({ question, answer }) => ({
+          mainEntity: faqItems.map(({ question, answer }) => ({
             "@type": "Question",
             name: question,
             acceptedAnswer: { "@type": "Answer", text: answer },
@@ -214,8 +237,62 @@ const BlogPost = () => {
             <motion.article
               {...inView(0)}
               className="prose-custom"
-              dangerouslySetInnerHTML={{ __html: post.contentHtml }}
+              dangerouslySetInnerHTML={{ __html: articleContent }}
             />
+
+            {faqItems.length ? (
+              <motion.section
+                {...inView(0.08)}
+                aria-labelledby="blog-faq-heading"
+                className="mt-14"
+              >
+                <div className="mb-5">
+                  <span className="text-xs font-semibold uppercase tracking-[0.12em] text-primary font-body">
+                    Quick answers
+                  </span>
+                  <h2
+                    id="blog-faq-heading"
+                    className="font-heading text-h3 font-bold text-foreground mt-2"
+                    style={{ letterSpacing: "-0.02em" }}
+                  >
+                    Frequently asked questions
+                  </h2>
+                </div>
+
+                <div
+                  className="overflow-hidden rounded-2xl bg-white"
+                  style={{ border: "1px solid hsl(220 15% 88%)" }}
+                >
+                  <div
+                    className="hidden sm:grid grid-cols-[minmax(0,1fr)_136px] gap-4 px-5 py-3 text-[11px] font-semibold uppercase tracking-[0.1em] font-body text-muted-foreground"
+                    style={{ background: "hsl(220 25% 97%)", borderBottom: "1px solid hsl(220 15% 88%)" }}
+                  >
+                    <span>Question</span>
+                    <span className="text-right">Answer</span>
+                  </div>
+                  <Accordion type="single" collapsible className="w-full">
+                    {faqItems.map((faq, index) => (
+                      <AccordionItem
+                        key={faq.question}
+                        value={`faq-${index}`}
+                        className="border-b-0 [&+&]:border-t"
+                        style={{ borderColor: "hsl(220 15% 88%)" }}
+                      >
+                        <AccordionTrigger className="gap-4 px-5 py-4 text-left font-heading font-semibold text-foreground no-underline hover:bg-slate-50 hover:no-underline [&>svg]:h-5 [&>svg]:w-5 [&>svg]:text-primary">
+                          <span>{faq.question}</span>
+                          <span className="ml-auto mr-2 hidden shrink-0 text-[11px] font-body font-semibold uppercase tracking-[0.08em] text-muted-foreground sm:block">
+                            View answer
+                          </span>
+                        </AccordionTrigger>
+                        <AccordionContent className="px-5 pb-5 pt-0 text-[15px] leading-relaxed text-muted-foreground font-body">
+                          <div className="border-l-2 border-primary/40 pl-4">{faq.answer}</div>
+                        </AccordionContent>
+                      </AccordionItem>
+                    ))}
+                  </Accordion>
+                </div>
+              </motion.section>
+            ) : null}
 
             {/* Tags bottom */}
             <motion.div {...inView(0.1)} className="mt-12 pt-8" style={{ borderTop: "1px solid hsl(220 15% 90%)" }}>
