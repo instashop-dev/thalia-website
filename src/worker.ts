@@ -2,6 +2,49 @@ interface Env {
   ASSETS: { fetch(req: Request): Promise<Response> };
 }
 
+const FORM_SUBMIT_ENDPOINT = "https://formsubmit.co/ajax/info@thaliatechnologies.com";
+
+function jsonResponse(body: Record<string, unknown>, status = 200): Response {
+  return new Response(JSON.stringify(body), {
+    status,
+    headers: { "Content-Type": "application/json; charset=utf-8", "Cache-Control": "no-store" },
+  });
+}
+
+async function handleContactRequest(request: Request): Promise<Response> {
+  if (request.method === "OPTIONS") return new Response(null, { status: 204 });
+  if (request.method !== "POST") return jsonResponse({ success: false, message: "Method not allowed" }, 405);
+
+  try {
+    const input = (await request.json()) as { name?: string; email?: string; subject?: string; message?: string };
+    const name = input.name?.trim() || "";
+    const email = input.email?.trim() || "";
+    const subject = input.subject?.trim() || "General Inquiry";
+    const message = input.message?.trim() || "";
+
+    if (!name || !email || !message) {
+      return jsonResponse({ success: false, message: "Please complete all required fields." }, 400);
+    }
+
+    const upstream = await fetch(FORM_SUBMIT_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify({ name, email, subject, message, _subject: `[Thalia Website] ${subject} — ${name}` }),
+    });
+    const responseText = await upstream.text();
+    let responseData: { success?: boolean | string; message?: string } = {};
+    try { responseData = JSON.parse(responseText) as typeof responseData; } catch { /* Keep the API response JSON-only. */ }
+
+    const success = upstream.ok && (responseData.success === true || responseData.success === "true");
+    if (!success) {
+      return jsonResponse({ success: false, message: responseData.message || "The message service could not accept the submission. Please email us directly." }, 502);
+    }
+    return jsonResponse({ success: true, message: "Message sent" });
+  } catch {
+    return jsonResponse({ success: false, message: "Unable to send the message right now. Please try again." }, 502);
+  }
+}
+
 // 301 redirects for app slugs renamed for better SEO
 const LEGACY_SLUG_REDIRECTS: Record<string, string> = {
   "/apps/bolt": "/apps/bolt-bulk-editor",
@@ -22,6 +65,7 @@ const STATIC_ROUTES = new Set([
   "/about",
   "/apps",
   "/contact",
+  "/become-a-partner",
   "/careers",
   "/blog",
   "/case-studies",
@@ -51,6 +95,8 @@ function isKnownRoute(pathname: string): boolean {
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     const url = new URL(request.url);
+
+    if (url.pathname === "/api/contact") return handleContactRequest(request);
 
     // Enforce HTTPS — redirect plain HTTP to HTTPS
     if (url.protocol === "http:") {

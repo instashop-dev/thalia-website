@@ -18,8 +18,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 
-/** Delivers to info@thaliatechnologies.com via FormSubmit. */
-const FORM_SUBMIT_ENDPOINT = "https://formsubmit.co/ajax/info@thaliatechnologies.com";
+/** Sent through the same-origin Cloudflare Worker, which forwards to FormSubmit server-side. */
+const FORM_SUBMIT_ENDPOINT = "/api/contact";
 
 const OFFICE_MAP_URL = "https://maps.app.goo.gl/kFtQe6m18qMZF7zH7";
 const OFFICE_ADDRESS =
