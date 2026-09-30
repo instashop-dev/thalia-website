@@ -378,7 +378,7 @@ const Blog = () => {
                 className="font-heading font-extrabold text-white mb-4"
                 style={{ fontSize: "clamp(28px, 3.6vw, 40px)", letterSpacing: "-0.02em", lineHeight: 1.15 }}
               >
-                Want to See Our Products in Action?
+                Want to See Our Apps in Action?
               </h2>
               <p className="text-white/85 font-body max-w-xl mx-auto mb-8 leading-relaxed">
                 Explore our suite of 18+ ecommerce apps designed to help merchants

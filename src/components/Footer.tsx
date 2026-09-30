@@ -36,9 +36,9 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Products */}
+          {/* Apps */}
           <div>
-            <h4 className="font-heading font-bold text-xs uppercase tracking-widest mb-5 opacity-60">Products</h4>
+            <h4 className="font-heading font-bold text-xs uppercase tracking-widest mb-5 opacity-60">Apps</h4>
             <div className="flex flex-col gap-3">
               <Link
                 to="/apps/spreadr"
@@ -100,6 +100,12 @@ const Footer = () => {
                 className="text-sm opacity-70 hover:opacity-100 hover:text-primary transition-all duration-150"
               >
                 Careers
+              </Link>
+              <Link
+                to="/become-a-partner"
+                className="text-sm opacity-70 hover:opacity-100 hover:text-primary transition-all duration-150"
+              >
+                Become a Partner
               </Link>
               <Link
                 to="/contact"

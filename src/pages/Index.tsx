@@ -413,7 +413,7 @@ const Index = () => {
                 className="flex flex-wrap gap-3"
               >
                 <Link to="/apps" className="btn-primary text-sm">
-                  Explore Our Products <ArrowRight className="ml-2 h-4 w-4 inline" />
+                  Explore Our Apps <ArrowRight className="ml-2 h-4 w-4 inline" />
                 </Link>
                 <Link to="/about" className="btn-ghost-dark text-sm">
                   Learn About Us

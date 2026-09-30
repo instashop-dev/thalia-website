@@ -157,7 +157,7 @@ const About = () => {
             >
               {[
                 { value: "100K+", label: "Merchants" },
-                { value: "14+",   label: "Products" },
+                { value: "14+",   label: "Apps" },
                 { value: "10+",   label: "Years" },
                 { value: "100+",  label: "Countries" },
               ].map((s) => (

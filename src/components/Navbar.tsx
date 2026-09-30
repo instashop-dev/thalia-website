@@ -1,20 +1,25 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import logo from "@/assets/thalia-logo.jpg";
 
 const navLinks = [
   { label: "Home",          path: "/" },
-  { label: "Products",      path: "/apps" },
-  { label: "Case Studies",  path: "/case-studies" },
-  { label: "Blog",          path: "/blog" },
+  { label: "Apps",          path: "/apps" },
   { label: "About",         path: "/about" },
   { label: "Careers",       path: "/careers" },
   { label: "Contact",       path: "/contact" },
 ];
 
+const resourceLinks = [
+  { label: "Blog", path: "/blog" },
+  { label: "Case Studies", path: "/case-studies" },
+  { label: "Become a Partner", path: "/become-a-partner" },
+];
+
 const Navbar = () => {
   const [isOpen, setIsOpen]   = useState(false);
+  const [resourcesOpen, setResourcesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
@@ -76,6 +81,39 @@ const Navbar = () => {
               </Link>
             );
           })}
+          <div
+            className="relative"
+            onMouseEnter={() => setResourcesOpen(true)}
+            onMouseLeave={() => setResourcesOpen(false)}
+          >
+            <button
+              type="button"
+              onClick={() => setResourcesOpen((open) => !open)}
+              className={`relative inline-flex items-center gap-1 px-3.5 py-2 rounded-md text-[14px] font-medium font-body transition-colors duration-150 ${
+                resourceLinks.some((link) => location.pathname.startsWith(link.path))
+                  ? "text-primary"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
+              aria-expanded={resourcesOpen}
+            >
+              Resources <ChevronDown className={`h-3.5 w-3.5 transition-transform ${resourcesOpen ? "rotate-180" : ""}`} />
+            </button>
+            {resourcesOpen && (
+              <div className="absolute right-0 top-full pt-2 w-52">
+                <div className="rounded-xl border border-border bg-background p-2 shadow-lg">
+                  {resourceLinks.map((link) => (
+                    <Link
+                      key={link.path}
+                      to={link.path}
+                      className="block rounded-lg px-3 py-2.5 text-sm font-medium text-muted-foreground hover:bg-secondary hover:text-foreground"
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
         </div>
 
         {/* Desktop CTA */}
@@ -113,6 +151,22 @@ const Navbar = () => {
                 {link.label}
               </Link>
             ))}
+            <div className="mt-1 border-t border-border pt-2">
+              <p className="px-3.5 py-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">Resources</p>
+              {resourceLinks.map((link) => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={`block rounded-md px-3.5 py-2.5 text-sm font-medium font-body transition-colors ${
+                    location.pathname.startsWith(link.path)
+                      ? "text-primary bg-secondary"
+                      : "text-muted-foreground hover:text-foreground hover:bg-muted"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
             <Link to="/apps" className="btn-primary text-sm mt-2 text-center">
               View Our Apps →
             </Link>

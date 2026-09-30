@@ -164,7 +164,7 @@ const faqData: FAQCategory[] = [
             <strong>Product Display</strong> (Prime Badges, Clever Variant Images, T2 Icons, Clean
             Tables, Dual Price Display), <strong>Affiliate &amp; External Links</strong> (Outlink),
             and <strong>Amazon &amp; FBA</strong> (Connectr, Shipr). View all on our{" "}
-            <IL to="/apps">Products page</IL>.
+            <IL to="/apps">Apps page</IL>.
           </>
         ),
       },
