@@ -19,7 +19,23 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 
 /** Sent through the same-origin Cloudflare Worker, which forwards to FormSubmit server-side. */
-const FORM_SUBMIT_ENDPOINT = "/api/contact";
+const CONTACT_EMAIL = "info@thaliatechnologies.com";
+
+const openEmailFallback = (form: typeof initialForm) => {
+  const fullName = `${form.firstName.trim()} ${form.lastName.trim()}`.trim();
+  const subject = `[Thalia Website] ${form.subject} — ${fullName}`;
+  const body = [
+    `Topic: ${form.subject}`,
+    "",
+    form.message.trim(),
+    "",
+    "---",
+    `Name: ${fullName}`,
+    `Reply-To: ${form.email.trim()}`,
+  ].join("\n");
+
+  window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+};
 
 const OFFICE_MAP_URL = "https://maps.app.goo.gl/kFtQe6m18qMZF7zH7";
 const OFFICE_ADDRESS =
@@ -117,7 +133,11 @@ const Contact = () => {
       setForm(initialForm);
     } catch (err) {
       const msg = err instanceof Error ? err.message : "Something went wrong. Please try again.";
-      toast({ title: "Could not send", description: msg, variant: "destructive" });
+      openEmailFallback(form);
+      toast({
+        title: "Opening your email app",
+        description: `${msg}. Review the message and press Send from your email client.`,
+      });
     } finally {
       setIsSubmitting(false);
     }
