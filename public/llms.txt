@@ -48,7 +48,7 @@ Full URL inventory: https://www.thaliatechnologies.com/llms-full.txt
 
 - [Watchlyst](https://www.thaliatechnologies.com/apps/watchlyst): Price drop alert system for Shopify. Customers click "Notify me when price drops" on product pages and receive automated emails when the price decreases. Drives 3-5x higher conversion rates than standard email campaigns. Includes analytics dashboard, customizable email templates, and multi-currency support. Free plan available; $5/month for multi-language and multi-region support. [Shopify App Store](https://apps.shopify.com/watchlyst)
 
-- [Outlink](https://www.thaliatechnologies.com/apps/outlink): Adds external "Buy" buttons to Shopify product pages that redirect customers to third-party URLs such as affiliate partners, brand sites, or external marketplaces. Essential for affiliate stores and multi-vendor models. [Shopify App Store](https://apps.shopify.com/outlink-external-link-button)
+- [Outlink](https://www.thaliatechnologies.com/apps/outlink): Adds external "Buy" buttons to Shopify product pages that redirect customers to third-party URLs such as affiliate partners, brand sites, or external marketplaces. Essential for affiliate stores and multi-vendor models. [Shopify App Store](https://apps.shopify.com/external-affiliate-product-links)
 
 ---
 
