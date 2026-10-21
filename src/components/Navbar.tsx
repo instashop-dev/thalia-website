@@ -7,6 +7,7 @@ const navLinks = [
   { label: "Home",          path: "/" },
   { label: "Apps",          path: "/apps" },
   { label: "About",         path: "/about" },
+  { label: "Partners",      path: "/become-a-partner" },
   { label: "Careers",       path: "/careers" },
   { label: "Contact",       path: "/contact" },
 ];
@@ -14,7 +15,6 @@ const navLinks = [
 const resourceLinks = [
   { label: "Blog", path: "/blog" },
   { label: "Case Studies", path: "/case-studies" },
-  { label: "Become a Partner", path: "/become-a-partner" },
 ];
 
 const Navbar = () => {

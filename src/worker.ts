@@ -65,6 +65,12 @@ const ROUTE_SEO: Record<string, { title: string; description: string; h1: string
     h1: "About Thalia Technologies",
     intro: "We build focused ecommerce software that helps merchants work smarter and grow faster.",
   },
+  "/become-a-partner": {
+    title: "Partners | Thalia Technologies",
+    description: "Partner with Thalia Technologies through co-marketing, referrals, technology partnerships, and merchant-first ecommerce collaborations.",
+    h1: "Better tools. Better together.",
+    intro: "Explore partnership opportunities with Thalia Technologies for agencies, creators, communities, and technology companies.",
+  },
 };
 
 function jsonResponse(body: Record<string, unknown>, status = 200): Response {

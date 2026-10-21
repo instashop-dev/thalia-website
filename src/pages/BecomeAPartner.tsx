@@ -54,7 +54,7 @@ const inView = (delay = 0) => ({
 const BecomeAPartner = () => (
   <Layout>
     <Seo
-      title="Become a Partner | Thalia Technologies"
+      title="Partners | Thalia Technologies"
       description="Partner with Thalia Technologies through co-marketing, in-app promotion, referrals, and technology partnerships for ecommerce teams."
       keywords="Thalia Technologies partner, ecommerce partnership, Shopify app partnership, co-marketing"
       path="/become-a-partner"
