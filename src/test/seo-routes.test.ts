@@ -20,6 +20,7 @@ describe("SEO route handling", () => {
     expect(isKnownRoute("/apps/probulkpriceeditor")).toBe(true);
     expect(isKnownRoute("/blog/example-post")).toBe(true);
     expect(isKnownRoute("/case-studies/example")).toBe(true);
+    expect(isKnownRoute("/apps/shipr/amazon-mcf-migration")).toBe(true);
   });
 
   it("rejects unknown top-level and nested dynamic routes", () => {

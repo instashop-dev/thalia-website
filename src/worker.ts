@@ -41,6 +41,12 @@ const ROUTE_SEO: Record<string, { title: string; description: string; h1: string
     h1: "Robo Product Importer — Import Products to Shopify",
     intro: "Import product titles, images, variants, descriptions, and pricing from almost any ecommerce website into Shopify.",
   },
+  "/apps/shipr/amazon-mcf-migration": {
+    title: "Amazon MCF Migration Guide | Shipr for Shopify",
+    description: "Move your Shopify fulfillment workflow to Amazon Multi-Channel Fulfillment with Shipr. Follow the migration checklist for products, inventory, orders, and tracking.",
+    h1: "Move Shopify fulfillment to Amazon MCF with Shipr",
+    intro: "A practical migration guide for connecting your Shopify store to Amazon Multi-Channel Fulfillment, validating the setup, and switching over with confidence.",
+  },
   "/blog": {
     title: "Thalia Blog — Ecommerce Tips for Shopify, Amazon & BigCommerce",
     description: "Practical ecommerce guides for Shopify, Amazon, and BigCommerce merchants covering pricing, inventory, apps, and multi-channel growth.",
@@ -210,6 +216,8 @@ export function isKnownRoute(pathname: string): boolean {
     : pathname;
 
   if (STATIC_ROUTES.has(normalized)) return true;
+
+  if (normalized === "/apps/shipr/amazon-mcf-migration") return true;
 
   return DYNAMIC_PREFIXES.some((prefix) => {
     if (!pathname.startsWith(prefix)) return false;

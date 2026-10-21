@@ -362,6 +362,21 @@ const AppDetail = () => {
         </div>
       </section>
 
+      {app.slug === "shipr" && (
+        <section className="section-alt" style={{ paddingTop: 32, paddingBottom: 32 }}>
+          <div className="section-container">
+            <div className="flex flex-col items-start justify-between gap-5 rounded-2xl border border-[#ff9900]/25 bg-white p-6 shadow-sm sm:flex-row sm:items-center sm:p-7">
+              <div>
+                <span className="font-heading text-xs font-bold uppercase tracking-[0.12em] text-[#d97706]">Planning a switch?</span>
+                <h2 className="mt-1 font-heading text-xl font-bold text-foreground">Read the Amazon MCF migration guide</h2>
+                <p className="mt-1 max-w-2xl text-sm leading-relaxed text-muted-foreground">Prepare products, test the order loop, and roll out Shipr in controlled stages.</p>
+              </div>
+              <Link to="/apps/shipr/amazon-mcf-migration" className="btn-outline inline-flex shrink-0 items-center gap-2">View guide <ArrowRight className="h-4 w-4" /></Link>
+            </div>
+          </div>
+        </section>
+      )}
+
       {!app.comingSoon && (
         <>
           {/* ═══════════════════════════════════════════════════════════════
