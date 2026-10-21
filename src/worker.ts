@@ -67,7 +67,7 @@ const ROUTE_SEO: Record<string, { title: string; description: string; h1: string
   },
   "/become-a-partner": {
     title: "Partners | Thalia Technologies",
-    description: "Partner with Thalia Technologies through co-marketing, referrals, technology partnerships, and merchant-first ecommerce collaborations.",
+    description: "Explore Thalia Technologies' partner community and partnership opportunities across co-marketing, referrals, technology collaborations, and merchant-first ecommerce work.",
     h1: "Better tools. Better together.",
     intro: "Explore partnership opportunities with Thalia Technologies for agencies, creators, communities, and technology companies.",
   },

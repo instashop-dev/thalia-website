@@ -55,7 +55,7 @@ const BecomeAPartner = () => (
   <Layout>
     <Seo
       title="Partners | Thalia Technologies"
-      description="Partner with Thalia Technologies through co-marketing, in-app promotion, referrals, and technology partnerships for ecommerce teams."
+      description="Explore Thalia Technologies' partner community and partnership opportunities across co-marketing, referrals, and technology collaborations for ecommerce teams."
       keywords="Thalia Technologies partner, ecommerce partnership, Shopify app partnership, co-marketing"
       path="/become-a-partner"
     />
@@ -66,17 +66,17 @@ const BecomeAPartner = () => (
         <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-12 items-center">
           <div>
             <motion.div {...inView()} className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 text-xs font-semibold font-body" style={{ border: "1px solid rgba(0,192,255,0.28)", background: "rgba(0,192,255,0.08)", color: "#00c0ff" }}>
-              <Handshake className="h-4 w-4" /> PARTNER WITH THALIA
+              <Handshake className="h-4 w-4" /> PARTNERS AT THALIA
             </motion.div>
             <motion.h1 {...inView(0.08)} className="font-heading font-extrabold text-white mb-6" style={{ fontSize: "clamp(40px, 5.7vw, 68px)", lineHeight: 1.06, letterSpacing: "-0.03em" }}>
               Better tools. <span className="gradient-text-cyan">Better together.</span>
             </motion.h1>
             <motion.p {...inView(0.16)} className="text-lg leading-relaxed max-w-xl mb-8" style={{ color: "rgba(255,255,255,0.7)" }}>
-              We partner with the people and platforms helping ecommerce businesses grow. Together, we can make useful technology easier to discover, adopt, and succeed with.
+              Whether you already work with Thalia or are exploring a new collaboration, this is where our partner community connects with useful ecommerce technology.
             </motion.p>
             <motion.div {...inView(0.22)} className="flex flex-wrap gap-3">
               <Link to="/contact" className="btn-primary">Start a conversation <ArrowRight className="ml-2 h-4 w-4" /></Link>
-              <a href="#partnerships" className="btn-ghost-dark">Explore partnerships</a>
+              <a href="#our-partners" className="btn-ghost-dark">Explore our partners</a>
             </motion.div>
           </div>
           <motion.div {...inView(0.16)} className="relative">
@@ -96,9 +96,9 @@ const BecomeAPartner = () => (
       </div>
     </section>
 
-    <section className="bg-white" style={{ paddingTop: 86, paddingBottom: 92 }}>
+    <section id="our-partners" className="bg-white" style={{ paddingTop: 86, paddingBottom: 92 }}>
       <div className="section-container">
-        <div className="mx-auto max-w-2xl text-center mb-12"><motion.span {...inView()} className="inline-block text-xs font-semibold uppercase tracking-[0.12em] text-primary font-body mb-4">WHO WE WORK WITH</motion.span><motion.h2 {...inView(0.08)} className="font-heading text-h2 font-extrabold text-foreground mb-4">Built for complementary strengths.</motion.h2><motion.p {...inView(0.16)} className="text-muted-foreground leading-relaxed font-body">You do not need to fit into a rigid program. We start with what you do best and find the most useful way to connect it with Thalia.</motion.p></div>
+        <div className="mx-auto max-w-2xl text-center mb-12"><motion.span {...inView()} className="inline-block text-xs font-semibold uppercase tracking-[0.12em] text-primary font-body mb-4">EXPLORE OUR PARTNERS</motion.span><motion.h2 {...inView(0.08)} className="font-heading text-h2 font-extrabold text-foreground mb-4">A community built on complementary strengths.</motion.h2><motion.p {...inView(0.16)} className="text-muted-foreground leading-relaxed font-body">Explore the kinds of partners we work with, from agencies and creators to technology companies. If you are already a partner, use this page as a starting point for your next collaboration.</motion.p></div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
           {partnerTypes.map((type, index) => <motion.article key={type.title} {...inView(index * 0.08)} className="card-elevated p-6 text-center" style={{ borderTop: "2px solid rgba(0,192,255,0.22)" }}><div className="mx-auto mb-5 flex h-12 w-12 items-center justify-center rounded-xl" style={{ background: "rgba(0,192,255,0.1)", border: "1px solid rgba(0,192,255,0.18)" }}><type.icon className="h-5 w-5 text-primary" /></div><h3 className="font-heading font-bold text-lg text-foreground mb-2">{type.title}</h3><p className="text-sm text-muted-foreground font-body leading-relaxed">{type.desc}</p></motion.article>)}
         </div>
