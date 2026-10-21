@@ -1,0 +1,25 @@
+---
+title: 'Agentic Commerce Shopify: Make Your Catalog AI-Ready'
+excerpt: 'Prepare your Shopify catalog for agentic commerce with a practical export, cleanup, and validation workflow for AI shopping discovery.'
+date: '2026-10-19'
+author: 'Thalia Technologies'
+authorRole: 'Shopify App Development Team'
+tags:
+  - 'Shopify'
+  - 'AI Commerce'
+  - 'Product Data'
+  - 'Catalog Management'
+readTime: '10 min read'
+coverImage: '/images/blog/agentic-commerce-shopify-catalog/agentic-commerce-shopify-hero.svg'
+seoTitle: 'Agentic Commerce Shopify Catalog Guide | Thalia'
+seoDescription: 'Prepare your Shopify catalog for agentic commerce. Use a practical export, cleanup, and validation workflow for AI shopping discovery.'
+faqs:
+  - question: 'What is agentic commerce on Shopify?'
+    answer: 'Agentic commerce on Shopify is a shopping model in which AI assistants help people discover, compare, and purchase products through conversational channels. Shopify’s Agentic Storefronts and Catalog support product discovery across AI surfaces, while merchants remain responsible for accurate product information.'
+  - question: 'How do I make my Shopify store ready for AI shopping?'
+    answer: 'Make product and variant data specific, complete, and consistent. Review titles, attributes, images, prices, inventory, metafields, policies, and identifiers, then test the export against real shopper questions.'
+  - question: 'Does Shopify Catalog replace product SEO?'
+    answer: 'No. Shopify Catalog is part of product-discovery infrastructure, but it does not replace clear product pages, useful content, accurate structured data, or sound technical SEO.'
+  - question: 'Which Shopify data should I export for AI discovery?'
+    answer: 'Export product and variant IDs, titles, descriptions, images, options, SKUs, prices, inventory, product type, vendor, tags, and relevant metafields. Add attributes that answer your category’s real questions, such as material, dimensions, compatibility, or care.'
+---

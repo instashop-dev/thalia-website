@@ -1,0 +1,106 @@
+<p>Shopify says AI-driven traffic to Shopify stores grew <strong>8 times year over year in Q1 2026</strong>, while orders from AI-powered searches grew nearly 13 times. That does not mean every store needs a new channel strategy tomorrow. It does mean product information is becoming part of the sales conversation. If an AI shopping assistant cannot understand your products, variants, availability, or policies, a beautiful storefront may never enter the shortlist.</p>
+
+<p><img src="/images/blog/agentic-commerce-shopify-catalog/agentic-commerce-shopify-hero.svg" alt="AI shopping Shopify workflow connecting a product catalog to an AI assistant and checkout" width="1200" height="630" loading="lazy" /> <em>Source: Original Thalia editorial illustration, created for this article.</em></p>
+
+<h2>TL;DR</h2>
+<ul>
+  <li><strong>Agentic commerce Shopify</strong> means AI assistants help shoppers discover, compare, and sometimes buy products through conversational surfaces.</li>
+  <li>Your first job is not to write more AI copy. Make product titles, attributes, variants, prices, inventory, images, and policies consistent.</li>
+  <li>Use a four-step workflow: define the answer your catalog needs to provide, export the source data, run a preflight review, then monitor changes.</li>
+  <li><a href="https://apps.shopify.com/product-data-exporter?utm_source=blog&amp;utm_medium=organic&amp;utm_campaign=product-data-exporter&amp;utm_content=agentic-commerce-shopify-catalog">Product Data Exporter Pro</a> helps teams create filtered, repeatable Shopify product data exports for that review.</li>
+</ul>
+
+<h2>Why agentic commerce makes catalog hygiene a growth task</h2>
+<p>Traditional search often gives a shopper a list of pages. An AI shopping assistant may give the shopper a much shorter recommendation set. It has to decide which products match the request, explain the trade-offs, and answer follow-up questions such as “Is this available in medium?” or “Does it arrive before Friday?”</p>
+<p>That changes the cost of vague product data. A title like “Classic Tee” does not tell an AI agent the material, fit, audience, color, or use case. A variant named “Option 3” hides the choice a buyer needs to compare.</p>
+<p>Shopify’s own <a href="https://www.shopify.com/blog/how-agentic-commerce-works">agentic commerce guide</a> describes this shift as AI helping shoppers browse, compare, and purchase in a conversation. Shopify also says its Catalog provides structured product information for AI surfaces. That is useful infrastructure, but it does not remove the merchant’s responsibility to keep source data accurate.</p>
+<p>Think of the catalog as a set of answers: what it is, who it is for, what makes it different, which options exist, whether it is available, and what happens after purchase. Conflicting answers reduce recommendation confidence.</p>
+
+<p><img src="/images/blog/agentic-commerce-shopify-catalog/shopify-catalog-data-chain.svg" alt="Shopify product data export and catalog fields flowing from source data to AI discovery" width="1200" height="630" loading="lazy" /> <em>Source: Original Thalia editorial illustration. The icons represent the data chain, not a specific Shopify screen.</em></p>
+
+<h2>Agentic commerce Shopify: a four-step workflow</h2>
+<h3>Step 1: Write the questions your catalog must answer</h3>
+<p>Start with shopper questions, not columns. Collect 10 to 20 real questions from support tickets, site search, sales calls, and product reviews.</p>
+<p>Group them into four sets:</p>
+<table>
+  <thead><tr><th>Shopper question</th><th>Product data needed</th><th>Typical failure</th></tr></thead>
+  <tbody>
+    <tr><td>“What is this made from?”</td><td>Material, composition, care</td><td>Information exists only in an image or PDF</td></tr>
+    <tr><td>“Which option fits me?”</td><td>Size, dimensions, compatibility, variant labels</td><td>Variants use internal codes</td></tr>
+    <tr><td>“Can I get it this week?”</td><td>Inventory, location, processing time</td><td>Stock and delivery promises disagree</td></tr>
+    <tr><td>“Is this right for my use case?”</td><td>Use case, features, category, audience</td><td>Description is creative but not specific</td></tr>
+  </tbody>
+</table>
+<p>This gives your team a testable definition of completeness. Use the same question set for one collection first, then apply the model to the rest of the catalog.</p>
+
+<h3>Step 2: Build a repeatable Shopify product data export</h3>
+<p>Create an export that includes the product and variant identifiers needed to trace every row back to the source. At minimum, include title, handle, description, vendor, product type, tags, images, SKU, barcode, price, compare-at price, inventory, variant options, and status.</p>
+<p>Then add the fields that answer your shopper questions. This may include <a href="https://help.shopify.com/en/manual/custom-data/metafields/using-metafields">Shopify metafields</a>, product taxonomy, material, care instructions, compatibility, dimensions, shipping notes, and structured product attributes.</p>
+<ol>
+  <li><strong>Export stable IDs.</strong> Titles change. Product and variant IDs make comparisons reliable.</li>
+  <li><strong>Keep variants visible.</strong> A parent product can look complete while one important size or color is missing an image, price, or inventory value.</li>
+  <li><strong>Save the export definition.</strong> A repeatable field set makes the next review comparable with the last one.</li>
+</ol>
+<p>If your catalog is large, filter the first export by collection, product type, or last updated date. A focused file is easier to inspect than a full database dump.</p>
+
+<h3>Step 3: Run a catalog preflight before distribution</h3>
+<p>Treat the export like a release candidate. Do not edit blindly in a spreadsheet and upload it without a review trail. First, find rows that can create a poor recommendation or a broken purchase path.</p>
+<p>Check for:</p>
+<ul>
+  <li>Missing or duplicate SKUs and variant IDs.</li>
+  <li>Titles that omit the product type or the main differentiator.</li>
+  <li>Variant names that make sense only to the internal team.</li>
+  <li>Empty material, size, compatibility, or care fields where shoppers need them.</li>
+  <li>Images that do not match the selected color or variant.</li>
+  <li>Prices, compare-at prices, and inventory values that conflict with the storefront.</li>
+  <li>Metafields with different units, spellings, or capitalization for the same attribute.</li>
+</ul>
+<p><img src="/images/blog/agentic-commerce-shopify-catalog/catalog-preflight-checklist.svg" alt="Shopify catalog preflight checklist showing product images, tags, variants, inventory, and quality checks" width="1200" height="630" loading="lazy" /> <em>Source: Original Thalia editorial illustration. The checklist is a visual concept, not a live merchant export.</em></p>
+<p>Assign every check one of three states: pass, needs decision, or block. “Needs decision” is important. Some missing fields are acceptable for a product; others should stop distribution until an owner fixes them.</p>
+<p>Do not turn the process into a demand for longer descriptions. A concise, specific product record is more useful than a paragraph that buries the decisive attribute.</p>
+
+<h3>Step 4: Measure discovery quality and keep the source current</h3>
+<p>After cleanup, record a baseline. Track AI referral sessions where analytics exposes them, product impressions, product-page clicks, conversion rate, and support questions about missing information. Do not claim that a catalog export caused a lift unless your measurement setup can support that conclusion.</p>
+<p>Review high-value collections more often than the long tail. Re-export after a pricing change, assortment change, or inventory migration.</p>
+<p>Shopify’s <a href="https://help.shopify.com/en/manual/online-sales-channels/agentic-storefronts">Agentic Storefronts documentation</a> explains how product discovery can occur across AI channels. Use it to understand the platform controls, then use your own export and QA process to verify the information your team owns.</p>
+<p><img src="/images/blog/agentic-commerce-shopify-catalog/ai-shopping-discovery-funnel.svg" alt="AI shopping Shopify discovery funnel from complete product data to qualified shopper and checkout" width="1200" height="630" loading="lazy" /> <em>Source: Original Thalia editorial illustration. The funnel shows a planning model, not a guaranteed conversion path.</em></p>
+
+<h2>Common catalog mistakes that weaken AI discovery</h2>
+<h3>1. Treating the product description as the whole catalog</h3>
+<p>Important facts often live in metafields, variant options, images, PDFs, or support documents. Export the fields that carry meaning, then decide which information belongs in the main product record.</p>
+<h3>2. Fixing the parent product but missing the variant rows</h3>
+<p>AI shopping depends on the option the customer can actually buy. If “Black / Medium” has no image or inventory while the parent product looks complete, the record is still incomplete.</p>
+<h3>3. Using internal language in customer-facing fields</h3>
+<p>“BLK-M” may be useful as a SKU. It is not a useful shopper-facing variant label. Keep the internal identifier, but give the customer a descriptive option name.</p>
+<h3>4. Confusing structured data with keyword stuffing</h3>
+<p>Adding the phrase “AI shopping Shopify” to every title will not make a catalog useful. The goal of <a href="https://help.shopify.com/en/manual/promoting-marketing/seo/structured-data">structured data on Shopify</a> is to make facts clear and machine-readable. Use natural language and accurate attributes.</p>
+<h3>5. Never reviewing the export after a bulk change</h3>
+<p>Catalog quality decays. A new supplier feed, theme migration, translation, or bulk edit can overwrite fields that looked correct last quarter. Keep a dated export and compare changes before the next major campaign.</p>
+<table>
+  <thead><tr><th>Risk</th><th>What it can cause</th><th>Better control</th></tr></thead>
+  <tbody>
+    <tr><td>Missing variant attributes</td><td>Wrong recommendation</td><td>Variant-level export and QA</td></tr>
+    <tr><td>Stale inventory</td><td>Unavailable product surfaced</td><td>Reconcile stock before campaigns</td></tr>
+    <tr><td>Inconsistent metafields</td><td>Weak filtering and comparison</td><td>Controlled values and units</td></tr>
+    <tr><td>Untracked bulk edits</td><td>Hard-to-reverse catalog drift</td><td>Dated exports and change review</td></tr>
+  </tbody>
+</table>
+
+<h2>How Product Data Exporter Pro supports the workflow</h2>
+<p>Once the team knows which fields matter, <a href="https://apps.shopify.com/product-data-exporter?utm_source=blog&amp;utm_medium=organic&amp;utm_campaign=product-data-exporter&amp;utm_content=agentic-commerce-shopify-catalog">Product Data Exporter Pro</a> can create filtered exports of products, variants, inventory, and metafields. Its listing highlights custom field selection, rule-based filters, saved templates, and export history.</p>
+<p>That makes it useful for a catalog preflight: save a field set for the pilot collection, export only the rows that need review, and repeat the same export after cleanup. You still decide what “complete” means for your store. The app helps make the source data easier to inspect and reuse.</p>
+<p>One Shopify App Store reviewer, Ramseyer Farms, described the value this way:</p>
+<blockquote>“It’s great being able to export the products, along with their details, and include inventory and hidden data ... all in one export.”</blockquote>
+<p><strong><a href="https://apps.shopify.com/product-data-exporter?utm_source=blog&amp;utm_medium=organic&amp;utm_campaign=product-data-exporter&amp;utm_content=agentic-commerce-shopify-catalog">Install Product Data Exporter Pro →</a></strong></p>
+
+<h2>Make your catalog answer the question</h2>
+<p>Agentic commerce does not require a speculative rewrite of your store. Start with a practical catalog review: list the questions shoppers ask, export the fields that answer them, check every variant, and record the changes. Then repeat the review for the collections where discovery and availability matter most.</p>
+<p>The goal is simple: when an AI assistant evaluates your products, the useful facts are present, consistent, and current. <a href="https://apps.shopify.com/product-data-exporter?utm_source=blog&amp;utm_medium=organic&amp;utm_campaign=product-data-exporter&amp;utm_content=agentic-commerce-shopify-catalog">Product Data Exporter Pro</a> can make that review repeatable as your catalog grows.</p>
+
+<h2>Related reads from Thalia</h2>
+<ul>
+  <li><a href="/blog/sync-inventory-across-channels">Shopify Inventory Planning Before Your Next Sale</a></li>
+  <li><a href="/blog/shopify-external-link-button">External Link Buttons on Shopify: When You Should Send Traffic Off-Site</a></li>
+</ul>
+
+<p><em>Written by the Thalia Technologies team, a Mumbai-based SaaS company building Shopify apps used by merchants worldwide. <a href="https://apps.shopify.com/partners/thalia-apps">Browse Thalia apps on the Shopify App Store →</a></em></p>
