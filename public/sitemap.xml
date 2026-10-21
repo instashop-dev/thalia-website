@@ -120,6 +120,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.thaliatechnologies.com/apps/shipr</loc>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.thaliatechnologies.com/apps/duplicate-sku-sync</loc>
     <lastmod>2026-06-16</lastmod>
     <changefreq>weekly</changefreq>
@@ -172,6 +178,12 @@
     <lastmod>2026-06-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.thaliatechnologies.com/apps/product-data-exporter</loc>
+    <lastmod>2026-06-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
 
   <!-- Case study detail pages -->

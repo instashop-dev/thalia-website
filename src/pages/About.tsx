@@ -77,8 +77,8 @@ const About = () => {
   return (
     <Layout>
       <Seo
-        title="About Thalia Technologies — Our Story & Mission"
-        description="Founded in 2015, Thalia Technologies builds products that help 100,000+ ecommerce merchants work smarter and grow faster. Meet our team."
+        title="About Thalia Technologies | Ecommerce Software Company"
+        description="Learn how Thalia Technologies builds practical ecommerce software for Shopify, Amazon, and BigCommerce merchants, from our Mumbai-based team."
         keywords="about Thalia Technologies, Thalia team, ecommerce software company, merchant-first products, SaaS product company, ecommerce mission"
         path="/about"
         structuredData={[aboutPageSchema, breadcrumbSchema]}

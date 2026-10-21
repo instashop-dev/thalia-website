@@ -80,8 +80,8 @@ const Apps = () => {
   return (
     <Layout>
       <Seo
-        title="18+ Ecommerce Apps for Shopify, Amazon & BigCommerce"
-        description="Browse Thalia's suite of focused SaaS apps. From Amazon importers to GST invoicing — every app solves a specific merchant problem."
+        title="Shopify, Amazon & BigCommerce Apps | Thalia Technologies"
+        description="Explore Thalia's ecommerce apps for Shopify, Amazon, and BigCommerce, including bulk price editing, product importing, inventory sync, and affiliate links."
         keywords="Thalia apps, ecommerce tools, Shopify app collection, Amazon sync app, bulk editor app, product badges app, pricing app, merchant productivity"
         path="/apps"
         structuredData={[collectionPageSchema, breadcrumbSchema, itemListSchema]}

@@ -223,8 +223,8 @@ export const apps: AppData[] = [
     icon: "🔗",
     stats: [{ value: "50K+", label: "Installs" }, { value: "4.9★", label: "Rating" }, { value: "2M+", label: "Products Imported" }],
     testimonial: { quote: "Spreadr transformed our business. We went from zero to dropshipping 10,000+ Amazon products in just one week.", author: "James M.", role: "Shopify Merchant, USA" },
-    seoTitle: "Spreadr — Amazon to Shopify Importer App",
-    seoDescription: "Import millions of Amazon products into your Shopify store with one click. Earn affiliate commissions or dropship. Trusted by 50,000+ merchants. 4.9★ rating.",
+    seoTitle: "Spreadr: Amazon to Shopify Importer | Thalia",
+    seoDescription: "Import Amazon products into Shopify, build affiliate stores, or dropship with Spreadr. Sync pricing, images, and availability across your catalog.",
     h1: "Spreadr — Import Amazon Products to Shopify & Earn Affiliate Commissions",
 
   },
@@ -306,8 +306,8 @@ export const apps: AppData[] = [
     icon: "🏷️",
     stats: [{ value: "8K+", label: "Installs" }, { value: "4.7★", label: "Rating" }, { value: "30M+", label: "Prices Changed" }],
     testimonial: { quote: "The scheduling and rollback features are game changers for our seasonal campaigns.", author: "Anna F.", role: "eCommerce Manager, Sweden" },
-    seoTitle: "Bulk Price Editor Pro — Shopify Bulk Price Editor App",
-    seoDescription: "Edit thousands of Shopify product prices in bulk with scheduled updates, rules, and automated workflows. Save hours every week.",
+    seoTitle: "Bulk Price Editor Pro | Shopify Price Editor",
+    seoDescription: "Edit Shopify prices in bulk with scheduling, pricing rules, collection targeting, rollback, and price history. Save hours on every promotion.",
     h1: "Bulk Price Editor Pro — Bulk Edit Shopify Product Prices & Schedule Updates",
 
   },
@@ -647,8 +647,8 @@ export const apps: AppData[] = [
     icon: "🔗",
     stats: [{ value: "9K+", label: "Installs" }, { value: "4.6★", label: "Rating" }, { value: "5M+", label: "Clicks Tracked" }],
     testimonial: { quote: "Outlink turned our Shopify store into a powerful affiliate hub. Setup took minutes.", author: "Emily C.", role: "Affiliate Marketer, USA" },
-    seoTitle: "Outlink — External Links Manager for Shopify",
-    seoDescription: "Add external/affiliate links to any product. Track clicks and manage outbound URLs at scale.",
+    seoTitle: "Outlink: Affiliate Links for Shopify Products",
+    seoDescription: "Add external and affiliate buy buttons to Shopify products, manage destination URLs, and track clicks across your catalog with Outlink.",
     h1: "Outlink — External & Affiliate Link Manager for Shopify Products",
 
   },
@@ -695,9 +695,9 @@ export const apps: AppData[] = [
     icon: "🤖",
     stats: [{ value: "7K+", label: "Installs" }, { value: "4.5★", label: "Rating" }, { value: "1M+", label: "Products Imported" }],
     testimonial: { quote: "Robo imports products from any site we need. The smart mapping saves hours of manual work.", author: "Kevin P.", role: "Dropshipper, Netherlands" },
-    seoTitle: "Robo — Shopify Automation & Workflows",
-    seoDescription: "Automate repetitive Shopify tasks with rule-based workflows. Schedule updates, auto-tag orders, and more.",
-    h1: "Robo — Shopify Task Automation & Workflow Engine",
+    seoTitle: "Robo Product Importer | Import Products to Shopify",
+    seoDescription: "Import products from almost any ecommerce website into Shopify. Robo extracts titles, images, variants, descriptions, and pricing to speed up setup.",
+    h1: "Robo Product Importer — Import Products from Any Website to Shopify",
 
   },
   {
