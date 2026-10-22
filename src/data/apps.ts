@@ -132,6 +132,7 @@ export const getAppLogo = (slug: string): string | undefined => appLogos[slug];
 export const apps: AppData[] = [
   {
     slug: "spreadr",
+    bfsBadge: true,
     name: "Spreadr",
     tagline: "Dropship Amazon products or earn affiliate commissions directly in your Shopify store.",
     description: "Import millions of Amazon products into your Shopify store with one click. Earn affiliate commissions or dropship — your choice.",
