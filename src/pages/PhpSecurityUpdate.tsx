@@ -4,6 +4,7 @@ import {
   CheckCircle2,
   ChevronDown,
   FileCheck2,
+  LockKeyhole,
   ServerCog,
   ShieldCheck,
 } from "lucide-react";
