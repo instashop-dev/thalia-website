@@ -69,6 +69,7 @@ const securityUpdateSections = [
     title: "What was changed in the application environment",
     paragraphs: [
       "The primary runtime change was an upgrade from PHP 8.3.22 to PHP 8.3.36. Alongside that version upgrade, the necessary security patches were installed to address the reported vulnerabilities. Keeping the runtime and its security fixes current is an important part of maintaining a dependable application environment, especially when a vulnerability has been publicly reported or identified for investigation.",
+      "The PHP Project identifies PHP 8.3.36 as a security release, and current vendor advisories describe CVE-2026-109618 and CVE-2026-109619 as critical vulnerabilities that can allow unauthenticated remote code execution on affected PHP installations. Updating to the fixed PHP 8.3.36 release is the complete remediation for the PHP 8.3 branch. We are intentionally not reproducing exploit instructions on this page.",
       "The change was applied across the applications and products covered by this environment, including our Shopify apps and other products using the affected application setup. Applying the update across the relevant product surface helps keep the remediation consistent and avoids leaving a covered application on the earlier runtime. The work was followed by application checks to confirm that the updated environment continued to load and operate normally.",
     ],
   },

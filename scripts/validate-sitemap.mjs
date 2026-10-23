@@ -29,6 +29,8 @@ const appSlugs = new Set([
 
 const isKnownRoute = (pathname) => {
   if (staticRoutes.has(pathname)) return true;
+  if (pathname === "/security/php-vulnerabilities-resolved") return true;
+  if (pathname === "/apps/shipr/amazon-mcf-migration") return true;
   const [section, slug, extra] = pathname.split("/").filter(Boolean);
   if (extra) return false;
   if (section === "apps") return appSlugs.has(slug);
