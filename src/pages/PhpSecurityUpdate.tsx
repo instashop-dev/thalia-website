@@ -53,8 +53,8 @@ const faqs = [
     "We addressed the two reported PHP security vulnerabilities CVE-2026-109618 and CVE-2026-109619, also referred to as PHP2Shell.",
   ],
   [
-    "Was any customer data leaked?",
-    "We found no evidence that customer data was accessed or leaked in connection with this issue. Available server logs showed no signs of attempted exploitation or suspicious activity during our investigation.",
+    "Was any merchant data leaked?",
+    "Based on our investigation of the available server logs, we found no evidence that merchant data was accessed or leaked in connection with this issue. The review also found no signs of attempted exploitation or suspicious activity.",
   ],
 ];
 
@@ -193,9 +193,9 @@ const PhpSecurityUpdate = () => {
               <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white text-emerald-600 shadow-sm"><LockKeyhole className="h-7 w-7" /></div>
               <div>
                 <span className="font-heading text-xs font-bold uppercase tracking-[0.14em] text-emerald-700">Your data and privacy</span>
-                <h2 className="mt-3 font-heading text-3xl font-extrabold leading-tight text-emerald-950 sm:text-4xl">No evidence of customer data access or leakage was identified.</h2>
-                <p className="mt-4 max-w-3xl text-base leading-relaxed text-emerald-900/75">As part of our investigation, we reviewed the available server logs for signs of attempted exploitation or suspicious activity. We found no signs of such activity and no evidence that customer data was accessed or leaked in connection with this issue.</p>
-                <p className="mt-4 max-w-3xl text-sm leading-relaxed text-emerald-900/65">Your existing data, login credentials, and application settings were not changed by this update. We will continue monitoring our infrastructure and applying necessary security updates.</p>
+                <h2 className="mt-3 font-heading text-3xl font-extrabold leading-tight text-emerald-950 sm:text-4xl">Merchant data was not exposed in this incident.</h2>
+                <p className="mt-4 max-w-3xl text-base leading-relaxed text-emerald-900/75">The PHP upgrade and security patches remove the reported vulnerabilities and help protect merchant data. Based on our investigation of the available server logs, we found no evidence that merchant data was accessed or leaked in connection with this issue.</p>
+                <p className="mt-4 max-w-3xl text-sm leading-relaxed text-emerald-900/65">This conclusion is based on the evidence available to us during the investigation. Your existing data, login credentials, and application settings were not changed by this update, and we will continue monitoring our infrastructure and applying necessary security updates.</p>
               </div>
             </div>
           </div>
