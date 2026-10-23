@@ -2,6 +2,7 @@ import {
   ArrowRight,
   Check,
   CheckCircle2,
+  ChevronDown,
   FileCheck2,
   LockKeyhole,
   ServerCog,
@@ -38,7 +39,7 @@ const actions = [
   },
 ];
 
-const securityQuestions = [
+const faqs = [
   [
     "Do I need to take any action?",
     "No. The security update has been completed on our end. You can continue using the application as usual.",
@@ -96,6 +97,44 @@ const securityQuestions = [
 ];
 
 */
+
+const securityUpdateSections = [
+  {
+    title: "Why we are sharing this update",
+    paragraphs: [
+      "We are sharing this update to document the security work completed for CVE-2026-109618 and CVE-2026-109619, also known as PHP2Shell.",
+      "The application is running normally. No merchant action is required.",
+    ],
+  },
+  {
+    title: "What was changed in the application environment",
+    paragraphs: [
+      "PHP was upgraded from 8.3.22 to 8.3.36, with the required security patches installed.",
+      "The update covers our Shopify apps and other products using the affected environment.",
+    ],
+  },
+  {
+    title: "How the security work was verified",
+    paragraphs: [
+      "After the upgrade, our team confirmed that the fixes were active, the application loaded successfully, and expected functionality remained available.",
+      "Available logs showed no suspicious activity or evidence of merchant-data access or leakage.",
+    ],
+  },
+  {
+    title: "What this means for merchants",
+    paragraphs: [
+      "Continue using the application as usual. No reinstall, migration, or settings change is required.",
+      "Please contact support if you notice anything unexpected.",
+    ],
+  },
+  {
+    title: "Our continuing security commitment",
+    paragraphs: [
+      "We continue to monitor our infrastructure, review risks, and apply necessary updates.",
+      "For this issue, the vulnerabilities were patched and no evidence of merchant-data access or leakage was found.",
+    ],
+  },
+];
 
 const PhpSecurityUpdate = () => {
   const structuredData = {
@@ -225,22 +264,30 @@ const PhpSecurityUpdate = () => {
         <div className="section-container max-w-4xl">
           <div className="mx-auto max-w-3xl text-center">
             <span className="font-heading text-xs font-bold uppercase tracking-[0.14em] text-primary">The full update</span>
-            <h2 className="mt-3 font-heading text-4xl font-extrabold leading-tight text-foreground sm:text-5xl">Security update questions, answered.</h2>
-            <p className="mt-5 text-base leading-relaxed text-muted-foreground">Each question below covers one part of the update, from the technical changes to what it means for your store.</p>
+            <h2 className="mt-3 font-heading text-4xl font-extrabold leading-tight text-foreground sm:text-5xl">What changed, how we checked it, and what merchants need to know.</h2>
+            <p className="mt-5 text-base leading-relaxed text-muted-foreground">This page provides the longer-form explanation behind the security update and its impact across our product suite.</p>
           </div>
-          <div className="mt-12 space-y-5">
-            {securityQuestions.map(([question, answer], index) => (
-              <article key={question} className="rounded-3xl border border-border bg-white p-6 shadow-sm sm:p-8">
+          <div className="mt-12 grid gap-5 md:grid-cols-2">
+            {securityUpdateSections.map(({ title, paragraphs }, index) => (
+              <article key={title} className="rounded-3xl border border-border bg-white p-6 shadow-sm sm:p-7">
                 <div className="flex items-center gap-3">
                   <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary/10 font-heading text-xs font-bold text-primary">0{index + 1}</div>
-                  <h3 className="font-heading text-xl font-bold text-foreground sm:text-2xl">{question}</h3>
+                  <h3 className="font-heading text-xl font-bold text-foreground">{title}</h3>
                 </div>
-                <div className="mt-5 border-l-2 border-primary/20 pl-5 sm:ml-12">
-                  <div className="text-xs font-bold uppercase tracking-[0.14em] text-primary">Answer</div>
-                  <p className="mt-2 max-w-3xl text-sm leading-7 text-muted-foreground">{answer}</p>
+                <div className="mt-4 space-y-3">
+                  {paragraphs.map((paragraph) => <p key={paragraph} className="text-sm leading-7 text-muted-foreground">{paragraph}</p>)}
                 </div>
               </article>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section style={{ paddingTop: 88, paddingBottom: 88 }}>
+        <div className="section-container max-w-4xl">
+          <div className="text-center"><span className="font-heading text-xs font-bold uppercase tracking-[0.14em] text-primary">Questions</span><h2 className="mt-3 font-heading text-4xl font-extrabold text-foreground sm:text-5xl">A few clear answers.</h2></div>
+          <div className="mt-10 divide-y divide-border rounded-3xl border border-border bg-white px-6 sm:px-8">
+            {faqs.map(([question, answer]) => <details key={question} className="group py-5"><summary className="flex cursor-pointer list-none items-center justify-between gap-5 font-heading font-bold text-foreground [&::-webkit-details-marker]:hidden">{question}<ChevronDown className="h-5 w-5 shrink-0 text-muted-foreground transition-transform group-open:rotate-180" /></summary><p className="max-w-3xl pt-3 text-sm leading-relaxed text-muted-foreground">{answer}</p></details>)}
           </div>
         </div>
       </section>
