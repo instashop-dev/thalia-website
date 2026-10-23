@@ -10,6 +10,7 @@ const About = lazy(() => import("./pages/About"));
 const Apps = lazy(() => import("./pages/Apps"));
 const AppDetail = lazy(() => import("./pages/AppDetail"));
 const ShiprMcfMigration = lazy(() => import("./pages/ShiprMcfMigration"));
+const PhpSecurityUpdate = lazy(() => import("./pages/PhpSecurityUpdate"));
 const Contact = lazy(() => import("./pages/Contact"));
 const BecomeAPartner = lazy(() => import("./pages/BecomeAPartner"));
 const Careers = lazy(() => import("./pages/Careers"));
@@ -37,6 +38,7 @@ const App = () => (
             <Route path="/apps" element={<Apps />} />
             <Route path="/apps/:slug" element={<AppDetail />} />
             <Route path="/apps/shipr/amazon-mcf-migration" element={<ShiprMcfMigration />} />
+            <Route path="/security/php-vulnerabilities-resolved" element={<PhpSecurityUpdate />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/become-a-partner" element={<BecomeAPartner />} />
             <Route path="/careers" element={<Careers />} />
