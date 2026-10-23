@@ -183,9 +183,6 @@ const PhpSecurityUpdate = () => {
                   <p className="mt-3 text-sm leading-relaxed text-muted-foreground">The required PHP upgrade and security patches were completed across the applications and products covered by this environment. We also verified that the updated applications load and operate normally after the change.</p>
                 </div>
               </div>
-              <div className="mt-7 grid gap-3 sm:grid-cols-3">
-                {["Shopify apps", "Other products", "Shared security review"].map((item) => <div key={item} className="flex items-center gap-2 rounded-xl border border-border bg-muted/50 px-4 py-3 text-sm font-semibold text-foreground"><CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-500" />{item}</div>)}
-              </div>
             </div>
           </div>
         </div>
@@ -231,17 +228,15 @@ const PhpSecurityUpdate = () => {
             <h2 className="mt-3 font-heading text-4xl font-extrabold leading-tight text-foreground sm:text-5xl">What changed, how we checked it, and what merchants need to know.</h2>
             <p className="mt-5 text-base leading-relaxed text-muted-foreground">This page provides the longer-form explanation behind the security update and its impact across our product suite.</p>
           </div>
-          <div className="mt-12 space-y-10">
+          <div className="mt-12 grid gap-5 md:grid-cols-2">
             {securityUpdateSections.map(({ title, paragraphs }, index) => (
-              <article key={title} className="border-t border-border pt-8 first:border-t-0 first:pt-0">
-                <div className="grid gap-5 sm:grid-cols-[110px_1fr]">
-                  <div className="font-heading text-xs font-bold uppercase tracking-[0.14em] text-primary">0{index + 1}</div>
-                  <div>
-                    <h3 className="font-heading text-2xl font-bold text-foreground">{title}</h3>
-                    <div className="mt-4 space-y-4">
-                      {paragraphs.map((paragraph) => <p key={paragraph} className="text-base leading-relaxed text-muted-foreground">{paragraph}</p>)}
-                    </div>
-                  </div>
+              <article key={title} className="rounded-3xl border border-border bg-white p-6 shadow-sm sm:p-7">
+                <div className="flex items-center gap-3">
+                  <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary/10 font-heading text-xs font-bold text-primary">0{index + 1}</div>
+                  <h3 className="font-heading text-xl font-bold text-foreground">{title}</h3>
+                </div>
+                <div className="mt-4 space-y-3">
+                  {paragraphs.map((paragraph) => <p key={paragraph} className="text-sm leading-7 text-muted-foreground">{paragraph}</p>)}
                 </div>
               </article>
             ))}
