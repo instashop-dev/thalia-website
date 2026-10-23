@@ -119,6 +119,12 @@ const Footer = () => {
               >
                 FAQ
               </Link>
+              <Link
+                to="/security/php-vulnerabilities-resolved"
+                className="text-sm opacity-70 hover:opacity-100 hover:text-primary transition-all duration-150"
+              >
+                Security Updates
+              </Link>
             </div>
           </div>
 
