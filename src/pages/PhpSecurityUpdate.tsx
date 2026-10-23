@@ -62,37 +62,36 @@ const securityUpdateSections = [
   {
     title: "Why we are sharing this update",
     paragraphs: [
-      "Security updates deserve clear communication. When a vulnerability is reported in a technology used by an application, the right response is to assess the report, apply the relevant fixes, verify the environment, and explain the outcome to the people who rely on the product. This notice documents that process for our merchants and customers.",
-      "Our technical team addressed two reported PHP security vulnerabilities, CVE-2026-109618 and CVE-2026-109619, also referred to as PHP2Shell. The work was completed as a maintenance and security update to the application environment. The application is currently running normally, and the update did not require merchants to change their workflows, credentials, data, or application settings.",
+      "We are sharing this update to document the security work completed for CVE-2026-109618 and CVE-2026-109619, also known as PHP2Shell.",
+      "The application is running normally. No merchant action is required.",
     ],
   },
   {
     title: "What was changed in the application environment",
     paragraphs: [
-      "The primary runtime change was an upgrade from PHP 8.3.22 to PHP 8.3.36. Alongside that version upgrade, the necessary security patches were installed to address the reported vulnerabilities. Keeping the runtime and its security fixes current is an important part of maintaining a dependable application environment, especially when a vulnerability has been publicly reported or identified for investigation.",
-      "The PHP Project identifies PHP 8.3.36 as a security release, and current vendor advisories describe CVE-2026-109618 and CVE-2026-109619 as critical vulnerabilities that can allow unauthenticated remote code execution on affected PHP installations. Updating to the fixed PHP 8.3.36 release is the complete remediation for the PHP 8.3 branch. We are intentionally not reproducing exploit instructions on this page.",
-      "The change was applied across the applications and products covered by this environment, including our Shopify apps and other products using the affected application setup. Applying the update across the relevant product surface helps keep the remediation consistent and avoids leaving a covered application on the earlier runtime. The work was followed by application checks to confirm that the updated environment continued to load and operate normally.",
+      "PHP was upgraded from 8.3.22 to 8.3.36, with the required security patches installed.",
+      "The update covers our Shopify apps and other products using the affected environment.",
     ],
   },
   {
     title: "How the security work was verified",
     paragraphs: [
       "Applying a patch is only one part of a security response. After the upgrade, our team confirmed that the fixes were active and reviewed the application’s normal operation. This included checking that the application loaded successfully and that its expected functionality remained available after the PHP version change. These checks were important because a security update should improve protection without creating unexpected disruption for merchants.",
-      "We also reviewed the available server logs for signs of attempted exploitation or suspicious activity related to the reported vulnerabilities. During our investigation, no such signs were identified. Based on the evidence available to us, we found no evidence that merchant data was accessed or leaked in connection with this issue. That statement reflects the results of the investigation and the logs available for review; it is not a promise that security risk can never exist in the future. We will continue monitoring the environment and responding to new risks as they are identified.",
+      "Available logs showed no suspicious activity or evidence of merchant-data access or leakage.",
     ],
   },
   {
     title: "What this means for merchants",
     paragraphs: [
-      "No action is required from you. The security update has been completed on our end, and the application is running normally. Merchants can continue using the application as usual. The update did not change existing merchant data, login credentials, or application settings, and it does not require a reinstallation or a change to the way the applications are used.",
-      "The purpose of this update was to strengthen the application environment and address the reported PHP vulnerabilities. It was not a product feature change, billing change, account change, or data migration. If you notice anything unexpected while using an application, please contact our support team with the relevant details so we can investigate promptly.",
+      "Continue using the application as usual. No reinstall, migration, or settings change is required.",
+      "Please contact support if you notice anything unexpected.",
     ],
   },
   {
     title: "Our continuing security commitment",
     paragraphs: [
-      "Security is an ongoing responsibility rather than a one-time task. We continue to monitor our infrastructure, review potential risks, maintain the software that supports our applications, and apply necessary updates. When a security issue requires action, our goal is to respond promptly, validate the remediation, and communicate clearly about what changed and what customers need to do.",
-      "We also recognize that trust depends on precise communication. We will not describe this update as a guarantee that no security incident can ever occur. Instead, we are sharing the specific work completed, the checks performed, and the evidence available from our investigation. For this PHP issue, the reported vulnerabilities were addressed, the relevant runtime was upgraded, the application was verified, and no evidence of merchant-data access or leakage was identified in the available review.",
+      "We continue to monitor our infrastructure, review risks, and apply necessary updates.",
+      "For this issue, the vulnerabilities were patched and no evidence of merchant-data access or leakage was found.",
     ],
   },
 ];
