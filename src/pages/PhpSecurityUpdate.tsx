@@ -52,6 +52,10 @@ const faqs = [
     "What vulnerabilities were addressed?",
     "We addressed the two reported PHP security vulnerabilities CVE-2026-109618 and CVE-2026-109619, also referred to as PHP2Shell.",
   ],
+  [
+    "Was any customer data leaked?",
+    "We found no evidence that customer data was accessed or leaked in connection with this issue. Available server logs showed no signs of attempted exploitation or suspicious activity during our investigation.",
+  ],
 ];
 
 const PhpSecurityUpdate = () => {
@@ -98,6 +102,7 @@ const PhpSecurityUpdate = () => {
                 <span><span className="text-white/80">Last updated</span> · October 22, 2026</span>
                 <span><span className="text-white/80">Status</span> · Complete</span>
               </div>
+              <div className="mt-3 text-sm text-white/50"><span className="text-white/80">Coverage</span> · Shopify apps + other products</div>
               <a href="#what-changed" className="btn-primary mt-9 inline-flex items-center gap-2">See what changed <ArrowRight className="h-4 w-4" /></a>
             </div>
 
@@ -118,6 +123,29 @@ const PhpSecurityUpdate = () => {
                 <div className="space-y-3 border-t border-white/10 pt-5">
                   {["Patches applied", "Application verified", "Logs reviewed"].map((item) => <div key={item} className="flex items-center gap-3 text-sm text-white/70"><Check className="h-4 w-4 text-emerald-300" /> {item}</div>)}
                 </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section-alt" style={{ paddingTop: 84, paddingBottom: 84 }}>
+        <div className="section-container">
+          <div className="grid items-center gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+            <div>
+              <span className="font-heading text-xs font-bold uppercase tracking-[0.14em] text-primary">Coverage across our products</span>
+              <h2 className="mt-3 font-heading text-4xl font-extrabold leading-tight text-foreground sm:text-5xl">One security update across the product suite.</h2>
+            </div>
+            <div className="rounded-3xl border border-border bg-white p-7 shadow-sm sm:p-9">
+              <div className="flex items-start gap-4">
+                <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary/10 text-primary"><ShieldCheck className="h-6 w-6" /></div>
+                <div>
+                  <h3 className="font-heading text-xl font-bold text-foreground">Remediation completed across our Shopify apps and other products</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">The required PHP upgrade and security patches were completed across the applications and products covered by this environment. We also verified that the updated applications load and operate normally after the change.</p>
+                </div>
+              </div>
+              <div className="mt-7 grid gap-3 sm:grid-cols-3">
+                {["Shopify apps", "Other products", "Shared security review"].map((item) => <div key={item} className="flex items-center gap-2 rounded-xl border border-border bg-muted/50 px-4 py-3 text-sm font-semibold text-foreground"><CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-500" />{item}</div>)}
               </div>
             </div>
           </div>
@@ -152,6 +180,23 @@ const PhpSecurityUpdate = () => {
                 {["Your existing data", "Login credentials", "Application settings"].map((item) => <div key={item} className="rounded-2xl border border-border bg-muted/50 p-4"><CheckCircle2 className="h-5 w-5 text-emerald-500" /><div className="mt-3 text-sm font-semibold text-foreground">Unchanged</div><div className="mt-1 text-xs leading-relaxed text-muted-foreground">{item}</div></div>)}
               </div>
               <p className="mt-7 border-t border-border pt-6 text-sm leading-relaxed text-muted-foreground">You can continue using the application as usual.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section style={{ paddingTop: 88, paddingBottom: 88 }}>
+        <div className="section-container">
+          <div className="relative overflow-hidden rounded-3xl border border-emerald-200 bg-emerald-50 p-7 sm:p-10">
+            <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-emerald-200/35 blur-2xl" />
+            <div className="relative grid items-start gap-8 lg:grid-cols-[auto_1fr]">
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white text-emerald-600 shadow-sm"><LockKeyhole className="h-7 w-7" /></div>
+              <div>
+                <span className="font-heading text-xs font-bold uppercase tracking-[0.14em] text-emerald-700">Your data and privacy</span>
+                <h2 className="mt-3 font-heading text-3xl font-extrabold leading-tight text-emerald-950 sm:text-4xl">No evidence of customer data access or leakage was identified.</h2>
+                <p className="mt-4 max-w-3xl text-base leading-relaxed text-emerald-900/75">As part of our investigation, we reviewed the available server logs for signs of attempted exploitation or suspicious activity. We found no signs of such activity and no evidence that customer data was accessed or leaked in connection with this issue.</p>
+                <p className="mt-4 max-w-3xl text-sm leading-relaxed text-emerald-900/65">Your existing data, login credentials, and application settings were not changed by this update. We will continue monitoring our infrastructure and applying necessary security updates.</p>
+              </div>
             </div>
           </div>
         </div>
