@@ -47,12 +47,6 @@ const ROUTE_SEO: Record<string, { title: string; description: string; h1: string
     h1: "Move Shopify fulfillment to Amazon MCF with Shipr",
     intro: "A practical migration guide for connecting your Shopify store to Amazon Multi-Channel Fulfillment, validating the setup, and switching over with confidence.",
   },
-  "/security/php-vulnerabilities-resolved": {
-    title: "Security Update: PHP Vulnerabilities Resolved | Thalia Technologies",
-    description: "Read the October 22, 2026 security update from Thalia Technologies covering PHP vulnerabilities CVE-2026-109618 and CVE-2026-109619.",
-    h1: "PHP vulnerabilities resolved",
-    intro: "Thalia Technologies upgraded the affected application environment from PHP 8.3.22 to PHP 8.3.36, applied the required security fixes, and verified normal application operation.",
-  },
   "/blog": {
     title: "Thalia Blog — Ecommerce Tips for Shopify, Amazon & BigCommerce",
     description: "Practical ecommerce guides for Shopify, Amazon, and BigCommerce merchants covering pricing, inventory, apps, and multi-channel growth.",
@@ -229,7 +223,7 @@ export function isKnownRoute(pathname: string): boolean {
 
   if (STATIC_ROUTES.has(normalized)) return true;
 
-  if (normalized === "/apps/shipr/amazon-mcf-migration" || normalized === "/security/php-vulnerabilities-resolved") return true;
+  if (normalized === "/apps/shipr/amazon-mcf-migration") return true;
 
   return DYNAMIC_PREFIXES.some((prefix) => {
     if (!pathname.startsWith(prefix)) return false;

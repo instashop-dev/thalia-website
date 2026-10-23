@@ -132,12 +132,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.thaliatechnologies.com/security/php-vulnerabilities-resolved</loc>
-    <lastmod>2026-10-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://www.thaliatechnologies.com/apps/duplicate-sku-sync</loc>
     <lastmod>2026-06-16</lastmod>
     <changefreq>weekly</changefreq>

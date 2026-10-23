@@ -4,7 +4,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import PhpSecurityUpdate from "./pages/PhpSecurityUpdate";
 
 const Index = lazy(() => import("./pages/Index"));
 const About = lazy(() => import("./pages/About"));
@@ -76,7 +75,6 @@ const App = () => (
             <Route path="/apps" element={<Apps />} />
             <Route path="/apps/:slug" element={<AppDetail />} />
             <Route path="/apps/shipr/amazon-mcf-migration" element={<ShiprMcfMigration />} />
-            <Route path="/security/php-vulnerabilities-resolved" element={<PhpSecurityUpdate />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/become-a-partner" element={<BecomeAPartner />} />
             <Route path="/careers" element={<Careers />} />

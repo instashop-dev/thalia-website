@@ -1,0 +1,111 @@
+<p>Security updates are easiest for merchants to understand when they answer three questions plainly: what changed, what was checked, and what does the customer need to do? This article explains the PHP2Shell disclosure, the upgrade from PHP 8.3.22 to PHP 8.3.36, and the verification work completed across the Thalia Technologies application environment.</p>
+
+<p>The <a href="https://www.php.net/releases/8_3_36.php">PHP 8.3.36 release announcement</a> identifies PHP 8.3.36 as a security release. It addresses CVE-2026-109618 and CVE-2026-109619, two vulnerabilities commonly referred to as PHP2Shell. For Thalia, the response was to patch the runtime promptly, verify normal application behavior, review available logs, and communicate the result without overstating what the evidence can prove.</p>
+
+<h2>TL;DR</h2>
+<ul>
+  <li><strong>PHP2Shell</strong> refers to CVE-2026-109618 and CVE-2026-109619, critical PHP vulnerabilities affecting vulnerable web-facing runtimes.</li>
+  <li>Thalia upgraded the affected environment from PHP 8.3.22 to PHP 8.3.36 and applied the required security fixes.</li>
+  <li>The work covered the Shopify apps and other products using the affected environment, followed by application checks and server-log review.</li>
+  <li>Based on the available logs reviewed during the investigation, no evidence of merchant-data access or leakage was found in connection with this issue. Merchants do not need to reinstall or change settings.</li>
+</ul>
+
+<h2>What is PHP2Shell?</h2>
+<p>PHP2Shell is a shorthand name used for CVE-2026-109618 and CVE-2026-109619. Public security advisories describe the issues as critical vulnerabilities that can affect PHP installations serving web requests. The PHP project’s fixed PHP 8.3 release is 8.3.36.</p>
+
+<p>The important operational detail is that these flaws sit in the PHP runtime layer. A theme setting or ordinary application-code patch cannot replace updating the interpreter, package, container image, or managed runtime that actually serves requests. The operator responsible for that runtime must confirm that the patched version is the one handling live traffic.</p>
+
+<p>Security releases also need careful communication. A vulnerability name can sound alarming, but the potential impact of an unpatched component and the evidence found in one environment are different questions. A useful customer update explains both without turning an investigation finding into an absolute guarantee.</p>
+
+<h2>Why upgrading PHP was the right remediation</h2>
+<p>For the affected Thalia environment, the change was from PHP 8.3.22 to PHP 8.3.36. That version target aligned with the fixed PHP 8.3 release. The <a href="https://support.plesk.com/hc/en-us/articles/44397729587351-Vulnerability-CVE-2026-109618-and-CVE-2026-109619-PHP2Shell-Remote-code-execution-in-PHP-shipped-with-Plesk">Plesk advisory</a> also points administrators to fixed PHP branches or the patched package supplied by their distribution.</p>
+
+<p>For teams managing their own systems, the exact update command depends on the operating system, package repository, container image, and process manager. The safe pattern is consistent: use a trusted fixed package or image, redeploy the process serving traffic, and verify the running version rather than relying only on a build file.</p>
+
+<p>WAF rules can add defense in depth, but they are not a substitute for patching. <a href="https://blog.cloudflare.com/php-vulnerabilities-waf-protection">Cloudflare’s PHP2Shell guidance</a> makes that distinction clear. The primary remediation is to update the vulnerable runtime, make sure the updated process serves live traffic, and then verify both security state and application health.</p>
+
+<h2>How we handled the PHP security update</h2>
+
+<h3>1. Identify the affected runtime and scope</h3>
+<p>We identified the application environment using PHP 8.3.22 and reviewed which products shared it. The scope included Thalia’s Shopify apps and other products connected to the affected application environment.</p>
+
+<p>Scope matters in a runtime incident. Updating one service does not automatically update a second container, scheduled worker, or separate application environment. We treated PHP as an environment-level dependency and reviewed the products using it.</p>
+
+<h3>2. Apply the fixed release and security patches</h3>
+<p>We upgraded PHP from 8.3.22 to 8.3.36 and installed the required security patches. The goal was to move the serving environment to the fixed release, not merely to add a temporary request filter.</p>
+
+<p>Teams should also confirm that the change reaches every process that can serve requests. A patched local shell, an updated build file, or a newly created image is not enough if an older worker or origin process remains active.</p>
+
+<h3>3. Verify application behavior after the change</h3>
+<p>A security patch is not complete until the application still works. After the upgrade, our team confirmed that the fixes were active, the application loaded successfully, and expected functionality remained available.</p>
+
+<p>This step catches a different kind of risk: an urgent update can create outages, dependency errors, or broken integrations. The right post-update review covers both the security state and the merchant experience.</p>
+
+<h3>4. Review available evidence</h3>
+<p>We reviewed available server logs for attempted exploitation, suspicious activity, or unexpected access patterns related to the issue. No such signs were identified during our investigation.</p>
+
+<p>That finding should be read precisely. The available logs showed no evidence of merchant-data access or leakage connected to this issue. It is not a universal guarantee for every PHP environment or every organization.</p>
+
+<h3>5. Communicate merchant impact</h3>
+<p>The update did not change existing merchant data, login credentials, or application settings. Merchants do not need to reinstall the apps, migrate their stores, or change their configuration because of this runtime update.</p>
+
+<h2>What this means for Shopify merchants</h2>
+<p>Most Shopify merchants do not administer the PHP runtime behind a hosted app. That responsibility belongs to the app operator or hosting provider. Merchants should still pay attention to security notices, especially when a provider asks them to update an app, rotate credentials, or review an integration.</p>
+
+<p>For this Thalia update, no merchant action is required. Merchants can continue using the applications as usual. If something unexpected appears, contact support with the app name, store context, approximate time, and a description of the behavior.</p>
+
+<table>
+  <thead><tr><th>Question</th><th>Answer for this update</th></tr></thead>
+  <tbody>
+    <tr><td>Was PHP upgraded?</td><td>Yes, from PHP 8.3.22 to PHP 8.3.36.</td></tr>
+    <tr><td>Were applications checked?</td><td>Yes, normal application operation was verified.</td></tr>
+    <tr><td>Were logs reviewed?</td><td>Yes, available logs were reviewed for suspicious activity.</td></tr>
+    <tr><td>Does a merchant need to act?</td><td>No reinstall, migration, or settings change is required.</td></tr>
+  </tbody>
+</table>
+
+<h2>Why “no evidence found” is the accurate security language</h2>
+<p>Security communication becomes less trustworthy when it promises more than an investigation can establish. “No merchant data will be leaked” is an absolute future guarantee. A responsible statement describes the controls applied, the evidence reviewed, and the conclusion supported by that evidence.</p>
+
+<p>For this issue, the accurate conclusion is that the affected runtime was patched, application functionality was verified, available logs were reviewed, and no evidence of merchant-data access or leakage was found in connection with the issue. Thalia will continue monitoring its infrastructure and applying necessary security updates.</p>
+
+<h2>What engineering teams should verify after a runtime patch</h2>
+<p>A version number is a useful starting point, but it is not the entire verification plan. Teams should confirm the package installed on the host, the image deployed to production, and the process that is actually receiving web traffic all point to the same patched release.</p>
+
+<ul>
+  <li><strong>Confirm the serving process.</strong> Check PHP-FPM, Apache, LiteSpeed, or the relevant runtime process rather than only the command-line PHP binary.</li>
+  <li><strong>Restart or redeploy where required.</strong> Long-running workers can continue using an older binary until they are restarted.</li>
+  <li><strong>Test normal requests.</strong> Verify login flows, app loading, API calls, background jobs, and the integrations merchants depend on.</li>
+  <li><strong>Preserve investigation evidence.</strong> Keep the relevant deployment record, version output, health checks, and log-review notes together.</li>
+  <li><strong>Define the communication boundary.</strong> Separate what was changed, what was observed, and what remains under monitoring.</li>
+</ul>
+
+<p>This approach also makes future maintenance easier. When another runtime advisory arrives, the team has a known inventory, a repeatable deployment path, and a clear set of checks instead of starting from a blank page.</p>
+
+<h2>PHP2Shell FAQ</h2>
+<h3>What is PHP2Shell?</h3>
+<p>PHP2Shell is the common name for CVE-2026-109618 and CVE-2026-109619, two critical PHP vulnerabilities. The PHP project released fixed versions, including PHP 8.3.36.</p>
+
+<h3>Does PHP 8.3.36 fix PHP2Shell?</h3>
+<p>Yes. PHP identifies 8.3.36 as the fixed PHP 8.3 release. Operators should verify that the runtime serving web requests is the patched one.</p>
+
+<h3>Do Shopify merchants need to update their stores?</h3>
+<p>Merchants generally do not manage the PHP runtime behind a hosted Shopify app. They should follow instructions from their app and hosting providers, while app operators patch the infrastructure they control.</p>
+
+<h3>Was merchant data leaked in the Thalia incident?</h3>
+<p>Based on the available server logs reviewed by Thalia, no evidence was found that merchant data was accessed or leaked in connection with this issue. That is an investigation finding for the affected environment, not an absolute statement about every PHP installation.</p>
+
+<h2>Conclusion</h2>
+<p>PHP2Shell was a runtime-level security issue that required a runtime-level fix. Thalia responded by upgrading PHP 8.3.22 to PHP 8.3.36, applying the required patches across the affected product environment, verifying normal application behavior, and reviewing available logs.</p>
+
+<p>For merchants, the practical answer is simple: no action is required, existing data and settings were not changed, and the applications can continue to be used normally. For engineering teams, the lasting lesson is to know where the runtime is running, patch the component actually exposed, verify the live process, and communicate findings with evidence-based language.</p>
+
+<h2>Sources and further reading</h2>
+<ul>
+  <li><a href="https://www.php.net/releases/8_3_36.php">PHP 8.3.36 release announcement</a></li>
+  <li><a href="https://support.plesk.com/hc/en-us/articles/44397729587351-Vulnerability-CVE-2026-109618-and-CVE-2026-109619-PHP2Shell-Remote-code-execution-in-PHP-shipped-with-Plesk">Plesk advisory for CVE-2026-109618 and CVE-2026-109619</a></li>
+  <li><a href="https://blog.cloudflare.com/php-vulnerabilities-waf-protection">Cloudflare guidance on PHP2Shell protections</a></li>
+  <li><a href="https://aws.amazon.com/blogs/security/using-aws-waf-to-apply-mitigations-for-php2shell-rce-vulnerabilities-cve-2026-109618-and-cve-2026-109619/">AWS Security Blog PHP2Shell guidance</a></li>
+</ul>
+
+<p><em>Written by the Thalia Technologies team, a Mumbai-based SaaS company building ecommerce software for Shopify merchants. <a href="https://apps.shopify.com/partners/thalia-apps">Explore Thalia apps on the Shopify App Store →</a></em></p>
