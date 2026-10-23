@@ -4,7 +4,6 @@ import {
   CheckCircle2,
   ChevronDown,
   FileCheck2,
-  LockKeyhole,
   ServerCog,
   ShieldCheck,
 } from "lucide-react";
@@ -56,6 +55,44 @@ const faqs = [
     "Was any merchant data leaked?",
     "Based on our investigation of the available server logs, we found no evidence that merchant data was accessed or leaked in connection with this issue. The review also found no signs of attempted exploitation or suspicious activity.",
   ],
+];
+
+const securityUpdateSections = [
+  {
+    title: "Why we are sharing this update",
+    paragraphs: [
+      "Security updates deserve clear communication. When a vulnerability is reported in a technology used by an application, the right response is to assess the report, apply the relevant fixes, verify the environment, and explain the outcome to the people who rely on the product. This notice documents that process for our merchants and customers.",
+      "Our technical team addressed two reported PHP security vulnerabilities, CVE-2026-109618 and CVE-2026-109619, also referred to as PHP2Shell. The work was completed as a maintenance and security update to the application environment. The application is currently running normally, and the update did not require merchants to change their workflows, credentials, data, or application settings.",
+    ],
+  },
+  {
+    title: "What was changed in the application environment",
+    paragraphs: [
+      "The primary runtime change was an upgrade from PHP 8.3.22 to PHP 8.3.36. Alongside that version upgrade, the necessary security patches were installed to address the reported vulnerabilities. Keeping the runtime and its security fixes current is an important part of maintaining a dependable application environment, especially when a vulnerability has been publicly reported or identified for investigation.",
+      "The change was applied across the applications and products covered by this environment, including our Shopify apps and other products using the affected application setup. Applying the update across the relevant product surface helps keep the remediation consistent and avoids leaving a covered application on the earlier runtime. The work was followed by application checks to confirm that the updated environment continued to load and operate normally.",
+    ],
+  },
+  {
+    title: "How the security work was verified",
+    paragraphs: [
+      "Applying a patch is only one part of a security response. After the upgrade, our team confirmed that the fixes were active and reviewed the application’s normal operation. This included checking that the application loaded successfully and that its expected functionality remained available after the PHP version change. These checks were important because a security update should improve protection without creating unexpected disruption for merchants.",
+      "We also reviewed the available server logs for signs of attempted exploitation or suspicious activity related to the reported vulnerabilities. During our investigation, no such signs were identified. Based on the evidence available to us, we found no evidence that merchant data was accessed or leaked in connection with this issue. That statement reflects the results of the investigation and the logs available for review; it is not a promise that security risk can never exist in the future. We will continue monitoring the environment and responding to new risks as they are identified.",
+    ],
+  },
+  {
+    title: "What this means for merchants",
+    paragraphs: [
+      "No action is required from you. The security update has been completed on our end, and the application is running normally. Merchants can continue using the application as usual. The update did not change existing merchant data, login credentials, or application settings, and it does not require a reinstallation or a change to the way the applications are used.",
+      "The purpose of this update was to strengthen the application environment and address the reported PHP vulnerabilities. It was not a product feature change, billing change, account change, or data migration. If you notice anything unexpected while using an application, please contact our support team with the relevant details so we can investigate promptly.",
+    ],
+  },
+  {
+    title: "Our continuing security commitment",
+    paragraphs: [
+      "Security is an ongoing responsibility rather than a one-time task. We continue to monitor our infrastructure, review potential risks, maintain the software that supports our applications, and apply necessary updates. When a security issue requires action, our goal is to respond promptly, validate the remediation, and communicate clearly about what changed and what customers need to do.",
+      "We also recognize that trust depends on precise communication. We will not describe this update as a guarantee that no security incident can ever occur. Instead, we are sharing the specific work completed, the checks performed, and the evidence available from our investigation. For this PHP issue, the reported vulnerabilities were addressed, the relevant runtime was upgraded, the application was verified, and no evidence of merchant-data access or leakage was identified in the available review.",
+    ],
+  },
 ];
 
 const PhpSecurityUpdate = () => {
@@ -186,18 +223,26 @@ const PhpSecurityUpdate = () => {
       </section>
 
       <section style={{ paddingTop: 88, paddingBottom: 88 }}>
-        <div className="section-container">
-          <div className="relative overflow-hidden rounded-3xl border border-emerald-200 bg-emerald-50 p-7 sm:p-10">
-            <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-emerald-200/35 blur-2xl" />
-            <div className="relative grid items-start gap-8 lg:grid-cols-[auto_1fr]">
-              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-white text-emerald-600 shadow-sm"><LockKeyhole className="h-7 w-7" /></div>
-              <div>
-                <span className="font-heading text-xs font-bold uppercase tracking-[0.14em] text-emerald-700">Your data and privacy</span>
-                <h2 className="mt-3 font-heading text-3xl font-extrabold leading-tight text-emerald-950 sm:text-4xl">Merchant data was not exposed in this incident.</h2>
-                <p className="mt-4 max-w-3xl text-base leading-relaxed text-emerald-900/75">The PHP upgrade and security patches remove the reported vulnerabilities and help protect merchant data. Based on our investigation of the available server logs, we found no evidence that merchant data was accessed or leaked in connection with this issue.</p>
-                <p className="mt-4 max-w-3xl text-sm leading-relaxed text-emerald-900/65">This conclusion is based on the evidence available to us during the investigation. Your existing data, login credentials, and application settings were not changed by this update, and we will continue monitoring our infrastructure and applying necessary security updates.</p>
-              </div>
-            </div>
+        <div className="section-container max-w-4xl">
+          <div className="mx-auto max-w-3xl text-center">
+            <span className="font-heading text-xs font-bold uppercase tracking-[0.14em] text-primary">The full update</span>
+            <h2 className="mt-3 font-heading text-4xl font-extrabold leading-tight text-foreground sm:text-5xl">What changed, how we checked it, and what merchants need to know.</h2>
+            <p className="mt-5 text-base leading-relaxed text-muted-foreground">This page provides the longer-form explanation behind the security update and its impact across our product suite.</p>
+          </div>
+          <div className="mt-12 space-y-10">
+            {securityUpdateSections.map(({ title, paragraphs }, index) => (
+              <article key={title} className="border-t border-border pt-8 first:border-t-0 first:pt-0">
+                <div className="grid gap-5 sm:grid-cols-[110px_1fr]">
+                  <div className="font-heading text-xs font-bold uppercase tracking-[0.14em] text-primary">0{index + 1}</div>
+                  <div>
+                    <h3 className="font-heading text-2xl font-bold text-foreground">{title}</h3>
+                    <div className="mt-4 space-y-4">
+                      {paragraphs.map((paragraph) => <p key={paragraph} className="text-base leading-relaxed text-muted-foreground">{paragraph}</p>)}
+                    </div>
+                  </div>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
