@@ -1,6 +1,6 @@
 ---
-title: 'PHP2Shell Explained: How We Resolved the PHP Security Update'
-excerpt: 'A practical explanation of PHP2Shell, the PHP 8.3.36 upgrade, and the checks Thalia Technologies completed across its Shopify apps and products.'
+title: 'Security Update: PHP Vulnerabilities Resolved'
+excerpt: 'A concise security update explaining the PHP2Shell fixes completed by Thalia Technologies and what they mean for merchants.'
 date: '2026-10-23'
 author: 'Thalia Technologies'
 authorRole: 'Shopify App Development Team'
@@ -9,9 +9,9 @@ tags:
   - 'Shopify'
   - 'PHP'
   - 'Engineering'
-readTime: '9 min read'
-seoTitle: 'PHP2Shell Explained: PHP Security Update | Thalia'
-seoDescription: 'Learn what PHP2Shell means, why PHP 8.3.36 matters, and how Thalia verified its security update across Shopify apps and products.'
+readTime: '3 min read'
+seoTitle: 'Security Update: PHP Vulnerabilities Resolved'
+seoDescription: 'Read Thalia Technologies’ concise report on the PHP2Shell security fixes, PHP 8.3.36 upgrade, and merchant impact.'
 faqs:
   - question: 'What is PHP2Shell?'
     answer: 'PHP2Shell is the name commonly used for two critical PHP vulnerabilities, CVE-2026-109618 and CVE-2026-109619. The PHP project released fixed versions including PHP 8.3.36.'
