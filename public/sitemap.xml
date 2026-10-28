@@ -52,6 +52,18 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.thaliatechnologies.com/partnerships</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.thaliatechnologies.com/partnerships/all-partners</loc>
+    <lastmod>2026-10-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.thaliatechnologies.com/privacy-policy</loc>
     <lastmod>2026-07-06</lastmod>
     <changefreq>monthly</changefreq>

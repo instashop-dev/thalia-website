@@ -1,6 +1,6 @@
 import { Component, lazy, Suspense, type ErrorInfo, type ReactNode } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -11,7 +11,8 @@ const Apps = lazy(() => import("./pages/Apps"));
 const AppDetail = lazy(() => import("./pages/AppDetail"));
 const ShiprMcfMigration = lazy(() => import("./pages/ShiprMcfMigration"));
 const Contact = lazy(() => import("./pages/Contact"));
-const BecomeAPartner = lazy(() => import("./pages/BecomeAPartner"));
+const Partnerships = lazy(() => import("./pages/Partnerships"));
+const PartnerDirectory = lazy(() => import("./pages/PartnerDirectory"));
 const Careers = lazy(() => import("./pages/Careers"));
 const Blog = lazy(() => import("./pages/Blog"));
 const BlogPost = lazy(() => import("./pages/BlogPost"));
@@ -76,7 +77,9 @@ const App = () => (
             <Route path="/apps/:slug" element={<AppDetail />} />
             <Route path="/apps/shipr/amazon-mcf-migration" element={<ShiprMcfMigration />} />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/become-a-partner" element={<BecomeAPartner />} />
+            <Route path="/partnerships" element={<Partnerships />} />
+            <Route path="/partnerships/all-partners" element={<PartnerDirectory />} />
+            <Route path="/become-a-partner" element={<Navigate to="/partnerships" replace />} />
             <Route path="/careers" element={<Careers />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />

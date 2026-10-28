@@ -17,6 +17,8 @@ const staticRoutes = new Set([
   "/faq",
   "/contact",
   "/careers",
+  "/partnerships",
+  "/partnerships/all-partners",
   "/privacy-policy",
   "/terms",
 ]);

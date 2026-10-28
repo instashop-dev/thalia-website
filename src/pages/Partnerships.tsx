@@ -42,13 +42,13 @@ const inView = (delay = 0) => ({
   transition: { duration: 0.55, delay, ease: [0.25, 0.46, 0.45, 0.94] as const },
 });
 
-const BecomeAPartner = () => (
+const Partnerships = () => (
   <Layout>
     <Seo
       title="Partnerships | Thalia Technologies"
       description="Explore Thalia Technologies' partners and partnership opportunities across co-marketing, referrals, and technology collaborations for ecommerce teams."
       keywords="Thalia Technologies partner, ecommerce partnership, Shopify app partnership, co-marketing"
-      path="/become-a-partner"
+      path="/partnerships"
     />
 
     <section className="relative overflow-hidden hero-dot-grid" style={{ background: "hsl(var(--hero-bg))", paddingTop: 88, paddingBottom: 92 }}>
@@ -66,8 +66,8 @@ const BecomeAPartner = () => (
               Whether you already work with Thalia or are exploring a new collaboration, this is where our partner community connects with useful ecommerce technology.
             </motion.p>
             <motion.div {...inView(0.22)} className="flex flex-wrap gap-3">
-              <Link to="/contact" className="btn-primary">Start a conversation <ArrowRight className="ml-2 h-4 w-4" /></Link>
-              <a href="#our-partners" className="btn-ghost-dark">Explore our partners</a>
+              <Link to="/partnerships/all-partners" className="btn-primary">Explore our partners <ArrowRight className="ml-2 h-4 w-4" /></Link>
+              <Link to="/contact" className="btn-ghost-dark">Start a conversation</Link>
             </motion.div>
           </div>
           <motion.div {...inView(0.16)} className="relative">
@@ -87,41 +87,11 @@ const BecomeAPartner = () => (
       </div>
     </section>
 
-    <section id="our-partners" className="bg-white" style={{ paddingTop: 86, paddingBottom: 92 }}>
-      <div className="section-container">
-        <div className="mx-auto max-w-2xl text-center mb-12"><motion.span {...inView()} className="inline-block text-xs font-semibold uppercase tracking-[0.12em] text-primary font-body mb-4">OUR PARTNERS</motion.span><motion.h2 {...inView(0.08)} className="font-heading text-h2 font-extrabold text-foreground mb-4">Tools that help ecommerce businesses grow.</motion.h2><motion.p {...inView(0.16)} className="text-muted-foreground leading-relaxed font-body">Discover our partners and explore the tools they offer to ecommerce businesses.</motion.p></div>
-        <div className="mx-auto grid max-w-3xl grid-cols-1 gap-5">
-          <motion.article {...inView()} className="card-elevated flex flex-col gap-6 p-6 sm:flex-row sm:items-center sm:p-8" style={{ borderTop: "2px solid rgba(0,192,255,0.22)" }}>
-            <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl border border-border bg-white p-3">
-              <img
-                src="https://drive.google.com/uc?export=view&id=109NjkfGtGVp8uBeNnGTksa10FZehJniw"
-                alt="Fiidom Dropship logo"
-                className="max-h-full max-w-full object-contain"
-                loading="lazy"
-              />
-            </div>
-            <div className="flex-1">
-              <h3 className="font-heading font-bold text-xl text-foreground mb-2">Fiidom Dropship</h3>
-              <p className="text-sm text-muted-foreground font-body leading-relaxed">Find winning AliExpress products, import them instantly, optimize with AI, and automate fulfillment - all in one place.</p>
-            </div>
-            <a
-              href="https://apps.shopify.com/fiidomds?utm_medium=Robo-thalia-website&utm_source=fiidomds-partnership&utm_campaign=fiidomds"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary shrink-0"
-            >
-              Install Now <ArrowRight className="ml-2 h-4 w-4" />
-            </a>
-          </motion.article>
-        </div>
-      </div>
-    </section>
-
     <section id="partnerships" style={{ background: "hsl(var(--section-alt))", paddingTop: 88, paddingBottom: 96 }}>
       <div className="section-container">
         <div className="max-w-2xl mb-12"><motion.span {...inView()} className="inline-block text-xs font-semibold uppercase tracking-[0.12em] text-primary font-body mb-4">WAYS TO WORK TOGETHER</motion.span><motion.h2 {...inView(0.08)} className="font-heading text-h2 font-extrabold text-foreground mb-4">A partnership with a clear purpose.</motion.h2><motion.p {...inView(0.16)} className="text-muted-foreground leading-relaxed font-body">From a one-off campaign to an ongoing technology relationship, we focus on work that creates a better outcome for merchants.</motion.p></div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {opportunities.map((item, index) => <motion.article key={item.title} {...inView(Math.min(index * 0.06, 0.2))} className="group card-elevated bg-white p-7" style={{ borderTop: `2px solid ${item.accent}55` }}><div className="flex items-start justify-between gap-4 mb-6"><div className="flex h-12 w-12 items-center justify-center rounded-xl" style={{ background: `${item.accent}15`, border: `1px solid ${item.accent}30` }}><item.icon className="h-5 w-5" style={{ color: item.accent }} /></div><span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground font-body">{item.eyebrow}</span></div><h3 className="font-heading font-bold text-xl text-foreground mb-2 group-hover:text-primary transition-colors">{item.title}</h3><p className="text-sm text-muted-foreground font-body leading-relaxed">{item.desc}</p><div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary font-body">Explore the fit <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" /></div></motion.article>)}
+          {opportunities.map((item, index) => <motion.article key={item.title} {...inView(Math.min(index * 0.06, 0.2))} className="group card-elevated bg-white p-7" style={{ borderTop: `2px solid ${item.accent}55` }}><div className="flex items-start justify-between gap-4 mb-6"><div className="flex h-12 w-12 items-center justify-center rounded-xl" style={{ background: `${item.accent}15`, border: `1px solid ${item.accent}30` }}><item.icon className="h-5 w-5" style={{ color: item.accent }} /></div><span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground font-body">{item.eyebrow}</span></div><h3 className="font-heading font-bold text-xl text-foreground mb-2 group-hover:text-primary transition-colors">{item.title}</h3><p className="text-sm text-muted-foreground font-body leading-relaxed">{item.desc}</p></motion.article>)}
         </div>
       </div>
     </section>
@@ -149,4 +119,4 @@ const BecomeAPartner = () => (
   </Layout>
 );
 
-export default BecomeAPartner;
+export default Partnerships;

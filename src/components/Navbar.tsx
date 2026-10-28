@@ -7,7 +7,7 @@ const navLinks = [
   { label: "Home",          path: "/" },
   { label: "Apps",          path: "/apps" },
   { label: "About",         path: "/about" },
-  { label: "Partnerships",  path: "/become-a-partner" },
+  { label: "Partnerships",  path: "/partnerships" },
   { label: "Careers",       path: "/careers" },
   { label: "Contact",       path: "/contact" },
 ];
@@ -60,7 +60,9 @@ const Navbar = () => {
         {/* Desktop nav links */}
         <div className="hidden lg:flex items-center gap-0.5">
           {navLinks.map((link) => {
-            const isActive = location.pathname === link.path;
+            const isActive =
+              location.pathname === link.path ||
+              (link.path === "/partnerships" && location.pathname.startsWith("/partnerships/"));
             return (
               <Link
                 key={link.path}

@@ -11,6 +11,7 @@ describe("SEO route handling", () => {
     ["/gst-invoices-india", "/apps/sleek-gst-invoicing"],
     ["/the-watchlyst", "/apps/watchlyst"],
     ["/stories/guide-built-for-shopify", "/case-studies"],
+    ["/become-a-partner", "/partnerships"],
   ])("redirects %s to %s", (source, target) => {
     expect(getLegacyRedirectTarget(source)).toBe(target);
   });
@@ -20,6 +21,8 @@ describe("SEO route handling", () => {
     expect(isKnownRoute("/apps/probulkpriceeditor")).toBe(true);
     expect(isKnownRoute("/blog/example-post")).toBe(true);
     expect(isKnownRoute("/case-studies/example")).toBe(true);
+    expect(isKnownRoute("/partnerships")).toBe(true);
+    expect(isKnownRoute("/partnerships/all-partners")).toBe(true);
     expect(isKnownRoute("/apps/shipr/amazon-mcf-migration")).toBe(true);
   });
 

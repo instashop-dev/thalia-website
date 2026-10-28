@@ -65,11 +65,17 @@ const ROUTE_SEO: Record<string, { title: string; description: string; h1: string
     h1: "About Thalia Technologies",
     intro: "We build focused ecommerce software that helps merchants work smarter and grow faster.",
   },
-  "/become-a-partner": {
+  "/partnerships": {
     title: "Partnerships | Thalia Technologies",
     description: "Explore Thalia Technologies' partners and partnership opportunities across co-marketing, referrals, technology collaborations, and merchant-first ecommerce work.",
     h1: "Better tools. Better together.",
     intro: "Explore partnership opportunities with Thalia Technologies for agencies, creators, communities, and technology companies.",
+  },
+  "/partnerships/all-partners": {
+    title: "Our Partners | Thalia Technologies",
+    description: "Discover trusted ecommerce partners and explore tools that help businesses grow.",
+    h1: "Tools that help ecommerce businesses grow.",
+    intro: "Discover our partners and explore the tools they offer to ecommerce businesses.",
   },
 };
 
@@ -175,6 +181,7 @@ async function handleContactRequest(request: Request): Promise<Response> {
 
 // 301 redirects for app slugs renamed for better SEO
 const LEGACY_SLUG_REDIRECTS: Record<string, string> = {
+  "/become-a-partner": "/partnerships",
   "/pro-bulk-price-editor": "/apps/probulkpriceeditor",
   "/amazon-to-shopify": "/apps/spreadr",
   "/external-affiliate-product-links": "/apps/outlink",
@@ -204,7 +211,8 @@ const STATIC_ROUTES = new Set([
   "/about",
   "/apps",
   "/contact",
-  "/become-a-partner",
+  "/partnerships",
+  "/partnerships/all-partners",
   "/careers",
   "/blog",
   "/case-studies",
@@ -257,7 +265,7 @@ export default {
       return Response.redirect(url.toString(), 301);
     }
 
-    // 301 redirects for renamed app slugs — preserve backlink equity
+    // 301 redirects for renamed routes — preserve backlink equity
     const legacyTarget = getLegacyRedirectTarget(url.pathname);
     if (legacyTarget) {
       url.pathname = legacyTarget;

@@ -102,10 +102,16 @@ const Footer = () => {
                 Careers
               </Link>
               <Link
-                to="/become-a-partner"
+                to="/partnerships"
                 className="text-sm opacity-70 hover:opacity-100 hover:text-primary transition-all duration-150"
               >
                 Partnerships
+              </Link>
+              <Link
+                to="/partnerships/all-partners"
+                className="text-sm opacity-70 hover:opacity-100 hover:text-primary transition-all duration-150"
+              >
+                Our Partners
               </Link>
               <Link
                 to="/contact"
