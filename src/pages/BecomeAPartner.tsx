@@ -2,16 +2,12 @@ import { motion } from "framer-motion";
 import {
   ArrowRight,
   BadgeCheck,
-  BarChart3,
   Check,
   Code2,
-  Globe2,
   Handshake,
   Mail,
   Megaphone,
   MonitorSmartphone,
-  Sparkles,
-  Users,
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
@@ -22,12 +18,6 @@ const opportunities = [
   { icon: MonitorSmartphone, eyebrow: "Help merchants discover", title: "In-app Promotion", desc: "Put complementary tools in front of the right merchants through contextual recommendations, partner offers, and thoughtful in-app placements.", accent: "#7c55ff" },
   { icon: Users, eyebrow: "Grow together", title: "Referral Partnerships", desc: "Help your customers discover tools that solve their next ecommerce challenge while building a transparent, long-term referral relationship.", accent: "#00c896" },
   { icon: Code2, eyebrow: "Connect better workflows", title: "Technology Partnerships", desc: "Connect your platform with Thalia apps to create smoother workflows for Shopify, Amazon, BigCommerce, and ecommerce teams.", accent: "#ff9900" },
-];
-
-const partnerTypes = [
-  { icon: Globe2, title: "Agencies & consultants", desc: "Recommend reliable tools to the merchants you advise and give clients a stronger technology stack." },
-  { icon: Sparkles, title: "Creators & communities", desc: "Bring genuinely useful ecommerce solutions to an audience that trusts your perspective." },
-  { icon: BarChart3, title: "Technology companies", desc: "Combine complementary products and help customers get more value from every workflow." },
 ];
 
 const steps = [
@@ -54,8 +44,8 @@ const inView = (delay = 0) => ({
 const BecomeAPartner = () => (
   <Layout>
     <Seo
-      title="Partners | Thalia Technologies"
-      description="Explore Thalia Technologies' partner community and partnership opportunities across co-marketing, referrals, and technology collaborations for ecommerce teams."
+      title="Partnerships | Thalia Technologies"
+      description="Explore Thalia Technologies' partners and partnership opportunities across co-marketing, referrals, and technology collaborations for ecommerce teams."
       keywords="Thalia Technologies partner, ecommerce partnership, Shopify app partnership, co-marketing"
       path="/become-a-partner"
     />
@@ -66,7 +56,7 @@ const BecomeAPartner = () => (
         <div className="grid lg:grid-cols-[1.05fr_0.95fr] gap-12 items-center">
           <div>
             <motion.div {...inView()} className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 text-xs font-semibold font-body" style={{ border: "1px solid rgba(0,192,255,0.28)", background: "rgba(0,192,255,0.08)", color: "#00c0ff" }}>
-              <Handshake className="h-4 w-4" /> PARTNERS AT THALIA
+              <Handshake className="h-4 w-4" /> PARTNERSHIPS AT THALIA
             </motion.div>
             <motion.h1 {...inView(0.08)} className="font-heading font-extrabold text-white mb-6" style={{ fontSize: "clamp(40px, 5.7vw, 68px)", lineHeight: 1.06, letterSpacing: "-0.03em" }}>
               Better tools. <span className="gradient-text-cyan">Better together.</span>
@@ -98,9 +88,30 @@ const BecomeAPartner = () => (
 
     <section id="our-partners" className="bg-white" style={{ paddingTop: 86, paddingBottom: 92 }}>
       <div className="section-container">
-        <div className="mx-auto max-w-2xl text-center mb-12"><motion.span {...inView()} className="inline-block text-xs font-semibold uppercase tracking-[0.12em] text-primary font-body mb-4">EXPLORE OUR PARTNERS</motion.span><motion.h2 {...inView(0.08)} className="font-heading text-h2 font-extrabold text-foreground mb-4">A community built on complementary strengths.</motion.h2><motion.p {...inView(0.16)} className="text-muted-foreground leading-relaxed font-body">Explore the kinds of partners we work with, from agencies and creators to technology companies. If you are already a partner, use this page as a starting point for your next collaboration.</motion.p></div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {partnerTypes.map((type, index) => <motion.article key={type.title} {...inView(index * 0.08)} className="card-elevated p-6 text-center" style={{ borderTop: "2px solid rgba(0,192,255,0.22)" }}><div className="mx-auto mb-5 flex h-12 w-12 items-center justify-center rounded-xl" style={{ background: "rgba(0,192,255,0.1)", border: "1px solid rgba(0,192,255,0.18)" }}><type.icon className="h-5 w-5 text-primary" /></div><h3 className="font-heading font-bold text-lg text-foreground mb-2">{type.title}</h3><p className="text-sm text-muted-foreground font-body leading-relaxed">{type.desc}</p></motion.article>)}
+        <div className="mx-auto max-w-2xl text-center mb-12"><motion.span {...inView()} className="inline-block text-xs font-semibold uppercase tracking-[0.12em] text-primary font-body mb-4">OUR PARTNERS</motion.span><motion.h2 {...inView(0.08)} className="font-heading text-h2 font-extrabold text-foreground mb-4">Tools that help ecommerce businesses grow.</motion.h2><motion.p {...inView(0.16)} className="text-muted-foreground leading-relaxed font-body">Discover our partners and explore the tools they offer to ecommerce businesses.</motion.p></div>
+        <div className="mx-auto grid max-w-3xl grid-cols-1 gap-5">
+          <motion.article {...inView()} className="card-elevated flex flex-col gap-6 p-6 sm:flex-row sm:items-center sm:p-8" style={{ borderTop: "2px solid rgba(0,192,255,0.22)" }}>
+            <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl border border-border bg-white p-3">
+              <img
+                src="https://drive.google.com/uc?export=view&id=109NjkfGtGVp8uBeNnGTksa10FZehJniw"
+                alt="Fiidom Dropship logo"
+                className="max-h-full max-w-full object-contain"
+                loading="lazy"
+              />
+            </div>
+            <div className="flex-1">
+              <h3 className="font-heading font-bold text-xl text-foreground mb-2">Fiidom Dropship</h3>
+              <p className="text-sm text-muted-foreground font-body leading-relaxed">Find winning AliExpress products, import them instantly, optimize with AI, and automate fulfillment - all in one place.</p>
+            </div>
+            <a
+              href="https://apps.shopify.com/fiidomds?utm_medium=Robo-thalia-website&utm_source=fiidomds-partnership&utm_campaign=fiidomds"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary shrink-0"
+            >
+              Install Now <ArrowRight className="ml-2 h-4 w-4" />
+            </a>
+          </motion.article>
         </div>
       </div>
     </section>
