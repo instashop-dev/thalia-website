@@ -50,6 +50,32 @@ const PartnerDirectory = () => (
               Install Now <ArrowRight className="ml-2 h-4 w-4" />
             </a>
           </article>
+          <article className="card-elevated flex flex-col gap-6 p-6 sm:flex-row sm:items-center sm:p-8" style={{ borderTop: "2px solid rgba(0,192,255,0.22)" }}>
+            <div className="flex h-20 w-20 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-border bg-white">
+              <img
+                src="/upsell-cross-sell-logo.png"
+                alt="Upsell logo"
+                className="h-full w-full object-contain"
+                width={80}
+                height={80}
+                loading="lazy"
+              />
+            </div>
+            <div className="flex-1">
+              <h2 className="mb-2 font-heading text-xl font-bold text-foreground">Upsell &amp; Cross-Sell</h2>
+              <p className="font-body text-sm leading-relaxed text-muted-foreground">
+                Boost AOV with post-purchase upsells, cross-sells, and bundles built for Shopify.
+              </p>
+            </div>
+            <a
+              href="https://apps.shopify.com/reconvert-upsell-cross-sell?utm_source=thalia_website&utm_medium=website_recommendation&utm_campaign=spreadr_partnership"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary shrink-0"
+            >
+              View on Shopify <ArrowRight className="ml-2 h-4 w-4" />
+            </a>
+          </article>
         </div>
 
         <div className="mx-auto mt-10 max-w-3xl">
