@@ -24,56 +24,56 @@ const PartnerDirectory = () => (
           </p>
         </div>
 
-        <div className="mx-auto mt-12 grid max-w-3xl grid-cols-1 gap-5">
-          <article className="card-elevated flex flex-col gap-6 p-6 sm:flex-row sm:items-center sm:p-8" style={{ borderTop: "2px solid rgba(0,192,255,0.22)" }}>
-            <div className="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl border border-border bg-white p-3">
+        <div className="mx-auto mt-12 grid max-w-6xl grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <article className="card-elevated flex h-full flex-col p-6" style={{ borderTop: "2px solid rgba(0,192,255,0.22)" }}>
+            <div className="mb-5 flex items-center gap-4">
+              <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl border border-border bg-white p-2">
               <img
                 src="/fiidom-logo.png"
                 alt="Fiidom Dropship logo"
                 className="max-h-full max-w-full object-contain"
-                width={80}
-                height={80}
+                width={64}
+                height={64}
               />
+              </div>
+              <h2 className="font-heading text-lg font-bold text-foreground">Fiidom Dropship</h2>
             </div>
-            <div className="flex-1">
-              <h2 className="mb-2 font-heading text-xl font-bold text-foreground">Fiidom Dropship</h2>
-              <p className="font-body text-sm leading-relaxed text-muted-foreground">
-                Find winning AliExpress products, import them instantly, optimize with AI, and automate fulfillment - all in one place.
-              </p>
-            </div>
+            <p className="mb-6 flex-1 font-body text-sm leading-relaxed text-muted-foreground">
+              Find winning AliExpress products, import them instantly, optimize with AI, and automate fulfillment - all in one place.
+            </p>
             <a
               href="https://apps.shopify.com/fiidomds?utm_medium=Robo-thalia-website&utm_source=fiidomds-partnership&utm_campaign=fiidomds"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary shrink-0"
+              className="btn-primary inline-flex w-fit items-center"
             >
-              Install Now <ArrowRight className="ml-2 h-4 w-4" />
+              Try it Now <ArrowRight className="ml-2 h-4 w-4" />
             </a>
           </article>
-          <article className="card-elevated flex flex-col gap-6 p-6 sm:flex-row sm:items-center sm:p-8" style={{ borderTop: "2px solid rgba(0,192,255,0.22)" }}>
-            <div className="flex h-20 w-20 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-border bg-white">
+          <article className="card-elevated flex h-full flex-col p-6" style={{ borderTop: "2px solid rgba(0,192,255,0.22)" }}>
+            <div className="mb-5 flex items-center gap-4">
+              <div className="flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-border bg-white">
               <img
                 src="/upsell-cross-sell-logo.png"
                 alt="Upsell logo"
                 className="h-full w-full object-contain"
-                width={80}
-                height={80}
+                width={64}
+                height={64}
                 loading="lazy"
               />
+              </div>
+              <h2 className="font-heading text-lg font-bold text-foreground">Upsell &amp; Cross-Sell</h2>
             </div>
-            <div className="flex-1">
-              <h2 className="mb-2 font-heading text-xl font-bold text-foreground">Upsell &amp; Cross-Sell</h2>
-              <p className="font-body text-sm leading-relaxed text-muted-foreground">
-                Boost AOV with post-purchase upsells, cross-sells, and bundles built for Shopify.
-              </p>
-            </div>
+            <p className="mb-6 flex-1 font-body text-sm leading-relaxed text-muted-foreground">
+              Boost AOV with post-purchase upsells, cross-sells, and bundles built for Shopify.
+            </p>
             <a
               href="https://apps.shopify.com/reconvert-upsell-cross-sell?utm_source=thalia_website&utm_medium=website_recommendation&utm_campaign=spreadr_partnership"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary shrink-0"
+              className="btn-primary inline-flex w-fit items-center"
             >
-              View on Shopify <ArrowRight className="ml-2 h-4 w-4" />
+              Try it Now <ArrowRight className="ml-2 h-4 w-4" />
             </a>
           </article>
         </div>
