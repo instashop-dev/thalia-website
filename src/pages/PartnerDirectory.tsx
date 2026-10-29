@@ -76,6 +76,32 @@ const PartnerDirectory = () => (
               Try it Now <ArrowRight className="ml-2 h-4 w-4" />
             </a>
           </article>
+          <article className="card-elevated flex h-full flex-col p-6" style={{ borderTop: "2px solid rgba(0,192,255,0.22)" }}>
+            <div className="mb-5 flex items-center gap-4">
+              <div className="flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-border bg-white">
+                <img
+                  src="https://cdn.shopify.com/app-store/listing_images/8d87bd0a0d4d7e42311c1323e1dadf00/icon/CJjcre2m6IEDEAE=.png?height=1200&width=1200"
+                  alt="Essential Grid Gallery app logo"
+                  className="h-full w-full object-contain"
+                  width={64}
+                  height={64}
+                  loading="lazy"
+                />
+              </div>
+              <h2 className="font-heading text-lg font-bold text-foreground">Essential Grid Gallery</h2>
+            </div>
+            <p className="mb-6 flex-1 font-body text-sm leading-relaxed text-muted-foreground">
+              Boost sales with shoppable galleries. Tag products in lifestyle images, build lookbooks and embed YouTube, Instagram or Vimeo videos in grid or masonry layouts.
+            </p>
+            <a
+              href="https://apps.shopify.com/essential-grid-gallery?utm_source=Outlink_Thalia&utm_medium=website&utm_campaign=essential-grid-gallery&utm_content=partners-page"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary inline-flex w-fit items-center"
+            >
+              Try it Now <ArrowRight className="ml-2 h-4 w-4" />
+            </a>
+          </article>
         </div>
 
         <div className="mx-auto mt-10 max-w-3xl">
