@@ -55,6 +55,7 @@ Shopify’s pricing guidance makes the same point: competitive pricing should be
 The goal is not to be the cheapest store. Be compelling where comparison is intense, while preserving full price where your product or service earns a premium.
 
 ![Contribution margin floor for Black Friday prices](/black-friday-margin-floor.png)
+*Your margin floor shows how far a discount can go before the sale stops being profitable.*
 
 ## 2. A data-led framework for Black Friday prices
 
@@ -93,6 +94,7 @@ Look for patterns:
 Keep a dated snapshot. One observation is a data point; four weeks of observations are a trend. Confirm MAP, wholesale, and regional pricing constraints before reacting.
 
 ![Competitor pricing ecommerce monitoring workflow](/black-friday-competitor-monitoring.png)
+*Track meaningful competitor price and stock changes so you can respond without chasing every alert.*
 
 ### Step 3 — Decide what to discount, by how much, and what to protect
 
