@@ -54,8 +54,7 @@ Shopify’s pricing guidance makes the same point: competitive pricing should be
 
 The goal is not to be the cheapest store. Be compelling where comparison is intense, while preserving full price where your product or service earns a premium.
 
-![Contribution margin floor for Black Friday prices](https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80)
-*Source: Unsplash; replace with a branded margin-floor chart.*
+![Contribution margin floor for Black Friday prices](/black-friday-margin-floor.png)
 
 ## 2. A data-led framework for Black Friday prices
 
@@ -93,8 +92,7 @@ Look for patterns:
 
 Keep a dated snapshot. One observation is a data point; four weeks of observations are a trend. Confirm MAP, wholesale, and regional pricing constraints before reacting.
 
-![Competitor pricing ecommerce monitoring workflow](https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1200&q=80)
-*Source: Unsplash; replace with an EcomScout or internal dashboard screenshot.*
+![Competitor pricing ecommerce monitoring workflow](/black-friday-competitor-monitoring.png)
 
 ### Step 3 — Decide what to discount, by how much, and what to protect
 
@@ -262,4 +260,4 @@ Suggested carousel URL: https://thaliatechnologies.com/blogs/news/black-friday-p
 
 Suggested quote-card URL: https://thaliatechnologies.com/blogs/news/black-friday-prices-competitor-data?utm_source=blog&utm_medium=linkedin&utm_campaign=black-friday-prices-competitor-data&utm_content=quote-card
 
-<!-- QA: Approx. 2,090 words including distribution assets. Primary keyword appears in H1, opening, slug, meta title, meta description, and one H2-equivalent context. FAQPage + Article schema specified. Hero and 2 inline image placeholders included; add 1–2 branded screenshots/charts before publication. -->
+<!-- QA: Primary keyword appears in H1, opening, slug, meta title, meta description, and one H2-equivalent context. FAQPage + Article schema specified. Inline visuals are original generated assets with no source credits required. -->
