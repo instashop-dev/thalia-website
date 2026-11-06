@@ -102,6 +102,32 @@ const PartnerDirectory = () => (
               Try it Now <ArrowRight className="ml-2 h-4 w-4" />
             </a>
           </article>
+          <article className="card-elevated flex h-full flex-col p-6" style={{ borderTop: "2px solid rgba(0,192,255,0.22)" }}>
+            <div className="mb-5 flex items-center gap-4">
+              <div className="flex h-16 w-28 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-border bg-[#111111] p-2">
+                <img
+                  src="/ecomscout-logo.png"
+                  alt="EcomScout logo"
+                  className="max-h-full max-w-full object-contain"
+                  width={149}
+                  height={26}
+                  loading="lazy"
+                />
+              </div>
+              <h2 className="font-heading text-lg font-bold text-foreground">EcomScout</h2>
+            </div>
+            <p className="mb-6 flex-1 font-body text-sm leading-relaxed text-muted-foreground">
+              Discover Shopify store insights, analyze competitors, explore trending products, and make smarter eCommerce decisions
+            </p>
+            <a
+              href="https://ecomscout.com/?utm_source=thalia-technologies&utm_medium=website&utm_campaign=prime-partnership"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary inline-flex w-fit items-center"
+            >
+              Try it Now <ArrowRight className="ml-2 h-4 w-4" />
+            </a>
+          </article>
         </div>
 
         <div className="mx-auto mt-10 max-w-3xl">
