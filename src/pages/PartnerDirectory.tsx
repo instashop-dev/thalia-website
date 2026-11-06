@@ -104,13 +104,13 @@ const PartnerDirectory = () => (
           </article>
           <article className="card-elevated flex h-full flex-col p-6" style={{ borderTop: "2px solid rgba(0,192,255,0.22)" }}>
             <div className="mb-5 flex items-center gap-4">
-              <div className="flex h-16 w-28 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-border bg-[#111111] p-2">
+              <div className="flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-border bg-white p-3">
                 <img
-                  src="/ecomscout-logo.png"
-                  alt="EcomScout logo"
+                  src="/ecomscout-mark.svg"
+                  alt="EcomScout S logo mark"
                   className="max-h-full max-w-full object-contain"
-                  width={149}
-                  height={26}
+                  width={32}
+                  height={32}
                   loading="lazy"
                 />
               </div>
