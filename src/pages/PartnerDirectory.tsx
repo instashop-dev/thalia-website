@@ -128,6 +128,32 @@ const PartnerDirectory = () => (
               Try it Now <ArrowRight className="ml-2 h-4 w-4" />
             </a>
           </article>
+          <article className="card-elevated flex h-full flex-col p-6" style={{ borderTop: "2px solid rgba(0,192,255,0.22)" }}>
+            <div className="mb-5 flex items-center gap-4">
+              <div className="flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-border bg-white">
+                <img
+                  src="https://cdn.shopify.com/app-store/listing_images/89f080b72a27e71e4d48c9ad2493e78d/icon/CJe604Pr8ZUDEAE=.png"
+                  alt="CWILL SEO optimizer app logo"
+                  className="h-full w-full object-contain"
+                  width={64}
+                  height={64}
+                  loading="lazy"
+                />
+              </div>
+              <h2 className="font-heading text-lg font-bold text-foreground">CWILL(SEOWILL) - AI SEO Optimizer</h2>
+            </div>
+            <p className="mb-6 flex-1 font-body text-sm leading-relaxed text-muted-foreground">
+              SEO booster with page speed, AI blog, SEO image optimizer, and 404 fixes.
+            </p>
+            <a
+              href="https://share.cwill.com/AJNv85Cg"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary inline-flex w-fit items-center"
+            >
+              Try it Now <ArrowRight className="ml-2 h-4 w-4" />
+            </a>
+          </article>
         </div>
 
         <div className="mx-auto mt-10 max-w-3xl">
