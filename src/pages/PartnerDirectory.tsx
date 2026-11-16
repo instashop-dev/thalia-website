@@ -154,6 +154,32 @@ const PartnerDirectory = () => (
               Try it Now <ArrowRight className="ml-2 h-4 w-4" />
             </a>
           </article>
+          <article className="card-elevated flex h-full flex-col p-6" style={{ borderTop: "2px solid rgba(0,192,255,0.22)" }}>
+            <div className="mb-5 flex items-center gap-4">
+              <div className="flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-border bg-white p-2">
+                <img
+                  src="https://shop-wil.com/brand-kit/v1/icons/protect-512.png"
+                  alt="Sam Shipping Protection logo"
+                  className="h-full w-full object-contain"
+                  width={64}
+                  height={64}
+                  loading="lazy"
+                />
+              </div>
+              <h2 className="font-heading text-lg font-bold text-foreground">Sam Shipping Protection</h2>
+            </div>
+            <p className="mb-6 flex-1 font-body text-sm leading-relaxed text-muted-foreground">
+              Solutions of shipping protection, return and extended warranty.
+            </p>
+            <a
+              href="https://apps.shopify.com/sam-shipping-protection?utm_source=thalia&utm_medium=website&utm_campaign=partnership"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary inline-flex w-fit items-center"
+            >
+              Try it Now <ArrowRight className="ml-2 h-4 w-4" />
+            </a>
+          </article>
         </div>
 
         <div className="mx-auto mt-10 max-w-3xl">
