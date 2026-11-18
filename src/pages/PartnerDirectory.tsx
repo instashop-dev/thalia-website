@@ -232,6 +232,84 @@ const PartnerDirectory = () => (
               Try it Now <ArrowRight className="ml-2 h-4 w-4" />
             </a>
           </article>
+          <article className="card-elevated flex h-full flex-col p-6" style={{ borderTop: "2px solid rgba(0,192,255,0.22)" }}>
+            <div className="mb-5 flex items-center gap-4">
+              <div className="flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-border bg-white">
+                <img
+                  src="https://cdn.shopify.com/app-store/listing_images/20116cfe1c17a355ddb00d7f59bcf363/icon/CLmz5aH965UDEAE=.png"
+                  alt="SectionKit Bundle logo"
+                  className="h-full w-full object-contain"
+                  width={64}
+                  height={64}
+                  loading="lazy"
+                />
+              </div>
+              <h2 className="font-heading text-lg font-bold text-foreground">SectionKit Bundle – Product Bundles for Shopify</h2>
+            </div>
+            <p className="mb-6 flex-1 font-body text-sm leading-relaxed text-muted-foreground">
+              SectionKit Bundle helps Shopify merchants create product bundles that boost sales and increase average order value.
+            </p>
+            <a
+              href="https://apps.shopify.com/sectionkit-bundle?utm_source=thalia_website&utm_medium=partnership&utm_campaign=thescriptflow_thalia_2026&utm_content=sectionkit_bundle_in_app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary inline-flex w-fit items-center"
+            >
+              Try it Now <ArrowRight className="ml-2 h-4 w-4" />
+            </a>
+          </article>
+          <article className="card-elevated flex h-full flex-col p-6" style={{ borderTop: "2px solid rgba(0,192,255,0.22)" }}>
+            <div className="mb-5 flex items-center gap-4">
+              <div className="flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-border bg-white">
+                <img
+                  src="https://cdn.shopify.com/app-store/listing_images/d8a63d43d4b02d6ec60e83dc6a254ba3/icon/COmMvq7_9JYDEAE=.png"
+                  alt="PA AI Image Generator logo"
+                  className="h-full w-full object-contain"
+                  width={64}
+                  height={64}
+                  loading="lazy"
+                />
+              </div>
+              <h2 className="font-heading text-lg font-bold text-foreground">PA AI Image Generator – AI Product Photography &amp; Lifestyle Images</h2>
+            </div>
+            <p className="mb-6 flex-1 font-body text-sm leading-relaxed text-muted-foreground">
+              PA AI Image Generator helps Shopify merchants create professional product images and lifestyle visuals without expensive photoshoots.
+            </p>
+            <a
+              href="https://apps.shopify.com/pa-ai-image-generator?utm_source=thalia_website&utm_medium=partnership&utm_campaign=thescriptflow_thalia_2026&utm_content=pa_ai_image_generator_in_app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary inline-flex w-fit items-center"
+            >
+              Try it Now <ArrowRight className="ml-2 h-4 w-4" />
+            </a>
+          </article>
+          <article className="card-elevated flex h-full flex-col p-6" style={{ borderTop: "2px solid rgba(0,192,255,0.22)" }}>
+            <div className="mb-5 flex items-center gap-4">
+              <div className="flex h-16 w-16 shrink-0 items-center justify-center overflow-hidden rounded-2xl border border-border bg-white">
+                <img
+                  src="https://cdn.shopify.com/app-store/listing_images/e152db961ace5a6ca5a03e022753419c/icon/CKaJut6EzpYDEAE=.png"
+                  alt="PA Claude Connector logo"
+                  className="h-full w-full object-contain"
+                  width={64}
+                  height={64}
+                  loading="lazy"
+                />
+              </div>
+              <h2 className="font-heading text-lg font-bold text-foreground">PA Claude Connector – AI Integration for Shopify</h2>
+            </div>
+            <p className="mb-6 flex-1 font-body text-sm leading-relaxed text-muted-foreground">
+              PA Claude Connector integrates Claude AI into Shopify workflows, helping merchants streamline store operations and boost productivity.
+            </p>
+            <a
+              href="https://apps.shopify.com/claude_connecter_-app?utm_source=thalia_website&utm_medium=partnership&utm_campaign=thescriptflow_thalia_2026&utm_content=pa_claude_connector_in_app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary inline-flex w-fit items-center"
+            >
+              Try it Now <ArrowRight className="ml-2 h-4 w-4" />
+            </a>
+          </article>
         </div>
 
         <div className="mx-auto mt-10 max-w-3xl">
